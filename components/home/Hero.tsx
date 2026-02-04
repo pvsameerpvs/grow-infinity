@@ -33,11 +33,52 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Main Heading */}
+            {/* Main Heading with Bullet Shoot Effect */}
             <h1 className="font-oswald text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-foreground mb-6 sm:mb-8 lg:mb-10 leading-[0.9] tracking-tight uppercase">
-              Architecting{' '}
-              <span className="text-gradient-infinity italic normal-case pr-2">Businesses</span>.{' '}
-              <span className="relative inline-block">
+              <motion.span 
+                className="inline-block relative"
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Architecting
+                {/* Speed lines effect */}
+                <motion.span
+                  className="absolute -left-20 top-1/2 -translate-y-1/2 w-16 h-0.5 bg-primary"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: [0, 1, 0] }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                />
+                <motion.span
+                  className="absolute -left-16 top-1/3 -translate-y-1/2 w-12 h-0.5 bg-primary/60"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: [0, 1, 0] }}
+                  transition={{ duration: 0.4, delay: 0.15 }}
+                />
+              </motion.span>{' '}
+              
+              <motion.span 
+                className="text-gradient-infinity italic normal-case pr-2 inline-block relative"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Businesses
+                {/* Circular impact effect */}
+                <motion.span
+                  className="absolute inset-0 border-2 border-primary rounded-full"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: [0.8, 1.2, 1.5], opacity: [0.6, 0.3, 0] }}
+                  transition={{ duration: 1, delay: 0.4, repeat: Infinity, repeatDelay: 2 }}
+                />
+              </motion.span>.{' '}
+              
+              <motion.span 
+                className="relative inline-block"
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
                 Securing
                 <motion.span 
                   initial={{ width: 0 }}
@@ -45,8 +86,40 @@ export function Hero() {
                   transition={{ delay: 1, duration: 1.5 }}
                   className="absolute -bottom-1 sm:-bottom-2 left-0 h-2 sm:h-3 bg-gold/20 -z-10" 
                 />
-              </span>{' '}
-              Legacies.
+                {/* Speed lines from right */}
+                <motion.span
+                  className="absolute -right-20 top-1/2 -translate-y-1/2 w-16 h-0.5 bg-gold"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: [0, 1, 0] }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                />
+                <motion.span
+                  className="absolute -right-16 top-2/3 -translate-y-1/2 w-12 h-0.5 bg-gold/60"
+                  initial={{ scaleX: 0, opacity: 0 }}
+                  animate={{ scaleX: 1, opacity: [0, 1, 0] }}
+                  transition={{ duration: 0.4, delay: 0.65 }}
+                />
+              </motion.span>{' '}
+              
+              <motion.span
+                className="inline-block relative"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Legacies
+                {/* Bullet impact dots */}
+                <motion.span
+                  className="absolute -top-2 -right-2 w-2 h-2 bg-primary rounded-full"
+                  animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                />
+                <motion.span
+                  className="absolute -bottom-2 -left-2 w-2 h-2 bg-gold rounded-full"
+                  animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                />
+              </motion.span>.
             </h1>
             
             {/* Description */}
