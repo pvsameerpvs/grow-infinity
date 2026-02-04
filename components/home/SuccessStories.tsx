@@ -40,6 +40,30 @@ const testimonials = [
     verified: true,
     setupTime: '42 hours',
     location: 'Singapore'
+  },
+  {
+    name: 'Fatima Al-Rashid',
+    role: 'Founder & CEO',
+    company: 'Emerald Consulting',
+    industry: 'Consulting',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop',
+    quote: 'Grow Infinity transformed my vision into reality. Their banking-first approach and deep understanding of UAE regulations made the entire process seamless and stress-free.',
+    rating: 5,
+    verified: true,
+    setupTime: '38 hours',
+    location: 'Dubai, UAE'
+  },
+  {
+    name: 'Marcus Williams',
+    role: 'Co-Founder',
+    company: 'Digital Horizon',
+    industry: 'Technology',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop',
+    quote: 'The level of expertise and personalized attention we received was exceptional. From free zone selection to corporate banking, every detail was handled with precision.',
+    rating: 5,
+    verified: true,
+    setupTime: '45 hours',
+    location: 'London, UK'
   }
 ];
 
@@ -128,7 +152,7 @@ export function SuccessStories() {
               <span className="text-gradient-gold italic">Success</span> Stories.
             </h2>
             <p className="text-xl text-foreground/70 dark:text-white/60 font-medium max-w-lg leading-relaxed">
-              We empower the world's most ambitious entrepreneurs to secure their place in the UAE's economic future.
+              We empower the world's most ambitious entrepreneurs to secure their place in the UAE's economic future. From Fortune 500 companies to innovative startups, our clients trust us to architect their success story.
             </p>
           </motion.div>
 

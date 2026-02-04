@@ -99,7 +99,7 @@ export function TrustBadges() {
             Trusted by <span className="text-gradient-infinity">Thousands</span>
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Our certifications and partnerships speak to our commitment to excellence
+            Our certifications, accreditations, and strategic partnerships with UAE's leading free zones and regulatory bodies speak to our unwavering commitment to excellence, compliance, and client success.
           </p>
         </motion.div>
 

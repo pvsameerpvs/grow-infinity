@@ -129,8 +129,8 @@ export function CTA() {
               transition={{ delay: 0.4 }}
               className="text-xl lg:text-2xl text-white/80 mb-16 max-w-3xl mx-auto font-medium leading-relaxed"
             >
-              Get a comprehensive breakdown of your business setup costs in less than{' '}
-              <span className="text-gold font-black">2 minutes</span> with our precision calculator.
+              Get a comprehensive breakdown of your UAE business setup costs in less than{' '}
+              <span className="text-gold font-black">2 minutes</span> with our precision calculator. No hidden fees, no surprises—just transparent pricing and expert guidance every step of the way.
             </motion.p>
 
             {/* CTA Buttons */}

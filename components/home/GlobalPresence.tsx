@@ -8,32 +8,35 @@ const locations = [
   { 
     city: 'Dubai', 
     country: 'UAE',
-    address: 'Business Bay, Downtown', 
-    status: 'Headquarters',
+    address: 'Business Bay, Downtown Dubai', 
+    status: 'Global Headquarters',
     color: 'from-primary to-primary-dark',
     icon: Building2,
     clients: '2,500+',
-    position: { top: '45%', left: '60%' }
+    position: { top: '45%', left: '60%' },
+    description: 'Our flagship office serving the entire MENA region with comprehensive business setup solutions'
   },
   { 
     city: 'London', 
     country: 'UK',
     address: 'Mayfair, Park Lane', 
-    status: 'Strategic Advisory',
+    status: 'Strategic Advisory Hub',
     color: 'from-gold to-gold-dark',
     icon: TrendingUp,
     clients: '1,200+',
-    position: { top: '30%', left: '48%' }
+    position: { top: '30%', left: '48%' },
+    description: 'European headquarters providing cross-border business structuring and international expansion services'
   },
   { 
     city: 'Singapore', 
     country: 'SG',
-    address: 'Marina Bay Financial', 
-    status: 'Tech & Fintech',
+    address: 'Marina Bay Financial Centre', 
+    status: 'Asia-Pacific Operations',
     color: 'from-primary-light to-primary',
     icon: Users,
     clients: '800+',
-    position: { top: '55%', left: '75%' }
+    position: { top: '55%', left: '75%' },
+    description: 'Tech and fintech specialization hub serving the rapidly growing Asian markets'
   }
 ];
 
@@ -111,7 +114,7 @@ export function GlobalPresence() {
           </h2>
           
           <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed font-medium">
-            Elite business setup requires a <span className="text-primary font-bold">global perspective</span>. Our presence across major financial hubs ensures seamless cross-border compliance.
+            Elite business setup requires a <span className="text-primary font-bold">global perspective</span>. Our strategically positioned offices across major financial hubs ensure seamless cross-border compliance, 24/7 support, and localized expertise for your international expansion.
           </p>
         </motion.div>
 

@@ -135,10 +135,10 @@ export function Stats() {
           className="text-center mb-20"
         >
           <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight uppercase">
-            Numbers That <span className="text-gradient-gold">Speak</span>
+            Numbers That <span className="text-gradient-gold">Speak Volumes</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Our track record of excellence in business setup and corporate services
+            Our proven track record of excellence in UAE business setup, corporate services, and banking solutions. These aren't just numbers—they're success stories of entrepreneurs who trusted us with their vision.
           </p>
         </motion.div>
 
