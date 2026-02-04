@@ -3,8 +3,12 @@
 import React from 'react';
 import { Hero } from '@/components/home/Hero';
 import { TrustBadges } from '@/components/home/TrustBadges';
+import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { CoreServices } from '@/components/home/CoreServices';
+import { ProcessSteps } from '@/components/home/ProcessSteps';
 import { BankingAdvantage } from '@/components/home/BankingAdvantage';
+import { GlobalPresence } from '@/components/home/GlobalPresence';
+import { SuccessStories } from '@/components/home/SuccessStories';
 import { Stats } from '@/components/home/Stats';
 import { CTA } from '@/components/home/CTA';
 
@@ -13,8 +17,12 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <Hero />
       <TrustBadges />
+      <WhyChooseUs />
       <CoreServices />
+      <ProcessSteps />
       <BankingAdvantage />
+      <GlobalPresence />
+      <SuccessStories />
       <Stats />
       <CTA />
     </div>

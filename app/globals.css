@@ -19,6 +19,8 @@
   
   --font-sans: var(--font-inter);
   --font-heading: var(--font-plus-jakarta);
+  --font-merriweather: var(--font-merriweather-sans);
+  --font-oswald: var(--font-oswald);
   --font-mono: var(--font-geist-mono);
   
   --radius-sm: 0.5rem;
@@ -56,11 +58,28 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), ui-sans-serif, system-ui;
   transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+@keyframes width-grow {
+  from { width: 0; }
+  to { width: 3rem; }
+}
+
+.animate-width {
+  animation: width-grow 1s ease-out forwards;
 }
 
 .glass {
@@ -116,4 +135,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark .button-premium:hover {
   box-shadow: 0 10px 20px -5px rgba(29, 111, 197, 0.5);
+}
+
+/* Font Utility Classes */
+.font-merriweather {
+  font-family: var(--font-merriweather-sans), ui-sans-serif, system-ui;
+}
+
+.font-oswald {
+  font-family: var(--font-oswald), ui-sans-serif, system-ui;
+  font-optical-sizing: auto;
 }

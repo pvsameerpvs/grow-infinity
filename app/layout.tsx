@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, Merriweather_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,6 +15,18 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const merriweatherSans = Merriweather_Sans({
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-merriweather-sans',
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ['200', '300', '400', '500', '600', '700'],
+  variable: '--font-oswald',
+});
+
 export const metadata: Metadata = {
   title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
   description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
@@ -28,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} ${merriweatherSans.variable} ${oswald.variable} font-sans antialiased`}>
         <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
           <Header />
           <main>{children}</main>
