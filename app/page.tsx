@@ -18,7 +18,6 @@ export default function Home() {
     <div className="flex flex-col w-full">
       <Hero />
       <AboutSection/>
-     
       <WhyChooseUs />
       <CoreServices />
       <ProcessSteps />

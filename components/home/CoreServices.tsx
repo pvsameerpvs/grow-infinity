@@ -2,63 +2,166 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Landmark, Calculator, ShieldCheck, Users2, Globe, ArrowRight, ChevronRight } from 'lucide-react';
+import { Building2, Landmark, Calculator, ShieldCheck, Users2, Globe, ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+
+const services = [
+  { 
+    title: 'Mainland Setup', 
+    icon: Building2, 
+    slug: 'mainland-company-formation', 
+    desc: 'Full access to UAE local markets with 100% ownership and unlimited business activities.',
+    image: '/service-mainland.png',
+    badge: 'Most Popular'
+  },
+  { 
+    title: 'Free Zone Setup', 
+    icon: Landmark, 
+    slug: 'free-zone-company-setup', 
+    desc: '100% tax-free environments for specialized industries with complete foreign ownership.',
+    image: '/service-freezone.png',
+    badge: '0% Tax'
+  },
+  { 
+    title: 'Banking Advisory', 
+    icon: Calculator, 
+    slug: 'corporate-bank-account-uae', 
+    desc: 'Pre-approved corporate accounts with top-tier UAE banks and seamless onboarding.',
+    image: '/service-banking.png',
+    badge: 'Fast Track'
+  },
+  { 
+    title: 'Golden Visa', 
+    icon: ShieldCheck, 
+    slug: 'golden-visa-uae', 
+    desc: 'Secure your 10-year residency and long-term security for you and your family.',
+    image: '/service-visa.png',
+    badge: '10 Years'
+  },
+  { 
+    title: 'Corporate Tax', 
+    icon: Users2, 
+    slug: 'corporate-tax-uae', 
+    desc: 'Strategic compliance with the UAE\'s new 9% tax regime and expert advisory.',
+    image: '/service-tax.png',
+    badge: 'Compliance'
+  },
+  { 
+    title: 'PRO Services', 
+    icon: Globe, 
+    slug: 'pro-services-uae', 
+    desc: 'Hands-off government liaison for all your legal paperwork and documentation.',
+    image: '/service-pro.png',
+    badge: 'Full Support'
+  },
+];
 
 export function CoreServices() {
   return (
-    <section id="services" className="py-32 bg-background relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full" />
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
-          <div className="max-w-2xl">
-            <div className="w-12 h-1.5 bg-gold mb-6 rounded-full" />
-            <h2 className="text-5xl md:text-7xl font-black text-foreground mb-8 tracking-tighter leading-none">
-              Specialized Solutions for <span className="text-primary underline decoration-gold/30">Infinite</span> Growth
-            </h2>
-            <p className="text-xl text-foreground/50 font-medium leading-relaxed">
-              From mainland formation to complex banking compliance, we provide the foundation for your Middle Eastern legacy.
-            </p>
+    <section id="services" className="relative py-20 lg:py-32 bg-gradient-to-b from-background via-foreground/[0.01] to-background overflow-hidden">
+      {/* Background Accents */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 lg:mb-20"
+        >
+          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-primary/10">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-xs font-black uppercase tracking-widest text-primary">Our Services</span>
           </div>
-          <Link href="/mainland-company-formation" className="px-8 py-4 glass hover:bg-foreground/5 text-foreground font-black rounded-xl transition-all flex items-center group text-sm uppercase tracking-widest">
-            View All Services
-            <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+          
+          <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight">
+            Specialized Solutions for <br />
+            <span className="text-gradient-infinity px-2">Infinite Growth</span>
+          </h2>
+          
+          <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed">
+            From mainland formation to complex banking compliance, we provide the foundation for your Middle Eastern legacy.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { title: 'Mainland Setup', icon: <Building2 />, slug: 'mainland-company-formation', desc: 'Full access to UAE local markets with 100% ownership.' },
-            { title: 'Free Zone Setup', icon: <Landmark />, slug: 'free-zone-company-setup', desc: '100% tax-free environments for specialized industries.' },
-            { title: 'Banking Advisory', icon: <Calculator />, slug: 'corporate-bank-account-uae', desc: 'Pre-approved corporate accounts with top-tier UAE banks.' },
-            { title: 'Golden Visa', icon: <ShieldCheck />, slug: 'golden-visa-uae', desc: 'Secure your 10-year residency and long-term security.' },
-            { title: 'Corporate Tax', icon: <Users2 />, slug: 'corporate-tax-uae', desc: 'Strategic compliance with the UAE\'s new 9% tax regime.' },
-            { title: 'PRO Services', icon: <Globe />, slug: 'pro-services-uae', desc: 'Hands-off government liaison for all your legal paperwork.' },
-          ].map((service, i) => (
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {services.map((service, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
+              key={service.slug}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -12 }}
-              className="group p-10 rounded-[3rem] border border-foreground/5 bg-foreground/[0.02] hover:bg-primary transition-all duration-500 overflow-hidden relative"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-3xl"
             >
-              <div className="absolute -right-4 -top-4 w-32 h-32 bg-primary/5 rounded-full group-hover:bg-white/10 transition-colors" />
-              
-              <div className="w-16 h-16 rounded-[2rem] bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mb-8 transition-all duration-500 transform group-hover:scale-110">
-                {React.isValidElement(service.icon) && React.cloneElement(service.icon as React.ReactElement<any>, { className: "w-8 h-8 text-primary group-hover:text-white transition-colors" })}
+              {/* Background Image */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70 group-hover:from-primary/90 group-hover:via-primary/80 group-hover:to-primary-dark/90 transition-all duration-500" />
               </div>
-              <h3 className="text-2xl font-black mb-4 group-hover:text-white transition-colors tracking-tight">{service.title}</h3>
-              <p className="text-foreground/50 group-hover:text-white/70 mb-10 leading-relaxed font-medium text-sm">
-                {service.desc}
-              </p>
-              <Link href={`/${service.slug}`} className="inline-flex items-center font-black text-xs uppercase tracking-[0.2em] text-primary group-hover:text-white transition-colors pb-1 border-b-2 border-primary group-hover:border-white">
-                LEARN MORE <ArrowRight className="ml-2 w-4 h-4 group-hover:rotate-45 transition-transform" />
-              </Link>
+
+              <div className="relative z-10 p-8 lg:p-10 h-full flex flex-col min-h-[400px]">
+                {/* Badge */}
+                <div className="mb-4">
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold text-[10px] font-black uppercase tracking-wider">
+                    {service.badge}
+                  </span>
+                </div>
+
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-500">
+                  <service.icon className="w-7 h-7 text-white" />
+                </div>
+
+                {/* Content */}
+                <h3 className="text-2xl lg:text-3xl font-black mb-4 text-white tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-8 flex-grow">
+                  {service.desc}
+                </p>
+
+                {/* CTA */}
+                <Link 
+                  href={`/${service.slug}`} 
+                  className="inline-flex items-center gap-2 text-white font-black text-sm uppercase tracking-wider group-hover:gap-4 transition-all"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                {/* Decorative Glow */}
+                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gold/30 opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 rounded-full" />
+              </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center mt-16"
+        >
+          <Link 
+            href="/services" 
+            className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium group"
+          >
+            <span>View All Services</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
