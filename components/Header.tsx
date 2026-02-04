@@ -94,16 +94,19 @@ const Header = () => {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-11 h-11 bg-primary flex items-center justify-center rounded-2xl shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform duration-300">
-                <span className="text-white font-black text-2xl italic tracking-tighter">G</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl md:text-2xl font-black tracking-tight text-foreground leading-none">
-                  GROW<span className="text-primary">INFINITY</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-[0.3em] text-gold font-bold mt-0.5">
-                  Elite Corporate Advisory
-                </span>
+              <div className="relative h-12 w-auto">
+                {/* Light theme logo (black) */}
+                <img 
+                  src="/logo-black.png" 
+                  alt="Grow Infinity" 
+                  className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300 dark:hidden"
+                />
+                {/* Dark theme logo (white) */}
+                <img 
+                  src="/logo-white.png" 
+                  alt="Grow Infinity" 
+                  className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300 hidden dark:block"
+                />
               </div>
             </Link>
 
