@@ -11,12 +11,14 @@ import { GlobalPresence } from '@/components/home/GlobalPresence';
 import { SuccessStories } from '@/components/home/SuccessStories';
 import { Stats } from '@/components/home/Stats';
 import { CTA } from '@/components/home/CTA';
+import { AboutSection } from '@/components/home/AboutSection';
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <Hero />
-      <TrustBadges />
+      <AboutSection/>
+     
       <WhyChooseUs />
       <CoreServices />
       <ProcessSteps />
@@ -24,6 +26,7 @@ export default function Home() {
       <GlobalPresence />
       <SuccessStories />
       <Stats />
+       <TrustBadges />
       <CTA />
     </div>
   );

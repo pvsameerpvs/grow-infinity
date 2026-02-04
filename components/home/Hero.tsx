@@ -60,7 +60,7 @@ export function Hero() {
                 </span>{' '}
                 
                 <motion.span 
-                  className="text-gradient-infinity italic normal-case inline-block relative px-2"
+                  className="text-gradient-infinity  inline-block relative px-2"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
