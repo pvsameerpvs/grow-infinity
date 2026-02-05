@@ -124,14 +124,125 @@ export function GlobalPresence() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative mb-20 h-[400px] glass rounded-[3rem] border border-foreground/10 overflow-hidden p-8"
+          className="relative mb-20 h-[500px] glass rounded-[3rem] border border-foreground/10 overflow-hidden"
         >
-          {/* Simplified World Map Background */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-10">
-            <Network className="w-full h-full" strokeWidth={0.5} />
+          {/* Real World Map Image Background */}
+          <div className="absolute inset-0 opacity-[0.15]">
+            <img 
+              src="/world-map.png" 
+              alt="World Map"
+              className="w-full h-full object-cover object-center"
+              style={{ filter: 'grayscale(100%) contrast(1.2)' }}
+            />
           </div>
 
-          {/* Location Markers */}
+          {/* Network Grid Overlay */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.06]">
+            <defs>
+              <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-primary"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+
+          {/* Animated Network Connections */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none">
+            {/* Connection: London to Dubai */}
+            <motion.path
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, delay: 0.5 }}
+              d="M 48% 30% Q 54% 35% 60% 45%"
+              stroke="url(#gradient1)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="8,4"
+            />
+            
+            {/* Connection: Dubai to Singapore */}
+            <motion.path
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, delay: 0.7 }}
+              d="M 60% 45% Q 67% 48% 75% 55%"
+              stroke="url(#gradient2)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="8,4"
+            />
+            
+            {/* Connection: Singapore to London (completing the triangle) */}
+            <motion.path
+              initial={{ pathLength: 0, opacity: 0 }}
+              whileInView={{ pathLength: 1, opacity: 0.5 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, delay: 0.9 }}
+              d="M 75% 55% Q 60% 40% 48% 30%"
+              stroke="url(#gradient3)"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="8,4"
+            />
+
+            {/* Animated Dots traveling along paths */}
+            <motion.circle
+              r="4"
+              fill="var(--color-primary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="5s"
+                repeatCount="indefinite"
+                path="M 48% 30% Q 54% 35% 60% 45%"
+              />
+            </motion.circle>
+
+            <motion.circle
+              r="4"
+              fill="var(--color-gold)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="6s"
+                repeatCount="indefinite"
+                path="M 60% 45% Q 67% 48% 75% 55%"
+              />
+            </motion.circle>
+
+            <motion.circle
+              r="4"
+              fill="var(--color-primary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="7s"
+                repeatCount="indefinite"
+                path="M 75% 55% Q 60% 40% 48% 30%"
+              />
+            </motion.circle>
+
+            <defs>
+              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="var(--color-gold)" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.6" />
+              </linearGradient>
+              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="var(--color-primary)" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0.6" />
+              </linearGradient>
+              <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0.6" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {/* Location Pins */}
           {locations.map((location, index) => (
             <motion.div
               key={location.city}
@@ -145,75 +256,67 @@ export function GlobalPresence() {
                 left: location.position.left,
                 transform: 'translate(-50%, -50%)'
               }}
-              className="relative"
+              className="relative z-10"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Pulsing Ring */}
+              {/* Outer Pulsing Ring */}
               <motion.div
-                animate={{ scale: [1, 2, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                className={`absolute inset-0 w-16 h-16 rounded-full bg-gradient-to-br ${location.color} -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
+                animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                className={`absolute inset-0 w-24 h-24 rounded-full bg-gradient-to-br ${location.color} -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
+              />
+              
+              {/* Secondary Ring */}
+              <motion.div
+                animate={{ scale: [1, 2, 1], opacity: [0.4, 0, 0.4] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: index * 0.3 }}
+                className={`absolute inset-0 w-24 h-24 rounded-full border-2 border-primary -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
               />
               
               {/* Main Pin */}
               <motion.div
-                whileHover={{ scale: 1.2 }}
-                className={`relative w-16 h-16 rounded-full bg-gradient-to-br ${location.color} flex items-center justify-center cursor-pointer shadow-2xl border-4 border-background`}
+                whileHover={{ scale: 1.3, rotate: 5 }}
+                className={`relative w-24 h-24 rounded-full bg-gradient-to-br ${location.color} flex items-center justify-center cursor-pointer shadow-2xl border-4 border-background z-10`}
               >
-                <location.icon className="w-7 h-7 text-white" />
+                <location.icon className="w-10 h-10 text-white" />
+                
+                {/* Inner glow */}
+                <motion.div
+                  animate={{ opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute inset-2 rounded-full bg-white/20"
+                />
               </motion.div>
 
-              {/* Tooltip */}
+              {/* Enhanced Tooltip on Hover */}
               <AnimatePresence>
                 {hoveredIndex === index && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full mt-4 left-1/2 -translate-x-1/2 glass px-4 py-3 rounded-xl border border-primary/20 whitespace-nowrap shadow-xl"
+                    initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                    transition={{ type: 'spring', damping: 20 }}
+                    className="absolute top-full mt-6 left-1/2 -translate-x-1/2 glass px-6 py-5 rounded-2xl border border-primary/30 whitespace-nowrap shadow-2xl z-20 min-w-[250px]"
                   >
-                    <div className="text-sm font-black text-foreground">{location.city}</div>
-                    <div className="text-xs text-primary font-bold">{location.clients} Clients</div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${location.color} flex items-center justify-center`}>
+                        <location.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="text-base font-black text-foreground">{location.city}, {location.country}</div>
+                        <div className="text-xs text-primary font-bold">{location.status}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 pt-3 border-t border-foreground/10">
+                      <Users className="w-4 h-4 text-gold" />
+                      <span className="text-xs font-bold text-foreground/60">{location.clients} Active Clients</span>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>
           ))}
-
-          {/* Connecting Lines */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none">
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, delay: 0.5 }}
-              x1="48%" y1="30%" x2="60%" y2="45%"
-              stroke="url(#gradient1)"
-              strokeWidth="2"
-              strokeDasharray="5,5"
-            />
-            <motion.line
-              initial={{ pathLength: 0 }}
-              whileInView={{ pathLength: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, delay: 0.7 }}
-              x1="60%" y1="45%" x2="75%" y2="55%"
-              stroke="url(#gradient2)"
-              strokeWidth="2"
-              strokeDasharray="5,5"
-            />
-            <defs>
-              <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0.3" />
-              </linearGradient>
-              <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-          </svg>
         </motion.div>
 
         {/* Locations Grid */}

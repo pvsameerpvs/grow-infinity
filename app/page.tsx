@@ -21,11 +21,6 @@ export default function Home() {
       <WhyChooseUs />
       <CoreServices />
       <ProcessSteps />
-      <BankingAdvantage />
-      <GlobalPresence />
-      <SuccessStories />
-      <Stats />
-       <TrustBadges />
       <CTA />
     </div>
   );
