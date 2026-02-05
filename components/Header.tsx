@@ -217,71 +217,94 @@ const Header = () => {
           </nav>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Sidebar Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-0 z-[60] lg:hidden bg-background"
-            >
-              <div className="flex flex-col h-full pt-24 px-6 overflow-y-auto">
-                <div className="flex items-center justify-between mb-10">
-                  <span className="text-xl font-black tracking-tight">MENU</span>
-                  <button
-                    className="text-foreground p-3 rounded-full bg-primary/5"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                </div>
-
-                <div className="flex flex-col space-y-8 pb-20">
-                  {NAVIGATION.map((group) => (
-                    <div key={group.name} className="space-y-5">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-1 h-4 bg-gold rounded-full" />
-                        <h4 className="text-xs font-black text-gold uppercase tracking-[0.2em]">{group.name}</h4>
-                      </div>
-                      <div className="flex flex-col space-y-4 pl-4 border-l-2 border-primary/5">
-                        {group.items.map((item) => (
-                          <Link
-                            key={item.slug}
-                            href={`/${item.slug}`}
-                            className="text-lg text-foreground/70 font-bold hover:text-primary transition-colors"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </div>
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] lg:hidden"
+                onClick={() => setIsOpen(false)}
+              />
+              
+              {/* Sidebar */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                className="fixed right-0 top-0 bottom-0 w-[85%] max-w-sm z-[70] lg:hidden bg-background shadow-2xl"
+              >
+                <div className="flex flex-col h-full overflow-y-auto">
+                  {/* Sidebar Header */}
+                  <div className="sticky top-0 bg-background/95 backdrop-blur-lg border-b border-foreground/10 px-6 py-5 flex items-center justify-between z-10">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-1.5 h-8 bg-primary rounded-full" />
+                      <span className="text-lg font-black tracking-tight uppercase">Menu</span>
                     </div>
-                  ))}
-                  
-                  <div className="pt-6 space-y-4">
-                    <Link
-                      href="/cost-calculator"
-                      className="w-full bg-primary text-white py-5 rounded-2xl flex items-center justify-center font-black text-lg shadow-2xl shadow-primary/20"
+                    <button
+                      className="text-foreground p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
-                      FREE CONSULTATION
-                    </Link>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="p-4 glass rounded-xl flex flex-col items-center">
-                        <Phone className="w-5 h-5 text-primary mb-2" />
-                        <span className="text-[10px] font-bold opacity-50">CALL US</span>
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
+
+                  {/* Sidebar Content */}
+                  <div className="flex flex-col space-y-6 px-6 py-6 pb-20">
+                    {NAVIGATION.map((group) => (
+                      <div key={group.name} className="space-y-4">
+                        <div className="flex items-center space-x-2.5">
+                          <div className="w-1 h-5 bg-gold rounded-full" />
+                          <h4 className="text-[11px] font-black text-gold uppercase tracking-[0.15em]">{group.name} Solutions</h4>
+                        </div>
+                        <div className="flex flex-col space-y-3 pl-3.5 border-l-2 border-primary/10">
+                          {group.items.map((item) => (
+                            <Link
+                              key={item.slug}
+                              href={`/${item.slug}`}
+                              className="text-sm text-foreground/70 font-bold hover:text-primary transition-colors flex items-center group"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <ArrowRight className="w-3.5 h-3.5 mr-2 opacity-0 group-hover:opacity-100 -ml-5 group-hover:ml-0 transition-all" />
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                      <div className="p-4 glass rounded-xl flex flex-col items-center">
-                        <Mail className="w-5 h-5 text-primary mb-2" />
-                        <span className="text-[10px] font-bold opacity-50">EMAIL</span>
+                    ))}
+                    
+                    {/* CTA Section */}
+                    <div className="pt-4 space-y-4">
+                      <Link
+                        href="/cost-calculator"
+                        className="w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl flex items-center justify-center font-black text-sm uppercase tracking-wider shadow-xl shadow-primary/20 transition-all active:scale-95"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <Globe className="w-4 h-4 mr-2" />
+                        Free Consultation
+                      </Link>
+                      
+                      {/* Contact Info */}
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="p-4 bg-primary/5 rounded-xl flex flex-col items-center border border-primary/10">
+                          <Phone className="w-4 h-4 text-primary mb-2" />
+                          <span className="text-[9px] font-black opacity-60 uppercase tracking-wider">Call Us</span>
+                        </div>
+                        <div className="p-4 bg-primary/5 rounded-xl flex flex-col items-center border border-primary/10">
+                          <Mail className="w-4 h-4 text-primary mb-2" />
+                          <span className="text-[9px] font-black opacity-60 uppercase tracking-wider">Email</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </header>

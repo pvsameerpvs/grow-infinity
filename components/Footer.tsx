@@ -103,13 +103,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-white/20 text-[10px] font-black uppercase tracking-[0.3em] gap-8">
-          <p>© {new Date().getFullYear()} Grow Infinity Corporate Advisory. ISO 9001 Certified.</p>
-          <div className="flex space-x-8">
-            <a href="#" className="hover:text-white transition-colors">Compliance</a>
-            <a href="#" className="hover:text-white transition-colors">Anti-Money Laundering</a>
-          </div>
-        </div>
+        
       </div>
     </footer>
   );
