@@ -32,14 +32,19 @@ export const SERVICES: ServiceData[] = [
     sections: [
       {
         title: 'Why Choose UAE Mainland?',
-        content: 'Mainland companies are registered under the Department of Economy and Tourism (DET). They allow you to trade freely within the UAE and internationally without restrictions.'
+        content: 'Mainland companies are registered under the Department of Economy and Tourism (DET) and operate under UAE federal commercial law. They allow you to trade freely within the UAE and internationally without restrictions, making them ideal for businesses seeking comprehensive market penetration and direct access to government contracts.'
       },
       {
         title: 'Our Entry Strategy',
-        content: [
-          'We handle everything from initial approval to trade license issuance.',
-          'Our banking-first approach ensures your mainland license is eligible for corporate accounts from day one.'
-        ]
+        content: 'We handle everything from initial consultation and business planning to trade license issuance and corporate banking setup. Our experienced team guides you through business activity selection, ensuring you choose activities that align with your business model while maximizing operational flexibility and market opportunities.'
+      },
+      {
+        title: 'Banking-First Approach',
+        content: 'Our banking-first approach ensures your mainland license is structured to meet the stringent requirements of UAE banks from day one. We prepare comprehensive business profiles, financial projections, and compliance documentation that significantly improve corporate bank account approval rates and reduce account opening timelines.'
+      },
+      {
+        title: 'Complete Setup Process',
+        content: 'Our streamlined mainland company formation process typically takes 7-10 working days from document submission to license issuance. We begin with business activity consultation and trade name selection, proceed through initial approval and Memorandum of Association preparation, secure approved office space with Ejari registration, and conclude with license issuance.'
       }
     ]
   },
@@ -54,7 +59,20 @@ export const SERVICES: ServiceData[] = [
       'With recent regulatory reforms, foreign investors can now own 100% of an LLC in most business sectors without requiring a UAE national partner, making this structure increasingly attractive for international entrepreneurs seeking complete control over their business operations.'
     ],
     advantages: ['Limited liability protection', 'Flexible shareholding', 'Scalable operations'],
-    sections: [{ title: 'Structure & Compliance', content: 'We ensure your LLC Agreement (MOA) is legally robust and bank-compliant.' }]
+    sections: [
+      {
+        title: 'Structure & Compliance',
+        content: 'We ensure your LLC Agreement (MOA) is legally robust and bank-compliant. Our experienced legal team drafts comprehensive Memorandums of Association that clearly define shareholder rights, profit distribution, management structure, and operational guidelines while ensuring compliance with UAE Commercial Companies Law and banking requirements.'
+      },
+      {
+        title: 'Shareholding Flexibility',
+        content: 'LLCs accommodate between 2 to 50 shareholders with customizable ownership percentages and profit distribution arrangements. This flexibility allows you to bring in strategic partners, investors, or family members while maintaining clear ownership structures and defined management responsibilities through the MOA.'
+      },
+      {
+        title: 'Limited Liability Protection',
+        content: 'Shareholders enjoy complete protection of personal assets from business debts and legal obligations. Your liability is strictly limited to your capital contribution in the company, ensuring that personal wealth, properties, and investments remain secure even if the business faces financial difficulties or legal challenges.'
+      }
+    ]
   },
   {
     slug: 'professional-license-uae',
@@ -67,7 +85,20 @@ export const SERVICES: ServiceData[] = [
       'Professional license holders benefit from simplified setup procedures, lower capital requirements compared to commercial licenses, and the ability to operate from smaller office spaces. The license is particularly attractive for experienced professionals looking to leverage their expertise in the lucrative UAE market.'
     ],
     advantages: ['100% ownership', 'Professional recognition', 'Simplified setup'],
-    sections: [{ title: 'Service Categories', content: 'Ideal for legal, accounting, and engineering consultancies.' }]
+    sections: [
+      {
+        title: 'Service Categories',
+        content: 'Professional licenses are ideal for legal services, accounting, engineering, architecture, medical services, educational consulting, and various other knowledge-based industries. This license category is specifically designed for specialists who offer expertise-based services rather than trading in goods or commercial products.'
+      },
+      {
+        title: 'Qualification Requirements',
+        content: 'Professional license applicants must hold relevant educational qualifications and professional certifications in their field of expertise. We assist with degree attestation, professional accreditation verification, and documentation preparation to ensure your qualifications meet DED requirements for professional license issuance.'
+      },
+      {
+        title: 'Setup Advantages',
+        content: 'Professional license holders benefit from simplified setup procedures, lower capital requirements compared to commercial licenses, and the ability to operate from smaller office spaces. The license provides complete autonomy over business operations, client relationships, and service delivery while maintaining professional credibility.'
+      }
+    ]
   },
   {
     slug: 'branch-office-uae',
@@ -80,7 +111,20 @@ export const SERVICES: ServiceData[] = [
       'The branch office structure is particularly beneficial for companies with established international reputations seeking to leverage their brand recognition in the UAE market. It provides a cost-effective entry strategy while maintaining complete parent company control over operations, staffing, and strategic direction.'
     ],
     advantages: ['Full parent company control', 'Unified branding', 'Strategic market entry'],
-    sections: [{ title: 'Legal Requirements', content: 'We manage the cross-border legalities and document attestation.' }]
+    sections: [
+      {
+        title: 'Legal Requirements',
+        content: 'We manage the cross-border legalities and document attestation required for branch office establishment. This includes parent company documentation, board resolutions, certificate of incorporation, memorandum and articles of association, and financial statements, all properly attested through the embassy chain and UAE Ministry of Foreign Affairs.'
+      },
+      {
+        title: 'Parent Company Control',
+        content: 'Branch offices operate as an extension of the parent company, conducting the same business activities and maintaining the same corporate identity. All operations, contracts, and liabilities are directly attributable to the parent company, ensuring seamless integration with global operations and consolidated financial reporting.'
+      },
+      {
+        title: 'Strategic Benefits',
+        content: 'The branch office structure is particularly beneficial for companies with established international reputations seeking to leverage their brand recognition in the UAE market. It provides a cost-effective entry strategy while maintaining complete parent company control over operations, staffing, and strategic direction.'
+      }
+    ]
   },
   {
     slug: 'representative-office-uae',
@@ -93,7 +137,20 @@ export const SERVICES: ServiceData[] = [
       'This low-overhead structure allows companies to establish market presence, build relationships, and gather intelligence about the UAE business environment with minimal investment and regulatory requirements. It serves as an excellent stepping stone for companies planning eventual full commercial operations.'
     ],
     advantages: ['Low overhead', 'Strategic networking', 'Direct market research'],
-    sections: [{ title: 'Operational Limits', content: 'Focused on marketing and administrative support for the parent company.' }]
+    sections: [
+      {
+        title: 'Operational Limits',
+        content: 'Representative offices are focused on marketing and administrative support for the parent company. They cannot engage in revenue-generating activities, sign commercial contracts, or conduct direct sales. The office serves as a liaison between the parent company and potential UAE clients or partners.'
+      },
+      {
+        title: 'Permitted Activities',
+        content: 'Representative offices can conduct market research, identify business opportunities, promote the parent company brand, facilitate connections with potential clients, and gather market intelligence. These activities help companies explore the UAE market before committing to full-scale commercial operations.'
+      },
+      {
+        title: 'Cost-Effective Presence',
+        content: 'This low-overhead structure allows companies to establish market presence, build relationships, and gather intelligence about the UAE business environment with minimal investment and regulatory requirements. It serves as an excellent stepping stone for companies planning eventual full commercial operations.'
+      }
+    ]
   },
   {
     slug: 'civil-company-formation',
@@ -106,7 +163,20 @@ export const SERVICES: ServiceData[] = [
       'This formation is particularly suitable for professionals seeking to establish group practices or partnerships with other qualified practitioners. It provides the benefits of shared resources, collaborative expertise, and professional credibility while maintaining individual professional accountability and adherence to industry-specific regulations.'
     ],
     advantages: ['Full ownership for professionals', 'Flexible partnership models', 'Direct professional liability'],
-    sections: [{ title: 'Licensing Process', content: 'We guide you through the professional accreditation required for civil companies.' }]
+    sections: [
+      {
+        title: 'Licensing Process',
+        content: 'We guide you through the professional accreditation required for civil companies. This includes verification of professional qualifications, licensing from relevant professional bodies, degree attestation, and compliance with industry-specific regulations governing professional practice in the UAE.'
+      },
+      {
+        title: 'Professional Partnerships',
+        content: 'Civil companies allow licensed professionals to establish group practices or partnerships with other qualified practitioners. The structure provides the benefits of shared resources, collaborative expertise, and professional credibility while maintaining individual professional accountability and adherence to industry-specific regulations.'
+      },
+      {
+        title: 'Regulatory Compliance',
+        content: 'Civil companies are governed by specific professional regulations and require all partners to hold relevant professional qualifications and licenses. The structure ensures that professional services are delivered by qualified practitioners while providing a legal framework for partnership, profit sharing, and liability management.'
+      }
+    ]
   },
 
   // B. Free Zone Company Formation
