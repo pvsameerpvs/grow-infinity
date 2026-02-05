@@ -115,7 +115,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Free Zone Business Setup',
     subtitle: 'Tax-Efficient Structures',
     category: 'Free Zone',
-    description: ['The UAE offers 40+ specialized Free Zones tailored to specific industries.'],
+    description: [
+      'The UAE offers 40+ specialized Free Zones tailored to specific industries, each providing unique advantages for different business sectors. Free zones are designated economic areas that offer 100% foreign ownership, complete tax exemptions, and streamlined business setup procedures designed to attract international investment and foster economic growth.',
+      'Free zone companies benefit from zero corporate and income tax, full repatriation of capital and profits, no currency restrictions, and exemption from import and export duties. These zones provide world-class infrastructure, modern office facilities, and strategic locations near airports, seaports, and major transportation hubs.',
+      'Choosing the right free zone is crucial for your business success. Our experts analyze your business activities, budget constraints, and operational requirements to recommend the optimal free zone that aligns with your strategic objectives and provides maximum value for your investment.'
+    ],
     advantages: ['0% Corporate & Income Tax', '100% Capital Repatriation', 'Simplified Customs'],
     sections: [{ title: 'Strategic Free Zone Selection', content: 'We help you choose the right zone based on your activity and budget.' }]
   },
@@ -124,7 +128,11 @@ export const SERVICES: ServiceData[] = [
     title: 'IFZA Company Formation',
     subtitle: 'International Free Zone Authority',
     category: 'Free Zone',
-    description: ['Flexible and cost-effective solutions in Dubai.'],
+    description: [
+      'International Free Zone Authority (IFZA) offers flexible and cost-effective business solutions in Dubai with streamlined setup procedures and competitive pricing packages. IFZA is designed for startups, SMEs, and service-based businesses seeking an affordable entry point into the UAE market with minimal bureaucracy and fast-track processing.',
+      'IFZA provides modern office spaces, flexi-desk options, and virtual office solutions to accommodate businesses of all sizes and budgets. The free zone offers comprehensive business support services including visa processing, PRO services, and banking assistance to ensure smooth company formation and operational setup.',
+      'Located strategically in Dubai with excellent connectivity to major business districts, IFZA is particularly popular among consultants, IT companies, marketing agencies, and professional service providers who value affordability, flexibility, and efficient business setup processes.'
+    ],
     advantages: ['Fast-track setup', 'Modern office facilities', 'Competitive pricing'],
     sections: [{ title: 'Why IFZA?', content: 'Preferred for consultancy and service-based startups.' }]
   },
@@ -133,7 +141,11 @@ export const SERVICES: ServiceData[] = [
     title: 'DMCC Company Formation',
     subtitle: 'Global Commodities Hub',
     category: 'Free Zone',
-    description: ['Located in JLT, DMCC is the world\'s leading free zone.'],
+    description: [
+      'Dubai Multi Commodities Centre (DMCC) is the world\'s leading free zone and the number one choice for commodities trading, precious metals, and diamond businesses. Located in the prestigious Jumeirah Lakes Towers (JLT) district, DMCC offers unparalleled networking opportunities, premium infrastructure, and access to a thriving business community of over 21,000 companies.',
+      'DMCC has been recognized as the Global Free Zone of the Year for seven consecutive years, demonstrating its commitment to excellence, innovation, and business-friendly environment. The free zone provides state-of-the-art office towers, luxury amenities, and comprehensive business support services.',
+      'DMCC is ideal for businesses in commodities trading, precious metals, diamonds, energy, financial services, and professional services sectors. The free zone offers excellent banking relationships, regulatory support, and access to global markets, making it the preferred choice for established businesses seeking premium positioning.'
+    ],
     advantages: ['Global networking', 'Prime location', 'Premium infrastructure'],
     sections: [{ title: 'Trading Hub', content: 'Ideal for gold, diamond, and energy trading.' }]
   },
@@ -142,7 +154,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Meydan Free Zone Setup',
     subtitle: 'Elite Business Environment',
     category: 'Free Zone',
-    description: ['A prestigious hub located at the heart of Dubai.'],
+    description: [
+      'Meydan Free Zone is a prestigious business hub located at the heart of Dubai, offering an elite business environment with world-class facilities and a digital-first approach to company formation. The free zone is strategically positioned near Dubai International Airport and major business districts, providing excellent connectivity and accessibility.',
+      'Meydan Free Zone specializes in serving e-commerce businesses, digital startups, technology companies, and modern entrepreneurs who value innovation, flexibility, and cutting-edge infrastructure. The free zone offers fully digital license processing, online business management tools, and streamlined procedures that enable rapid company setup.',
+      'With its prestigious address, modern amenities, and focus on digital transformation, Meydan Free Zone is the top choice for digital nomads, e-commerce entrepreneurs, and tech-savvy businesses seeking a premium business environment with minimal physical presence requirements and maximum operational flexibility.'
+    ],
     advantages: ['Prestigious address', 'Digital-first setup', 'Excellent amenities'],
     sections: [{ title: 'E-commerce Friendly', content: 'Top choice for digital nomads and e-commerce entrepreneurs.' }]
   },
@@ -151,7 +167,11 @@ export const SERVICES: ServiceData[] = [
     title: 'RAKEZ Company Formation',
     subtitle: 'Industrial & Academic Hub',
     category: 'Free Zone',
-    description: ['Connecting businesses to global markets in Ras Al Khaimah.'],
+    description: [
+      'Ras Al Khaimah Economic Zone (RAKEZ) connects businesses to global markets with cost-effective solutions, extensive industrial infrastructure, and strategic location in the northern emirate of Ras Al Khaimah. RAKEZ offers significantly lower setup and operational costs compared to Dubai-based free zones while maintaining high-quality facilities and services.',
+      'RAKEZ provides diverse business park options including industrial zones, academic zones, and general business parks, accommodating manufacturing, trading, logistics, and service businesses. The free zone offers large warehouse spaces, industrial facilities, and flexible office solutions suitable for businesses of all sizes.',
+      'With its proximity to major seaports, airports, and the UAE-Oman border, RAKEZ is ideal for manufacturing companies, logistics operations, and businesses requiring large-scale industrial facilities. The free zone offers excellent value for money while providing comprehensive support services and efficient business setup procedures.'
+    ],
     advantages: ['Low cost', 'Extensive warehouse space', 'Simplified logistics'],
     sections: [{ title: 'Manufacturing Focus', content: 'Best for industrial projects and large-scale distribution.' }]
   },
@@ -160,7 +180,11 @@ export const SERVICES: ServiceData[] = [
     title: 'SPC Free Zone Setup',
     subtitle: 'Shajah Publishing City',
     category: 'Free Zone',
-    description: ['Worlds first publishing and printing free zone.'],
+    description: [
+      'Sharjah Publishing City (SPC) is the world\'s first free zone dedicated to publishing, printing, and packaging industries, offering specialized infrastructure and services tailored to media and creative businesses. SPC provides the fastest license issuance in the UAE, with companies able to obtain their license in as little as 2 hours.',
+      'SPC offers unique dual license options allowing businesses to operate both within the free zone and in the UAE mainland market, providing maximum flexibility and market access. The free zone supports multisite business activities, enabling companies to establish operations across different locations while maintaining a single license.',
+      'With its focus on speed, flexibility, and industry-specific support, SPC is ideal for publishing houses, printing companies, packaging businesses, media agencies, and creative enterprises seeking rapid setup, competitive costs, and specialized facilities designed for their unique operational requirements.'
+    ],
     advantages: ['Fastest license issuance', 'Dual license options', 'Multisite business activities'],
     sections: [{ title: 'Speed of Execution', content: 'Get your business license in as little as 2 hours.' }]
   },
@@ -169,7 +193,11 @@ export const SERVICES: ServiceData[] = [
     title: 'SHAMS Free Zone Setup',
     subtitle: 'Sharjah Media City',
     category: 'Free Zone',
-    description: ['A creative hub for media and digital start-ups.'],
+    description: [
+      'Sharjah Media City (SHAMS) is a creative hub designed specifically for media professionals, digital startups, content creators, and creative industries. SHAMS offers the most affordable free zone setup in the UAE with flexible flexi-desk options, no deposit requirements, and simplified visa processing procedures.',
+      'SHAMS caters to designers, marketers, influencers, content creators, media production companies, and digital agencies seeking a cost-effective entry into the UAE market. The free zone provides modern co-working spaces, creative studios, and collaborative environments that foster innovation and networking.',
+      'With its focus on the creative economy and affordable pricing structure, SHAMS is the perfect choice for freelancers, startups, and small creative businesses looking to establish a legal presence in the UAE without significant capital investment while benefiting from free zone advantages.'
+    ],
     advantages: ['Affordable flexi-desks', 'No deposit required', 'Simplified visa process'],
     sections: [{ title: 'Creative Economy', content: 'Tailored for designers, marketers, and influencers.' }]
   },
@@ -178,7 +206,11 @@ export const SERVICES: ServiceData[] = [
     title: 'DIFC Company Formation',
     subtitle: 'Financial District',
     category: 'Free Zone',
-    description: ['The leading financial center for MEASA region.'],
+    description: [
+      'Dubai International Financial Centre (DIFC) is the leading financial hub for the Middle East, Africa, and South Asia (MEASA) region, offering a world-class regulatory framework based on English common law. DIFC provides a unique jurisdiction specifically designed for financial services, fintech companies, and professional services firms.',
+      'DIFC operates under its own independent regulatory authority (DFSA) with regulations aligned with international best practices and standards. The financial center offers access to an independent judicial system, sophisticated legal framework, and comprehensive regulatory oversight that meets global compliance requirements.',
+      'DIFC is ideal for banks, insurance companies, asset management firms, fintech startups, law firms, and professional services seeking to operate in a globally recognized financial center with elite networking opportunities, access to international markets, and regulatory credibility that facilitates global business operations.'
+    ],
     advantages: ['Common Law legal framework', 'Elite networking', 'Global financial standard'],
     sections: [{ title: 'Financial Advisory', content: 'We assist with DFSA licensing and regulatory compliance.' }]
   },
@@ -187,7 +219,11 @@ export const SERVICES: ServiceData[] = [
     title: 'DAFZA Company Formation',
     subtitle: 'Dubai Airport Free Zone',
     category: 'Free Zone',
-    description: ['Strategic location adjacent to DXB international airport.'],
+    description: [
+      'Dubai Airport Free Zone (DAFZA) offers a strategic location adjacent to Dubai International Airport (DXB), providing unparalleled logistics advantages and direct air-cargo connectivity. DAFZA is specifically designed for aviation-related businesses, freight forwarding companies, electronics trading, and businesses requiring rapid international shipping capabilities.',
+      'DAFZA provides superior logistics infrastructure with direct access to airport facilities, customs clearance areas, and cargo handling services. The free zone offers tax exemptions, streamlined import-export procedures, and efficient supply chain management solutions that reduce operational costs and improve delivery timelines.',
+      'With its proximity to one of the world\'s busiest airports and comprehensive logistics support, DAFZA is perfect for aviation services, freight forwarding, electronics trading, pharmaceutical distribution, and businesses where speed-to-market and air connectivity are critical success factors.'
+    ],
     advantages: ['Superior logistics', 'Tax exemptions', 'Direct air-cargo link'],
     sections: [{ title: 'Logistics Hub', content: 'Perfect for aviation, freight, and electronic trading.' }]
   },
@@ -196,7 +232,11 @@ export const SERVICES: ServiceData[] = [
     title: 'JAFZA Company Formation',
     subtitle: 'Jebel Ali Free Zone',
     category: 'Free Zone',
-    description: ['The largest industrial free zone in the world.'],
+    description: [
+      'Jebel Ali Free Zone (JAFZA) is the largest industrial free zone in the world, offering massive-scale infrastructure, comprehensive logistics facilities, and unparalleled sea-to-air connectivity. JAFZA is home to over 7,000 companies and provides world-class manufacturing, warehousing, and distribution facilities.',
+      'JAFZA offers direct access to Jebel Ali Port, one of the largest and busiest ports globally, combined with proximity to Al Maktoum International Airport. This dual connectivity enables seamless global supply chain operations, efficient import-export procedures, and cost-effective international trade.',
+      'JAFZA is ideal for large-scale manufacturing operations, global distribution centers, logistics companies, and businesses requiring extensive industrial facilities. The free zone provides comprehensive infrastructure including warehouses, factories, office spaces, and specialized facilities for diverse industries.'
+    ],
     advantages: ['Sea-to-air connectivity', 'Massive scale infrastructure', 'Global supply chain'],
     sections: [{ title: 'Distribution Center', content: 'Best for large scale global manufacturing and distribution.' }]
   },
@@ -205,7 +245,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Dubai South Free Zone',
     subtitle: 'The Home of Expo 2020',
     category: 'Free Zone',
-    description: ['Sustainability and innovation focused hub.'],
+    description: [
+      'Dubai South Free Zone, formerly known as Dubai World Central, is a sustainability and innovation-focused hub built around Al Maktoum International Airport and the Expo 2020 site. The free zone emphasizes green business practices, smart city technologies, and sustainable development initiatives.',
+      'Dubai South offers proximity to Al Maktoum International Airport, which is set to become the world\'s largest airport, providing exceptional aviation connectivity and logistics capabilities. The free zone integrates urban living with business operations, offering residential communities, retail facilities, and comprehensive amenities.',
+      'Dubai South is ideal for aerospace companies, logistics operations, e-commerce businesses, and companies focused on innovation and sustainability. The free zone provides modern infrastructure, competitive pricing, and strategic positioning for businesses seeking long-term growth in a future-focused environment.'
+    ],
     advantages: ['Proximity to DWC Airport', 'Urban living integration', 'Supply chain mastery'],
     sections: [{ title: 'Aviation Focus', content: 'The epicenter of Dubai aerospace and logistics projects.' }]
   },
@@ -214,7 +258,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Ajman Free Zone Setup',
     subtitle: 'Cost-Effective Growth',
     category: 'Free Zone',
-    description: ['Strategic and economical gateway for SME\'s.'],
+    description: [
+      'Ajman Free Zone is a strategic and economical gateway for small and medium enterprises (SMEs) seeking cost-effective business setup solutions in the UAE. Ajman Free Zone offers the cheapest setup costs among UAE free zones while maintaining quality facilities and comprehensive business support services.',
+      'The free zone provides strategic access to Ajman Port and excellent connectivity to Dubai and other emirates via modern highway networks. Ajman Free Zone offers quick visa processing, flexible office solutions, and simplified procedures that enable rapid business setup and operational commencement.',
+      'Ajman Free Zone is highly recommended for startups, young entrepreneurs, and budget-conscious businesses seeking to establish a UAE presence without significant capital investment. The free zone provides excellent value for money while offering all standard free zone benefits including tax exemptions and full ownership.'
+    ],
     advantages: ['Cheapest setup costs', 'Strategic port access', 'Quick visa services'],
     sections: [{ title: 'Budget Friendly', content: 'Highly recommended for startups and young entrepreneurs.' }]
   },
@@ -223,7 +271,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Fujairah Free Zone Setup',
     subtitle: 'Eastern Gateway',
     category: 'Free Zone',
-    description: ['Strategic port access on the UAE eastern coast.'],
+    description: [
+      'Fujairah Free Zone offers strategic port access on the UAE\'s eastern coast with direct connectivity to the Indian Ocean, bypassing the congested Strait of Hormuz. This unique geographic advantage provides businesses with alternative shipping routes and enhanced supply chain resilience.',
+      'Fujairah Free Zone specializes in oil and gas services, maritime operations, logistics, and energy-related businesses. The free zone offers lower operating costs compared to western UAE free zones while providing modern facilities, efficient procedures, and comprehensive support services.',
+      'With its strategic location, maritime infrastructure, and focus on energy sector services, Fujairah Free Zone is ideal for shipping companies, oil and gas service providers, maritime logistics operations, and businesses requiring direct access to international waters and alternative trade routes.'
+    ],
     advantages: ['Direct access to Indian Ocean', 'Lower operating costs', 'Multi-access connectivity'],
     sections: [{ title: 'Energy & Trade', content: 'Ideal for maritime services and energy-related logistics.' }]
   },
@@ -234,7 +286,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Offshore Company Formation',
     subtitle: 'Asset Protection',
     category: 'Offshore',
-    description: ['Protect your assets and maintain privacy with a UAE offshore entity.'],
+    description: [
+      'Protect your assets and maintain privacy with a UAE offshore entity designed for international business operations, asset holding, and wealth management. UAE offshore companies provide complete tax exemption, enhanced confidentiality, and flexible corporate structures ideal for non-resident business owners and international investors.',
+      'Offshore companies in the UAE are specifically designed for conducting business outside the UAE mainland, holding international assets, managing intellectual property rights, and facilitating cross-border transactions. These entities cannot conduct business within the UAE but offer significant advantages for international operations.',
+      'UAE offshore jurisdictions provide robust legal frameworks, strong privacy protections, and access to multi-currency banking facilities. Offshore companies are ideal for holding companies, international trading entities, asset protection vehicles, and businesses seeking tax-efficient structures for global operations.'
+    ],
     advantages: ['100% Tax Free', 'High confidentiality', 'Multi-currency accounts'],
     sections: [{ title: 'Non-Resident Strategy', content: 'Ideal for holding companies and international investment.' }]
   },
@@ -243,7 +299,11 @@ export const SERVICES: ServiceData[] = [
     title: 'RAK Offshore Company',
     subtitle: 'RAK International Corporate Centre',
     category: 'Offshore',
-    description: ['The gold standard for offshore jurisdictions in UAE.'],
+    description: [
+      'RAK Offshore Company formation through the RAK International Corporate Centre (RAK ICC) represents the gold standard for offshore jurisdictions in the UAE. RAK ICC provides a stable legal framework based on international best practices, offering comprehensive asset protection, privacy, and operational flexibility for international business owners.',
+      'RAK offshore companies benefit from fast incorporation procedures, typically completed within 2-3 working days, with minimal documentation requirements and streamlined processes. The jurisdiction offers strong privacy laws protecting shareholder information while maintaining compliance with international transparency standards.',
+      'RAK offshore entities are preferred for holding real estate investments, managing intellectual property portfolios, facilitating international trading operations, and protecting family wealth. The jurisdiction provides access to UAE banking facilities, multi-currency accounts, and comprehensive corporate services.'
+    ],
     advantages: ['Stable legal framework', 'Fast incorporation', 'Strong privacy laws'],
     sections: [{ title: 'Asset Holding', content: 'Preferred for real estate and intellectual property holding.' }]
   },
@@ -252,7 +312,11 @@ export const SERVICES: ServiceData[] = [
     title: 'JAFZA Offshore Company',
     subtitle: 'Dubai Offshore Advantage',
     category: 'Offshore',
-    description: ['Premium offshore status within Dubai.'],
+    description: [
+      'JAFZA Offshore Company formation provides premium offshore status within Dubai, combining the prestige of a Dubai address with comprehensive offshore benefits. JAFZA offshore entities are the only offshore companies permitted to directly own property in Dubai freehold areas, making them ideal for real estate investment and property holding.',
+      'JAFZA offshore companies operate under a well-established legal framework recognized by international banks and financial institutions. The jurisdiction provides access to Dubai\'s sophisticated banking sector, facilitating corporate account opening with leading UAE and international banks operating in the emirate.',
+      'This structure is particularly beneficial for international investors seeking to hold Dubai real estate, manage property portfolios, and conduct international business operations while maintaining a prestigious Dubai business address. JAFZA offshore companies combine asset protection with operational flexibility and banking accessibility.'
+    ],
     advantages: ['Dubai prestige', 'Bankable jurisdiction', 'Direct real estate ownership'],
     sections: [{ title: 'Property Holding', content: 'The only offshore entity permitted to own property in Dubai freeholds.' }]
   },
@@ -261,7 +325,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Ajman Offshore Company',
     subtitle: 'Economic Asset Holding',
     category: 'Offshore',
-    description: ['Simplified and speedy offshore setup.'],
+    description: [
+      'Ajman Offshore Company formation offers simplified and speedy offshore setup procedures with the most affordable costs among UAE offshore jurisdictions. Ajman offshore entities provide complete tax exemption, privacy protection, and streamlined incorporation processes ideal for small-scale international consultants and service providers.',
+      'The jurisdiction offers a paperless incorporation process with minimal documentation requirements and fast-track approval procedures. Ajman offshore companies can be established within 2-3 working days with comprehensive support for banking introductions and account opening assistance.',
+      'Ajman offshore entities are best suited for international trading operations, consultancy services, asset holding, and businesses seeking cost-effective offshore structures. The jurisdiction provides excellent value for money while offering all standard offshore benefits including tax exemption, privacy, and international business capabilities.'
+    ],
     advantages: ['Most affordable', 'Paperless process', 'Quick bank intro'],
     sections: [{ title: 'International Trade', content: 'Best for small-scale international consultants.' }]
   },
@@ -272,7 +340,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Corporate Bank Account UAE',
     subtitle: 'Banking-First Advisory',
     category: 'Banking',
-    description: ['In the UAE, the real challenge is not getting a license, but opening a bank account.'],
+    description: [
+      'In the UAE, the real challenge is not getting a business license, but opening a corporate bank account. UAE banks have stringent compliance requirements, risk assessment procedures, and documentation standards that many new businesses struggle to meet. Our banking-first advisory ensures your company is structured for banking approval from day one.',
+      'We provide comprehensive pre-approval advisory services, analyzing your business model, shareholding structure, and operational plans to identify potential banking concerns before license issuance. Our team prepares detailed business profiles, financial projections, and compliance documentation that meet bank requirements and significantly improve approval rates.',
+      'Our direct banker introductions leverage established relationships with leading UAE banks including Emirates NBD, Mashreq, ADCB, FAB, and international banks operating in the UAE. We facilitate meetings, guide you through the application process, and provide ongoing compliance assistance to ensure smooth account opening and operational banking.'
+    ],
     advantages: ['Pre-approval advisory', 'Direct banker intro', 'Compliance assistance'],
     sections: [{ title: 'Our Methodology', content: 'We build your business profile to match bank risk appetites.' }]
   },
@@ -281,7 +353,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Multi-Currency Bank Accounts',
     subtitle: 'Global Treasury',
     category: 'Banking',
-    description: ['Seamlessly trade in AED, USD, EUR, and GBP.'],
+    description: [
+      'Seamlessly trade in multiple currencies including AED, USD, EUR, and GBP with multi-currency bank accounts designed for international businesses. Multi-currency accounts eliminate the need for multiple banking relationships, reduce foreign exchange fees, and streamline international payment processing for businesses engaged in global trade.',
+      'Our multi-currency banking solutions provide direct SWIFT and IBAN capabilities for efficient international transfers, competitive foreign exchange rates, and priority banking services. These accounts enable businesses to receive payments in various currencies, hold balances in multiple denominations, and execute currency conversions at optimal rates.',
+      'We assist with trade finance configurations including Letter of Credit (LC) and Documentary Collection arrangements for international traders. Our banking experts help you structure payment terms, manage currency risks, and optimize cash flow through sophisticated multi-currency treasury management solutions.'
+    ],
     advantages: ['Low FX fees', 'Direct SWIFT/IBAN', 'Priority service'],
     sections: [{ title: 'Trade Finance', content: 'We assist with LC/LC configurations for international traders.' }]
   },
@@ -290,7 +366,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Banking Compliance Advisory',
     subtitle: 'Securing Your Flow',
     category: 'Banking',
-    description: ['Navigate the complex AML/KYC requirements of UAE banks.'],
+    description: [
+      'Navigate the complex Anti-Money Laundering (AML) and Know Your Customer (KYC) requirements of UAE banks with our comprehensive banking compliance advisory services. UAE banks maintain stringent compliance standards aligned with international regulations, requiring detailed documentation, transaction monitoring, and ongoing due diligence.',
+      'We provide complete KYC documentation preparation services, ensuring all required documents are properly formatted, attested, and presented to meet bank standards. Our team conducts risk profile audits to identify potential compliance concerns and implement corrective measures before they impact your banking relationships.',
+      'Our ongoing compliance maintenance services ensure your business continues to meet evolving bank requirements through regular documentation updates, transaction monitoring support, and proactive communication with bank compliance teams. We ensure your transactions are properly documented to satisfy bank audits and regulatory requirements.'
+    ],
     advantages: ['KYC documentation prep', 'Risk profile audit', 'Ongoing maintenance'],
     sections: [{ title: 'AML Support', content: 'We ensure your transactions are documented to satisfy bank audits.' }]
   },
@@ -301,7 +381,11 @@ export const SERVICES: ServiceData[] = [
     title: 'PRO Services UAE',
     subtitle: 'Government Liaison',
     category: 'Compliance',
-    description: ['Expert handling of all government-related documentation.'],
+    description: [
+      'Expert handling of all government-related documentation and procedures through our comprehensive PRO (Public Relations Officer) services. PRO services are essential for navigating UAE government departments, immigration authorities, labor departments, and various regulatory bodies that require specialized knowledge and established relationships.',
+      'Our dedicated PRO team manages visa processing, Emirates ID applications, medical examinations, labor card issuance, immigration approvals, and all government liaison activities. We handle document submissions, follow-ups, and collections, saving you valuable time and ensuring error-free filing that prevents delays and penalties.',
+      'Each client is assigned a dedicated account manager who coordinates all PRO activities, provides regular updates, and ensures timely completion of government procedures. Our team maintains current knowledge of regulatory changes and procedural updates to provide efficient, compliant services.'
+    ],
     advantages: ['Time saving', 'Error-free filing', 'Dedicated account manager'],
     sections: [{ title: 'Liaison Scope', content: 'Visas, Emirates ID, Medical, and Labor Department approvals.' }]
   },
@@ -310,7 +394,11 @@ export const SERVICES: ServiceData[] = [
     title: 'VAT Registration & Filing',
     subtitle: 'Tax Compliance',
     category: 'Compliance',
-    description: ['Ensure your business stays compliant with FTA regulations.'],
+    description: [
+      'Ensure your business stays compliant with Federal Tax Authority (FTA) regulations through our comprehensive VAT registration and filing services. UAE VAT compliance requires accurate record-keeping, timely filing, and proper documentation of all taxable transactions. Non-compliance can result in significant penalties and business disruptions.',
+      'We manage your complete VAT compliance including initial registration, quarterly return preparation and filing, tax portal management, and refund claim processing. Our experienced tax consultants ensure accurate calculation of input and output VAT, proper documentation of exempt and zero-rated supplies, and timely submission of all required returns.',
+      'Our VAT services include penalty avoidance strategies, refund optimization, and ongoing advisory to ensure your business maximizes VAT efficiency while maintaining full compliance. We provide detailed reporting, audit support, and proactive guidance on VAT implications of business transactions and structural changes.'
+    ],
     advantages: ['Accurate filing', 'Penalty avoidance', 'Refund management'],
     sections: [{ title: 'FTA Advisory', content: 'We manage your tax portal and quarterly filings.' }]
   },
@@ -319,7 +407,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Corporate Tax Advisory UAE',
     subtitle: 'Tax Optimization',
     category: 'Compliance',
-    description: ['9% Corporate Tax is now active in the UAE. Are you ready?'],
+    description: [
+      '9% Corporate Tax is now active in the UAE. Are you ready? The introduction of corporate tax represents a significant change in the UAE business landscape, requiring careful planning, structural optimization, and comprehensive compliance procedures. Our corporate tax advisory ensures your business navigates this new tax regime efficiently.',
+      'We provide structure optimization services to minimize tax liability while maintaining full compliance with UAE corporate tax law. Our advisors analyze your business structure, operations, and transactions to identify tax-efficient strategies, legitimate deductions, and optimization opportunities that reduce your effective tax rate.',
+      'Our services include Pillar 2 advisory for multinational enterprises, transfer pricing documentation, tax residency planning, and comprehensive compliance support. We help you navigate the new tax landscape without overpaying, ensuring your business remains competitive while meeting all regulatory requirements.'
+    ],
     advantages: ['Structure optimization', 'Pillar 2 advisory', 'Documentation'],
     sections: [{ title: 'Strategy', content: 'We help you navigate the new tax landscape without overpaying.' }]
   },
@@ -328,7 +420,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Accounting & Bookkeeping',
     subtitle: 'Financial Precision',
     category: 'Compliance',
-    description: ['Professional ledger maintenance for UAE companies.'],
+    description: [
+      'Professional ledger maintenance for UAE companies using cloud-based accounting systems that provide real-time financial visibility and audit-ready reporting. Proper bookkeeping is essential for tax compliance, banking relationships, investor reporting, and strategic business decision-making.',
+      'We use industry-leading platforms including Xero and QuickBooks to maintain pristine financial records with complete transparency and accessibility. Our accounting services include daily transaction recording, bank reconciliation, accounts payable and receivable management, payroll processing, and monthly financial statement preparation.',
+      'Our cloud-based tracking systems provide 24/7 access to your financial data, automated reporting, and real-time insights into business performance. We deliver audit-ready reports that meet UAE accounting standards, facilitate tax compliance, and provide the financial transparency required by banks and investors.'
+    ],
     advantages: ['Cloud-based tracking', 'Audit-ready reports', 'Transparency'],
     sections: [{ title: 'Ledger Management', content: 'We use Xero and QuickBooks to keep your books pristine.' }]
   },
@@ -339,7 +435,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Golden Visa UAE',
     subtitle: '10-Year Residency',
     category: 'Residency',
-    description: ['Secure your future in the UAE with long-term residency.'],
+    description: [
+      'Secure your future in the UAE with long-term residency through the prestigious Golden Visa program offering 10-year renewable residence permits. The Golden Visa provides complete independence from employer sponsorship, allowing you to live, work, and invest in the UAE with maximum flexibility and security.',
+      'Golden Visa holders enjoy 100% ownership of their residency status with no sponsor requirements, the ability to sponsor family members including spouse, children, and parents, and the freedom to work for any employer or establish their own businesses. The visa is renewable every 10 years subject to meeting eligibility criteria.',
+      'Eligibility extends to investors, entrepreneurs, highly skilled professionals, outstanding students, and individuals with specialized talents. We guide you through the application process, document preparation, and submission procedures to secure your Golden Visa and establish long-term residency in the UAE.'
+    ],
     advantages: ['No sponsor needed', '100% ownership of self', 'Family sponsorship'],
     sections: [{ title: 'Eligibility', content: 'Investors, entrepreneurs, and highly skilled talent.' }]
   },
@@ -348,7 +448,11 @@ export const SERVICES: ServiceData[] = [
     title: 'UAE Wills & Estate Planning',
     subtitle: 'Legacy Protection',
     category: 'Residency',
-    description: ['Protect your assets according to your wishes, not local law defaults.'],
+    description: [
+      'Protect your assets according to your wishes, not local law defaults, through comprehensive UAE wills and estate planning services. Without a registered will, UAE inheritance laws based on Sharia principles will determine asset distribution, which may not align with your personal wishes or family circumstances.',
+      'We draft and register wills for both non-Muslims and Muslims through the DIFC Wills and Probate Registry, providing legally enforceable asset distribution according to your specific instructions. DIFC Court registration ensures your will is recognized and enforced according to your wishes, protecting your family and beneficiaries.',
+      'Our estate planning services include asset protection strategies, guardianship provisions for minor children, business succession planning, and comprehensive legacy protection. We ensure your assets are distributed according to your wishes while minimizing legal complications and family disputes.'
+    ],
     advantages: ['DIFC Court registration', 'Asset protection', 'Family security'],
     sections: [{ title: 'Asset Distribution', content: 'We draft and register wills for non-muslims and muslims alike.' }]
   },
@@ -359,7 +463,11 @@ export const SERVICES: ServiceData[] = [
     title: 'ISO Certification Services',
     subtitle: 'Quality Standards',
     category: 'Corporate Support',
-    description: ['Gain global credibility with ISO standards.'],
+    description: [
+      'Gain global credibility with ISO certification demonstrating your commitment to quality standards, process excellence, and continuous improvement. ISO certification enhances your competitive positioning, facilitates international business opportunities, and demonstrates compliance with globally recognized quality management systems.',
+      'We provide comprehensive ISO certification services including gap analysis, documentation preparation, process implementation, internal audits, and certification body liaison. Our experts guide you through the entire certification process, ensuring efficient implementation and successful certification.',
+      'We specialize in multiple ISO standards including ISO 9001 (Quality Management), ISO 14001 (Environmental Management), ISO 45001 (Occupational Health and Safety), and various industry-specific standards. ISO certification improves process efficiency, enhances client trust, and provides global recognition for your quality commitment.'
+    ],
     advantages: ['Global recognition', 'Process efficiency', 'Client trust'],
     sections: [{ title: 'Standard Types', content: 'ISO 9001, 14001, 45001 and more.' }]
   },
@@ -368,7 +476,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Document Attestation',
     subtitle: 'MOFA & Embassy Liaison',
     category: 'Corporate Support',
-    description: ['Get your international documents legalized for UAE use.'],
+    description: [
+      'Get your international documents legalized for UAE use through our comprehensive document attestation services covering Ministry of Foreign Affairs (MOFA) attestation, embassy legalization, and consulate authentication. Document attestation is mandatory for using foreign documents in UAE legal, business, and government procedures.',
+      'We provide worldwide document pickup services, managing the complete attestation chain from your home country through embassy attestation to final MOFA attestation in the UAE. Our verified processes ensure authentic results with fast turnaround times and complete tracking.',
+      'Our attestation services cover educational certificates, marriage certificates, birth certificates, corporate documents, power of attorney, and commercial documents. We manage the complex multi-step attestation process including notarization, state authentication, embassy legalization, and MOFA attestation.'
+    ],
     advantages: ['Worldwide pickup', 'Verified results', 'Fast turnaround'],
     sections: [{ title: 'Service Scope', content: 'Educational, Marriage, and Corporate certificates.' }]
   },
@@ -377,7 +489,11 @@ export const SERVICES: ServiceData[] = [
     title: 'Legal Translation Services',
     subtitle: 'Certified Linguists',
     category: 'Corporate Support',
-    description: ['Precise translation for MOJ and government submissions.'],
+    description: [
+      'Precise translation for Ministry of Justice (MOJ) and government submissions through our certified legal translation services. Legal translations require absolute accuracy, proper terminology, and official certification to be accepted by UAE courts, government departments, and regulatory authorities.',
+      'Our MOJ-certified translators provide accurate translations in over 75 languages with complete confidentiality and professional handling. We specialize in legal terminology, ensuring translations maintain the precise meaning and legal implications of original documents.',
+      'We translate court documents, Memorandums of Association, legal contracts, corporate agreements, government submissions, and all legal documentation requiring certified translation. Our translations are officially stamped and certified for acceptance by UAE authorities.'
+    ],
     advantages: ['MOJ certified', '75+ languages', 'Confidentiality'],
     sections: [{ title: 'Document Types', content: 'Court documents, MOAs, and legal contracts.' }]
   }
