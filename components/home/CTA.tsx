@@ -1,11 +1,23 @@
 "use client";
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, ArrowRight, Sparkles, Zap, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 export function CTA() {
+  // Generate stable particle positions to avoid hydration errors
+  const particles = useMemo(() => 
+    Array.from({ length: 30 }, (_, i) => ({
+      id: i,
+      left: (i * 31.7 + 17.3) % 100,
+      top: (i * 47.1 + 23.9) % 100,
+      duration: 4 + (i % 4),
+      delay: (i % 6) * 0.33
+    })),
+    []
+  );
+
   return (
     <section className="relative py-32 lg:py-40 overflow-hidden">
       {/* Animated Background */}
@@ -27,13 +39,13 @@ export function CTA() {
         />
 
         {/* Floating Particles */}
-        {[...Array(30)].map((_, i) => (
+        {particles.map((particle) => (
           <motion.div
-            key={i}
+            key={particle.id}
             className="absolute w-2 h-2 bg-white/30 rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
             animate={{
               y: [0, -50, 0],
@@ -41,9 +53,9 @@ export function CTA() {
               scale: [1, 1.5, 1],
             }}
             transition={{
-              duration: 4 + Math.random() * 3,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: particle.delay,
             }}
           />
         ))}

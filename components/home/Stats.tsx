@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { Zap, TrendingUp, Shield, Globe2 } from 'lucide-react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { TrendingUp, Users, Building2, Award, Shield, Zap, Globe2 } from 'lucide-react';
 
 const stats = [
   { 
@@ -74,6 +74,18 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 }
 
 export function Stats() {
+  // Generate stable particle positions to avoid hydration errors
+  const particles = useMemo(() => 
+    Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      left: (i * 37.5 + 13.7) % 100, // Pseudo-random but stable
+      top: (i * 53.2 + 27.3) % 100,
+      duration: 3 + (i % 3),
+      delay: (i % 5) * 0.4
+    })),
+    []
+  );
+
   return (
     <section className="relative py-32 bg-gradient-to-b from-foreground via-foreground to-background dark:from-[#020617] dark:via-[#0f172a] dark:to-background overflow-hidden">
       {/* Animated Grid Background */}
@@ -88,22 +100,22 @@ export function Stats() {
       </div>
 
       {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
+      {particles.map((particle) => (
         <motion.div
-          key={i}
+          key={particle.id}
           className="absolute w-1 h-1 bg-white/20 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
           }}
           animate={{
             y: [0, -30, 0],
             opacity: [0.2, 0.5, 0.2],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: particle.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: particle.delay,
           }}
         />
       ))}
