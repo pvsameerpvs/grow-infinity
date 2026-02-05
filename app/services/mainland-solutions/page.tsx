@@ -106,6 +106,105 @@ export default function MainlandSolutions() {
     { item: 'Government Fees', range: 'AED 5,000 - 10,000' },
   ];
 
+  const requiredDocuments = [
+    { doc: 'Passport Copies', detail: 'Valid passport copies of all shareholders and directors' },
+    { doc: 'Emirates ID', detail: 'UAE residence visa or entry stamp for all partners' },
+    { doc: 'Business Plan', detail: 'Detailed business plan outlining your operations and projections' },
+    { doc: 'Proof of Address', detail: 'Utility bill or tenancy contract from home country' },
+    { doc: 'No Objection Certificate', detail: 'NOC from current sponsor if applicable' },
+    { doc: 'Bank Reference Letter', detail: 'Reference letter from your current bank' },
+    { doc: 'Educational Certificates', detail: 'Attested degrees for professional licenses' },
+    { doc: 'Office Tenancy Contract', detail: 'Ejari-registered office lease agreement' }
+  ];
+
+  const faqs = [
+    {
+      q: 'How long does mainland company setup take?',
+      a: 'Typically 7-10 working days from document submission to license issuance, depending on the business activity and completeness of documentation.'
+    },
+    {
+      q: 'Can I operate from a virtual office?',
+      a: 'No, mainland companies require a physical office space with an Ejari-registered tenancy contract. However, flexi-desk solutions are available starting from AED 15,000/year.'
+    },
+    {
+      q: 'What is the minimum capital requirement?',
+      a: 'There is no minimum capital requirement for most mainland companies. However, certain activities may require specific capital as per DED regulations.'
+    },
+    {
+      q: 'Can I change my business activities later?',
+      a: 'Yes, you can add or modify business activities during license renewal or through an amendment process with additional fees.'
+    },
+    {
+      q: 'Do I need a local partner?',
+      a: 'No, 100% foreign ownership is now permitted for most business activities in Dubai mainland. Only a few strategic sectors still require UAE national partnership.'
+    },
+    {
+      q: 'How many visas can I get?',
+      a: 'Visa allocation depends on your office space size and business activity. Typically, you get 1 visa per 100 sq ft of office space, with a minimum of 3 visas.'
+    }
+  ];
+
+  const comparisonData = [
+    { feature: 'Ownership', mainland: '100% Foreign', freezone: '100% Foreign' },
+    { feature: 'Trade in UAE', mainland: 'Unlimited', freezone: 'Requires Distributor' },
+    { feature: 'Office Requirement', mainland: 'Physical Office', freezone: 'Flexi-desk Available' },
+    { feature: 'Government Contracts', mainland: 'Eligible', freezone: 'Not Eligible' },
+    { feature: 'Corporate Tax', mainland: '9% (from 2023)', freezone: '0% (conditions apply)' },
+    { feature: 'Setup Cost', mainland: 'AED 25,000+', freezone: 'AED 15,000+' },
+    { feature: 'Visa Cost', mainland: 'AED 5,000+', freezone: 'AED 3,000+' },
+    { feature: 'Setup Time', mainland: '7-10 days', freezone: '2-5 days' }
+  ];
+
+  const industries = [
+    {
+      name: 'Trading & E-commerce',
+      description: 'Import/export, wholesale, retail, and online trading',
+      icon: TrendingUp,
+      benefits: ['Access to UAE market', 'Multiple warehouse options', 'Easy customs clearance']
+    },
+    {
+      name: 'Professional Services',
+      description: 'Consulting, legal, accounting, and advisory services',
+      icon: Award,
+      benefits: ['Professional recognition', 'Client credibility', 'Flexible operations']
+    },
+    {
+      name: 'Technology & IT',
+      description: 'Software development, IT services, and digital solutions',
+      icon: Zap,
+      benefits: ['Tech talent pool', 'Innovation ecosystem', 'Global connectivity']
+    },
+    {
+      name: 'Real Estate',
+      description: 'Property development, brokerage, and management',
+      icon: Building2,
+      benefits: ['Booming market', 'High ROI potential', 'Regulatory support']
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      title: 'Banking-First Approach',
+      description: 'We structure your company to ensure smooth corporate bank account opening with UAE\'s leading banks.',
+      icon: Shield
+    },
+    {
+      title: 'End-to-End Support',
+      description: 'From initial consultation to license issuance and beyond, we handle every step of your setup journey.',
+      icon: Users
+    },
+    {
+      title: 'Expert Legal Team',
+      description: 'Our experienced legal advisors ensure your MOA and all documents are compliant and bank-ready.',
+      icon: Award
+    },
+    {
+      title: 'Fast-Track Processing',
+      description: 'Leveraging our relationships with government entities, we expedite your application for faster approval.',
+      icon: Zap
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -347,6 +446,278 @@ export default function MainlandSolutions() {
                   <strong className="text-foreground">Note:</strong> Costs vary based on business activity, office location, and number of visas. 
                   Use our cost calculator for a precise quote tailored to your needs.
                 </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Required Documents */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-oswald text-4xl md:text-5xl font-black text-foreground mb-6 uppercase">
+              Required <span className="text-gradient-infinity">Documents</span>
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Comprehensive documentation checklist to ensure smooth and efficient mainland company formation. Our team will guide you through each requirement and assist with document preparation, attestation, and submission to relevant authorities for faster processing and approval.
+            </p>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              {requiredDocuments.map((item, index) => (
+                <motion.div
+                  key={item.doc}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="glass p-6 rounded-2xl border border-foreground/10 hover:border-primary/30 transition-all"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-black text-foreground mb-2">{item.doc}</h3>
+                      <p className="text-sm text-foreground/70 leading-relaxed">{item.detail}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mainland vs Free Zone Comparison */}
+      <section className="py-24 bg-foreground/[0.02]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-oswald text-4xl md:text-5xl font-black text-foreground mb-6 uppercase">
+              Mainland vs <span className="text-gradient-infinity">Free Zone</span>
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Understanding the key differences between mainland and free zone company formation is crucial for making an informed decision. Each jurisdiction offers unique advantages depending on your business model, target market, and operational requirements. Our experts will help you choose the optimal structure for your specific needs and long-term growth strategy.
+            </p>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto glass p-8 rounded-3xl border border-foreground/10 overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-foreground/10">
+                  <th className="text-left py-4 px-4 font-black text-foreground">Feature</th>
+                  <th className="text-center py-4 px-4 font-black text-primary">Mainland</th>
+                  <th className="text-center py-4 px-4 font-black text-foreground/60">Free Zone</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, index) => (
+                  <motion.tr
+                    key={row.feature}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="border-b border-foreground/5 last:border-0"
+                  >
+                    <td className="py-4 px-4 font-bold text-foreground">{row.feature}</td>
+                    <td className="py-4 px-4 text-center text-primary font-bold">{row.mainland}</td>
+                    <td className="py-4 px-4 text-center text-foreground/70">{row.freezone}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry-Specific Guidance */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-oswald text-4xl md:text-5xl font-black text-foreground mb-6 uppercase">
+              Industry-Specific <span className="text-gradient-infinity">Solutions</span>
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Every industry has unique requirements and regulatory considerations when establishing a mainland presence in Dubai. Our specialized consultants provide tailored guidance for your specific sector, ensuring compliance with industry regulations, optimal license selection, and strategic positioning for maximum market penetration and business growth opportunities.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.name}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass p-8 rounded-3xl border border-foreground/10 hover:border-primary/30 transition-all"
+              >
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-6">
+                  <industry.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-black text-foreground mb-3">{industry.name}</h3>
+                <p className="text-foreground/70 mb-6 leading-relaxed">{industry.description}</p>
+                <div className="space-y-2">
+                  <p className="text-xs font-black text-foreground/60 uppercase tracking-wider mb-3">Key Benefits:</p>
+                  {industry.benefits.map((benefit) => (
+                    <div key={benefit} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span className="text-sm text-foreground/80">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-foreground/[0.02]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-oswald text-4xl md:text-5xl font-black text-foreground mb-6 uppercase">
+              Why Choose <span className="text-gradient-infinity">Grow Infinity?</span>
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              With over a decade of experience in UAE business formation, we have successfully established thousands of mainland companies across diverse industries. Our proven track record, strategic partnerships with government entities, and comprehensive understanding of banking requirements set us apart as the premier choice for entrepreneurs seeking seamless mainland company formation with guaranteed banking access.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {whyChooseUs.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass p-8 rounded-3xl border border-foreground/10 text-center hover:border-primary/30 transition-all"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center mb-6 mx-auto">
+                  <item.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-black text-foreground mb-3">{item.title}</h3>
+                <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-oswald text-4xl md:text-5xl font-black text-foreground mb-6 uppercase">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Get answers to the most common questions about Dubai mainland company formation. Our comprehensive FAQ section addresses key concerns regarding setup timelines, costs, documentation requirements, and operational considerations to help you make informed decisions about your business establishment journey in the UAE.
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="glass p-8 rounded-3xl border border-foreground/10"
+              >
+                <h3 className="text-xl font-black text-foreground mb-4 flex items-start gap-3">
+                  <span className="text-primary flex-shrink-0">Q:</span>
+                  {faq.q}
+                </h3>
+                <p className="text-foreground/70 leading-relaxed pl-7">
+                  <span className="font-black text-foreground">A:</span> {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Visa Information */}
+      <section className="py-24 bg-foreground/[0.02]">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <h2 className="font-oswald text-4xl md:text-5xl font-black text-foreground mb-6 uppercase">
+                Visa <span className="text-gradient-infinity">Information</span>
+              </h2>
+              <p className="text-lg text-foreground/70">
+                Comprehensive visa solutions for you, your employees, and family members with streamlined processing and expert PRO services handling all government formalities.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="glass p-8 rounded-3xl border border-foreground/10">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-black text-foreground mb-3">Investor Visa</h3>
+                <p className="text-foreground/70 mb-4 leading-relaxed">
+                  As a mainland company owner, you are eligible for a 2 or 3-year investor residence visa, renewable upon license renewal. This visa allows you to sponsor family members and provides complete freedom to live and work in the UAE without employer sponsorship requirements.
+                </p>
+                <div className="text-sm font-bold text-primary">AED 5,000 - 7,000</div>
+              </div>
+
+              <div className="glass p-8 rounded-3xl border border-foreground/10">
+                <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-6">
+                  <Building2 className="w-6 h-6 text-gold" />
+                </div>
+                <h3 className="text-xl font-black text-foreground mb-3">Employee Visa</h3>
+                <p className="text-foreground/70 mb-4 leading-relaxed">
+                  Sponsor skilled professionals and staff members with 2-year employment visas. The number of visas allocated depends on your office space size and business activity classification. We handle all labor card processing, medical examinations, Emirates ID applications, and visa stamping procedures efficiently.
+                </p>
+                <div className="text-sm font-bold text-primary">AED 3,000 - 5,000 per visa</div>
+              </div>
+
+              <div className="glass p-8 rounded-3xl border border-foreground/10">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <Shield className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-black text-foreground mb-3">Family Visa</h3>
+                <p className="text-foreground/70 mb-4 leading-relaxed">
+                  Bring your loved ones to the UAE by sponsoring your spouse, children, and parents under your mainland company. Family visa holders can also apply for work permits if they wish to seek employment. Minimum salary requirements apply based on accommodation type and family size.
+                </p>
+                <div className="text-sm font-bold text-primary">AED 3,000 - 4,000 per person</div>
               </div>
             </div>
           </motion.div>
