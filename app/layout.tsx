@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
   description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
   keywords: "business setup dubai, uae company formation, banking advisory uae, golden visa, corporate tax uae",
+  icons: {
+    icon: '/fevic.png',
+    shortcut: '/fevic.png',
+    apple: '/fevic.png',
+  },
 };
 
 export default function RootLayout({
