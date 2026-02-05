@@ -142,7 +142,7 @@ const Header = () => {
                         transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                         className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[650px]"
                       >
-                        <div className="glass rounded-[2rem] shadow-2xl p-8 grid grid-cols-2 gap-8 border border-white/10 overflow-hidden relative">
+                        <div className="bg-background rounded-[2rem] shadow-2xl p-8 grid grid-cols-2 gap-8 border border-foreground/10 overflow-hidden relative">
                           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full" />
                           <div className="absolute bottom-0 left-0 w-24 h-24 bg-gold/5 blur-2xl rounded-full" />
                           
@@ -158,6 +158,7 @@ const Header = () => {
                                 <Link
                                   key={item.slug}
                                   href={`/${item.slug}`}
+                                  onClick={() => setActiveMenu(null)}
                                   className="group/link flex items-center text-[13px] text-foreground/60 hover:text-primary transition-all font-bold"
                                 >
                                   <div className="w-2 h-2 rounded-full border border-primary/20 group-hover/link:bg-primary group-hover/link:scale-125 mr-3 transition-all" />
@@ -178,6 +179,7 @@ const Header = () => {
                             </div>
                             <Link 
                               href="/cost-calculator" 
+                              onClick={() => setActiveMenu(null)}
                               className="inline-flex items-center text-xs font-black text-primary hover:text-primary-dark transition-all mt-6 group/btn"
                             >
                               START COST CALCULATION
