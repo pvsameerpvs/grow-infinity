@@ -15,7 +15,11 @@ import {
   Calculator,
   BadgeCheck,
   CheckCircle2,
-  ChevronDown
+  ChevronDown,
+  X,
+  Sparkles,
+  Mail,
+  Phone as PhoneIcon
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -35,6 +39,7 @@ const NATIONALITIES = [
 
 const CostCalculator = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     businessActivity: '',
     jurisdiction: '',
@@ -362,7 +367,7 @@ const CostCalculator = () => {
               </button>
               
               <button
-                onClick={currentStep === STEPS.length - 1 ? () => alert('Quote request sent!') : nextStep}
+                onClick={currentStep === STEPS.length - 1 ? () => setShowModal(true) : nextStep}
                 disabled={!isStepComplete()}
                 className={cn(
                   "flex items-center px-12 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all shadow-2xl",
@@ -378,6 +383,151 @@ const CostCalculator = () => {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/70 backdrop-blur-md z-[100]"
+              onClick={() => setShowModal(false)}
+            />
+            
+            {/* Modal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl z-[110]"
+            >
+              <div className="bg-background rounded-[3rem] p-8 md:p-12 shadow-2xl border border-foreground/10 relative overflow-hidden">
+                {/* Decorative Elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 blur-[80px] rounded-full" />
+                
+                {/* Close Button */}
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="absolute top-6 right-6 p-3 rounded-xl bg-foreground/5 hover:bg-foreground/10 transition-colors z-10"
+                >
+                  <X className="w-5 h-5 text-foreground/60" />
+                </button>
+
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Success Icon */}
+                  <div className="flex justify-center mb-6">
+                    <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center relative">
+                      <div className="absolute inset-0 bg-primary/20 rounded-3xl animate-ping" />
+                      <CheckCircle2 className="w-10 h-10 text-primary relative z-10" />
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <div className="text-center mb-8">
+                    <h3 className="text-3xl md:text-4xl font-black text-foreground mb-3 tracking-tight">
+                      Quote Request <span className="text-primary italic">Received!</span>
+                    </h3>
+                    <p className="text-foreground/50 font-medium text-sm">
+                      Our elite advisory team will contact you within 24 hours with a customized proposal.
+                    </p>
+                  </div>
+
+                  {/* Summary */}
+                  <div className="bg-foreground/[0.02] rounded-2xl p-6 mb-6 space-y-4">
+                    <div className="flex items-center space-x-2 mb-4">
+                      <Sparkles className="w-4 h-4 text-gold" />
+                      <h4 className="text-xs font-black text-gold uppercase tracking-widest">Your Selection Summary</h4>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-1">
+                        <div className="text-[10px] font-black text-foreground/40 uppercase tracking-wider">Business Activity</div>
+                        <div className="text-sm font-bold text-foreground">{formData.businessActivity || 'Not specified'}</div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-[10px] font-black text-foreground/40 uppercase tracking-wider">Jurisdiction</div>
+                        <div className="text-sm font-bold text-foreground capitalize">{formData.jurisdiction || 'Not specified'}</div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-[10px] font-black text-foreground/40 uppercase tracking-wider">Shareholders</div>
+                        <div className="text-sm font-bold text-foreground">{formData.shareholders} Person(s)</div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-[10px] font-black text-foreground/40 uppercase tracking-wider">Visas Required</div>
+                        <div className="text-sm font-bold text-foreground">{formData.visas} Visa(s)</div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-[10px] font-black text-foreground/40 uppercase tracking-wider">Office Type</div>
+                        <div className="text-sm font-bold text-foreground">{formData.officeType || 'Not specified'}</div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-[10px] font-black text-foreground/40 uppercase tracking-wider">Nationality</div>
+                        <div className="text-sm font-bold text-foreground">{formData.nationality || 'Not specified'}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Contact Info */}
+                  <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10 space-y-3">
+                    <div className="flex items-center space-x-2 mb-3">
+                      <Send className="w-4 h-4 text-primary" />
+                      <h4 className="text-xs font-black text-primary uppercase tracking-widest">Quote Will Be Sent To</h4>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center space-x-3">
+                        <Mail className="w-4 h-4 text-foreground/40" />
+                        <span className="text-sm font-bold text-foreground">{formData.email}</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <PhoneIcon className="w-4 h-4 text-foreground/40" />
+                        <span className="text-sm font-bold text-foreground">{formData.phone}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => setShowModal(false)}
+                      className="flex-1 bg-primary hover:bg-primary-dark text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-xl shadow-primary/20 transition-all active:scale-95"
+                    >
+                      Close
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowModal(false);
+                        setCurrentStep(0);
+                        setFormData({
+                          businessActivity: '',
+                          jurisdiction: '',
+                          shareholders: '1',
+                          visas: '1',
+                          officeType: '',
+                          timeline: '',
+                          nationality: '',
+                          name: '',
+                          email: '',
+                          phone: '',
+                        });
+                      }}
+                      className="flex-1 bg-foreground/5 hover:bg-foreground/10 text-foreground py-4 rounded-xl font-black text-sm uppercase tracking-wider transition-all active:scale-95"
+                    >
+                      New Quote
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
