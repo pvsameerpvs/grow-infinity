@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
   images: {
     unoptimized: true,
   },
-  // Ensure trailing slashes for static hosting compatibility
+  // Vercel handles Next.js apps natively - no static export needed
   trailingSlash: true,
 };
 
 export default nextConfig;
+
