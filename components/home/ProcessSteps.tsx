@@ -96,10 +96,15 @@ export function ProcessSteps() {
           </p>
 
           {/* Timeline Summary */}
-          <div className="inline-flex items-center gap-3 glass px-6 py-3 rounded-full border border-primary/10">
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-3 glass px-6 py-3 rounded-full border border-primary/10"
+          >
             <CheckCircle className="w-5 h-5 text-primary" />
             <span className="text-sm font-black text-foreground">Complete Setup in Just 7 Days</span>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Stepper Tabs */}
@@ -108,13 +113,15 @@ export function ProcessSteps() {
           <div className="relative mb-8 lg:mb-12">
             {/* Progress Line */}
             <div className="absolute top-6 md:top-8 left-0 right-0 h-0.5 md:h-1 bg-foreground/10" />
-            <div 
-              className="absolute top-6 md:top-8 left-0 h-0.5 md:h-1 bg-gradient-to-r from-primary to-gold transition-all duration-500"
-              style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
+            <motion.div 
+              className="absolute top-6 md:top-8 left-0 h-0.5 md:h-1 bg-gradient-to-r from-primary to-gold z-10"
+              initial={{ width: 0 }}
+              animate={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
             />
             
             {/* Step Buttons */}
-            <div className="relative grid grid-cols-4 gap-2 md:gap-4">
+            <div className="relative grid grid-cols-4 gap-2 md:gap-4 z-20">
               {steps.map((step, index) => (
                 <motion.button
                   key={step.num}
@@ -123,6 +130,8 @@ export function ProcessSteps() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`relative flex flex-col items-center gap-2 md:gap-3 transition-all ${
                     activeStep === index ? 'scale-105' : 'scale-100'
                   }`}
@@ -135,11 +144,27 @@ export function ProcessSteps() {
                       ? 'bg-gradient-to-br from-primary/50 to-gold/50'
                       : 'bg-foreground/10'
                   }`}>
-                    {activeStep > index ? (
-                      <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-white" />
-                    ) : (
-                      <step.icon className={`w-5 h-5 md:w-8 md:h-8 ${activeStep === index ? 'text-white' : 'text-foreground/40'}`} />
-                    )}
+                    <AnimatePresence mode="wait">
+                      {activeStep > index ? (
+                        <motion.div
+                          key="check"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          exit={{ scale: 0 }}
+                        >
+                          <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-white" />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="icon"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          exit={{ scale: 0 }}
+                        >
+                          <step.icon className={`w-5 h-5 md:w-8 md:h-8 ${activeStep === index ? 'text-white' : 'text-foreground/40'}`} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
 
                   {/* Step Info */}
@@ -164,19 +189,26 @@ export function ProcessSteps() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeStep}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="glass p-6 md:p-8 lg:p-12 rounded-2xl lg:rounded-3xl border border-foreground/5"
             >
               <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
                 {/* Left Side - Info */}
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
                   <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center flex-shrink-0">
+                    <motion.div 
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center flex-shrink-0"
+                    >
                       {React.createElement(steps[activeStep].icon, { className: "w-6 h-6 md:w-8 md:h-8 text-white" })}
-                    </div>
+                    </motion.div>
                     <div>
                       <div className="text-[10px] md:text-sm font-black text-primary uppercase tracking-wider mb-0.5 md:mb-1">
                         Step {steps[activeStep].num}
@@ -191,13 +223,16 @@ export function ProcessSteps() {
                     {steps[activeStep].desc}
                   </p>
 
-                  <div className="flex items-center gap-2 md:gap-3 glass px-3 md:px-4 py-2 md:py-3 rounded-lg md:rounded-xl border border-primary/10 inline-flex">
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-2 md:gap-3 glass px-3 md:px-4 py-2 md:py-3 rounded-lg md:rounded-xl border border-primary/10 inline-flex"
+                  >
                     <Clock className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                     <span className="text-xs md:text-sm font-black text-foreground">
                       Duration: {steps[activeStep].duration}
                     </span>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
 
                 {/* Right Side - Details */}
                 <div>
@@ -210,8 +245,9 @@ export function ProcessSteps() {
                         key={index}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-lg md:rounded-xl bg-foreground/[0.02] border border-foreground/5 hover:border-primary/20 transition-all"
+                        transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                        whileHover={{ x: 10, borderColor: 'rgba(var(--primary-rgb), 0.3)' }}
+                        className="flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-lg md:rounded-xl bg-foreground/[0.02] border border-foreground/5 hover:border-primary/20 transition-all cursor-default"
                       >
                         <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-xs md:text-sm text-foreground/80 font-medium">{detail}</span>
@@ -223,7 +259,9 @@ export function ProcessSteps() {
 
               {/* Navigation Buttons */}
               <div className="flex items-center justify-between mt-6 md:mt-8 pt-6 md:pt-8 border-t border-foreground/5">
-                <button
+                <motion.button
+                  whileHover={activeStep !== 0 ? { scale: 1.05 } : {}}
+                  whileTap={activeStep !== 0 ? { scale: 0.95 } : {}}
                   onClick={() => setActiveStep(Math.max(0, activeStep - 1))}
                   disabled={activeStep === 0}
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-black text-xs md:text-sm uppercase tracking-wider transition-all ${
@@ -234,13 +272,15 @@ export function ProcessSteps() {
                 >
                   <span className="hidden sm:inline">Previous Step</span>
                   <span className="sm:hidden">Previous</span>
-                </button>
+                </motion.button>
 
                 <div className="text-xs md:text-sm font-bold text-foreground/60">
                   {activeStep + 1} of {steps.length}
                 </div>
 
-                <button
+                <motion.button
+                  whileHover={activeStep !== steps.length - 1 ? { scale: 1.05 } : {}}
+                  whileTap={activeStep !== steps.length - 1 ? { scale: 0.95 } : {}}
                   onClick={() => setActiveStep(Math.min(steps.length - 1, activeStep + 1))}
                   disabled={activeStep === steps.length - 1}
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-black text-xs md:text-sm uppercase tracking-wider transition-all inline-flex items-center gap-1 md:gap-2 ${
@@ -252,7 +292,7 @@ export function ProcessSteps() {
                   <span className="hidden sm:inline">Next Step</span>
                   <span className="sm:hidden">Next</span>
                   <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -266,17 +306,25 @@ export function ProcessSteps() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 glass p-6 lg:p-8 rounded-2xl border border-foreground/5">
+          <motion.div 
+            whileHover={{ scale: 1.02 }}
+            className="inline-flex flex-col sm:flex-row items-center gap-4 glass p-6 lg:p-8 rounded-2xl border border-foreground/5 shadow-lg"
+          >
             <div className="text-center sm:text-left">
               <div className="text-lg font-black text-foreground mb-1">Ready to Get Started?</div>
               <div className="text-sm text-foreground/60">Schedule a free consultation with our experts</div>
             </div>
-            <button className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium whitespace-nowrap">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium whitespace-nowrap"
+            >
               Book Consultation
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
 }
+

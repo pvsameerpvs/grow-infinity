@@ -57,6 +57,25 @@ const services = [
 ];
 
 export function CoreServices() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
     <section id="services" className="relative py-20 lg:py-32 bg-gradient-to-b from-background via-foreground/[0.01] to-background overflow-hidden">
       {/* Background Accents */}
@@ -88,14 +107,18 @@ export function CoreServices() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+        >
           {services.map((service, index) => (
             <motion.div
               key={service.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
               className="group relative overflow-hidden rounded-3xl"
             >
               {/* Background Image */}
@@ -118,9 +141,12 @@ export function CoreServices() {
                 </div>
 
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-500">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/20 transition-all duration-500"
+                >
                   <service.icon className="w-7 h-7 text-white" />
-                </div>
+                </motion.div>
 
                 {/* Content */}
                 <h3 className="text-2xl lg:text-3xl font-black mb-4 text-white tracking-tight">
@@ -144,7 +170,7 @@ export function CoreServices() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
@@ -154,15 +180,19 @@ export function CoreServices() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-16"
         >
-          <Link 
-            href="/services" 
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium group"
-          >
-            <span>View All Services</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <Link href="/services">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium group"
+            >
+              <span>View All Services</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </motion.div>
           </Link>
         </motion.div>
       </div>
     </section>
   );
 }
+

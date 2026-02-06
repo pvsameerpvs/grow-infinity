@@ -36,6 +36,25 @@ const milestones = [
 ];
 
 export function AboutSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <section className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background Elements */}
@@ -75,7 +94,10 @@ export function AboutSection() {
           >
             <div className="grid grid-cols-2 gap-4">
               {/* Large Image */}
-              <div className="col-span-2 relative h-[300px] lg:h-[400px] rounded-3xl overflow-hidden group">
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="col-span-2 relative h-[300px] lg:h-[400px] rounded-3xl overflow-hidden group border border-white/10"
+              >
                 <img 
                   src="/about-office.png" 
                   alt="Grow Infinity Dubai Office" 
@@ -86,10 +108,13 @@ export function AboutSection() {
                   <div className="text-white font-black text-sm uppercase tracking-wider">Dubai Office</div>
                   <div className="text-white/80 text-xs">Premium Business District</div>
                 </div>
-              </div>
+              </motion.div>
               
               {/* Two Small Images */}
-              <div className="relative h-[200px] rounded-2xl overflow-hidden group">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
+              >
                 <img 
                   src="/about-team.png" 
                   alt="Expert Team" 
@@ -99,9 +124,12 @@ export function AboutSection() {
                 <div className="absolute bottom-4 left-4">
                   <div className="text-white font-black text-xs uppercase">Expert Team</div>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="relative h-[200px] rounded-2xl overflow-hidden group">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
+              >
                 <img 
                   src="/about-dubai.png" 
                   alt="Dubai Skyline" 
@@ -111,7 +139,7 @@ export function AboutSection() {
                 <div className="absolute bottom-4 left-4">
                   <div className="text-white font-black text-xs uppercase">UAE Hub</div>
                 </div>
-              </div>
+              </motion.div>
             </div>
             
             {/* Floating Stats Card */}
@@ -120,6 +148,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -5, scale: 1.05 }}
               className="absolute -bottom-8 -right-8 glass p-6 rounded-2xl border border-primary/10 shadow-2xl hidden lg:block"
             >
               <div className="flex items-center gap-4">
@@ -162,44 +191,52 @@ export function AboutSection() {
                 { label: 'Banking Partners', value: '25+' },
                 { label: 'Expert Advisors', value: '40+' },
               ].map((item, index) => (
-                <div key={index} className="glass p-4 rounded-xl border border-foreground/5">
+                <motion.div 
+                  key={index} 
+                  whileHover={{ y: -5, borderColor: 'rgba(var(--primary-rgb), 0.3)' }}
+                  className="glass p-4 rounded-xl border border-foreground/5 transition-colors"
+                >
                   <div className="text-2xl font-black text-primary mb-1">{item.value}</div>
                   <div className="text-xs font-bold text-foreground/60 uppercase tracking-wider">{item.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <Link 
-              href="/about" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm transition-all duration-500 button-premium"
-            >
-              <span>Learn Our Story</span>
-              <Award className="w-4 h-4" />
+            <Link href="/about">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm transition-all duration-500 button-premium cursor-pointer"
+              >
+                <span>Learn Our Story</span>
+                <Award className="w-4 h-4" />
+              </motion.div>
             </Link>
           </motion.div>
         </div>
 
         {/* Core Values */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <h3 className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase">
+          <motion.h3 
+            variants={itemVariants}
+            className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
+          >
             Our Core <span className="text-gradient-infinity">Values</span>
-          </h3>
+          </motion.h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass p-6 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group"
+                variants={itemVariants}
+                whileHover={{ y: -10, borderColor: 'rgba(var(--primary-rgb), 0.2)' }}
+                className="glass p-6 rounded-2xl border border-foreground/5 transition-all duration-500 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <value.icon className="w-6 h-6 text-primary" />
@@ -212,21 +249,27 @@ export function AboutSection() {
         </motion.div>
 
         {/* Timeline - Our Journey */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase">
+        <div className="mb-20">
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
+          >
             Our <span className="text-gradient-infinity">Journey</span>
-          </h3>
+          </motion.h3>
           
           <div className="max-w-5xl mx-auto">
             {/* Desktop Timeline */}
             <div className="hidden md:block relative">
               {/* Timeline Line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-gold to-primary -translate-x-1/2" />
+              <motion.div 
+                initial={{ height: 0 }}
+                whileInView={{ height: '100%' }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5 }}
+                className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-gold to-primary -translate-x-1/2" 
+              />
               
               <div className="space-y-16">
                 {milestones.map((milestone, index) => (
@@ -243,7 +286,10 @@ export function AboutSection() {
                       <div className="flex-1 flex justify-end pr-8">
                         {index % 2 === 0 && (
                           <div className="max-w-sm w-full">
-                            <div className="glass p-6 lg:p-8 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group text-right">
+                            <motion.div 
+                              whileHover={{ scale: 1.02, x: -5 }}
+                              className="glass p-6 lg:p-8 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group text-right"
+                            >
                               <div className="flex items-center gap-4 mb-4 justify-end">
                                 <div className="text-4xl lg:text-5xl font-black text-gradient-infinity">{milestone.year}</div>
                                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -251,21 +297,27 @@ export function AboutSection() {
                                 </div>
                               </div>
                               <div className="text-base lg:text-lg font-bold text-foreground">{milestone.event}</div>
-                            </div>
+                            </motion.div>
                           </div>
                         )}
                       </div>
                       
                       {/* Center Dot */}
                       <div className="relative z-10">
-                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-gold border-4 border-background shadow-xl" />
+                        <motion.div 
+                          whileHover={{ scale: 1.5 }}
+                          className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-gold border-4 border-background shadow-xl" 
+                        />
                       </div>
                       
                       {/* Right Side */}
                       <div className="flex-1 flex justify-start pl-8">
                         {index % 2 === 1 && (
                           <div className="max-w-sm w-full">
-                            <div className="glass p-6 lg:p-8 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group text-left">
+                            <motion.div 
+                              whileHover={{ scale: 1.02, x: 5 }}
+                              className="glass p-6 lg:p-8 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group text-left"
+                            >
                               <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                                   <CheckCircle className="w-6 h-6 text-primary" />
@@ -273,7 +325,7 @@ export function AboutSection() {
                                 <div className="text-4xl lg:text-5xl font-black text-gradient-infinity">{milestone.year}</div>
                               </div>
                               <div className="text-base lg:text-lg font-bold text-foreground">{milestone.event}</div>
-                            </div>
+                            </motion.div>
                           </div>
                         )}
                       </div>
@@ -286,7 +338,12 @@ export function AboutSection() {
             {/* Mobile Timeline */}
             <div className="md:hidden relative">
               {/* Vertical Line */}
-              <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-gold to-primary" />
+              <motion.div 
+                initial={{ height: 0 }}
+                whileInView={{ height: '100%' }}
+                viewport={{ once: true }}
+                className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-gold to-primary" 
+              />
               
               <div className="space-y-8">
                 {milestones.map((milestone, index) => (
@@ -304,7 +361,10 @@ export function AboutSection() {
                     </div>
                     
                     {/* Content Card */}
-                    <div className="glass p-6 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500">
+                    <motion.div 
+                      whileHover={{ x: 5 }}
+                      className="glass p-6 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500"
+                    >
                       <div className="flex items-center gap-3 mb-3">
                         <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center">
                           <CheckCircle className="w-5 h-5 text-primary" />
@@ -312,13 +372,13 @@ export function AboutSection() {
                         <div className="text-3xl font-black text-gradient-infinity">{milestone.year}</div>
                       </div>
                       <div className="text-sm font-bold text-foreground">{milestone.event}</div>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 ))}
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

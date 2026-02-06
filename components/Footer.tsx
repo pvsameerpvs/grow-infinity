@@ -13,15 +13,12 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-8">
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-2xl shadow-xl shadow-primary/20 transition-transform group-hover:rotate-12">
-                <span className="text-white font-black text-2xl">G</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-black tracking-tighter leading-none">GROW INFINITY</span>
-                <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-black mt-1">
-                  Corporate Advisory
-                </span>
-              </div>
+              <img 
+                src="/logo-white.png" 
+                alt="Grow Infinity Logo" 
+                className="h-12 w-auto object-contain transition-transform group-hover:scale-110"
+              />
+             
             </Link>
             <p className="text-white/40 leading-relaxed font-medium text-sm">
               Architecting Businesses. Securing Legacies. Growing Infinitely. Your elite partner for UAE business formation and banking advisory since 2018.

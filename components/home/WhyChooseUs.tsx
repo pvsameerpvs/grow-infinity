@@ -62,6 +62,25 @@ const benefits = [
 ];
 
 export function WhyChooseUs() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
     <section className="relative py-20 lg:py-32 bg-gradient-to-b from-background via-foreground/[0.01] to-background overflow-hidden">
       {/* Background Accents */}
@@ -93,14 +112,18 @@ export function WhyChooseUs() {
         </motion.div>
 
         {/* Main Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16"
+        >
           {mainFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
               className="group relative overflow-hidden rounded-3xl"
             >
               {/* Background Image */}
@@ -119,9 +142,12 @@ export function WhyChooseUs() {
               <div className="glass-dark p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-500 h-full relative z-10 backdrop-blur-sm">
                 {/* Icon with Gradient Background */}
                 <div className="relative mb-6">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl`}>
+                  <motion.div 
+                    whileHover={{ rotate: 12, scale: 1.1 }}
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-2xl transition-all duration-500`}
+                  >
                     <feature.icon className="w-8 h-8 text-white" />
-                  </div>
+                  </motion.div>
                   {/* Stats Badge */}
                   <div className="absolute -top-2 -right-2 glass px-3 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md">
                     <span className="text-[10px] font-black text-white uppercase tracking-wider">
@@ -143,7 +169,7 @@ export function WhyChooseUs() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Additional Benefits */}
         <motion.div
@@ -171,12 +197,13 @@ export function WhyChooseUs() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
+                  whileHover={{ x: 5 }}
                   className="flex items-start gap-3 group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                     <benefit.icon className="w-4 h-4 text-primary" />
                   </div>
-                  <span className="text-sm font-bold text-foreground/70 group-hover:text-foreground transition-colors">
+                  <span className="text-sm font-bold text-foreground/70 group-hover:text-foreground transition-colors cursor-default">
                     {benefit.text}
                   </span>
                 </motion.div>
@@ -190,3 +217,4 @@ export function WhyChooseUs() {
     </section>
   );
 }
+
