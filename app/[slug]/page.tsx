@@ -49,6 +49,7 @@ export default async function Page({ params }: Props) {
       description={service.description}
       advantages={service.advantages}
       sections={service.sections}
+      image={service.image}
     />
   );
 }
