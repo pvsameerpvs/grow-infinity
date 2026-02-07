@@ -97,7 +97,8 @@ const ServicePage: React.FC<ServicePageProps> = ({
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover brightness-[0.45] contrast-[1.15] scale-110"
+            className="w-full h-full object-cover scale-110"
+            onError={(e) => console.log('Image failed to load:', image)}
           />
           {/* Advanced Mesh Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-background via-background/60 to-transparent" />
@@ -324,7 +325,6 @@ const ServicePage: React.FC<ServicePageProps> = ({
                           alt={section.title} 
                           className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                       </div>
                     </div>
                   </motion.div>

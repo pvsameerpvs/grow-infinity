@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // Vercel handles Next.js apps natively - no static export needed
-  trailingSlash: true,
+  trailingSlash: false,
 };
 
 export default nextConfig;
