@@ -19,7 +19,7 @@ export default function Home() {
       <Hero />
       <TrustBadges />
       <AboutSection/>
-      <Stats />
+      {/* <Stats /> */}
       <WhyChooseUs />
       <CoreServices />
       {/* <BankingAdvantage /> */}
