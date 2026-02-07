@@ -22,10 +22,10 @@ export default function Home() {
       <Stats />
       <WhyChooseUs />
       <CoreServices />
-      <BankingAdvantage />
+      {/* <BankingAdvantage /> */}
       <ProcessSteps />
       <GlobalPresence />
-      <SuccessStories />
+      {/* <SuccessStories /> */}
       <CTA />
     </div>
   );
