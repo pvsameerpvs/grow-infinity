@@ -317,7 +317,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                     transition={{ duration: 1.2 }}
                     className="flex-1 w-full"
                   >
-                    <div className="relative group p-3 glass rounded-[3rem] border border-foreground/5 shadow-xl">
+                    {/* <div className="relative group p-3 glass rounded-[3rem] border border-foreground/5 shadow-xl">
                       <div className="absolute inset-0 bg-primary/5 rounded-[3rem] blur-xl group-hover:bg-primary/10 transition-colors" />
                       <div className="relative rounded-[2.5rem] overflow-hidden aspect-video shadow-inner">
                         <img 
@@ -326,7 +326,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                           className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
                         />
                       </div>
-                    </div>
+                    </div> */}
                   </motion.div>
                 )}
               </div>
