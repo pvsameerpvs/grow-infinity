@@ -47,7 +47,7 @@ export default function OffshoreSolutions() {
       description: 'UAE\'s premier offshore jurisdiction offering complete privacy and tax neutrality.',
       features: ['Zero Tax', 'Full Privacy', 'Quick Setup', 'No Audit'],
       cost: 'AED 8,500',
-      image: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e03a?auto=format&fit=crop&q=80&w=1200"
+      image: "/services/offshore_category.jpg"
     },
     {
       name: 'JAFZA',
@@ -55,7 +55,7 @@ export default function OffshoreSolutions() {
       description: 'Established offshore jurisdiction with strong reputation and direct banking access.',
       features: ['Tax Exempt', 'Confidential', 'Banking Suport', 'Flexible'],
       cost: 'AED 12,000',
-      image: "https://images.unsplash.com/photo-1577705998148-ebad130f7a04?auto=format&fit=crop&q=80&w=1200"
+      image: "/services/offshore_category.jpg"
     }
   ];
 
@@ -104,7 +104,7 @@ export default function OffshoreSolutions() {
             >
               <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] border border-foreground/10 shadow-3xl group scale-x-[-1]">
                 <img 
-                  src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/offshore_category.jpg"
                   alt="Secure Asset"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[5s] brightness-110"
                 />

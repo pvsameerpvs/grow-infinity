@@ -66,7 +66,7 @@ export default function ComplianceSolutions() {
             >
               <div className="relative rounded-[4rem] overflow-hidden aspect-square border border-foreground/10 shadow-3xl group">
                 <img 
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/compliance_category.jpg"
                   alt="Legal Document"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[4s] brightness-105 contrast-110 saturate-[0.8]"
                 />

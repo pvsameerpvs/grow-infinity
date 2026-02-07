@@ -48,7 +48,7 @@ export default function FreeZoneSolutions() {
       specialization: 'Commodities & Trading',
       minCost: 'AED 15,000',
       features: ['Prime JLT Location', 'Banking Support', 'Elite Networking'],
-      image: "https://images.unsplash.com/photo-1577705998148-ebad130f7a04?auto=format&fit=crop&q=80&w=1200"
+      image: "/services/freezone_category.jpg"
     },
     {
       name: 'IFZA',
@@ -57,7 +57,7 @@ export default function FreeZoneSolutions() {
       specialization: 'E-commerce & Tech',
       minCost: 'AED 10,000',
       features: ['100% Remote Setup', 'Budget Excellence', 'Fast Track'],
-      image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1200"
+      image: "/services/freezone_category.jpg"
     },
     {
       name: 'DIFC',
@@ -66,7 +66,7 @@ export default function FreeZoneSolutions() {
       specialization: 'Financial Services',
       minCost: 'AED 35,000',
       features: ['Independent Law', 'Global Recognition', 'VC Ecosystem'],
-      image: "https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=1200"
+      image: "/services/freezone_category.jpg"
     }
   ];
 
@@ -115,7 +115,7 @@ export default function FreeZoneSolutions() {
             >
               <div className="relative rounded-[4rem] overflow-hidden aspect-video border border-foreground/10 shadow-3xl group">
                 <img 
-                  src="https://images.unsplash.com/photo-1582650625119-3a31f8a2d9b6?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/freezone_category.jpg"
                   alt="Dubai Tech Hub"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[5s] brightness-110"
                 />

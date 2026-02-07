@@ -16,9 +16,9 @@ export default function BankingSolutions() {
   ];
 
   const banks = [
-    { name: 'Emirates NBD', type: 'Local Giant', features: ['Best for Mainland', 'Digital Leader', 'Premier Support'], minDeposit: 'AED 25k', image: "https://images.unsplash.com/photo-1526304640581-d33a699a9a38?auto=format&fit=crop&q=80&w=1200" },
-    { name: 'Mashreq Bank', type: 'SME Leader', features: ['Trade Intensive', 'Quick Approvals', 'Vibrant Tech'], minDeposit: 'AED 20k', image: "https://images.unsplash.com/photo-1550565118-3d14293b9f33?auto=format&fit=crop&q=80&w=1200" },
-    { name: 'ADCB', type: 'Premium Choice', features: ['Corporate Focus', 'Multi-Currency', 'Global Reach'], minDeposit: 'AED 50k', image: "https://images.unsplash.com/photo-1554224155-1696413575a8?auto=format&fit=crop&q=80&w=1200" }
+    { name: 'Emirates NBD', type: 'Local Giant', features: ['Best for Mainland', 'Digital Leader', 'Premier Support'], minDeposit: 'AED 25k', image: "/services/banking_category.jpg" },
+    { name: 'Mashreq Bank', type: 'SME Leader', features: ['Trade Intensive', 'Quick Approvals', 'Vibrant Tech'], minDeposit: 'AED 20k', image: "/services/banking_category.jpg" },
+    { name: 'ADCB', type: 'Premium Choice', features: ['Corporate Focus', 'Multi-Currency', 'Global Reach'], minDeposit: 'AED 50k', image: "/services/banking_category.jpg" }
   ];
 
   return (
@@ -66,7 +66,7 @@ export default function BankingSolutions() {
             >
               <div className="relative rounded-[4rem] overflow-hidden aspect-square border border-foreground/10 shadow-3xl group">
                 <img 
-                  src="https://images.unsplash.com/photo-1550565118-3d14293b9f33?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/banking_category.jpg"
                   alt="Banking District"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[5s] brightness-110 saturate-[1.1] contrast-[1.1]"
                 />

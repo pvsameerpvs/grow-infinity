@@ -17,10 +17,15 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <Hero />
+      <TrustBadges />
       <AboutSection/>
+      <Stats />
       <WhyChooseUs />
       <CoreServices />
+      <BankingAdvantage />
       <ProcessSteps />
+      <GlobalPresence />
+      <SuccessStories />
       <CTA />
     </div>
   );

@@ -145,7 +145,7 @@ export default function MainlandSolutions() {
             >
               <div className="relative rounded-[4rem] overflow-hidden aspect-[4/5] border border-foreground/10 shadow-3xl group">
                 <img 
-                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/mainland_category.jpg"
                   alt="Dubai Mainland"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[4s]"
                 />
@@ -244,7 +244,7 @@ export default function MainlandSolutions() {
             >
               <div className="rounded-[4rem] overflow-hidden aspect-square border border-foreground/10 shadow-3xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/mainland_hero.png"
                   alt="Modern Office"
                   className="w-full h-full object-cover brightness-110 saturate-[1.2]"
                 />

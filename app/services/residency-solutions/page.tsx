@@ -75,7 +75,7 @@ export default function ResidencySolutions() {
             >
               <div className="relative rounded-[4rem] overflow-hidden aspect-[4/5] border border-foreground/10 shadow-3xl group">
                 <img 
-                  src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200"
+                  src="/services/residency_category.jpg"
                   alt="Dubai Lifestyle"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[6s] brightness-110"
                 />

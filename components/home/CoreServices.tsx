@@ -11,7 +11,7 @@ const services = [
     icon: Building2, 
     slug: 'mainland-company-formation', 
     desc: 'Full access to UAE local markets with 100% ownership and unlimited business activities.',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=1200',
+    image: '/service-mainland.png',
     badge: 'Most Popular'
   },
   { 
@@ -19,7 +19,7 @@ const services = [
     icon: Landmark, 
     slug: 'free-zone-company-setup', 
     desc: '100% tax-free environments for specialized industries with complete foreign ownership.',
-    image: 'https://images.unsplash.com/photo-1582650625119-3a31f8a2d9b6?auto=format&fit=crop&q=80&w=1200',
+    image: '/service-freezone.png',
     badge: '0% Tax'
   },
   { 
@@ -27,7 +27,7 @@ const services = [
     icon: Calculator, 
     slug: 'corporate-bank-account-uae', 
     desc: 'Pre-approved corporate accounts with top-tier UAE banks and seamless onboarding.',
-    image: 'https://images.unsplash.com/photo-1526304640581-d33a699a9a38?auto=format&fit=crop&q=80&w=1200',
+    image: '/service-banking.png',
     badge: 'Fast Track'
   },
   { 
@@ -35,7 +35,7 @@ const services = [
     icon: ShieldCheck, 
     slug: 'golden-visa-uae', 
     desc: 'Secure your 10-year residency and long-term security for you and your family.',
-    image: 'https://images.unsplash.com/photo-1508514177221-18d19f07ac68?auto=format&fit=crop&q=80&w=1200',
+    image: '/service-visa.png',
     badge: '10 Years'
   },
   { 
@@ -43,7 +43,7 @@ const services = [
     icon: Users2, 
     slug: 'corporate-tax-uae', 
     desc: 'Strategic compliance with the UAE\'s new 9% tax regime and expert advisory.',
-    image: 'https://images.unsplash.com/photo-1554224155-1696413575a8?auto=format&fit=crop&q=80&w=1200',
+    image: '/service-tax.png',
     badge: 'Compliance'
   },
   { 
@@ -51,7 +51,7 @@ const services = [
     icon: Globe, 
     slug: 'pro-services-uae', 
     desc: 'Hands-off government liaison for all your legal paperwork and documentation.',
-    image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200',
+    image: '/service-pro.png',
     badge: 'Full Support'
   },
 ];
