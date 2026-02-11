@@ -56,202 +56,199 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
-      
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16 lg:mb-24"
-        >
-          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-primary/10">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-xs font-black uppercase tracking-widest text-primary">About Grow Infinity</span>
-          </div>
-          <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase">
-            Architecting Your <span className="text-gradient-infinity">UAE Success</span>
-          </h2>
-          <p className="text-lg text-foreground/60 max-w-3xl mx-auto leading-relaxed">
-            We're not just business setup consultants—we're your strategic partners in building a legacy in the world's most dynamic business hub.
-          </p>
-        </motion.div>
-
-        {/* Story Section with Images */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
-          {/* Left: Images Grid */}
+    <section id="about" className="relative py-12 px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-[#f8f8f8] dark:bg-[#0c0c0c] border border-foreground/5">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
+        
+        <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
+          {/* Section Header */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 lg:mb-24"
           >
-            <div className="grid grid-cols-2 gap-4">
-              {/* Large Image */}
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                className="col-span-2 relative h-[300px] lg:h-[400px] rounded-3xl overflow-hidden group border border-white/10"
-              >
-                <img 
-                  src="/about-office.png" 
-                  alt="Grow Infinity Dubai Office" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <div className="text-white font-black text-sm uppercase tracking-wider">Dubai Office</div>
-                  <div className="text-white/80 text-xs">Premium Business District</div>
-                </div>
-              </motion.div>
-              
-              {/* Two Small Images */}
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
-              >
-                <img 
-                  src="/about-team.png" 
-                  alt="Expert Team" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="text-white font-black text-xs uppercase">Expert Team</div>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
-              >
-                <img 
-                  src="/about-dubai.png" 
-                  alt="Dubai Skyline" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="text-white font-black text-xs uppercase">UAE Hub</div>
-                </div>
-              </motion.div>
+            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-primary/10">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-black uppercase tracking-widest text-primary">About Grow Infinity</span>
             </div>
-            
-            {/* Floating Stats Card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ y: -5, scale: 1.05 }}
-              className="absolute -bottom-8 -right-8 glass p-6 rounded-2xl border border-primary/10 shadow-2xl hidden lg:block"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-foreground">9+ Years</div>
-                  <div className="text-xs text-foreground/60 font-bold">Industry Excellence</div>
-                </div>
-              </div>
-            </motion.div>
+            <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase">
+              Architecting Your <span className="text-gradient-infinity">UAE Success</span>
+            </h2>
+            <p className="text-lg text-foreground/60 max-w-3xl mx-auto leading-relaxed">
+              We're not just business setup consultants—we're your strategic partners in building a legacy in the world's most dynamic business hub.
+            </p>
           </motion.div>
 
-          {/* Right: Story Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h3 className="text-3xl lg:text-4xl font-black text-foreground mb-6 tracking-tight">
-              Your Gateway to <span className="text-primary">UAE Business Excellence</span>
-            </h3>
-            
-            <div className="space-y-4 mb-8">
-              <p className="text-foreground/70 leading-relaxed">
-                Since 2015, Grow Infinity has been the trusted partner for entrepreneurs and corporations seeking to establish their presence in the UAE. We've transformed the complex process of business setup into a streamlined, banking-first experience.
-              </p>
-              <p className="text-foreground/70 leading-relaxed">
-                Our expertise spans Mainland, Free Zone, and Offshore company formations, backed by strategic partnerships with 25+ leading UAE banks and all major free zones.
-              </p>
-            </div>
-
-            {/* Key Highlights */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {[
-                { label: 'Success Rate', value: '100%' },
-                { label: 'Avg. Setup Time', value: '7 Days' },
-                { label: 'Banking Partners', value: '25+' },
-                { label: 'Expert Advisors', value: '40+' },
-              ].map((item, index) => (
+          {/* Story Section with Images */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
+            {/* Left: Images Grid */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {/* Large Image */}
                 <motion.div 
-                  key={index} 
-                  whileHover={{ y: -5, borderColor: 'rgba(var(--primary-rgb), 0.3)' }}
-                  className="glass p-4 rounded-xl border border-foreground/5 transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  className="col-span-2 relative h-[300px] lg:h-[400px] rounded-3xl overflow-hidden group border border-white/10"
                 >
-                  <div className="text-2xl font-black text-primary mb-1">{item.value}</div>
-                  <div className="text-xs font-bold text-foreground/60 uppercase tracking-wider">{item.label}</div>
+                  <img 
+                    src="/about-office.png" 
+                    alt="Grow Infinity Dubai Office" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-6 left-6">
+                    <div className="text-white font-black text-sm uppercase tracking-wider">Dubai Office</div>
+                    <div className="text-white/80 text-xs">Premium Business District</div>
+                  </div>
+                </motion.div>
+                
+                {/* Two Small Images */}
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
+                >
+                  <img 
+                    src="/about-team.png" 
+                    alt="Expert Team" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-white font-black text-xs uppercase">Expert Team</div>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
+                >
+                  <img 
+                    src="/about-dubai.png" 
+                    alt="Dubai Skyline" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-white font-black text-xs uppercase">UAE Hub</div>
+                  </div>
+                </motion.div>
+              </div>
+              
+              {/* Floating Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{ y: -5, scale: 1.05 }}
+                className="absolute -bottom-8 -right-8 glass p-6 rounded-2xl border border-primary/10 shadow-2xl hidden lg:block"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-foreground">9+ Years</div>
+                    <div className="text-xs text-foreground/60 font-bold">Industry Excellence</div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right: Story Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl lg:text-4xl font-black text-foreground mb-6 tracking-tight">
+                Your Gateway to <span className="text-primary">UAE Business Excellence</span>
+              </h3>
+              
+              <div className="space-y-4 mb-8">
+                <p className="text-foreground/70 leading-relaxed">
+                  Since 2015, Grow Infinity has been the trusted partner for entrepreneurs and corporations seeking to establish their presence in the UAE. We've transformed the complex process of business setup into a streamlined, banking-first experience.
+                </p>
+                <p className="text-foreground/70 leading-relaxed">
+                  Our expertise spans Mainland, Free Zone, and Offshore company formations, backed by strategic partnerships with 25+ leading UAE banks and all major free zones.
+                </p>
+              </div>
+
+              {/* Key Highlights */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {[
+                  { label: 'Success Rate', value: '100%' },
+                  { label: 'Avg. Setup Time', value: '7 Days' },
+                  { label: 'Banking Partners', value: '25+' },
+                  { label: 'Expert Advisors', value: '40+' },
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index} 
+                    whileHover={{ y: -5, borderColor: 'rgba(var(--primary-rgb), 0.3)' }}
+                    className="glass p-4 rounded-xl border border-foreground/5 transition-colors"
+                  >
+                    <div className="text-2xl font-black text-primary mb-1">{item.value}</div>
+                    <div className="text-xs font-bold text-foreground/60 uppercase tracking-wider">{item.label}</div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <Link href="/about">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm transition-all duration-500 button-premium cursor-pointer"
+                >
+                  <span>Learn Our Story</span>
+                  <Award className="w-4 h-4" />
+                </motion.div>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Core Values */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <motion.h3 
+              variants={itemVariants}
+              className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
+            >
+              Our Core <span className="text-gradient-infinity">Values</span>
+            </motion.h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  variants={itemVariants}
+                  whileHover={{ y: -10, borderColor: 'rgba(var(--primary-rgb), 0.2)' }}
+                  className="glass p-6 rounded-2xl border border-foreground/5 transition-all duration-500 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <value.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-lg font-black text-foreground mb-2">{value.title}</h4>
+                  <p className="text-sm text-foreground/60 leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}
             </div>
-
-            <Link href="/about">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm transition-all duration-500 button-premium cursor-pointer"
-              >
-                <span>Learn Our Story</span>
-                <Award className="w-4 h-4" />
-              </motion.div>
-            </Link>
           </motion.div>
         </div>
-
-        {/* Core Values */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <motion.h3 
-            variants={itemVariants}
-            className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
-          >
-            Our Core <span className="text-gradient-infinity">Values</span>
-          </motion.h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                variants={itemVariants}
-                whileHover={{ y: -10, borderColor: 'rgba(var(--primary-rgb), 0.2)' }}
-                className="glass p-6 rounded-2xl border border-foreground/5 transition-all duration-500 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <value.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h4 className="text-lg font-black text-foreground mb-2">{value.title}</h4>
-                <p className="text-sm text-foreground/60 leading-relaxed">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Timeline - Our Journey */}
-
-        
-        
       </div>
     </section>
   );
