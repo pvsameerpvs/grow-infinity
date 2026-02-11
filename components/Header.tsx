@@ -34,6 +34,15 @@ const NAVIGATION = [
     name: 'Residency',
     category: 'Residency',
     items: SERVICES.filter(s => s.category === 'Residency')
+  },
+  {
+    name: 'Contact',
+    category: 'Contact',
+    items: [
+      { title: 'About Us', slug: '#about' },
+      { title: 'Contact Us', slug: 'contact' },
+      { title: 'Cost Calculator', slug: 'cost-calculator' }
+    ] as any
   }
 ];
 

@@ -56,7 +56,7 @@ export function AboutSection() {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section id="about" className="relative py-20 lg:py-32 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
@@ -249,136 +249,9 @@ export function AboutSection() {
         </motion.div>
 
         {/* Timeline - Our Journey */}
-        <div className="mb-20">
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
-          >
-            Our <span className="text-gradient-infinity">Journey</span>
-          </motion.h3>
-          
-          <div className="max-w-5xl mx-auto">
-            {/* Desktop Timeline */}
-            <div className="hidden md:block relative">
-              {/* Timeline Line */}
-              <motion.div 
-                initial={{ height: 0 }}
-                whileInView={{ height: '100%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5 }}
-                className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-gold to-primary -translate-x-1/2" 
-              />
-              
-              <div className="space-y-16">
-                {milestones.map((milestone, index) => (
-                  <motion.div
-                    key={milestone.year}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="relative"
-                  >
-                    <div className="flex items-center">
-                      {/* Left Side */}
-                      <div className="flex-1 flex justify-end pr-8">
-                        {index % 2 === 0 && (
-                          <div className="max-w-sm w-full">
-                            <motion.div 
-                              whileHover={{ scale: 1.02, x: -5 }}
-                              className="glass p-6 lg:p-8 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group text-right"
-                            >
-                              <div className="flex items-center gap-4 mb-4 justify-end">
-                                <div className="text-4xl lg:text-5xl font-black text-gradient-infinity">{milestone.year}</div>
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                  <CheckCircle className="w-6 h-6 text-primary" />
-                                </div>
-                              </div>
-                              <div className="text-base lg:text-lg font-bold text-foreground">{milestone.event}</div>
-                            </motion.div>
-                          </div>
-                        )}
-                      </div>
-                      
-                      {/* Center Dot */}
-                      <div className="relative z-10">
-                        <motion.div 
-                          whileHover={{ scale: 1.5 }}
-                          className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-gold border-4 border-background shadow-xl" 
-                        />
-                      </div>
-                      
-                      {/* Right Side */}
-                      <div className="flex-1 flex justify-start pl-8">
-                        {index % 2 === 1 && (
-                          <div className="max-w-sm w-full">
-                            <motion.div 
-                              whileHover={{ scale: 1.02, x: 5 }}
-                              className="glass p-6 lg:p-8 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 group text-left"
-                            >
-                              <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                                  <CheckCircle className="w-6 h-6 text-primary" />
-                                </div>
-                                <div className="text-4xl lg:text-5xl font-black text-gradient-infinity">{milestone.year}</div>
-                              </div>
-                              <div className="text-base lg:text-lg font-bold text-foreground">{milestone.event}</div>
-                            </motion.div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
 
-            {/* Mobile Timeline */}
-            <div className="md:hidden relative">
-              {/* Vertical Line */}
-              <motion.div 
-                initial={{ height: 0 }}
-                whileInView={{ height: '100%' }}
-                viewport={{ once: true }}
-                className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-gold to-primary" 
-              />
-              
-              <div className="space-y-8">
-                {milestones.map((milestone, index) => (
-                  <motion.div
-                    key={milestone.year}
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="relative pl-16"
-                  >
-                    {/* Dot */}
-                    <div className="absolute left-3 top-6 -translate-x-1/2">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-primary to-gold border-4 border-background shadow-lg" />
-                    </div>
-                    
-                    {/* Content Card */}
-                    <motion.div 
-                      whileHover={{ x: 5 }}
-                      className="glass p-6 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500"
-                    >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center">
-                          <CheckCircle className="w-5 h-5 text-primary" />
-                        </div>
-                        <div className="text-3xl font-black text-gradient-infinity">{milestone.year}</div>
-                      </div>
-                      <div className="text-sm font-bold text-foreground">{milestone.event}</div>
-                    </motion.div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        
+        
       </div>
     </section>
   );
