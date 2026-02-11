@@ -21,11 +21,6 @@ const NAVIGATION = [
     items: SERVICES.filter(s => s.category === 'Free Zone')
   },
   {
-    name: 'Offshore',
-    category: 'Offshore',
-    items: SERVICES.filter(s => s.category === 'Offshore')
-  },
-  {
     name: 'Banking',
     category: 'Banking',
     items: SERVICES.filter(s => s.category === 'Banking')

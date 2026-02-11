@@ -39,6 +39,7 @@ const Footer = () => {
               {[
                 { label: 'Mainland Formation', path: '/mainland-company-formation' },
                 { label: 'Free Zone Setup', path: '/free-zone-company-setup' },
+                { label: 'Offshore Formation', path: '/offshore-company-formation' },
                 { label: 'Banking Advisory', path: '/corporate-bank-account-uae' },
                 { label: 'Residency Solutions', path: '/golden-visa-uae' },
               ].map((link) => (
