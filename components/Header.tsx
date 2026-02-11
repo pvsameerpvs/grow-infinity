@@ -3,13 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Phone, Mail, Globe, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { SERVICES } from '@/constants/services';
 import { ThemeToggle } from './ThemeToggle';
 
 const NAVIGATION = [
-  // ... existing navigation remains same
   {
     name: 'Mainland',
     category: 'Mainland',
@@ -35,285 +34,184 @@ const NAVIGATION = [
     category: 'Residency',
     items: SERVICES.filter(s => s.category === 'Residency')
   },
-  {
-    name: 'Contact',
-    category: 'Contact',
-    items: [
-      { title: 'About Us', slug: '#about' },
-      { title: 'Contact Us', slug: 'contact' },
-      { title: 'Cost Calculator', slug: 'cost-calculator' }
-    ] as any
-  }
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  // Disable top bar as it's not in the target design
   return (
-    <>
-      {/* Top Bar */}
-      <div className="hidden lg:block bg-primary text-white py-2.5 text-[11px] font-bold tracking-wider uppercase border-b border-white/5">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-8">
-            <span className="flex items-center">
-              <Phone className="w-3.5 h-3.5 mr-2 text-gold-light" />
-              +971 4 XXX XXXX
-            </span>
-            <span className="flex items-center">
-              <Mail className="w-3.5 h-3.5 mr-2 text-gold-light" />
-              info@growinfinity.ae
-            </span>
+    <header className="fixed top-0 left-0 right-0 z-50 pt-6 px-4 sm:px-6 lg:px-8 pointer-events-none">
+      <div className="container mx-auto max-w-7xl pointer-events-auto">
+        <nav className="relative flex items-center justify-between bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-full px-4 py-2 shadow-sm border border-foreground/5 transition-all duration-300">
+          {/* Left: Navigation Group */}
+          <div className="hidden lg:flex items-center space-x-6">
+            {NAVIGATION.map((group) => (
+              <div
+                key={group.name}
+                className="relative group"
+                onMouseEnter={() => setActiveMenu(group.name)}
+                onMouseLeave={() => setActiveMenu(null)}
+              >
+                <button
+                  className={cn(
+                    "flex items-center text-[13px] font-medium tracking-tight transition-all py-2",
+                    activeMenu === group.name ? "text-primary" : "text-foreground/70 hover:text-foreground"
+                  )}
+                >
+                  {group.name}
+                  <ChevronDown className={cn(
+                    "w-3.5 h-3.5 ml-1 transition-transform duration-300 opacity-50",
+                    activeMenu === group.name ? "rotate-180" : ""
+                  )} />
+                </button>
+
+                {/* Mega Menu Dropdown */}
+                <AnimatePresence>
+                  {activeMenu === group.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 15, scale: 0.98 }}
+                      transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+                      className="absolute left-0 top-full pt-4 w-[280px]"
+                    >
+                      <div className="bg-background rounded-3xl shadow-xl p-4 border border-foreground/10 overflow-hidden">
+                        <div className="grid gap-y-1">
+                          {group.items.map((item) => (
+                            <Link
+                              key={item.slug}
+                              href={`/${item.slug}`}
+                              onClick={() => setActiveMenu(null)}
+                              className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] transition-all"
+                            >
+                              <div className="text-[13px] text-foreground/60 group-hover/link:text-primary font-medium transition-colors">
+                                {item.title}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
           </div>
-          <div className="flex items-center space-x-8">
-            <span className="flex items-center">
-              <Globe className="w-3.5 h-3.5 mr-2 text-gold-light" />
-              Dubai International Financial Centre
-            </span>
-            <Link href="/cost-calculator" className="text-gold-light hover:text-white transition-colors flex items-center">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold-light mr-2 animate-pulse" />
+
+          {/* Center: Logo */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center group">
+            <div className="relative h-8 w-auto">
+              <img 
+                src="/logo-black.png" 
+                alt="Grow Infinity" 
+                className="h-full w-auto object-contain dark:hidden"
+              />
+              <img 
+                src="/logo-white.png" 
+                alt="Grow Infinity" 
+                className="h-full w-auto object-contain hidden dark:block"
+              />
+            </div>
+          </Link>
+
+          {/* Right: Actions Group */}
+          <div className="flex items-center space-x-2">
+            <div className="hidden sm:flex items-center space-x-1 pr-2">
+              <ThemeToggle />
+            </div>
+            
+           
+            
+            <Link
+              href="/cost-calculator"
+              className="bg-primary text-white px-6 py-2.5 rounded-full text-[13px] font-bold tracking-tight transition-all active:scale-95 shadow-lg shadow-primary/20 button-premium"
+            >
               Cost Calculator
             </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-foreground p-2 rounded-full hover:bg-foreground/5 transition-colors"
+              onClick={() => setIsOpen(true)}
+            >
+              <Menu className="w-5 h-5" />
+            </button>
           </div>
-        </div>
+        </nav>
       </div>
 
-      {/* Main Header */}
-      <header
-        className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-500",
-          scrolled 
-            ? "bg-background/80 backdrop-blur-xl shadow-2xl shadow-primary/5 py-3 border-b border-primary/5" 
-            : "bg-transparent py-6"
-        )}
-      >
-        <div className="container mx-auto px-4">
-          <nav className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="relative h-12 w-auto">
-                {/* Light theme logo (black) */}
-                <img 
-                  src="/logo-black.png" 
-                  alt="Grow Infinity" 
-                  className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300 dark:hidden"
-                />
-                {/* Dark theme logo (white) */}
-                <img 
-                  src="/logo-white.png" 
-                  alt="Grow Infinity" 
-                  className="h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300 hidden dark:block"
-                />
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-7">
-              {NAVIGATION.map((group) => (
-                <div
-                  key={group.name}
-                  className="relative group"
-                  onMouseEnter={() => setActiveMenu(group.name)}
-                  onMouseLeave={() => setActiveMenu(null)}
-                >
-                  <button
-                    className={cn(
-                      "flex items-center text-xs font-black uppercase tracking-[0.1em] transition-all py-2",
-                      activeMenu === group.name ? "text-primary" : "text-foreground/70 hover:text-primary"
-                    )}
-                  >
-                    {group.name}
-                    <ChevronDown className={cn(
-                      "w-3.5 h-3.5 ml-1.5 transition-transform duration-300",
-                      activeMenu === group.name ? "rotate-180" : ""
-                    )} />
-                  </button>
-
-                  {/* Mega Menu Dropdown */}
-                  <AnimatePresence>
-                    {activeMenu === group.name && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 15, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 15, scale: 0.98 }}
-                        transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                        className="absolute left-1/2 -translate-x-1/2 top-full pt-4 w-[650px]"
-                      >
-                        <div className="bg-background rounded-[2rem] shadow-2xl p-8 grid grid-cols-2 gap-8 border border-foreground/10 overflow-hidden relative">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full" />
-                          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gold/5 blur-2xl rounded-full" />
-                          
-                          <div className="col-span-1 space-y-6 relative z-10">
-                            <div className="flex items-center space-x-2">
-                              <div className="w-1.5 h-6 bg-primary rounded-full" />
-                              <h4 className="text-sm font-black text-foreground uppercase tracking-widest">
-                                {group.name} Solutions
-                              </h4>
-                            </div>
-                            <div className="grid gap-y-3">
-                              {group.items.map((item) => (
-                                <Link
-                                  key={item.slug}
-                                  href={`/${item.slug}`}
-                                  onClick={() => setActiveMenu(null)}
-                                  className="group/link flex items-center text-[13px] text-foreground/60 hover:text-primary transition-all font-bold"
-                                >
-                                  <div className="w-2 h-2 rounded-full border border-primary/20 group-hover/link:bg-primary group-hover/link:scale-125 mr-3 transition-all" />
-                                  {item.title}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                          <div className="col-span-1 bg-primary/[0.03] dark:bg-primary/[0.08] rounded-3xl p-7 flex flex-col justify-between border border-primary/5 relative z-10">
-                            <div>
-                              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                                <Globe className="w-5 h-5 text-primary" />
-                              </div>
-                              <h5 className="text-foreground font-black mb-3 uppercase text-[11px] tracking-widest">Strategic Advisory</h5>
-                              <p className="text-[12px] text-foreground/50 leading-relaxed font-medium">
-                                Our banking-first methodology ensures your {group.name.toLowerCase()} entity is operational with a corporate IBAN in record time.
-                              </p>
-                            </div>
-                            <Link 
-                              href="/cost-calculator" 
-                              onClick={() => setActiveMenu(null)}
-                              className="inline-flex items-center text-xs font-black text-primary hover:text-primary-dark transition-all mt-6 group/btn"
-                            >
-                              START COST CALCULATION
-                              <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                            </Link>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-
-              <div className="flex items-center space-x-4 pl-4 border-l border-foreground/10">
-                <ThemeToggle />
-                <Link
-                  href="/cost-calculator"
-                  className="bg-primary hover:bg-primary-dark text-white px-7 py-3 rounded-xl text-xs font-black uppercase tracking-widest button-premium shadow-xl shadow-primary/20 transition-all active:scale-95"
-                >
-                  Get A Quote
-                </Link>
-              </div>
-            </div>
-
-            {/* Mobile Menu Button + Toggle */}
-            <div className="flex items-center space-x-3 lg:hidden">
-              <ThemeToggle />
-              <button
-                className="text-foreground p-2 rounded-xl bg-primary/5"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </nav>
-        </div>
-
-      </header>
-
-      {/* Mobile Sidebar Menu - Moved outside header to avoid backdrop-blur containment issues */}
+      {/* Mobile Menu Sidebar */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] lg:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
               onClick={() => setIsOpen(false)}
             />
             
-            {/* Sidebar */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 bottom-0 w-[85%] max-w-sm z-[110] lg:hidden bg-background shadow-2xl"
+              className="fixed right-4 top-4 bottom-4 w-[calc(100%-2rem)] max-w-sm z-[110] bg-background rounded-3xl shadow-2xl p-6 overflow-y-auto"
             >
-              <div className="flex flex-col h-full overflow-y-auto">
-                {/* Sidebar Header */}
-                <div className="sticky top-0 bg-background/95 backdrop-blur-lg border-b border-foreground/10 px-6 py-5 flex items-center justify-between z-10">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-1.5 h-8 bg-primary rounded-full" />
-                    <span className="text-lg font-black tracking-tight uppercase">Menu</span>
+              <div className="flex items-center justify-between mb-8">
+                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">Navigation</span>
+                <button
+                  className="p-2 rounded-full bg-foreground/5"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="space-y-6">
+                {NAVIGATION.map((group) => (
+                  <div key={group.name} className="space-y-3">
+                    <h4 className="text-[11px] font-black text-foreground/20 uppercase tracking-[0.2em]">{group.name}</h4>
+                    <div className="grid gap-2">
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.slug}
+                          href={`/${item.slug}`}
+                          className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary py-1"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                  <button
-                    className="text-foreground p-2.5 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors"
+                ))}
+                
+                <div className="pt-6 border-t border-foreground/5 space-y-3">
+                  <Link
+                    href="/cost-calculator"
+                    className="flex items-center justify-center bg-foreground/5 text-foreground py-4 rounded-2xl font-bold text-sm"
                     onClick={() => setIsOpen(false)}
                   >
-                    <X className="w-5 h-5" />
-                  </button>
-                </div>
-
-                {/* Sidebar Content */}
-                <div className="flex flex-col space-y-6 px-6 py-6 pb-20">
-                  {NAVIGATION.map((group) => (
-                    <div key={group.name} className="space-y-4">
-                      <div className="flex items-center space-x-2.5">
-                        <div className="w-1 h-5 bg-gold rounded-full" />
-                        <h4 className="text-[11px] font-black text-gold uppercase tracking-[0.15em]">{group.name} Solutions</h4>
-                      </div>
-                      <div className="flex flex-col space-y-3 pl-3.5 border-l-2 border-primary/10">
-                        {group.items.map((item) => (
-                          <Link
-                            key={item.slug}
-                            href={`/${item.slug}`}
-                            className="text-sm text-foreground/70 font-bold hover:text-primary transition-colors flex items-center group"
-                            onClick={() => setIsOpen(false)}
-                          >
-                            <ArrowRight className="w-3.5 h-3.5 mr-2 opacity-0 group-hover:opacity-100 -ml-5 group-hover:ml-0 transition-all" />
-                            {item.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                  
-                  {/* CTA Section */}
-                  <div className="pt-4 space-y-4">
-                    <Link
-                      href="/cost-calculator"
-                      className="w-full bg-primary hover:bg-primary-dark text-white py-4 rounded-xl flex items-center justify-center font-black text-sm uppercase tracking-wider shadow-xl shadow-primary/20 transition-all active:scale-95"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Globe className="w-4 h-4 mr-2" />
-                      Free Consultation
-                    </Link>
-                    
-                    {/* Contact Info */}
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="p-4 bg-primary/5 rounded-xl flex flex-col items-center border border-primary/10">
-                        <Phone className="w-4 h-4 text-primary mb-2" />
-                        <span className="text-[9px] font-black opacity-60 uppercase tracking-wider">Call Us</span>
-                      </div>
-                      <div className="p-4 bg-primary/5 rounded-xl flex flex-col items-center border border-primary/10">
-                        <Mail className="w-4 h-4 text-primary mb-2" />
-                        <span className="text-[9px] font-black opacity-60 uppercase tracking-wider">Email</span>
-                      </div>
-                    </div>
-                  </div>
+                    Cost Calculator
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="flex items-center justify-center bg-black dark:bg-white text-white dark:text-black py-4 rounded-2xl font-bold text-sm"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get in touch
+                  </Link>
                 </div>
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
-    </>
+    </header>
   );
 };
 

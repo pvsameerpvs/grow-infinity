@@ -2,155 +2,112 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-92px)] lg:min-h-[calc(100vh-129px)] flex items-center justify-center overflow-hidden">
-      {/* Cinematic Video Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/hro-vid.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Light Themed Overlays */}
-        <div className="absolute inset-0 bg-background/30 dark:bg-black/40 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent dark:from-background dark:via-background/60" />
-      </div>
+    <section className="relative min-h-[90vh] lg:h-screen pt-[120px] pb-12 px-4 sm:px-6 lg:px-8 bg-[#f5f5f5] dark:bg-[#0a0a0a]">
+      {/* Main Rounded Hero Card */}
+      <div className="relative h-full w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/hero-section.jpg" 
+            alt="Dubai Luxury Business Environment" 
+            className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-[3s] ease-out"
+          />
+          {/* Subtle Artistic Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
+        </div>
 
-      {/* Main Content - Centered */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+        {/* Content Container */}
+        <div className="relative z-10 h-full flex flex-col lg:flex-row items-end lg:items-center justify-between p-8 sm:p-12 lg:p-20">
+          
+          {/* Left: Dramatic Typography */}
+          <div className="flex flex-col space-y-2 mb-12 lg:mb-0">
+            <motion.h1 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="font-cormorant text-[15vw] sm:text-[12vw] lg:text-[10rem] text-white leading-none italic font-light tracking-tight drop-shadow-2xl"
+            >
+              Dubai
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="flex items-center space-x-4 pl-2"
+            >
+              <div className="h-[1px] w-12 bg-white/40" />
+              <p className="font-sans text-white/90 uppercase tracking-[0.4em] text-[10px] sm:text-sm font-bold">
+                Elite Corporate Legacy
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right: Floating Info Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-md bg-white/10 dark:bg-black/20 backdrop-blur-3xl border border-white/20 rounded-[2.5rem] p-8 sm:p-10 shadow-2xl relative overflow-hidden group/card"
           >
-            {/* Main Heading with Bullet Shoot Effect */}
-            <h1 className="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-foreground mb-6 sm:mb-8 lg:mb-10 leading-[1.1] tracking-tight uppercase">
-              {/* First Line: Architecting Businesses */}
-              <motion.span 
-                className="block mb-2"
-                initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="inline-block relative">
-                  Architecting
-                  {/* Speed lines effect */}
-                  <motion.span
-                    className="absolute -left-20 top-1/2 -translate-y-1/2 w-16 h-0.5 bg-primary"
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    animate={{ scaleX: 1, opacity: [0, 1, 0] }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                  />
-                  <motion.span
-                    className="absolute -left-16 top-1/3 -translate-y-1/2 w-12 h-0.5 bg-primary/60"
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    animate={{ scaleX: 1, opacity: [0, 1, 0] }}
-                    transition={{ duration: 0.4, delay: 0.15 }}
-                  />
-                </span>{' '}
-                
-                <motion.span 
-                  className="text-gradient-infinity  inline-block relative px-2"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  Businesses
-                  {/* Circular impact effect */}
-                  <motion.span
-                    className="absolute inset-0 border-2 border-primary rounded-full"
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: [0.8, 1.2, 1.5], opacity: [0.6, 0.3, 0] }}
-                    transition={{ duration: 1, delay: 0.4, repeat: Infinity, repeatDelay: 2 }}
-                  />
-                </motion.span>.
-              </motion.span>
-              
-              {/* Second Line: Securing Legacies */}
-              <motion.span 
-                className="block"
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="relative inline-block">
-                  Securing
-                  <motion.span 
-                    initial={{ width: 0 }}
-                    animate={{ width: '100%' }}
-                    transition={{ delay: 1, duration: 1.5 }}
-                    className="absolute -bottom-1 sm:-bottom-2 left-0 h-2 sm:h-3 bg-gold/20 -z-10" 
-                  />
-                  {/* Speed lines from right */}
-                  <motion.span
-                    className="absolute -right-20 top-1/2 -translate-y-1/2 w-16 h-0.5 bg-gold"
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    animate={{ scaleX: 1, opacity: [0, 1, 0] }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                  />
-                  <motion.span
-                    className="absolute -right-16 top-2/3 -translate-y-1/2 w-12 h-0.5 bg-gold/60"
-                    initial={{ scaleX: 0, opacity: 0 }}
-                    animate={{ scaleX: 1, opacity: [0, 1, 0] }}
-                    transition={{ duration: 0.4, delay: 0.65 }}
-                  />
-                </span>{' '}
-                
-                <motion.span
-                  className="inline-block relative"
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  Legacies
-                  {/* Bullet impact dots */}
-                  <motion.span
-                    className="absolute -top-2 -right-2 w-2 h-2 bg-primary rounded-full"
-                    animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                  />
-                  <motion.span
-                    className="absolute -bottom-2 -left-2 w-2 h-2 bg-gold rounded-full"
-                    animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
-                  />
-                </motion.span>.
-              </motion.span>
-            </h1>
-            
-            {/* Description */}
-            <p className="text-sm sm:text-base lg:text-lg text-foreground/60 mb-8 sm:mb-10 lg:mb-12 max-w-2xl mx-auto leading-relaxed font-semibold px-4">
-              Elite, banking-first business setup solutions for global visionaries demanding absolute precision, speed, and UAE market access.
-            </p>
+            {/* Card Header */}
+            <h2 className="font-plus-jakarta text-2xl sm:text-3xl text-white font-bold mb-6 tracking-tight">
+              Strategic Advisory
+            </h2>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center px-4">
-              <Link
-                href="/cost-calculator"
-                className="w-full sm:w-auto px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 bg-primary hover:bg-primary-dark text-white font-black rounded-lg lg:rounded-xl text-xs sm:text-sm lg:text-base transition-all duration-500 flex items-center justify-center group button-premium shadow-xl hover:shadow-2xl hover:shadow-primary/30"
-              >
-                START YOUR SETUP
-                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform w-3.5 sm:w-4 lg:w-5 h-3.5 sm:h-4 lg:h-5" />
-              </Link>
-              <Link
-                href="#services"
-                className="w-full sm:w-auto px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 glass hover:bg-foreground/5 text-foreground font-black rounded-lg lg:rounded-xl text-xs sm:text-sm lg:text-base transition-all duration-500 border border-foreground/10 flex items-center justify-center group"
-              >
-                OUR SOLUTIONS
-                <div className="ml-2 w-1.5 h-1.5 rounded-full bg-gold group-hover:scale-150 transition-transform" />
-              </Link>
+            {/* Content Body - User's Content preserved */}
+            <div className="space-y-6 mb-10">
+              <div className="flex flex-col space-y-4">
+                <p className="text-white/80 text-[15px] sm:text-[16px] leading-relaxed font-medium">
+                  Elite, banking-first business setup solutions for global visionaries demanding absolute precision, speed, and UAE market access.
+                </p>
+                
+                <div className="pt-4 space-y-3.5">
+                  <div className="flex items-center space-x-3 text-white/60">
+                    <MapPin className="w-4 h-4 text-white/40" />
+                    <span className="text-[13px]">DIFC, Infinity Plaza, Dubai</span>
+                  </div>
+                  <div className="flex items-center space-x-3 text-white/60">
+                    <Phone className="w-4 h-4 text-white/40" />
+                    <span className="text-[13px]">+971 4 XXX XXXX</span>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* Pill CTA Button */}
+            <Link 
+              href="/cost-calculator" 
+              className="w-full bg-primary text-white py-4.5 rounded-full flex items-center justify-center font-bold text-[15px] group/btn hover:bg-primary-dark transition-all duration-500 shadow-xl shadow-primary/20 button-premium"
+            >
+              Start Your Setup
+              <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
+            </Link>
+
+            {/* Subtle card glow */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/5 blur-[80px] rounded-full group-hover/card:bg-white/10 transition-colors" />
           </motion.div>
+
+        </div>
+
+        {/* Hero Section Labels (User's Branding preserved in decorative way) */}
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 flex items-center space-x-12 hidden lg:flex">
+          {["Architecting", "Businesses", "Legacies"].map((label, idx) => (
+            <motion.span
+              key={label}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.7 }}
+              transition={{ delay: 1.5 + (idx * 0.2) }}
+              className="text-primary text-[10px] uppercase tracking-[0.6em] font-black"
+            >
+              {label}
+            </motion.span>
+          ))}
         </div>
       </div>
     </section>

@@ -182,3 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-oswald), ui-sans-serif, system-ui;
   font-optical-sizing: auto;
 }
+
+.font-cormorant {
+  font-family: var(--font-cormorant), serif;
+}

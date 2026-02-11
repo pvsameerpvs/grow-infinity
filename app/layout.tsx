@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, Merriweather_Sans, Oswald } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, Merriweather_Sans, Oswald, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -27,6 +27,13 @@ const oswald = Oswald({
   variable: '--font-oswald',
 });
 
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-cormorant',
+  style: ['normal', 'italic'],
+});
+
 export const metadata: Metadata = {
   title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
   description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
@@ -45,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${plusJakarta.variable} ${merriweatherSans.variable} ${oswald.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} ${merriweatherSans.variable} ${oswald.variable} ${cormorant.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />
           <main>{children}</main>
