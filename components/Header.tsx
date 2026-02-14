@@ -275,10 +275,8 @@ const Header = () => {
           </div>
 
           {/* Right: Actions Group */}
-          <div className="flex items-center space-x-2">
-            <div className="hidden sm:flex items-center space-x-1 pr-2">
-              <ThemeToggle />
-            </div>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <ThemeToggle />
             
             {/* Desktop Only Button */}
             <Link
