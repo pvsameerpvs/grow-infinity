@@ -131,7 +131,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-6 px-4 sm:px-6 lg:px-8 pointer-events-none">
       <div className="container mx-auto max-w-7xl pointer-events-auto">
-        <nav className="relative flex items-center justify-between bg-white/95 dark:bg-black/95 backdrop-blur-md rounded-full px-4 py-2 shadow-sm border border-foreground/5 transition-all duration-300">
+        <nav className="relative flex items-center justify-between bg-white/95 dark:bg-black/95 premium-dark-nav backdrop-blur-md rounded-full px-4 py-2 shadow-sm border border-foreground/5 transition-all duration-300">
           {/* Left: Navigation Group */}
           <div className="hidden lg:flex items-center space-x-6">
             {NAVIGATION.map((group) => (
@@ -148,10 +148,10 @@ const Header = () => {
                   <button
                     className={cn(
                       "flex items-center text-[13px] font-medium tracking-tight transition-all py-2 outline-none",
-                      activeMenu === group.name ? "text-primary" : "text-foreground/70 hover:text-foreground"
+                      activeMenu === group.name ? "text-primary dark:text-white" : "text-foreground/70 hover:text-foreground dark:text-white/80 dark:hover:text-white"
                     )}
                   >
-                    {group.name}
+                    <span className={cn(activeMenu === group.name ? "dark:text-white" : "")}>{group.name}</span>
                     <ChevronDown className={cn(
                       "w-3.5 h-3.5 ml-1 transition-transform duration-300 opacity-50",
                       activeMenu === group.name ? "rotate-180" : ""
@@ -162,7 +162,7 @@ const Header = () => {
                     href={'slug' in group ? (group as any).slug : '#'}
                     className={cn(
                       "flex items-center text-[13px] font-medium tracking-tight transition-all py-2",
-                      "text-foreground/70 hover:text-foreground"
+                      "text-foreground/70 hover:text-foreground dark:text-white/80 dark:hover:text-white"
                     )}
                   >
                     {group.name}
@@ -179,7 +179,7 @@ const Header = () => {
                       transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                       className="absolute left-0 top-full pt-4 w-[280px]"
                     >
-                      <div className="bg-background rounded-3xl shadow-xl p-4 border border-foreground/10 overflow-visible">
+                      <div className="bg-background dark:bg-black premium-dark-nav rounded-3xl shadow-xl p-4 border border-foreground/10 dark:border-white/10 overflow-visible dark:backdrop-blur-xl">
                         <div className="grid gap-y-1">
                           {group.items.map((item: any) => (
                             <div key={item.title} className="relative group/item">
@@ -192,7 +192,7 @@ const Header = () => {
                                   <button
                                     className={cn(
                                       "w-full flex items-center justify-between px-4 py-3 rounded-2xl transition-all",
-                                      activeSubMenu === item.title ? "bg-foreground/[0.03] text-primary" : "text-foreground/60 hover:bg-foreground/[0.03] hover:text-primary"
+                                      activeSubMenu === item.title ? "bg-foreground/[0.03] dark:bg-white/10 text-primary dark:text-white" : "text-foreground/60 hover:bg-foreground/[0.03] dark:text-white/60 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white"
                                     )}
                                   >
                                     <span className="text-[13px] font-medium">{item.title}</span>
@@ -211,7 +211,7 @@ const Header = () => {
                                         exit={{ opacity: 0, x: 10 }}
                                         className="absolute left-full top-0 ml-2 w-[220px]"
                                       >
-                                        <div className="bg-background rounded-2xl shadow-xl p-3 border border-foreground/10">
+                                        <div className="bg-background dark:bg-black premium-dark-nav rounded-2xl shadow-xl p-3 border border-foreground/10 dark:border-white/10 dark:backdrop-blur-xl">
                                           <div className="grid gap-y-1">
                                             {item.children.map((child: any) => (
                                               <Link
@@ -221,7 +221,7 @@ const Header = () => {
                                                   setActiveMenu(null);
                                                   setActiveSubMenu(null);
                                                 }}
-                                                className="block px-4 py-2 rounded-xl text-[12px] text-foreground/60 hover:bg-foreground/[0.03] hover:text-primary transition-all"
+                                                className="block px-4 py-2 rounded-xl text-[12px] text-foreground/60 hover:bg-foreground/[0.03] dark:text-white/60 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white transition-all"
                                               >
                                                 {child.title}
                                               </Link>
@@ -236,9 +236,9 @@ const Header = () => {
                                 <Link
                                   href={`/${item.slug}`}
                                   onClick={() => setActiveMenu(null)}
-                                  className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] transition-all"
+                                  className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] dark:hover:bg-white/5 transition-all"
                                 >
-                                  <div className="text-[13px] text-foreground/60 group-hover/link:text-primary font-medium transition-colors">
+                                  <div className="text-[13px] text-foreground/60 dark:text-white/60 group-hover/link:text-primary dark:group-hover/link:text-white font-medium transition-colors">
                                     {item.title}
                                   </div>
                                 </Link>
@@ -311,34 +311,34 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-4 top-4 bottom-4 w-[calc(100%-2rem)] max-w-sm z-[110] bg-background rounded-3xl shadow-2xl p-6 overflow-y-auto"
+              className="fixed right-4 top-4 bottom-4 w-[calc(100%-2rem)] max-w-sm z-[110] bg-background dark:bg-black premium-dark-nav rounded-3xl shadow-2xl p-6 overflow-y-auto border border-white/10 dark:backdrop-blur-xl"
             >
               <div className="flex items-center justify-between mb-8">
-                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40">Navigation</span>
+                <span className="text-sm font-bold uppercase tracking-widest text-foreground/40 dark:text-white/40">Navigation</span>
                 <button
-                  className="p-2 rounded-full bg-foreground/5"
+                  className="p-2 rounded-full bg-foreground/5 dark:bg-white/10"
                   onClick={() => setIsOpen(false)}
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-5 h-5 text-foreground dark:text-white" />
                 </button>
               </div>
 
               <div className="space-y-6">
                 {NAVIGATION.map((group) => (
                   <div key={group.name} className="space-y-3">
-                    <h4 className="text-[11px] font-black text-foreground/20 uppercase tracking-[0.2em]">{group.name}</h4>
+                    <h4 className="text-[11px] font-black text-foreground/20 dark:text-white/20 uppercase tracking-[0.2em]">{group.name}</h4>
                     <div className="grid gap-2">
                       {group.items ? group.items.map((item: any) => (
                         <div key={item.title} className="space-y-2">
                           {item.isSubMenu ? (
                             <>
-                              <div className="text-xs font-bold text-foreground/40 px-1 pt-2">{item.title}</div>
+                              <div className="text-xs font-bold text-foreground/40 dark:text-white/40 px-1 pt-2">{item.title}</div>
                               <div className="grid gap-2 pl-3 border-l border-foreground/5 ml-1">
                                 {item.children.map((child: any) => (
                                   <Link
                                     key={child.slug}
                                     href={`/${child.slug}`}
-                                    className="text-sm font-semibold text-foreground/70 hover:text-primary py-1"
+                                    className="text-sm font-semibold text-foreground/70 dark:text-white/70 hover:text-primary dark:hover:text-white py-1"
                                     onClick={() => setIsOpen(false)}
                                   >
                                     {child.title}
@@ -349,7 +349,7 @@ const Header = () => {
                           ) : (
                             <Link
                               href={`/${item.slug}`}
-                              className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary py-1"
+                              className="flex items-center text-sm font-semibold text-foreground/70 dark:text-white/70 hover:text-primary dark:hover:text-white py-1"
                               onClick={() => setIsOpen(false)}
                             >
                               {item.title}
@@ -359,7 +359,7 @@ const Header = () => {
                       )) : (
                         <Link
                           href={'slug' in group ? (group as any).slug : '#'}
-                          className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary py-1"
+                          className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary dark:hover:text-white py-1"
                           onClick={() => setIsOpen(false)}
                         >
                           {group.name}
@@ -372,7 +372,7 @@ const Header = () => {
                 <div className="pt-6 border-t border-foreground/5 space-y-3">
                   <Link
                     href="/cost-calculator"
-                    className="flex items-center justify-center bg-foreground/5 text-foreground py-4 rounded-2xl font-bold text-sm"
+                    className="flex items-center justify-center bg-foreground/5 dark:bg-white/10 text-foreground dark:text-white py-4 rounded-2xl font-bold text-sm"
                     onClick={() => setIsOpen(false)}
                   >
                     Cost Calculator
