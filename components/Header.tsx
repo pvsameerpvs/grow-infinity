@@ -127,148 +127,152 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
+  const [mobileExpandedGroup, setMobileExpandedGroup] = useState<string | null>(null);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-6 px-4 sm:px-6 lg:px-8 pointer-events-none">
       <div className="container mx-auto max-w-7xl pointer-events-auto">
         <nav className="relative flex items-center justify-between bg-white/95 dark:bg-black/95 premium-dark-nav backdrop-blur-md rounded-full px-4 py-2 shadow-sm border border-foreground/5 transition-all duration-300">
-          {/* Left: Navigation Group */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {NAVIGATION.map((group) => (
-              <div
-                key={group.name}
-                className="relative group"
-                onMouseEnter={() => setActiveMenu(group.name)}
-                onMouseLeave={() => {
-                  setActiveMenu(null);
-                  setActiveSubMenu(null);
-                }}
-              >
-                {group.items ? (
-                  <button
-                    className={cn(
-                      "flex items-center text-[13px] font-medium tracking-tight transition-all py-2 outline-none",
-                      activeMenu === group.name ? "text-primary dark:text-white" : "text-foreground/70 hover:text-foreground dark:text-white/80 dark:hover:text-white"
-                    )}
-                  >
-                    <span className={cn(activeMenu === group.name ? "dark:text-white" : "")}>{group.name}</span>
-                    <ChevronDown className={cn(
-                      "w-3.5 h-3.5 ml-1 transition-transform duration-300 opacity-50",
-                      activeMenu === group.name ? "rotate-180" : ""
-                    )} />
-                  </button>
-                ) : (
-                  <Link
-                    href={'slug' in group ? (group as any).slug : '#'}
-                    className={cn(
-                      "flex items-center text-[13px] font-medium tracking-tight transition-all py-2",
-                      "text-foreground/70 hover:text-foreground dark:text-white/80 dark:hover:text-white"
-                    )}
-                  >
-                    {group.name}
-                  </Link>
-                )}
-
-                {/* Mega Menu Dropdown */}
-                <AnimatePresence>
-                  {activeMenu === group.name && group.items && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 15, scale: 0.98 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 15, scale: 0.98 }}
-                      transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                      className="absolute left-0 top-full pt-4 w-[280px]"
+          {/* Mobile Layout: Logo Left | Desktop Layout: Nav Left */}
+          <div className="flex items-center">
+            {/* Desktop Navigation Group */}
+            <div className="hidden lg:flex items-center space-x-6">
+              {NAVIGATION.map((group) => (
+                <div
+                  key={group.name}
+                  className="relative group"
+                  onMouseEnter={() => setActiveMenu(group.name)}
+                  onMouseLeave={() => {
+                    setActiveMenu(null);
+                    setActiveSubMenu(null);
+                  }}
+                >
+                  {group.items ? (
+                    <button
+                      className={cn(
+                        "flex items-center text-[13px] font-medium tracking-tight transition-all py-2 outline-none",
+                        activeMenu === group.name ? "text-primary dark:text-white" : "text-foreground/70 hover:text-foreground dark:text-white/80 dark:hover:text-white"
+                      )}
                     >
-                      <div className="bg-background dark:bg-black premium-dark-nav rounded-3xl shadow-xl p-4 border border-foreground/10 dark:border-white/10 overflow-visible dark:backdrop-blur-xl">
-                        <div className="grid gap-y-1">
-                          {group.items.map((item: any) => (
-                            <div key={item.title} className="relative group/item">
-                              {item.isSubMenu ? (
-                                <div
-                                  onMouseEnter={() => setActiveSubMenu(item.title)}
-                                  onMouseLeave={() => setActiveSubMenu(null)}
-                                  className="relative"
-                                >
-                                  <button
-                                    className={cn(
-                                      "w-full flex items-center justify-between px-4 py-3 rounded-2xl transition-all",
-                                      activeSubMenu === item.title ? "bg-foreground/[0.03] dark:bg-white/10 text-primary dark:text-white" : "text-foreground/60 hover:bg-foreground/[0.03] dark:text-white/60 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white"
-                                    )}
-                                  >
-                                    <span className="text-[13px] font-medium">{item.title}</span>
-                                    <ChevronDown className={cn(
-                                      "w-3.5 h-3.5 -rotate-90 transition-transform duration-300",
-                                      activeSubMenu === item.title ? "rotate-0" : ""
-                                    )} />
-                                  </button>
-
-                                  {/* Sub-dropdown */}
-                                  <AnimatePresence>
-                                    {activeSubMenu === item.title && (
-                                      <motion.div
-                                        initial={{ opacity: 0, x: 10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: 10 }}
-                                        className="absolute left-full top-0 ml-2 w-[220px]"
-                                      >
-                                        <div className="bg-background dark:bg-black premium-dark-nav rounded-2xl shadow-xl p-3 border border-foreground/10 dark:border-white/10 dark:backdrop-blur-xl">
-                                          <div className="grid gap-y-1">
-                                            {item.children.map((child: any) => (
-                                              <Link
-                                                key={child.slug}
-                                                href={`/${child.slug}`}
-                                                onClick={() => {
-                                                  setActiveMenu(null);
-                                                  setActiveSubMenu(null);
-                                                }}
-                                                className="block px-4 py-2 rounded-xl text-[12px] text-foreground/60 hover:bg-foreground/[0.03] dark:text-white/60 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white transition-all"
-                                              >
-                                                {child.title}
-                                              </Link>
-                                            ))}
-                                          </div>
-                                        </div>
-                                      </motion.div>
-                                    )}
-                                  </AnimatePresence>
-                                </div>
-                              ) : (
-                                <Link
-                                  href={`/${item.slug}`}
-                                  onClick={() => setActiveMenu(null)}
-                                  className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] dark:hover:bg-white/5 transition-all"
-                                >
-                                  <div className="text-[13px] text-foreground/60 dark:text-white/60 group-hover/link:text-primary dark:group-hover/link:text-white font-medium transition-colors">
-                                    {item.title}
-                                  </div>
-                                </Link>
-                              )}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
+                      <span className={cn(activeMenu === group.name ? "dark:text-white" : "")}>{group.name}</span>
+                      <ChevronDown className={cn(
+                        "w-3.5 h-3.5 ml-1 transition-transform duration-300 opacity-50",
+                        activeMenu === group.name ? "rotate-180" : ""
+                      )} />
+                    </button>
+                  ) : (
+                    <Link
+                      href={'slug' in group ? (group as any).slug : '#'}
+                      className={cn(
+                        "flex items-center text-[13px] font-medium tracking-tight transition-all py-2",
+                        "text-foreground/70 hover:text-foreground dark:text-white/80 dark:hover:text-white"
+                      )}
+                    >
+                      {group.name}
+                    </Link>
                   )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
 
-          {/* Center: Logo */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex items-center group">
-            <div className="relative h-8 w-auto">
-              <img 
-                src="/logo-black.png" 
-                alt="Grow Infinity" 
-                className="h-full w-auto object-contain dark:hidden"
-              />
-              <img 
-                src="/logo-white.png" 
-                alt="Grow Infinity" 
-                className="h-full w-auto object-contain hidden dark:block"
-              />
+                  {/* Mega Menu Dropdown */}
+                  <AnimatePresence>
+                    {activeMenu === group.name && group.items && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 15, scale: 0.98 }}
+                        transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+                        className="absolute left-0 top-full pt-4 w-[280px]"
+                      >
+                        <div className="bg-background dark:bg-black premium-dark-nav rounded-3xl shadow-xl p-4 border border-foreground/10 dark:border-white/10 overflow-visible dark:backdrop-blur-xl">
+                          <div className="grid gap-y-1">
+                            {group.items.map((item: any) => (
+                              <div key={item.title} className="relative group/item">
+                                {item.isSubMenu ? (
+                                  <div
+                                    onMouseEnter={() => setActiveSubMenu(item.title)}
+                                    onMouseLeave={() => setActiveSubMenu(null)}
+                                    className="relative"
+                                  >
+                                    <button
+                                      className={cn(
+                                        "w-full flex items-center justify-between px-4 py-3 rounded-2xl transition-all",
+                                        activeSubMenu === item.title ? "bg-foreground/[0.03] dark:bg-white/10 text-primary dark:text-white" : "text-foreground/60 hover:bg-foreground/[0.03] dark:text-white/60 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white"
+                                      )}
+                                    >
+                                      <span className="text-[13px] font-medium">{item.title}</span>
+                                      <ChevronDown className={cn(
+                                        "w-3.5 h-3.5 -rotate-90 transition-transform duration-300",
+                                        activeSubMenu === item.title ? "rotate-0" : ""
+                                      )} />
+                                    </button>
+
+                                    {/* Sub-dropdown */}
+                                    <AnimatePresence>
+                                      {activeSubMenu === item.title && (
+                                        <motion.div
+                                          initial={{ opacity: 0, x: 10 }}
+                                          animate={{ opacity: 1, x: 0 }}
+                                          exit={{ opacity: 0, x: 10 }}
+                                          className="absolute left-full top-0 ml-2 w-[220px]"
+                                        >
+                                          <div className="bg-background dark:bg-black premium-dark-nav rounded-2xl shadow-xl p-3 border border-foreground/10 dark:border-white/10 dark:backdrop-blur-xl">
+                                            <div className="grid gap-y-1">
+                                              {item.children.map((child: any) => (
+                                                <Link
+                                                  key={child.slug}
+                                                  href={`/${child.slug}`}
+                                                  onClick={() => {
+                                                    setActiveMenu(null);
+                                                    setActiveSubMenu(null);
+                                                  }}
+                                                  className="block px-4 py-2 rounded-xl text-[12px] text-foreground/60 hover:bg-foreground/[0.03] dark:text-white/60 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white transition-all"
+                                                >
+                                                  {child.title}
+                                                </Link>
+                                              ))}
+                                            </div>
+                                          </div>
+                                        </motion.div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                ) : (
+                                  <Link
+                                    href={`/${item.slug}`}
+                                    onClick={() => setActiveMenu(null)}
+                                    className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] dark:hover:bg-white/5 transition-all"
+                                  >
+                                    <div className="text-[13px] text-foreground/60 dark:text-white/60 group-hover/link:text-primary dark:group-hover/link:text-white font-medium transition-colors">
+                                      {item.title}
+                                    </div>
+                                  </Link>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
-          </Link>
+
+            {/* Logo: Left on Mobile, Center on Desktop */}
+            <Link href="/" className="flex items-center group lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+              <div className="relative h-7 sm:h-8 w-auto">
+                <img 
+                  src="/logo-black.png" 
+                  alt="Grow Infinity" 
+                  className="h-full w-auto object-contain dark:hidden"
+                />
+                <img 
+                  src="/logo-white.png" 
+                  alt="Grow Infinity" 
+                  className="h-full w-auto object-contain hidden dark:block"
+                />
+              </div>
+            </Link>
+          </div>
 
           {/* Right: Actions Group */}
           <div className="flex items-center space-x-2">
@@ -276,19 +280,20 @@ const Header = () => {
               <ThemeToggle />
             </div>
             
+            {/* Desktop Only Button */}
             <Link
               href="/cost-calculator"
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-[13px] font-bold tracking-tight transition-all active:scale-95 shadow-lg shadow-primary/20 button-premium"
+              className="hidden lg:block bg-primary text-white px-6 py-2.5 rounded-full text-[13px] font-bold tracking-tight transition-all active:scale-95 shadow-lg shadow-primary/20 button-premium"
             >
               Cost Calculator
             </Link>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Right Aligned */}
             <button
-              className="lg:hidden text-foreground p-2 rounded-full hover:bg-foreground/5 transition-colors"
+              className="lg:hidden text-foreground dark:text-white p-2 rounded-full hover:bg-foreground/5 dark:hover:bg-white/5 transition-colors"
               onClick={() => setIsOpen(true)}
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-5 h-5 transition-transform active:scale-90" />
             </button>
           </div>
         </nav>
@@ -302,7 +307,7 @@ const Header = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] pointer-events-auto"
               onClick={() => setIsOpen(false)}
             />
             
@@ -311,7 +316,7 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed right-4 top-4 bottom-4 w-[calc(100%-2rem)] max-w-sm z-[110] bg-background dark:bg-black premium-dark-nav rounded-3xl shadow-2xl p-6 overflow-y-auto border border-white/10 dark:backdrop-blur-xl"
+              className="fixed right-4 top-4 bottom-4 w-[calc(100%-2rem)] max-w-sm z-[110] bg-background dark:bg-black premium-dark-nav rounded-3xl shadow-2xl p-6 overflow-y-auto border border-white/10 dark:backdrop-blur-xl pointer-events-auto"
             >
               <div className="flex items-center justify-between mb-8">
                 <span className="text-sm font-bold uppercase tracking-widest text-foreground/40 dark:text-white/40">Navigation</span>
@@ -323,67 +328,113 @@ const Header = () => {
                 </button>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {NAVIGATION.map((group) => (
-                  <div key={group.name} className="space-y-3">
-                    <h4 className="text-[11px] font-black text-foreground/20 dark:text-white/20 uppercase tracking-[0.2em]">{group.name}</h4>
-                    <div className="grid gap-2">
-                      {group.items ? group.items.map((item: any) => (
-                        <div key={item.title} className="space-y-2">
-                          {item.isSubMenu ? (
-                            <>
-                              <div className="text-xs font-bold text-foreground/40 dark:text-white/40 px-1 pt-2">{item.title}</div>
-                              <div className="grid gap-2 pl-3 border-l border-foreground/5 ml-1">
-                                {item.children.map((child: any) => (
+                  <div key={group.name} className="border-b border-foreground/5 dark:border-white/5 pb-2">
+                    <button
+                      onClick={() => setMobileExpandedGroup(mobileExpandedGroup === group.name ? null : group.name)}
+                      className="w-full flex items-center justify-between py-3 text-left"
+                    >
+                      <span className={cn(
+                        "text-[15px] font-bold tracking-tight transition-colors",
+                        mobileExpandedGroup === group.name ? "text-primary dark:text-white" : "text-foreground/70 dark:text-white/70"
+                      )}>
+                        {group.name}
+                      </span>
+                      {group.items && (
+                        <ChevronDown className={cn(
+                          "w-4 h-4 transition-transform duration-300",
+                          mobileExpandedGroup === group.name ? "rotate-180" : ""
+                        )} />
+                      )}
+                    </button>
+
+                    <AnimatePresence>
+                      {mobileExpandedGroup === group.name && group.items && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="overflow-hidden bg-foreground/[0.02] dark:bg-white/[0.02] rounded-2xl px-4"
+                        >
+                          <div className="py-2 space-y-4">
+                            {group.items.map((item: any) => (
+                              <div key={item.title} className="space-y-2">
+                                {item.isSubMenu ? (
+                                  <>
+                                    <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/30 dark:text-white/30 pt-2 px-1">
+                                      {item.title}
+                                    </div>
+                                    <div className="grid gap-1 pl-2 border-l border-foreground/10 dark:border-white/10">
+                                      {item.children.map((child: any) => (
+                                        <Link
+                                          key={child.slug}
+                                          href={`/${child.slug}`}
+                                          className="block py-2 text-[13px] font-medium text-foreground/60 dark:text-white/60 hover:text-primary dark:hover:text-white"
+                                          onClick={() => setIsOpen(false)}
+                                        >
+                                          {child.title}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </>
+                                ) : (
                                   <Link
-                                    key={child.slug}
-                                    href={`/${child.slug}`}
-                                    className="text-sm font-semibold text-foreground/70 dark:text-white/70 hover:text-primary dark:hover:text-white py-1"
+                                    href={`/${item.slug}`}
+                                    className="block py-2 text-[13px] font-bold text-foreground/70 dark:text-white/70 hover:text-primary dark:hover:text-white"
                                     onClick={() => setIsOpen(false)}
                                   >
-                                    {child.title}
+                                    {item.title}
                                   </Link>
-                                ))}
+                                )}
                               </div>
-                            </>
-                          ) : (
-                            <Link
-                              href={`/${item.slug}`}
-                              className="flex items-center text-sm font-semibold text-foreground/70 dark:text-white/70 hover:text-primary dark:hover:text-white py-1"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {item.title}
-                            </Link>
-                          )}
-                        </div>
-                      )) : (
-                        <Link
-                          href={'slug' in group ? (group as any).slug : '#'}
-                          className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary dark:hover:text-white py-1"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {group.name}
-                        </Link>
+                            ))}
+                          </div>
+                        </motion.div>
                       )}
-                    </div>
+                    </AnimatePresence>
+                    {!group.items && (
+                       <Link
+                        href={'slug' in group ? (group as any).slug : '#'}
+                        className="absolute inset-0 z-0 pointer-events-auto"
+                        onClick={() => setIsOpen(false)}
+                      />
+                    )}
                   </div>
                 ))}
                 
-                <div className="pt-6 border-t border-foreground/5 space-y-3">
-                  <Link
-                    href="/cost-calculator"
-                    className="flex items-center justify-center bg-foreground/5 dark:bg-white/10 text-foreground dark:text-white py-4 rounded-2xl font-bold text-sm"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Cost Calculator
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="flex items-center justify-center bg-black dark:bg-white text-white dark:text-black py-4 rounded-2xl font-bold text-sm"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Get in touch
-                  </Link>
+                <div className="pt-8 space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    <Link
+                      href="/cost-calculator"
+                      className="flex flex-col items-center justify-center bg-foreground/5 dark:bg-white/5 p-4 rounded-2xl shadow-sm border border-foreground/5 dark:border-white/5 active:scale-95 transition-all"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="text-[10px] font-bold text-foreground/40 dark:text-white/40 uppercase tracking-widest mb-1">Tools</span>
+                      <span className="text-xs font-bold text-foreground dark:text-white">Calculator</span>
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="flex flex-col items-center justify-center bg-primary text-white p-4 rounded-2xl shadow-lg shadow-primary/20 active:scale-95 transition-all"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-1">Fast Track</span>
+                      <span className="text-xs font-bold">Get Started</span>
+                    </Link>
+                  </div>
+
+                  <div className="bg-foreground/[0.03] dark:bg-white/[0.03] rounded-3xl p-5 space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-green-500/10 rounded-full flex items-center justify-center">
+                        <svg className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.404 2.503 1.091 3.491l-.717 2.624 2.684-.704c.954.521 2.046.82 3.208.821 3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.866-5.832zm3.39 8.163c-.147.414-.851.762-1.18 0-.33-.762-1.921-2.029-2.583-2.691-.497-.497-.101-1.001.21-1.312.312-.311.623-.623.935-.935.311-.311.104-.623-.207-.623h-.623c-.311 0-.623.104-.83.311s-.414.518-.414.726c0 1.243.621 2.486 1.657 3.522 1.036 1.036 2.279 1.657 3.522 1.657.207 0 .518-.207.726-.414s.518-.518.726-.83.003-.623-.309-.623h-.623c-.311 0-.622.312-.935.623l-.159.189zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/></svg>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-bold text-foreground/40 dark:text-white/40 uppercase tracking-widest leading-none">WhatsApp Support</p>
+                        <p className="text-sm font-bold text-foreground dark:text-white">+971 4 123 4567</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
