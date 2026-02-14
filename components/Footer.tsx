@@ -37,11 +37,12 @@ const Footer = () => {
             <h4 className="text-xs font-black uppercase tracking-[0.3em] text-white/30 italic">Strategy</h4>
             <ul className="space-y-5">
               {[
-                { label: 'Mainland Formation', path: '/mainland-company-formation' },
-                { label: 'Free Zone Setup', path: '/free-zone-company-setup' },
-                { label: 'Offshore Formation', path: '/offshore-company-formation' },
-                { label: 'Banking Advisory', path: '/corporate-bank-account-uae' },
-                { label: 'Residency Solutions', path: '/golden-visa-uae' },
+                { label: 'Mainland Businesses', path: '/services?category=Mainland' },
+                { label: 'Free Zone Ventures', path: '/services?category=Free%20Zone' },
+                { label: 'Offshore Solutions', path: '/services?category=Offshore' },
+                { label: 'Banking & Financial', path: '/services?category=Banking' },
+                { label: 'Compliance & Tax', path: '/services?category=Compliance' },
+                { label: 'Corporate Support', path: '/services?category=Corporate%20Support' },
               ].map((link) => (
                 <li key={link.path}>
                   <Link href={link.path} className="text-white/60 hover:text-white transition-all flex items-center text-sm font-bold group">

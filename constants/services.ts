@@ -11,6 +11,8 @@ export interface ServiceData {
     image?: string;
   }[];
   image: string;
+  badge?: string;
+  navTitle?: string;
 }
 
 export const SERVICES: ServiceData[] = [
@@ -26,6 +28,7 @@ export const SERVICES: ServiceData[] = [
       'With recent regulatory reforms allowing 100% foreign ownership in most sectors, mainland company formation has become increasingly attractive for international entrepreneurs seeking complete control over their UAE business operations while enjoying unlimited market access and the ability to participate in government tenders.'
     ],
     image: "/services/mainland_setup_service.png",
+    badge: 'Most Popular',
     advantages: [
       '100% Foreign Ownership in most sectors',
       'No geographical limits for trade',
@@ -90,6 +93,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Professional License Setup',
     subtitle: 'Expert-led Business Units',
     category: 'Mainland',
+    navTitle: 'Professional License',
     description: [
       'Professional licenses in the UAE are specifically designed for specialists, consultants, and service providers who offer expertise-based services rather than trading in goods. This license category is ideal for professionals in fields such as legal services, accounting, engineering, architecture, medical services, educational consulting, and various other knowledge-based industries.',
       'The professional license allows qualified individuals to establish their own consultancy or service business in the UAE mainland with 100% foreign ownership. This structure provides complete autonomy over business operations, client relationships, and service delivery while maintaining professional credibility and regulatory compliance.',
@@ -120,6 +124,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Branch Office Setup',
     subtitle: 'Global Expansion',
     category: 'Mainland',
+    navTitle: 'Branch Office',
     description: [
       'A branch office allows established international companies to expand their operations into the UAE market while maintaining direct control and unified branding under the parent company. This structure is ideal for multinational corporations seeking to establish a physical presence in the UAE without creating a separate legal entity.',
       'Branch offices operate as an extension of the parent company, conducting the same business activities and maintaining the same corporate identity. All operations, contracts, and liabilities are directly attributable to the parent company, ensuring seamless integration with global operations and consolidated financial reporting.',
@@ -150,6 +155,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Representative Office Setup',
     subtitle: 'Market Presence',
     category: 'Mainland',
+    navTitle: 'Representative Office',
     description: [
       'A representative office provides international companies with a strategic presence in the UAE for marketing, market research, and business development activities without engaging in direct commercial trading. This structure is ideal for companies exploring the UAE market before committing to full-scale operations.',
       'Representative offices focus on promoting the parent company brand, conducting market research, identifying business opportunities, and facilitating connections between the parent company and potential UAE clients or partners. They cannot engage in revenue-generating activities, sign commercial contracts, or conduct direct sales.',
@@ -180,6 +186,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Civil Company Formation',
     subtitle: 'Professional Partnerships',
     category: 'Mainland',
+    navTitle: 'Civil Company',
     description: [
       'Civil companies are specialized business structures designed for professionals in traditional regulated fields such as medicine, dentistry, law, engineering, and accounting. This formation type allows licensed professionals to practice their profession and provide specialized services while maintaining professional standards and regulatory compliance.',
       'Civil companies are governed by specific professional regulations and require all partners to hold relevant professional qualifications and licenses. The structure ensures that professional services are delivered by qualified practitioners while providing a legal framework for partnership, profit sharing, and liability management.',
@@ -212,12 +219,14 @@ export const SERVICES: ServiceData[] = [
     title: 'Free Zone Business Setup',
     subtitle: 'Tax-Efficient Structures',
     category: 'Free Zone',
+    navTitle: 'Free Zone Setup (General)',
     description: [
       'The UAE offers 40+ specialized Free Zones tailored to specific industries, each providing unique advantages for different business sectors. Free zones are designated economic areas that offer 100% foreign ownership, complete tax exemptions, and streamlined business setup procedures designed to attract international investment and foster economic growth.',
       'Free zone companies benefit from zero corporate and income tax, full repatriation of capital and profits, no currency restrictions, and exemption from import and export duties. These zones provide world-class infrastructure, modern office facilities, and strategic locations near airports, seaports, and major transportation hubs.',
       'Choosing the right free zone is crucial for your business success. Our experts analyze your business activities, budget constraints, and operational requirements to recommend the optimal free zone that aligns with your strategic objectives and provides maximum value for your investment.'
     ],
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000',
+    badge: '0% Tax',
     advantages: ['0% Corporate & Income Tax', '100% Capital Repatriation', 'Simplified Customs'],
     sections: [
       {
@@ -242,6 +251,7 @@ export const SERVICES: ServiceData[] = [
     title: 'IFZA Company Formation',
     subtitle: 'International Free Zone Authority',
     category: 'Free Zone',
+    navTitle: 'IFZA Dubai',
     description: [
       'International Free Zone Authority (IFZA) offers flexible and cost-effective business solutions in Dubai with streamlined setup procedures and competitive pricing packages. IFZA is designed for startups, SMEs, and service-based businesses seeking an affordable entry point into the UAE market with minimal bureaucracy and fast-track processing.',
       'IFZA provides modern office spaces, flexi-desk options, and virtual office solutions to accommodate businesses of all sizes and budgets. The free zone offers comprehensive business support services including visa processing, PRO services, and banking assistance to ensure smooth company formation and operational setup.',
@@ -272,6 +282,7 @@ export const SERVICES: ServiceData[] = [
     title: 'DMCC Company Formation',
     subtitle: 'Global Commodities Hub',
     category: 'Free Zone',
+    navTitle: 'DMCC Dubai',
     description: [
       'Dubai Multi Commodities Centre (DMCC) is the world\'s leading free zone and the number one choice for commodities trading, precious metals, and diamond businesses. Located in the prestigious Jumeirah Lakes Towers (JLT) district, DMCC offers unparalleled networking opportunities, premium infrastructure, and access to a thriving business community of over 21,000 companies.',
       'DMCC has been recognized as the Global Free Zone of the Year for seven consecutive years, demonstrating its commitment to excellence, innovation, and business-friendly environment. The free zone provides state-of-the-art office towers, luxury amenities, and comprehensive business support services.',
@@ -332,6 +343,7 @@ export const SERVICES: ServiceData[] = [
     title: 'RAKEZ Company Formation',
     subtitle: 'Industrial & Academic Hub',
     category: 'Free Zone',
+    navTitle: 'RAKEZ (Ras Al Khaimah)',
     description: [
       'Ras Al Khaimah Economic Zone (RAKEZ) connects businesses to global markets with cost-effective solutions, extensive industrial infrastructure, and strategic location in the northern emirate of Ras Al Khaimah. RAKEZ offers significantly lower setup and operational costs compared to Dubai-based free zones while maintaining high-quality facilities and services.',
       'RAKEZ provides diverse business park options including industrial zones, academic zones, and general business parks, accommodating manufacturing, trading, logistics, and service businesses. The free zone offers large warehouse spaces, industrial facilities, and flexible office solutions suitable for businesses of all sizes.',
@@ -362,6 +374,7 @@ export const SERVICES: ServiceData[] = [
     title: 'SPC Free Zone Setup',
     subtitle: 'Shajah Publishing City',
     category: 'Free Zone',
+    navTitle: 'SPC Sharjah',
     description: [
       'Sharjah Publishing City (SPC) is the world\'s first free zone dedicated to publishing, printing, and packaging industries, offering specialized infrastructure and services tailored to media and creative businesses. SPC provides the fastest license issuance in the UAE, with companies able to obtain their license in as little as 2 hours.',
       'SPC offers unique dual license options allowing businesses to operate both within the free zone and in the UAE mainland market, providing maximum flexibility and market access. The free zone supports multisite business activities, enabling companies to establish operations across different locations while maintaining a single license.',
@@ -392,6 +405,7 @@ export const SERVICES: ServiceData[] = [
     title: 'SHAMS Free Zone Setup',
     subtitle: 'Sharjah Media City',
     category: 'Free Zone',
+    navTitle: 'SHAMS Sharjah',
     description: [
       'Sharjah Media City (SHAMS) is a creative hub designed specifically for media professionals, digital startups, content creators, and creative industries. SHAMS offers the most affordable free zone setup in the UAE with flexible flexi-desk options, no deposit requirements, and simplified visa processing procedures.',
       'SHAMS caters to designers, marketers, influencers, content creators, media production companies, and digital agencies seeking a cost-effective entry into the UAE market. The free zone provides modern co-working spaces, creative studios, and collaborative environments that foster innovation and networking.',
@@ -422,6 +436,7 @@ export const SERVICES: ServiceData[] = [
     title: 'DIFC Company Formation',
     subtitle: 'Financial District',
     category: 'Free Zone',
+    navTitle: 'DIFC (Finance)',
     description: [
       'Dubai International Financial Centre (DIFC) is the leading financial hub for the Middle East, Africa, and South Asia (MEASA) region, offering a world-class regulatory framework based on English common law. DIFC provides a unique jurisdiction specifically designed for financial services, fintech companies, and professional services firms.',
       'DIFC operates under its own independent regulatory authority (DFSA) with regulations aligned with international best practices and standards. The financial center offers access to an independent judicial system, sophisticated legal framework, and comprehensive regulatory oversight that meets global compliance requirements.',
@@ -452,6 +467,7 @@ export const SERVICES: ServiceData[] = [
     title: 'DAFZA Company Formation',
     subtitle: 'Dubai Airport Free Zone',
     category: 'Free Zone',
+    navTitle: 'DAFZA (Airport)',
     description: [
       'Dubai Airport Free Zone (DAFZA) offers a strategic location adjacent to Dubai International Airport (DXB), providing unparalleled logistics advantages and direct air-cargo connectivity. DAFZA is specifically designed for aviation-related businesses, freight forwarding companies, electronics trading, and businesses requiring rapid international shipping capabilities.',
       'DAFZA provides superior logistics infrastructure with direct access to airport facilities, customs clearance areas, and cargo handling services. The free zone offers tax exemptions, streamlined import-export procedures, and efficient supply chain management solutions that reduce operational costs and improve delivery timelines.',
@@ -482,6 +498,7 @@ export const SERVICES: ServiceData[] = [
     title: 'JAFZA Company Formation',
     subtitle: 'Jebel Ali Free Zone',
     category: 'Free Zone',
+    navTitle: 'JAFZA (Jebel Ali)',
     description: [
       'Jebel Ali Free Zone (JAFZA) is the largest industrial free zone in the world, offering massive-scale infrastructure, comprehensive logistics facilities, and unparalleled sea-to-air connectivity. JAFZA is home to over 7,000 companies and provides world-class manufacturing, warehousing, and distribution facilities.',
       'JAFZA offers direct access to Jebel Ali Port, one of the largest and busiest ports globally, combined with proximity to Al Maktoum International Airport. This dual connectivity enables seamless global supply chain operations, efficient import-export procedures, and cost-effective international trade.',
@@ -726,12 +743,14 @@ export const SERVICES: ServiceData[] = [
     title: 'Corporate Bank Account UAE',
     subtitle: 'Banking-First Advisory',
     category: 'Banking',
+    navTitle: 'Corporate Bank Account',
     description: [
       'In the UAE, the real challenge is not getting a business license, but opening a corporate bank account. UAE banks have stringent compliance requirements, risk assessment procedures, and documentation standards that many new businesses struggle to meet. Our banking-first advisory ensures your company is structured for banking approval from day one.',
       'We provide comprehensive pre-approval advisory services, analyzing your business model, shareholding structure, and operational plans to identify potential banking concerns before license issuance. Our team prepares detailed business profiles, financial projections, and compliance documentation that meet bank requirements and significantly improve approval rates.',
       'Our direct banker introductions leverage established relationships with leading UAE banks including Emirates NBD, Mashreq, ADCB, FAB, and international banks operating in the UAE. We facilitate meetings, guide you through the application process, and provide ongoing compliance assistance to ensure smooth account opening and operational banking.'
     ],
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000',
+    badge: 'Fast Track',
     advantages: ['Pre-approval advisory', 'Direct banker intro', 'Compliance assistance'],
     sections: [
       {
@@ -756,6 +775,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Multi-Currency Bank Accounts',
     subtitle: 'Global Treasury',
     category: 'Banking',
+    navTitle: 'Multi-Currency Accounts',
     description: [
       'Seamlessly trade in multiple currencies including AED, USD, EUR, and GBP with multi-currency bank accounts designed for international businesses. Multi-currency accounts eliminate the need for multiple banking relationships, reduce foreign exchange fees, and streamline international payment processing for businesses engaged in global trade.',
       'Our multi-currency banking solutions provide direct SWIFT and IBAN capabilities for efficient international transfers, competitive foreign exchange rates, and priority banking services. These accounts enable businesses to receive payments in various currencies, hold balances in multiple denominations, and execute currency conversions at optimal rates.',
@@ -786,6 +806,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Banking Compliance Advisory',
     subtitle: 'Securing Your Flow',
     category: 'Banking',
+    navTitle: 'Banking Compliance',
     description: [
       'Navigate the complex Anti-Money Laundering (AML) and Know Your Customer (KYC) requirements of UAE banks with our comprehensive banking compliance advisory services. UAE banks maintain stringent compliance standards aligned with international regulations, requiring detailed documentation, transaction monitoring, and ongoing due diligence.',
       'We provide complete KYC documentation preparation services, ensuring all required documents are properly formatted, attested, and presented to meet bank standards. Our team conducts risk profile audits to identify potential compliance concerns and implement corrective measures before they impact your banking relationships.',
@@ -818,12 +839,14 @@ export const SERVICES: ServiceData[] = [
     title: 'PRO Services UAE',
     subtitle: 'Government Liaison',
     category: 'Compliance',
+    navTitle: 'PRO Services',
     description: [
       'Expert handling of all government-related documentation and procedures through our comprehensive PRO (Public Relations Officer) services. PRO services are essential for navigating UAE government departments, immigration authorities, labor departments, and various regulatory bodies that require specialized knowledge and established relationships.',
       'Our dedicated PRO team manages visa processing, Emirates ID applications, medical examinations, labor card issuance, immigration approvals, and all government liaison activities. We handle document submissions, follow-ups, and collections, saving you valuable time and ensuring error-free filing that prevents delays and penalties.',
       'Each client is assigned a dedicated account manager who coordinates all PRO activities, provides regular updates, and ensures timely completion of government procedures. Our team maintains current knowledge of regulatory changes and procedural updates to provide efficient, compliant services.'
     ],
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000',
+    badge: 'Full Support',
     advantages: ['Time saving', 'Error-free filing', 'Dedicated account manager'],
     sections: [
       {
@@ -848,6 +871,7 @@ export const SERVICES: ServiceData[] = [
     title: 'VAT Registration & Filing',
     subtitle: 'Tax Compliance',
     category: 'Compliance',
+    navTitle: 'VAT Registration',
     description: [
       'Ensure your business stays compliant with Federal Tax Authority (FTA) regulations through our comprehensive VAT registration and filing services. UAE VAT compliance requires accurate record-keeping, timely filing, and proper documentation of all taxable transactions. Non-compliance can result in significant penalties and business disruptions.',
       'We manage your complete VAT compliance including initial registration, quarterly return preparation and filing, tax portal management, and refund claim processing. Our experienced tax consultants ensure accurate calculation of input and output VAT, proper documentation of exempt and zero-rated supplies, and timely submission of all required returns.',
@@ -884,6 +908,7 @@ export const SERVICES: ServiceData[] = [
       'Our services include Pillar 2 advisory for multinational enterprises, transfer pricing documentation, tax residency planning, and comprehensive compliance support. We help you navigate the new tax landscape without overpaying, ensuring your business remains competitive while meeting all regulatory requirements.'
     ],
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000',
+    badge: 'Compliance',
     advantages: ['Structure optimization', 'Pillar 2 advisory', 'Documentation'],
     sections: [
       {
@@ -908,6 +933,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Accounting & Bookkeeping',
     subtitle: 'Financial Precision',
     category: 'Compliance',
+    navTitle: 'Accounting and Bookkeeping',
     description: [
       'Professional ledger maintenance for UAE companies using cloud-based accounting systems that provide real-time financial visibility and audit-ready reporting. Proper bookkeeping is essential for tax compliance, banking relationships, investor reporting, and strategic business decision-making.',
       'We use industry-leading platforms including Xero and QuickBooks to maintain pristine financial records with complete transparency and accessibility. Our accounting services include daily transaction recording, bank reconciliation, accounts payable and receivable management, payroll processing, and monthly financial statement preparation.',
@@ -940,12 +966,14 @@ export const SERVICES: ServiceData[] = [
     title: 'Golden Visa UAE',
     subtitle: '10-Year Residency',
     category: 'Residency',
+    navTitle: 'Golden Visa',
     description: [
       'Secure your future in the UAE with long-term residency through the prestigious Golden Visa program offering 10-year renewable residence permits. The Golden Visa provides complete independence from employer sponsorship, allowing you to live, work, and invest in the UAE with maximum flexibility and security.',
       'Golden Visa holders enjoy 100% ownership of their residency status with no sponsor requirements, the ability to sponsor family members including spouse, children, and parents, and the freedom to work for any employer or establish their own businesses. The visa is renewable every 10 years subject to meeting eligibility criteria.',
       'Eligibility extends to investors, entrepreneurs, highly skilled professionals, outstanding students, and individuals with specialized talents. We guide you through the application process, document preparation, and submission procedures to secure your Golden Visa and establish long-term residency in the UAE.'
     ],
     image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=2000',
+    badge: '10 Years',
     advantages: ['No sponsor needed', '100% ownership of self', 'Family sponsorship'],
     sections: [
       {
@@ -970,6 +998,7 @@ export const SERVICES: ServiceData[] = [
     title: 'UAE Wills & Estate Planning',
     subtitle: 'Legacy Protection',
     category: 'Residency',
+    navTitle: 'Wills & Estate',
     description: [
       'Protect your assets according to your wishes, not local law defaults, through comprehensive UAE wills and estate planning services. Without a registered will, UAE inheritance laws based on Sharia principles will determine asset distribution, which may not align with your personal wishes or family circumstances.',
       'We draft and register wills for both non-Muslims and Muslims through the DIFC Wills and Probate Registry, providing legally enforceable asset distribution according to your specific instructions. DIFC Court registration ensures your will is recognized and enforced according to your wishes, protecting your family and beneficiaries.',
@@ -1002,6 +1031,7 @@ export const SERVICES: ServiceData[] = [
     title: 'ISO Certification Services',
     subtitle: 'Quality Standards',
     category: 'Corporate Support',
+    navTitle: 'ISO Certification',
     description: [
       'Gain global credibility with ISO certification demonstrating your commitment to quality standards, process excellence, and continuous improvement. ISO certification enhances your competitive positioning, facilitates international business opportunities, and demonstrates compliance with globally recognized quality management systems.',
       'We provide comprehensive ISO certification services including gap analysis, documentation preparation, process implementation, internal audits, and certification body liaison. Our experts guide you through the entire certification process, ensuring efficient implementation and successful certification.',
@@ -1032,6 +1062,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Document Attestation',
     subtitle: 'MOFA & Embassy Liaison',
     category: 'Corporate Support',
+    navTitle: 'Document Attestation',
     description: [
       'Get your international documents legalized for UAE use through our comprehensive document attestation services covering Ministry of Foreign Affairs (MOFA) attestation, embassy legalization, and consulate authentication. Document attestation is mandatory for using foreign documents in UAE legal, business, and government procedures.',
       'We provide worldwide document pickup services, managing the complete attestation chain from your home country through embassy attestation to final MOFA attestation in the UAE. Our verified processes ensure authentic results with fast turnaround times and complete tracking.',
@@ -1062,6 +1093,7 @@ export const SERVICES: ServiceData[] = [
     title: 'Legal Translation Services',
     subtitle: 'Certified Linguists',
     category: 'Corporate Support',
+    navTitle: 'Legal Translation',
     description: [
       'Precise translation for Ministry of Justice (MOJ) and government submissions through our certified legal translation services. Legal translations require absolute accuracy, proper terminology, and official certification to be accepted by UAE courts, government departments, and regulatory authorities.',
       'Our MOJ-certified translators provide accurate translations in over 75 languages with complete confidentiality and professional handling. We specialize in legal terminology, ensuring translations maintain the precise meaning and legal implications of original documents.',
@@ -1083,6 +1115,347 @@ export const SERVICES: ServiceData[] = [
       {
         title: 'Official Certification',
         content: 'We translate corporate agreements, government submissions, and all legal documentation requiring certified translation. Our translations are officially stamped and certified for acceptance by UAE courts, government departments, and regulatory authorities.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'india-company-formation',
+    title: 'India Company Formation',
+    subtitle: 'Cross-Border Expansion',
+    category: 'Corporate Support',
+    description: [
+      'Establishing a presence in the Indian market requires navigating complex regulatory frameworks, state-specific requirements, and diverse business landscapes. Our India company formation services provide a seamless entry for international businesses seeking to leverage India\'s growing economic potential.',
+      'We handle everything from Digital Signature Certificate (DSC) and Director Identification Number (DIN) procurement to Name Approval and Incorporation with the Registrar of Companies (ROC). Our experts ensure compliance with the Companies Act, 2013 and assist with PAN/TAN registration and Goods and Services Tax (GST) setup.',
+      'Whether you are looking to set up a Private Limited Company, a Limited Liability Partnership (LLP), or a Branch/Liaison Office, we provide tailored advisory to ensure your Indian entity is structured for operational efficiency and regulatory compliance from day one.'
+    ],
+    image: 'https://images.unsplash.com/photo-1524492718561-e27a1f01ef7c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['100% foreign ownership in many sectors', 'Access to massive consumer market', 'Competitive operational costs'],
+    sections: [
+      {
+        title: 'Complete Setup Process',
+        content: 'We manage the entire incorporation process including MoA and AoA drafting, ROC filing, and securing the Certificate of Incorporation. Our team ensures all documentation meets the stringent requirements of the Ministry of Corporate Affairs (MCA).',
+        image: 'https://images.unsplash.com/photo-1532375811450-5d6e6fe4d38c?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'market-entry-strategy',
+    title: 'Market Entry Strategy',
+    subtitle: 'Strategic Expansion',
+    category: 'Corporate Support',
+    description: [
+      'Successfully entering a new market requires more than just a business license; it requires a deep understanding of local dynamics, competition, and regulatory nuances. Our market entry strategy services provide a comprehensive roadmap for international businesses seeking to establish or expand their presence in the UAE, India, Saudi Arabia, and Qatar.',
+      'We conduct thorough market research, competitor analysis, and feasibility studies to identify opportunities and mitigate risks. Our team assists with business model optimization, pricing strategy, and distribution channel selection to ensure your market entry is both efficient and sustainable.',
+      'With a focus on long-term growth, we help you navigate the cultural and business etiquette differences, ensuring your brand resonates with local stakeholders and achieves its strategic objectives in the new territory.'
+    ],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Risk mitigation through research', 'Optimized business models', 'Cultural and regulatory alignment'],
+    sections: [
+      {
+        title: 'Research & Analysis',
+        content: 'Our strategy begins with data-driven insights. We analyze market trends, consumer behavior, and regulatory trends to provide a clear picture of the opportunities and challenges in your target market.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'company-incorporation-and-registration',
+    title: 'Company Incorporation & Registration',
+    subtitle: 'Legal Entity Setup',
+    category: 'Corporate Support',
+    navTitle: 'Company Incorporation',
+    description: [
+      'The foundation of any successful business is its legal structure. Our company incorporation and registration services provide end-to-end support for establishing your business entity across various jurisdictions, ensuring full compliance with local laws and regulations.',
+      'We guide you through the selection of the most appropriate legal form—be it a limited liability company, a joint-stock company, or a partnership—based on your business goals, ownership structure, and liability requirements.',
+      'Our team manages all aspects of the registration process, including document preparation, government liaison, fee payments, and securing necessary approvals, allowing you to focus on building your core business operations.'
+    ],
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Tailored legal structuring', 'Streamlined registration process', 'Full regulatory compliance'],
+    sections: [
+      {
+        title: 'Seamless Registration',
+        content: 'We handle the bureaucracy so you don\'t have to. From name reservation to final license issuance, our team ensures a smooth and efficient registration process across all government departments.',
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'corporate-and-regulatory-compliance',
+    title: 'Corporate & Regulatory Compliance',
+    subtitle: 'Maintaining Standards',
+    category: 'Compliance',
+    description: [
+      'In today\'s complex global business environment, maintaining compliance with ever-evolving laws and regulations is critical. Our corporate and regulatory compliance services ensure your business operations remain within legal boundaries, protecting you from penalties and reputational damage.',
+      'We provide comprehensive audits, monitoring, and advisory across various domains, including anti-money laundering (AML), data protection, labor laws, and industry-specific regulations. Our team helps you implement robust compliance frameworks and internal controls.',
+      'Our proactive approach identifies potential compliance risks before they become issues, ensuring your business maintains its license to operate and its reputation for integrity across all its markets.'
+    ],
+    image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Penalty avoidance', 'Reputational protection', 'Robust internal controls'],
+    sections: [
+      {
+        title: 'Audit & Monitoring',
+        content: 'We conduct regular compliance audits and monitor regulatory changes to ensure your business stays ahead of its legal obligations. Our experts provide clear, actionable advice on all compliance matters.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'tax-advisory-and-compliance',
+    title: 'Tax Advisory & Compliance',
+    subtitle: 'Strategic Tax Management',
+    category: 'Compliance',
+    description: [
+      'Effective tax management is essential for optimizing financial performance and ensuring long-term sustainability. Our tax advisory and compliance services provide expert guidance on direct and indirect taxes across multiple jurisdictions, including the UAE, India, Saudi Arabia, and Qatar.',
+      'We assist with tax planning, structure optimization, and compliance with local tax laws, including VAT, corporate tax, and income tax. Our goal is to minimize your tax liability while ensuring full transparency and compliance with all regulatory requirements.',
+      'Our team stays abreast of the latest tax reforms and international tax standards, providing you with the insights needed to navigate the changing tax landscape and make informed financial decisions.'
+    ],
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Tax liability optimization', 'Full compliance with local laws', 'Expert tax planning'],
+    sections: [
+      {
+        title: 'Tax Optimization',
+        content: 'We analyze your business operations to identify legal tax-saving opportunities and structure your transactions for maximum tax efficiency. Our advisors provide comprehensive support for tax filings and audits.',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'financial-advisory',
+    title: 'Financial Advisory',
+    subtitle: 'Strategic Wealth Management',
+    category: 'Banking',
+    description: [
+      'Make informed financial decisions with our expert financial advisory services. We provide comprehensive guidance on capital structuring, investment strategies, risk management, and financial planning to help your business achieve its long-term financial goals.',
+      'Our team of financial experts analyzes your financial performance, market conditions, and growth objectives to provide tailored advice. We assist with fundraising, mergers and acquisitions, and treasury management to optimize your capital deployment.',
+      'Whether you are a startup seeking venture capital or an established enterprise looking to restructure, we provide the insights and expertise needed to navigate complex financial landscapes and drive sustainable growth.'
+    ],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Data-driven financial insights', 'Optimized capital structure', 'Strategic risk management'],
+    sections: [
+      {
+        title: 'Capital Structuring',
+        content: 'We help you optimize your debt-to-equity ratio and select the best financing options for your business needs. Our advisors provide expert support for financial modeling and valuation.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'hr-and-payroll-services',
+    title: 'HR & Payroll Services',
+    subtitle: 'People & Performance',
+    category: 'Corporate Support',
+    description: [
+      'Manage your workforce efficiently with our comprehensive HR and payroll services. From talent acquisition and onboarding to payroll processing and employee benefits management, we provide a full suite of services designed to optimize your human capital management.',
+      'We ensure compliance with local labor laws, social security requirements, and wage protection systems. Our team handles employee record maintenance, leave management, and termination procedures, allowing you to focus on employee engagement and performance.',
+      'Our outsourced payroll solutions ensure accurate and timely salary payments, while our HR advisory provides expert guidance on organizational structure, performance management, and employee relations.'
+    ],
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Full labor law compliance', 'Accurate payroll processing', 'Reduced administrative burden'],
+    sections: [
+      {
+        title: 'Payroll Management',
+        content: 'Our automated payroll systems ensure accurate calculations, timely payments, and full compliance with Wage Protection Systems (WPS). We handle all aspects of employee compensation and benefits.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'legal-services',
+    title: 'Legal Services',
+    subtitle: 'Expert Legal Support',
+    category: 'Corporate Support',
+    description: [
+      'Navigate the complexities of business law with our comprehensive legal services. We provide expert advice and support on a wide range of legal matters, including contract drafting, dispute resolution, intellectual property protection, and corporate governance.',
+      'Our team of experienced legal professionals works closely with you to understand your legal needs and provide tailored solutions. We ensure your business interests are protected through legally robust agreements and proactive risk management.',
+      'Whether you are dealing with local regulations or international commercial law, our legal experts provide the guidance needed to ensure your business remains compliant and legally secure across all its operations.'
+    ],
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Legally robust contracts', 'Expert dispute resolution', 'Proactive risk management'],
+    sections: [
+      {
+        title: 'Contract Drafting',
+        content: 'We draft and review all types of commercial contracts to ensure your business interests are fully protected. Our legal experts provide clear, actionable advice on all legal matters.',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'other-services',
+    title: 'Other Corporate Services',
+    subtitle: 'Comprehensive Support',
+    category: 'Corporate Support',
+    description: [
+      'Beyond company formation and core compliance, we provide a wide range of additional corporate services designed to support your business at every stage of its growth. Our goal is to be your single point of contact for all your business support needs.',
+      'Our extended services include office space procurement, brand registration, trademark protection, market research, and business development support. We tailor our services to meet your specific requirements, providing flexible and responsive support.',
+      'With our deep local knowledge and extensive network of partners, we provide the solutions needed to overcome operational challenges and drive business success in your target markets.'
+    ],
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Single point of contact', 'Tailored support solutions', 'Deep local market knowledge'],
+    sections: [
+      {
+        title: 'Bespoke Solutions',
+        content: 'We understand that every business is unique. Our team provides customized support services tailored to your specific operational needs and growth objectives.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'auditing',
+    title: 'Auditing Services',
+    subtitle: 'Financial Verification',
+    category: 'Compliance',
+    description: [
+      'Ensure the accuracy and integrity of your financial statements with our professional auditing services. We provide comprehensive statutory and internal audits that meet local regulatory requirements and international auditing standards.',
+      'Our team of experienced auditors conducts thorough examinations of your financial records, internal controls, and accounting procedures. We provide independent verification of your financial performance, enhancing the trust of banks, investors, and other stakeholders.',
+      'Beyond compliance, our audits provide valuable insights into your business operations, identifying areas for improvement and helping you enhance your financial management and internal controls.'
+    ],
+    image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Statutory compliance', 'Enhanced stakeholder trust', 'Actionable financial insights'],
+    sections: [
+      {
+        title: 'Statutory Audits',
+        content: 'We conduct mandatory statutory audits for UAE, Indian, and other international companies as per local laws. Our reports are recognized by government authorities and financial institutions.',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'accounting',
+    title: 'Accounting Services',
+    subtitle: 'Financial Record Keeping',
+    category: 'Compliance',
+    description: [
+      'Maintain accurate and up-to-date financial records with our professional accounting services. We provide comprehensive bookkeeping, financial statement preparation, and management reporting services designed to give you a clear picture of your business performance.',
+      'We use modern cloud-based accounting software to ensure your financial data is accessible and secure. Our team handles all daily accounting tasks, including transaction recording, bank reconciliations, and accounts management.',
+      'Our accounting services ensure compliance with local accounting standards and provide the financial information needed for informed decision-making, tax filing, and audit preparation.'
+    ],
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Real-time financial visibility', 'Full compliance with standards', 'Informed decision making'],
+    sections: [
+      {
+        title: 'Bookkeeping',
+        content: 'We manage your daily financial transactions and maintain accurate ledgers using industry-leading software. Our team ensures your records are always audit-ready.',
+        image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'tax-services',
+    title: 'Tax Services',
+    subtitle: 'Comprehensive Tax Solutions',
+    category: 'Compliance',
+    description: [
+      'Navigate the complexities of taxation with our comprehensive tax services. We provide expert guidance and support on a wide range of tax matters, including registration, filing, planning, and dispute resolution.',
+      'Our services cover direct and indirect taxes, including VAT, corporate tax, income tax, and withholding tax. We ensure your business remains compliant with all local tax laws while optimizing your tax position.',
+      'With our deep understanding of international tax treaties and local regulations, we provide the insights needed to manage cross-border tax issues and ensure multi-jurisdictional compliance.'
+    ],
+    image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Full multi-tax compliance', 'Strategic tax planning', 'Expert audit support'],
+    sections: [
+      {
+        title: 'VAT & Corporate Tax',
+        content: 'We manage all aspects of your VAT and corporate tax compliance, from registration to return filing and audit support. Our experts ensure accurate and timely submissions.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'compliance-banking',
+    title: 'Compliance & Banking Support',
+    subtitle: 'Facilitating Financial Flow',
+    category: 'Banking',
+    description: [
+      'Ensure seamless financial operations with our integrated compliance and banking support services. We bridge the gap between regulatory requirements and banking operational needs, helping your business maintain healthy financial relationships.',
+      'We assist with corporate bank account opening, multi-currency account management, and ongoing banking compliance. Our team prepares all necessary documentation, including business profiles and KYC files, to meet stringent bank requirements.',
+      'Our proactive compliance support ensures your transactions and operations remain within banking guidelines, reducing the risk of account freezes or transactional delays.'
+    ],
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Streamlined bank account opening', 'Full banking KYC compliance', 'Proactive transactional support'],
+    sections: [
+      {
+        title: 'Banking Liaison',
+        content: 'We maintain direct relationships with leading banks to facilitate smooth account opening and operational banking. Our team handles all communication and documentation requirements.',
+        image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'saudi-company-formation',
+    title: 'Saudi Arabia Company Formation',
+    subtitle: 'KSA Market Entry',
+    category: 'Corporate Support',
+    description: [
+      'The Saudi Arabian market offers immense opportunities under the Vision 2030 initiative. Our KSA company formation services provide end-to-end support for international investors seeking to establish a presence in the Kingdom.',
+      'We assist with MISA (Ministry of Investment) license procurement, Articles of Association drafting, and registration with the Ministry of Commerce. Our team ensures compliance with Saudization requirements and local labor laws.',
+      'From 100% foreign-owned entities to joint ventures, we provide the expertise needed to navigate the Saudi regulatory landscape and achieve successful market entry.'
+    ],
+    image: 'https://images.unsplash.com/photo-1586724230411-44b20743b38c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Access to the largest economy in the GCC', 'Vision 2030 growth opportunities', 'Streamlined investment procedures'],
+    sections: [
+      {
+        title: 'MISA Licensing',
+        content: 'We handle the entire MISA licensing process, ensuring your investment plan aligns with Saudi regulatory requirements and national economic goals.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'qatar-company-formation',
+    title: 'Qatar Company Formation',
+    subtitle: 'Doha Business Hub',
+    category: 'Corporate Support',
+    description: [
+      'Qatar is a dynamic business hub with a strong focus on infrastructure development and economic diversification. Our Qatar company formation services help you establish your business in one of the world\'s most resilient economies.',
+      'We guide you through the registration process with the Ministry of Commerce and Industry (MOCI) and assist with Qatar Financial Centre (QFC) setup where applicable. Our experts ensure full compliance with Qatar\'s commercial laws and tax regulations.',
+      'Whether you are setting up an LLC or a branch office, we provide tailored solutions that leverage Qatar\'s strategic location and advanced infrastructure.'
+    ],
+    image: 'https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['High per capita income market', 'Advanced infrastructure and logistics', 'Strategic regional positioning'],
+    sections: [
+      {
+        title: 'Market Entry Strategy',
+        content: 'We provide comprehensive market entry advisory for Qatar, helping you identify the best legal structure and location for your business operations.',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'about',
+    title: 'About Grow Infinity',
+    subtitle: 'Your Growth Partner',
+    category: 'Corporate Support',
+    description: [
+      'Grow Infinity is a premier corporate services provider dedicated to facilitating business growth across the UAE, India, Saudi Arabia, and Qatar. With our deep expertise and extensive network, we provide the solutions needed to thrive in complex markets.',
+      'Our team reflects our values of integrity, precision, and client-centricity. We believe in building long-term partnerships with our clients, helping them navigate regulatory landscapes and achieve their strategic objectives.',
+      'From company formation to tax advisory and corporate support, we offer a comprehensive suite of services that allow you to focus on what you do best—running your business.'
+    ],
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Experienced multidisciplinary team', 'Multi-jurisdictional expertise', 'Commitment to excellence'],
+    sections: [
+      {
+        title: 'Our Vision',
+        content: 'To be the most trusted partner for businesses expanding and operating in the MEASA region, providing seamless solutions that drive sustainable value.',
+        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000'
+      }
+    ]
+  },
+  {
+    slug: 'other-services-tax',
+    title: 'Other Tax & Accounting Services',
+    subtitle: 'Specialized Financial Support',
+    category: 'Compliance',
+    description: [
+      'We offer a wide range of specialized tax and accounting services tailored to your unique business needs. Our goal is to provide comprehensive financial support that ensures compliance and optimizes performance.',
+      'Our services include tax residency planning, transfer pricing documentation, excise tax advisory, and specialized financial reporting. We work closely with you to identify and address specific financial challenges.',
+      'With our expertise in both local and international tax standards, we ensure your business remains compliant and tax-efficient across all its operations.'
+    ],
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000',
+    advantages: ['Bespoke financial solutions', 'Expert tax optimization', 'Comprehensive compliance focus'],
+    sections: [
+      {
+        title: 'Specialized Advisory',
+        content: 'Our team provides expert guidance on complex tax matters and specialized financial reporting requirements. We ensure your business is well-prepared for any regulatory scrutiny.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
       }
     ]

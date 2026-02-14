@@ -4,57 +4,36 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Landmark, Calculator, ShieldCheck, Users2, Globe, ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { SERVICES } from '@/constants/services';
 
-const services = [
-  { 
-    title: 'Mainland Setup', 
-    icon: Building2, 
-    slug: 'mainland-company-formation', 
-    desc: 'Full access to UAE local markets with 100% ownership and unlimited business activities.',
-    image: '/service-mainland.png',
-    badge: 'Most Popular'
-  },
-  { 
-    title: 'Free Zone Setup', 
-    icon: Landmark, 
-    slug: 'free-zone-company-setup', 
-    desc: '100% tax-free environments for specialized industries with complete foreign ownership.',
-    image: '/service-freezone.png',
-    badge: '0% Tax'
-  },
-  { 
-    title: 'Banking Advisory', 
-    icon: Calculator, 
-    slug: 'corporate-bank-account-uae', 
-    desc: 'Pre-approved corporate accounts with top-tier UAE banks and seamless onboarding.',
-    image: '/service-banking.png',
-    badge: 'Fast Track'
-  },
-  { 
-    title: 'Golden Visa', 
-    icon: ShieldCheck, 
-    slug: 'golden-visa-uae', 
-    desc: 'Secure your 10-year residency and long-term security for you and your family.',
-    image: '/service-visa.png',
-    badge: '10 Years'
-  },
-  { 
-    title: 'Corporate Tax', 
-    icon: Users2, 
-    slug: 'corporate-tax-uae', 
-    desc: 'Strategic compliance with the UAE\'s new 9% tax regime and expert advisory.',
-    image: '/service-tax.png',
-    badge: 'Compliance'
-  },
-  { 
-    title: 'PRO Services', 
-    icon: Globe, 
-    slug: 'pro-services-uae', 
-    desc: 'Hands-off government liaison for all your legal paperwork and documentation.',
-    image: '/service-pro.png',
-    badge: 'Full Support'
-  },
+const CORE_SLUGS = [
+  'mainland-company-formation',
+  'free-zone-company-setup',
+  'corporate-bank-account-uae',
+  'golden-visa-uae',
+  'corporate-tax-uae',
+  'pro-services-uae'
 ];
+
+const iconMap: Record<string, any> = {
+  'mainland-company-formation': Building2,
+  'free-zone-company-setup': Landmark,
+  'corporate-bank-account-uae': Calculator,
+  'golden-visa-uae': ShieldCheck,
+  'corporate-tax-uae': Users2,
+  'pro-services-uae': Globe,
+};
+
+const services = CORE_SLUGS.map(slug => {
+  const service = SERVICES.find(s => s.slug === slug);
+  if (!service) return null;
+  return {
+    ...service,
+    icon: iconMap[slug] || Building2,
+    desc: service.description[0],
+    badge: service.badge || 'New'
+  };
+}).filter(Boolean) as any[];
 
 export function CoreServices() {
   const containerVariants = {

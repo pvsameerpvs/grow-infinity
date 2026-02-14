@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SERVICES, ServiceData } from '@/constants/services';
 import { Building2, Landmark, Calculator, ShieldCheck, Globe, Rocket, Users2, ArrowRight, Sparkles, Search, Filter } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const categories = [
@@ -14,12 +15,23 @@ const categories = [
   { name: 'Offshore', icon: ShieldCheck },
   { name: 'Banking', icon: Calculator },
   { name: 'Compliance', icon: Rocket },
-  { name: 'Residency', icon: Users2 }
+  { name: 'Residency', icon: Users2 },
+  { name: 'Corporate Support', icon: Globe }
 ];
 
-export default function ServicesListing() {
+function ServicesListingContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get('category');
+  
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Update category if URL param changes
+  useEffect(() => {
+    if (categoryParam) {
+      setActiveCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   const filteredServices = SERVICES.filter(s => {
     const matchesCategory = activeCategory === 'All' || s.category === activeCategory;
@@ -129,9 +141,9 @@ export default function ServicesListing() {
                     <h3 className="text-2xl font-black text-foreground mb-4 uppercase tracking-tighter leading-none group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-6">
+                    <h4 className="text-sm font-bold text-foreground/40 uppercase tracking-widest mb-6">
                       {service.subtitle}
-                    </p>
+                    </h4>
                     <p className="text-foreground/60 font-medium leading-relaxed line-clamp-3 mb-10 flex-grow">
                       {service.description[0]}
                     </p>
@@ -190,5 +202,13 @@ export default function ServicesListing() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ServicesListing() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ServicesListingContent />
+    </Suspense>
   );
 }

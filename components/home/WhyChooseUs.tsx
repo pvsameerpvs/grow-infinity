@@ -113,7 +113,65 @@ export function WhyChooseUs() {
           </motion.div>
 
           {/* Main Features Grid */}
-        
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16"
+          >
+            {mainFeatures.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                variants={itemVariants}
+                whileHover={{ y: -10 }}
+                className="group relative overflow-hidden rounded-3xl"
+              >
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/50 transition-all duration-500" />
+                  {/* Gradient Accent Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`} />
+                </div>
+
+                <div className="glass-dark p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-500 h-full relative z-10 backdrop-blur-sm">
+                  {/* Icon with Gradient Background */}
+                  <div className="relative mb-6">
+                    <motion.div 
+                      whileHover={{ rotate: 12, scale: 1.1 }}
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-2xl transition-all duration-500`}
+                    >
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </motion.div>
+                    {/* Stats Badge */}
+                    <div className="absolute -top-2 -right-2 glass px-3 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md">
+                      <span className="text-[10px] font-black text-white uppercase tracking-wider">
+                        {feature.stats}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-2xl lg:text-3xl font-black mb-4 tracking-tight text-white group-hover:text-gold transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-white/80 text-sm lg:text-base leading-relaxed font-medium">
+                    {feature.desc}
+                  </p>
+
+                  {/* Decorative Glow */}
+                  <div className={`absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500 rounded-full`} />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
           {/* Additional Benefits */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

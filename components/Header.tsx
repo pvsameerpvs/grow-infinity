@@ -10,37 +10,124 @@ import { ThemeToggle } from './ThemeToggle';
 
 const NAVIGATION = [
   {
-    name: 'Mainland',
-    category: 'Mainland',
-    items: SERVICES.filter(s => s.category === 'Mainland')
+    name: 'Business Set Up',
+    items: [
+      {
+        title: 'India',
+        isSubMenu: true,
+        children: [
+          { title: 'India Company Formation', slug: 'india-company-formation' },
+          { title: 'Market Entry Strategy', slug: 'market-entry-strategy' },
+          { title: 'Company Incorporation', slug: 'company-incorporation-and-registration' }
+        ]
+      },
+      {
+        title: 'Saudi Arabia',
+        isSubMenu: true,
+        children: [
+          { title: 'Saudi Company Formation', slug: 'saudi-company-formation' },
+          { title: 'Market Entry Strategy', slug: 'market-entry-strategy' }
+        ]
+      },
+      {
+        title: 'Qatar',
+        isSubMenu: true,
+        children: [
+          { title: 'Qatar Company Formation', slug: 'qatar-company-formation' },
+          { title: 'Market Entry Strategy', slug: 'market-entry-strategy' }
+        ]
+      },
+      {
+        title: 'Mainland',
+        isSubMenu: true,
+        children: [
+          { title: 'Mainland Company Formation', slug: 'mainland-company-formation' },
+          { title: 'LLC Company Formation', slug: 'llc-company-formation-uae' },
+          { title: 'Professional License', slug: 'professional-license-uae' },
+          { title: 'Branch Office', slug: 'branch-office-uae' },
+          { title: 'Representative Office', slug: 'representative-office-uae' },
+          { title: 'Civil Company', slug: 'civil-company-formation' }
+        ]
+      },
+      {
+        title: 'Freezone',
+        isSubMenu: true,
+        children: [
+          { title: 'Free Zone Setup (General)', slug: 'free-zone-company-setup' },
+          { title: 'IFZA Dubai', slug: 'ifza-company-formation' },
+          { title: 'DMCC Dubai', slug: 'dmcc-company-formation' },
+          { title: 'Meydan Free Zone', slug: 'meydan-free-zone' },
+          { title: 'RAKEZ (Ras Al Khaimah)', slug: 'rakez-company-formation' },
+          { title: 'SPC Sharjah', slug: 'sharjah-publishing-city' },
+          { title: 'SHAMS Sharjah', slug: 'shams-free-zone' },
+          { title: 'DIFC (Finance)', slug: 'difc-company-formation' },
+          { title: 'DAFZA (Airport)', slug: 'dafza-company-formation' },
+          { title: 'JAFZA (Jebel Ali)', slug: 'jafza-company-formation' },
+          { title: 'Dubai South', slug: 'dubai-south-free-zone' },
+          { title: 'Ajman Free Zone', slug: 'ajman-free-zone' },
+          { title: 'Fujairah Free Zone', slug: 'fujairah-free-zone' }
+        ]
+      },
+      {
+        title: 'Offshore',
+        isSubMenu: true,
+        children: [
+          { title: 'Offshore Formation (General)', slug: 'offshore-company-formation' },
+          { title: 'RAK Offshore', slug: 'rak-offshore-company' },
+          { title: 'JAFZA Offshore', slug: 'jafza-offshore-company' },
+          { title: 'Ajman Offshore', slug: 'ajman-offshore-company' }
+        ]
+      },
+      { title: 'Corporate & Regulatory Compliance', slug: 'corporate-and-regulatory-compliance' },
+      { title: 'Tax Advisory & Compliance', slug: 'tax-advisory-and-compliance' },
+      { title: 'Financial Advisory', slug: 'financial-advisory' },
+      { title: 'Accounting and Bookkeeping', slug: 'accounting-bookkeeping-uae' },
+      { title: 'HR and Payroll Services', slug: 'hr-and-payroll-services' },
+      { title: 'Legal Services', slug: 'legal-services' },
+      { title: 'Other Services', slug: 'other-services' }
+    ]
   },
   {
-    name: 'Free Zone',
-    category: 'Free Zone',
-    items: SERVICES.filter(s => s.category === 'Free Zone')
+    name: 'Tax and Accounting',
+    items: [
+      { title: 'Accounting', slug: 'accounting' },
+      { title: 'Auditing', slug: 'auditing' },
+      { title: 'TAX Services', slug: 'tax-services' },
+      { title: 'VAT Registration', slug: 'vat-registration-uae' },
+      { title: 'Corporate Tax', slug: 'corporate-tax-uae' },
+      { title: 'Other Services', slug: 'other-services-tax' }
+    ]
   },
   {
-    name: 'Banking',
-    category: 'Banking',
-    items: SERVICES.filter(s => s.category === 'Banking')
+    name: 'Business Support',
+    items: [
+      { title: 'Compliance & Banking', slug: 'compliance-banking' },
+      { title: 'Corporate Bank Account', slug: 'corporate-bank-account-uae' },
+      { title: 'Multi-Currency Accounts', slug: 'multi-currency-bank-account' },
+      { title: 'Banking Compliance', slug: 'banking-compliance-advisory' },
+      { title: 'PRO Services', slug: 'pro-services-uae' },
+      { title: 'ISO Certification', slug: 'iso-certification-uae' },
+      { title: 'Document Attestation', slug: 'document-attestation-uae' },
+      { title: 'Legal Translation', slug: 'legal-translation-uae' },
+      { title: 'Golden Visa', slug: 'golden-visa-uae' },
+      { title: 'Wills & Estate', slug: 'uae-wills-estate-planning' }
+    ]
   },
   {
-    name: 'Compliance',
-    category: 'Compliance',
-    items: SERVICES.filter(s => s.category === 'Compliance')
-  },
-  {
-    name: 'Residency',
-    category: 'Residency',
-    items: SERVICES.filter(s => s.category === 'Residency')
-  },
+    name: 'Contact Us',
+    items: [
+      { title: 'About Us', slug: 'about' },
+      { title: 'Contact Us', slug: 'contact' },
+      { title: 'Cost Calculator', slug: 'cost-calculator' }
+    ]
+  }
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeSubMenu, setActiveSubMenu] = useState<string | null>(null);
 
-  // Disable top bar as it's not in the target design
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-6 px-4 sm:px-6 lg:px-8 pointer-events-none">
       <div className="container mx-auto max-w-7xl pointer-events-auto">
@@ -52,24 +139,39 @@ const Header = () => {
                 key={group.name}
                 className="relative group"
                 onMouseEnter={() => setActiveMenu(group.name)}
-                onMouseLeave={() => setActiveMenu(null)}
+                onMouseLeave={() => {
+                  setActiveMenu(null);
+                  setActiveSubMenu(null);
+                }}
               >
-                <button
-                  className={cn(
-                    "flex items-center text-[13px] font-medium tracking-tight transition-all py-2",
-                    activeMenu === group.name ? "text-primary" : "text-foreground/70 hover:text-foreground"
-                  )}
-                >
-                  {group.name}
-                  <ChevronDown className={cn(
-                    "w-3.5 h-3.5 ml-1 transition-transform duration-300 opacity-50",
-                    activeMenu === group.name ? "rotate-180" : ""
-                  )} />
-                </button>
+                {group.items ? (
+                  <button
+                    className={cn(
+                      "flex items-center text-[13px] font-medium tracking-tight transition-all py-2 outline-none",
+                      activeMenu === group.name ? "text-primary" : "text-foreground/70 hover:text-foreground"
+                    )}
+                  >
+                    {group.name}
+                    <ChevronDown className={cn(
+                      "w-3.5 h-3.5 ml-1 transition-transform duration-300 opacity-50",
+                      activeMenu === group.name ? "rotate-180" : ""
+                    )} />
+                  </button>
+                ) : (
+                  <Link
+                    href={'slug' in group ? (group as any).slug : '#'}
+                    className={cn(
+                      "flex items-center text-[13px] font-medium tracking-tight transition-all py-2",
+                      "text-foreground/70 hover:text-foreground"
+                    )}
+                  >
+                    {group.name}
+                  </Link>
+                )}
 
                 {/* Mega Menu Dropdown */}
                 <AnimatePresence>
-                  {activeMenu === group.name && (
+                  {activeMenu === group.name && group.items && (
                     <motion.div
                       initial={{ opacity: 0, y: 15, scale: 0.98 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -77,19 +179,71 @@ const Header = () => {
                       transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                       className="absolute left-0 top-full pt-4 w-[280px]"
                     >
-                      <div className="bg-background rounded-3xl shadow-xl p-4 border border-foreground/10 overflow-hidden">
+                      <div className="bg-background rounded-3xl shadow-xl p-4 border border-foreground/10 overflow-visible">
                         <div className="grid gap-y-1">
-                          {group.items.map((item) => (
-                            <Link
-                              key={item.slug}
-                              href={`/${item.slug}`}
-                              onClick={() => setActiveMenu(null)}
-                              className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] transition-all"
-                            >
-                              <div className="text-[13px] text-foreground/60 group-hover/link:text-primary font-medium transition-colors">
-                                {item.title}
-                              </div>
-                            </Link>
+                          {group.items.map((item: any) => (
+                            <div key={item.title} className="relative group/item">
+                              {item.isSubMenu ? (
+                                <div
+                                  onMouseEnter={() => setActiveSubMenu(item.title)}
+                                  onMouseLeave={() => setActiveSubMenu(null)}
+                                  className="relative"
+                                >
+                                  <button
+                                    className={cn(
+                                      "w-full flex items-center justify-between px-4 py-3 rounded-2xl transition-all",
+                                      activeSubMenu === item.title ? "bg-foreground/[0.03] text-primary" : "text-foreground/60 hover:bg-foreground/[0.03] hover:text-primary"
+                                    )}
+                                  >
+                                    <span className="text-[13px] font-medium">{item.title}</span>
+                                    <ChevronDown className={cn(
+                                      "w-3.5 h-3.5 -rotate-90 transition-transform duration-300",
+                                      activeSubMenu === item.title ? "rotate-0" : ""
+                                    )} />
+                                  </button>
+
+                                  {/* Sub-dropdown */}
+                                  <AnimatePresence>
+                                    {activeSubMenu === item.title && (
+                                      <motion.div
+                                        initial={{ opacity: 0, x: 10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: 10 }}
+                                        className="absolute left-full top-0 ml-2 w-[220px]"
+                                      >
+                                        <div className="bg-background rounded-2xl shadow-xl p-3 border border-foreground/10">
+                                          <div className="grid gap-y-1">
+                                            {item.children.map((child: any) => (
+                                              <Link
+                                                key={child.slug}
+                                                href={`/${child.slug}`}
+                                                onClick={() => {
+                                                  setActiveMenu(null);
+                                                  setActiveSubMenu(null);
+                                                }}
+                                                className="block px-4 py-2 rounded-xl text-[12px] text-foreground/60 hover:bg-foreground/[0.03] hover:text-primary transition-all"
+                                              >
+                                                {child.title}
+                                              </Link>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                </div>
+                              ) : (
+                                <Link
+                                  href={`/${item.slug}`}
+                                  onClick={() => setActiveMenu(null)}
+                                  className="group/link flex items-center px-4 py-3 rounded-2xl hover:bg-foreground/[0.03] transition-all"
+                                >
+                                  <div className="text-[13px] text-foreground/60 group-hover/link:text-primary font-medium transition-colors">
+                                    {item.title}
+                                  </div>
+                                </Link>
+                              )}
+                            </div>
                           ))}
                         </div>
                       </div>
@@ -121,8 +275,6 @@ const Header = () => {
             <div className="hidden sm:flex items-center space-x-1 pr-2">
               <ThemeToggle />
             </div>
-            
-           
             
             <Link
               href="/cost-calculator"
@@ -176,16 +328,43 @@ const Header = () => {
                   <div key={group.name} className="space-y-3">
                     <h4 className="text-[11px] font-black text-foreground/20 uppercase tracking-[0.2em]">{group.name}</h4>
                     <div className="grid gap-2">
-                      {group.items.map((item) => (
+                      {group.items ? group.items.map((item: any) => (
+                        <div key={item.title} className="space-y-2">
+                          {item.isSubMenu ? (
+                            <>
+                              <div className="text-xs font-bold text-foreground/40 px-1 pt-2">{item.title}</div>
+                              <div className="grid gap-2 pl-3 border-l border-foreground/5 ml-1">
+                                {item.children.map((child: any) => (
+                                  <Link
+                                    key={child.slug}
+                                    href={`/${child.slug}`}
+                                    className="text-sm font-semibold text-foreground/70 hover:text-primary py-1"
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    {child.title}
+                                  </Link>
+                                ))}
+                              </div>
+                            </>
+                          ) : (
+                            <Link
+                              href={`/${item.slug}`}
+                              className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary py-1"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {item.title}
+                            </Link>
+                          )}
+                        </div>
+                      )) : (
                         <Link
-                          key={item.slug}
-                          href={`/${item.slug}`}
+                          href={'slug' in group ? (group as any).slug : '#'}
                           className="flex items-center text-sm font-semibold text-foreground/70 hover:text-primary py-1"
                           onClick={() => setIsOpen(false)}
                         >
-                          {item.title}
+                          {group.name}
                         </Link>
-                      ))}
+                      )}
                     </div>
                   </div>
                 ))}
