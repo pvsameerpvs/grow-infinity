@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Vercel handles Next.js apps natively - no static export needed
-  trailingSlash: false,
+  output: "export",
+  trailingSlash: true,
 };
 
 export default nextConfig;

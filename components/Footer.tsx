@@ -83,14 +83,14 @@ const Footer = () => {
                   <MapPin className="w-5 h-5 text-gold" />
                 </div>
                 <p className="text-white/40 text-sm font-medium leading-relaxed">
-                  The Exchange Tower,<br />Business Bay, Dubai, UAE
+                  Office 1517, 15th Floor,<br />Burjuman Business Tower,<br />Shaikh Khalifa Bin Zayed Street,<br />Al Mankhool Dubai
                 </p>
               </div>
               <div className="flex items-center space-x-5">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 border border-white/5">
                   <Phone className="w-4 h-4 text-gold" />
                 </div>
-                <p className="text-white/40 text-sm font-bold">+971 4 584 7777</p>
+                <p className="text-white/40 text-sm font-bold">+971 50 866 3700</p>
               </div>
               <div className="flex items-center space-x-5">
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 border border-white/5">

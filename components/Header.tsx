@@ -429,7 +429,7 @@ const Header = () => {
                       </div>
                       <div>
                         <p className="text-[10px] font-bold text-foreground/40 dark:text-white/40 uppercase tracking-widest leading-none">WhatsApp Support</p>
-                        <p className="text-sm font-bold text-foreground dark:text-white">+971 4 123 4567</p>
+                        <p className="text-sm font-bold text-foreground dark:text-white">+971 50 866 3700</p>
                       </div>
                     </div>
                   </div>

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/fevic.png',
     shortcut: '/fevic.png',
-    apple: '/fevic.png',
+    apple: '/logo-black.png',
   },
 };
 

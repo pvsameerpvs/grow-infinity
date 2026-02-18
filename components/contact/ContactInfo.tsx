@@ -8,7 +8,7 @@ const CONTACT_METHODS = [
   {
     icon: MapPin,
     label: "Global Headquarters",
-    value: "The Exchange Tower, Business Bay, Dubai, UAE",
+    value: "Office 1517, 15th Floor, Burjuman Business Tower, Shaikh Khalifa Bin Zayed Street, Al Mankhool Dubai",
     path: "https://maps.app.goo.gl/xxx",
     color: "text-blue-500",
     bg: "bg-blue-500/10"
@@ -16,8 +16,8 @@ const CONTACT_METHODS = [
   {
     icon: Phone,
     label: "Strategic Hotline",
-    value: "+971 4 584 7777",
-    path: "tel:+97145847777",
+    value: "+971 50 866 3700",
+    path: "tel:+971508663700",
     color: "text-emerald-500",
     bg: "bg-emerald-500/10"
   },

@@ -67,13 +67,13 @@ export function Hero() {
               </p>
               
               <div className="pt-2 lg:pt-4 space-y-2 lg:space-y-3.5 flex flex-col items-center lg:items-start text-white/60">
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-3.5 h-3.5 text-white/40" />
-                  <span className="text-[12px] sm:text-[13px]">DIFC, Infinity Plaza, Dubai</span>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-3.5 h-3.5 text-white/40 mt-1" />
+                  <span className="text-[12px] sm:text-[13px] text-left">Office 1517, 15th Floor, Burjuman Business Tower, Al Mankhool, Dubai</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-3.5 h-3.5 text-white/40" />
-                  <span className="text-[12px] sm:text-[13px]">+971 4 XXX XXXX</span>
+                  <span className="text-[12px] sm:text-[13px]">+971 50 866 3700</span>
                 </div>
               </div>
             </div>
