@@ -256,34 +256,39 @@ export function TrustBadges() {
               <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/30" />
             </div>
             
-            {/* Partner Logos Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 lg:gap-12 mb-12">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={partner.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  whileHover={{ scale: 1.2, y: -5 }}
-                  className="group cursor-pointer relative"
-                >
-                  <div className="text-center">
-                    <span className="text-3xl lg:text-4xl font-black text-foreground/40 group-hover:text-gradient-infinity transition-all duration-500 tracking-tighter">
-                      {partner.name}
-                    </span>
-                    
-                    {/* Tooltip */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      whileHover={{ opacity: 1, y: 0 }}
-                      className="absolute top-full mt-2 left-1/2 -translate-x-1/2 glass px-3 py-2 rounded-lg border border-primary/20 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10"
-                    >
-                      <div className="text-xs font-bold text-foreground">{partner.fullName}</div>
-                    </motion.div>
+            {/* Continuous Infinite Sliding Marquee */}
+            <div className="relative flex w-full overflow-hidden py-6 mb-12">
+              {/* Fade Edges for premium look */}
+              <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+              <motion.div
+                className="flex items-center space-x-12 sm:space-x-24 w-max"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{
+                  repeat: Infinity,
+                  ease: "linear",
+                  duration: 25,
+                }}
+              >
+                {/* Array duplicated twice (4 times total for seamless 50% scroll) so it never snaps abruptly. */}
+                {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={`${partner.name}-${index}`}
+                    className="group cursor-pointer relative flex-shrink-0"
+                  >
+                    <div className="text-center">
+                      <span className="text-3xl lg:text-4xl font-black text-foreground/40 hover:text-foreground transition-all duration-300 tracking-tighter">
+                        {partner.name}
+                      </span>
+                      
+                      {/* Tooltip */}
+                      <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-background/95 backdrop-blur-md px-3 py-2 rounded-lg border border-primary/20 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                      </div>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </motion.div>
             </div>
           </motion.div>
 
