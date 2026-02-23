@@ -66,26 +66,10 @@ export function Hero() {
                 Elite, banking-first business setup solutions for global visionaries demanding absolute precision, speed, and UAE market access.
               </p>
               
-              <div className="pt-2 lg:pt-4 space-y-2 lg:space-y-3.5 flex flex-col items-center lg:items-start text-white/60">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-3.5 h-3.5 text-white/40 mt-1" />
-                  <span className="text-[12px] sm:text-[13px] text-left">Office 1517, 15th Floor, Burjuman Business Tower, Al Mankhool, Dubai</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-3.5 h-3.5 text-white/40" />
-                  <span className="text-[12px] sm:text-[13px]">+971 50 866 3700</span>
-                </div>
-              </div>
+             
             </div>
 
-            {/* Pill CTA Button */}
-            <Link 
-              href="/cost-calculator" 
-              className="w-full bg-primary text-white py-4 rounded-full flex items-center justify-center font-bold text-[14px] sm:text-[15px] group/btn hover:bg-primary-dark transition-all duration-500 shadow-xl shadow-primary/20 button-premium"
-            >
-              Start Your Setup
-              <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
-            </Link>
+          
 
             {/* Subtle card glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/5 blur-[80px] rounded-full group-hover/card:bg-white/10 transition-colors" />
