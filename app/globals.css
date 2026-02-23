@@ -43,10 +43,10 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --primary: #1D6FC5;
-  --primary-rgb: 29, 111, 197;
-  --primary-light: #4D94C8;
-  --primary-dark: #16569a;
+  --primary: #C49A45;
+  --primary-rgb: 196, 154, 69;
+  --primary-light: #D4B26B;
+  --primary-dark: #A98135;
   
   --card-bg: rgba(255, 255, 255, 0.7);
   --card-border: rgba(0, 0, 0, 0.05);
@@ -55,10 +55,10 @@
 .dark {
   --background: #020617;
   --foreground: #f8fafc;
-  --primary: #1D6FC5;
-  --primary-rgb: 29, 111, 197;
-  --primary-light: #4D94C8;
-  --primary-dark: #0f4a86;
+  --primary: #C49A45;
+  --primary-rgb: 196, 154, 69;
+  --primary-light: #D4B26B;
+  --primary-dark: #A98135;
   
   --card-bg: rgba(15, 23, 42, 0.6);
   --card-border: rgba(255, 255, 255, 0.1);
@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient-infinity {
-  background: linear-gradient(135deg, #1D6FC5 0%, #4D94C8 50%, #1D6FC5 100%);
+  background: linear-gradient(135deg, #C49A45 0%, #D4B26B 50%, #C49A45 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-gradient-infinity {
-  background: linear-gradient(135deg, #1D6FC5 0%, #4D94C8 100%);
+  background: linear-gradient(135deg, #C49A45 0%, #D4B26B 100%);
 }
 
 .text-gradient-gold {
@@ -166,11 +166,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .button-premium:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -5px rgba(29, 111, 197, 0.3);
+  box-shadow: 0 10px 20px -5px rgba(196, 154, 69, 0.3);
 }
 
 .dark .button-premium:hover {
-  box-shadow: 0 10px 20px -5px rgba(29, 111, 197, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(196, 154, 69, 0.5);
 }
 
 /* Font Utility Classes */
