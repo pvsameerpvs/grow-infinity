@@ -137,7 +137,7 @@ const Header = () => {
  <div className="flex items-center h-full">
  {/* Logo */}
  <Link href="/" className="flex items-center mr-8 lg:mr-10 xl:mr-12 shrink-0">
- <div className="relative h-6 sm:h-7 w-auto">
+ <div className="relative h-8 sm:h-10 lg:h-12 w-auto transition-all duration-300">
  <img 
  src="/logo-black.png" 
  alt="Grow Infinity" 
