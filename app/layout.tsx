@@ -6,59 +6,59 @@ import Footer from "@/components/Footer";
 import { ThemeProvider } from "next-themes";
 
 const plusJakarta = Plus_Jakarta_Sans({ 
-  subsets: ["latin"],
-  variable: '--font-plus-jakarta',
+ subsets: ["latin"],
+ variable: '--',
 });
 
 const inter = Inter({ 
-  subsets: ["latin"],
-  variable: '--font-inter',
+ subsets: ["latin"],
+ variable: '--font-inter',
 });
 
 const merriweatherSans = Merriweather_Sans({
-  subsets: ["latin"],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-merriweather-sans',
+ subsets: ["latin"],
+ weight: ['300', '400', '500', '600', '700', '800'],
+ variable: '---sans',
 });
 
 const oswald = Oswald({
-  subsets: ["latin"],
-  weight: ['200', '300', '400', '500', '600', '700'],
-  variable: '--font-oswald',
+ subsets: ["latin"],
+ weight: ['200', '300', '400', '500', '600', '700'],
+ variable: '--',
 });
 
 const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant',
-  style: ['normal', 'italic'],
+ subsets: ["latin"],
+ weight: ['300', '400', '500', '600', '700'],
+ variable: '--font-cormorant',
+ style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
-  title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
-  description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
-  keywords: "business setup dubai, uae company formation, banking advisory uae, golden visa, corporate tax uae",
-  icons: {
-    icon: '/fevic.png',
-    shortcut: '/fevic.png',
-    apple: '/logo-black.png',
-  },
+ title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
+ description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
+ keywords: "business setup dubai, uae company formation, banking advisory uae, golden visa, corporate tax uae",
+ icons: {
+ icon: '/fevic.png',
+ shortcut: '/fevic.png',
+ apple: '/logo-black.png',
+ },
 };
 
 export default function RootLayout({
-  children,
+ children,
 }: Readonly<{
-  children: React.ReactNode;
+ children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${plusJakarta.variable} ${merriweatherSans.variable} ${oswald.variable} ${cormorant.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+ return (
+ <html lang="en" suppressHydrationWarning>
+ <body className={`${inter.variable} ${plusJakarta.variable} ${merriweatherSans.variable} ${oswald.variable} ${cormorant.variable} font-sans antialiased`}>
+ <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+ <Header />
+ <main>{children}</main>
+ <Footer />
+ </ThemeProvider>
+ </body>
+ </html>
+ );
 }

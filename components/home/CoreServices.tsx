@@ -1,179 +1,151 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, Landmark, Calculator, ShieldCheck, Users2, Globe, ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { SERVICES } from '@/constants/services';
+import { cn } from '@/lib/utils';
 
 const CORE_SLUGS = [
-  'mainland-company-formation',
-  'free-zone-company-setup',
-  'corporate-bank-account-uae',
-  'golden-visa-uae',
-  'corporate-tax-uae',
-  'pro-services-uae'
+ 'mainland-company-formation',
+ 'free-zone-company-setup',
+ 'corporate-bank-account-uae',
+ 'golden-visa-uae',
+ 'corporate-tax-uae',
+ 'pro-services-uae'
 ];
 
 const iconMap: Record<string, any> = {
-  'mainland-company-formation': Building2,
-  'free-zone-company-setup': Landmark,
-  'corporate-bank-account-uae': Calculator,
-  'golden-visa-uae': ShieldCheck,
-  'corporate-tax-uae': Users2,
-  'pro-services-uae': Globe,
+ 'mainland-company-formation': Building2,
+ 'free-zone-company-setup': Landmark,
+ 'corporate-bank-account-uae': Calculator,
+ 'golden-visa-uae': ShieldCheck,
+ 'corporate-tax-uae': Users2,
+ 'pro-services-uae': Globe,
 };
 
 const services = CORE_SLUGS.map(slug => {
-  const service = SERVICES.find(s => s.slug === slug);
-  if (!service) return null;
-  return {
-    ...service,
-    icon: iconMap[slug] || Building2,
-    desc: service.description[0],
-    badge: service.badge || 'New'
-  };
+ const service = SERVICES.find(s => s.slug === slug);
+ if (!service) return null;
+ return {
+ ...service,
+ icon: iconMap[slug] || Building2,
+ desc: service.description[0],
+ badge: service.badge || 'Featured'
+ };
 }).filter(Boolean) as any[];
 
 export function CoreServices() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      }
-    }
-  };
+ const [activeIndex, setActiveIndex] = useState(0);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  };
+ // Auto-play timer for sliding tabs
+ useEffect(() => {
+ const timer = setInterval(() => {
+ setActiveIndex((current) => (current + 1) % services.length);
+ }, 5000); // changes every 5 seconds
+ 
+ return () => clearInterval(timer);
+ }, []);
 
-  return (
-    <section id="services" className="relative py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-[#f5f5f5] dark:bg-[#0a0a0a] border border-foreground/5">
-        {/* Background Accents */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
-        
-        <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 lg:mb-20"
-          >
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-primary/10">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-xs font-black uppercase tracking-widest text-primary">Our Services</span>
-            </div>
-            
-            <h2 className="font-oswald text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight">
-              Specialized Solutions for <br />
-              <span className="text-gradient-infinity px-2">Infinite Growth</span>
-            </h2>
-            
-            <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed">
-              From mainland formation to complex banking compliance, we provide the foundation for your Middle Eastern legacy.
-            </p>
-          </motion.div>
+ const activeService = services[activeIndex];
 
-          {/* Services Grid */}
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={service.slug}
-                variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="group relative overflow-hidden rounded-3xl"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/85 via-black/75 to-black/70 group-hover:from-primary/90 group-hover:via-primary/80 group-hover:to-primary-dark/90 transition-all duration-500" />
-                </div>
+ return (
+ <section id="services" className="relative py-20 px-4 sm:px-6 lg:px-8 bg-background">
+ <div className="container mx-auto max-w-7xl">
+ 
+ {/* Clean Centered Header like Pemo */}
+ <motion.div
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ margin: "-100px" }}
+ transition={{ duration: 0.6 }}
+ className="text-center mb-16"
+ >
+ <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
+ Everything you need to efficiently <br className="hidden md:block" />
+ set up your business in the UAE
+ </h2>
+ </motion.div>
 
-                <div className="relative z-10 p-8 lg:p-10 h-full flex flex-col min-h-[400px]">
-                  {/* Badge */}
-                  <div className="mb-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-gold/20 border border-gold/30 text-gold text-[10px] font-black uppercase tracking-wider">
-                      {service.badge}
-                    </span>
-                  </div>
+ {/* Minimalist Tabs Above Content */}
+ <div className="flex flex-wrap items-center justify-center gap-2 mb-16">
+ {services.map((service, index) => {
+ const isActive = activeIndex === index;
+ return (
+ <button
+ key={service.slug}
+ onClick={() => setActiveIndex(index)}
+ className={cn(
+ "px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300",
+ isActive 
+ ? "bg-primary text-white shadow-md shadow-primary/20" 
+ : "bg-foreground/5 text-foreground/70 hover:bg-primary/10 hover:text-primary"
+ )}
+ >
+ {service.title.split(' ')[0]} {/* Abbreviate tab names slightly for neatness */}
+ </button>
+ );
+ })}
+ </div>
 
-                  {/* Icon */}
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/20 transition-all duration-500"
-                  >
-                    <service.icon className="w-7 h-7 text-white" />
-                  </motion.div>
+ {/* Clean 2-Column Feature Content matching Screenshot */}
+ <div className="relative min-h-[400px] lg:min-h-[500px]">
+ <AnimatePresence mode="wait">
+ <motion.div
+ key={activeIndex}
+ initial={{ opacity: 0, y: 10 }}
+ animate={{ opacity: 1, y: 0 }}
+ exit={{ opacity: 0, y: -10 }}
+ transition={{ duration: 0.4, ease: "easeInOut" }}
+ className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between w-full"
+ >
+ 
+ {/* Left Side: Clean Text Details */}
+ <div className="w-full lg:w-[45%] flex flex-col justify-center">
+ <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-foreground tracking-tight">
+ {activeService.title}
+ </h3>
+ 
+ <p className="text-base text-foreground/70 leading-relaxed mb-6">
+ {activeService.desc}
+ </p>
+ 
+ <div className="text-sm font-medium text-foreground/60 mb-8 border-t border-foreground/5 pt-6">
+ Expert guidance, documentation support, and end-to-end processing for a seamless UAE business setup experience.
+ </div>
+ 
+ <Link 
+ href={`/${activeService.slug}`} 
+ className="inline-flex items-center gap-2 font-bold text-sm text-primary hover:text-primary-dark transition-all group"
+ >
+ Learn more about {activeService.title} 
+ <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+ </Link>
+ </div>
 
-                  {/* Content */}
-                  <h3 className="text-2xl lg:text-3xl font-black mb-4 text-white tracking-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/80 text-sm lg:text-base leading-relaxed mb-8 flex-grow">
-                    {service.desc}
-                  </p>
-
-                  {/* CTA */}
-                  <Link 
-                    href={`/${service.slug}`} 
-                    className="inline-flex items-center gap-2 text-white font-black text-sm uppercase tracking-wider group-hover:gap-4 transition-all"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-
-                  {/* Decorative Glow */}
-                  <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-gold/30 opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-500 rounded-full" />
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center mt-16"
-          >
-            <Link href="/services">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium group"
-              >
-                <span>View All Services</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.div>
-            </Link>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
+ {/* Right Side: Floating Image in Soft Rounded Container */}
+ <div className="w-full lg:w-[50%]">
+ <div className="w-full aspect-[4/3] bg-primary/5 dark:bg-primary/10 rounded-[2rem] flex items-center justify-center p-8 lg:p-12 relative overflow-hidden border border-primary/10">
+ <motion.img
+ initial={{ scale: 0.95, opacity: 0 }}
+ animate={{ scale: 1, opacity: 1 }}
+ transition={{ duration: 0.5, delay: 0.1 }}
+ src={activeService.image}
+ alt={activeService.title}
+ className="w-full h-full object-cover rounded-xl shadow-2xl z-10 block"
+ />
+ {/* Soft decorative shadow behind image */}
+ <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
+ </div>
+ </div>
+ 
+ </motion.div>
+ </AnimatePresence>
+ </div>
+ 
+ </div>
+ </section>
+ );
 }
 
