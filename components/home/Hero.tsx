@@ -1,15 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Building2, TrendingUp, ShieldCheck, PhoneCall, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
+const LOCATIONS = ["UAE", "Qatar", "KSA", "India"];
+
 export function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [locationIndex, setLocationIndex] = useState(0);
 
   useEffect(() => {
     setMounted(true);
+    const interval = setInterval(() => {
+      setLocationIndex((prev) => (prev + 1) % LOCATIONS.length);
+    }, 2500);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -38,27 +45,27 @@ export function Hero() {
           
           {/* Left: Dramatic Typography & Content */}
           <div className="flex flex-col items-center lg:items-start space-y-6 lg:space-y-8 mb-10 lg:mb-0 text-center lg:text-left w-full lg:w-3/5">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              className="flex items-center space-x-3 bg-white/10 dark:bg-black/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 shadow-xl"
-            >
-              <div className="h-2 w-2 rounded-full bg-[#C49A45] animate-pulse" />
-              <p className="font-sans text-white/95 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase">
-                Premier Business Setup in UAE
-              </p>
-            </motion.div>
+            
 
-            <div className="space-y-0 relative">
-              <motion.h1
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                className="font-cormorant text-[12vw] xs:text-[10vw] sm:text-[8vw] lg:text-[7.5rem] text-white leading-[0.9] font-light tracking-tight drop-shadow-2xl"
-              >
+            <div className="space-y-2 relative w-full">
+              {/* Invisible placeholder to maintain consistent height */}
+              <div className="font-cormorant text-[12vw] xs:text-[10vw] sm:text-[8vw] lg:text-[7.5rem] leading-[0.9] font-light tracking-tight opacity-0 pointer-events-none select-none">
                 Dubai
-              </motion.h1>
+              </div>
+              
+              <AnimatePresence>
+                <motion.h1
+                  key={locationIndex}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -30 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="font-cormorant text-[12vw] xs:text-[10vw] sm:text-[8vw] lg:text-[7.5rem] text-white leading-[0.9] font-light tracking-tight drop-shadow-2xl absolute top-0 left-0 w-full text-center lg:text-left"
+                >
+                  {LOCATIONS[locationIndex]}
+                </motion.h1>
+              </AnimatePresence>
+              
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
