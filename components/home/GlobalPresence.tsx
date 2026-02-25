@@ -19,12 +19,45 @@ const locations = [
     country: "UAE",
     address: "Business Bay, Downtown Dubai",
     status: "Global Headquarters",
-    color: "from-primary to-primary-dark",
+    color: "from-[#C49A45] to-[#C5A030]",
     icon: Building2,
     clients: "2,500+",
     position: { top: "45%", left: "60%" },
     description:
       "Our flagship office serving the entire MENA region with comprehensive business setup solutions",
+  },
+  {
+    city: "Riyadh",
+    country: "KSA",
+    address: "King Abdullah Financial District",
+    status: "Regional Hub",
+    color: "from-[#C49A45] to-[#C5A030]",
+    icon: Building2,
+    clients: "1,200+",
+    position: { top: "48%", left: "56%" },
+    description: "Driving Saudi Vision 2030 with specialized corporate solutions",
+  },
+  {
+    city: "Doha",
+    country: "Qatar",
+    address: "West Bay, Doha",
+    status: "Strategic Hub",
+    color: "from-[#C49A45] to-[#C5A030]",
+    icon: Network,
+    clients: "800+",
+    position: { top: "46%", left: "58%" },
+    description: "Premier infrastructure and gateway for Qatari market entry",
+  },
+  {
+    city: "Mumbai",
+    country: "India",
+    address: "BKC, Mumbai",
+    status: "Operations Center",
+    color: "from-[#C49A45] to-[#C5A030]",
+    icon: Network,
+    clients: "3,000+",
+    position: { top: "56%", left: "66%" },
+    description: "Strategic back-office and technology corridor for global ventures",
   },
 ];
 
@@ -93,7 +126,7 @@ export function GlobalPresence() {
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
-            Strategic Hub In Dubai
+            Strategic Global Network
           </h2>
 
           <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed">
@@ -202,38 +235,38 @@ export function GlobalPresence() {
             >
               {/* Outer Pulsing Ring */}
               <motion.div
-                animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
+                animate={{ scale: [1, 3, 1], opacity: [0.5, 0, 0.5] }}
                 transition={{
                   duration: 3,
                   repeat: Infinity,
                   delay: index * 0.5,
                 }}
-                className={`absolute inset-0 w-24 h-24 rounded-full bg-gradient-to-br ${location.color} -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
+                className={`absolute inset-0 w-8 h-8 rounded-full bg-gradient-to-br ${location.color} -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
               />
 
               {/* Secondary Ring */}
               <motion.div
-                animate={{ scale: [1, 2, 1], opacity: [0.4, 0, 0.4] }}
+                animate={{ scale: [1, 2.2, 1], opacity: [0.4, 0, 0.4] }}
                 transition={{
                   duration: 2.5,
                   repeat: Infinity,
                   delay: index * 0.3,
                 }}
-                className={`absolute inset-0 w-24 h-24 rounded-full border-2 border-primary -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
+                className={`absolute inset-0 w-8 h-8 rounded-full border border-primary -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2`}
               />
 
               {/* Main Pin */}
               <motion.div
-                whileHover={{ scale: 1.3, rotate: 5 }}
-                className={`relative w-24 h-24 rounded-full bg-gradient-to-br ${location.color} flex items-center justify-center cursor-pointer shadow-2xl border-4 border-background z-10`}
+                whileHover={{ scale: 1.5, rotate: 5 }}
+                className={`relative w-8 h-8 rounded-full bg-gradient-to-br ${location.color} flex items-center justify-center cursor-pointer shadow-xl border-2 border-background z-10`}
               >
-                <location.icon className="w-10 h-10 text-white" />
+                <location.icon className="w-3.5 h-3.5 text-white" />
 
                 {/* Inner glow */}
                 <motion.div
                   animate={{ opacity: [0.3, 0.6, 0.3] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="absolute inset-2 rounded-full bg-white/20"
+                  className="absolute inset-1 rounded-full bg-white/20"
                 />
               </motion.div>
 
