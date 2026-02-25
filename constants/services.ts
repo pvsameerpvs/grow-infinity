@@ -1136,6 +1136,27 @@ export const SERVICES: ServiceData[] = [
         title: 'Complete Setup Process',
         content: 'We manage the entire incorporation process including MoA and AoA drafting, ROC filing, and securing the Certificate of Incorporation. Our team ensures all documentation meets the stringent requirements of the Ministry of Corporate Affairs (MCA).',
         image: 'https://images.unsplash.com/photo-1532375811450-5d6e6fe4d38c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Entity Options & Structuring',
+        content: [
+          'Choosing the right structure in India is a strategic decision that impacts taxation, fundraising, liability, and day-to-day operations. We map your business model to the most suitable vehicle, including Private Limited Company, LLP, Branch Office, or Liaison Office where applicable.',
+          'We also align director/shareholder composition, authorized capital, and governance mechanics with practical needs like banking, vendor onboarding, and cross-border remittances.'
+        ],
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Tax & Operational Readiness',
+        content: [
+          'Beyond incorporation, we set up the operational basics required to transact: PAN/TAN, GST registration (where relevant), statutory registrations, and a clean compliance file that supports faster banking and vendor approvals.',
+          'If you are entering India from the UAE, we can also advise on cross-border documentation and transaction flows to reduce friction and keep reporting aligned across jurisdictions.'
+        ],
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Ongoing Compliance Support',
+        content: 'We support ongoing ROC compliance including annual filings, board processes, statutory record maintenance, and advisory for changes such as director appointments, capital changes, or shareholder transfers. The goal is to keep your entity audit-ready and regulator-ready as you scale.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1156,6 +1177,24 @@ export const SERVICES: ServiceData[] = [
         title: 'Research & Analysis',
         content: 'Our strategy begins with data-driven insights. We analyze market trends, consumer behavior, and regulatory trends to provide a clear picture of the opportunities and challenges in your target market.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Go-to-Market Blueprint',
+        content: [
+          'We convert research into a practical execution plan: positioning, target segments, pricing logic, and channel selection (direct, distributor, online, enterprise).',
+          'You receive a clear sequencing plan covering the first 30/60/90 days, with milestones for licensing, banking, hiring, and revenue activation.'
+        ],
+        image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Regulatory Pathway',
+        content: 'We align your operating model with the right jurisdiction and regulatory route, including activity selection, ownership rules, office requirements, and compliance obligations. This avoids costly restructuring later and keeps your setup compatible with banking and vendor due diligence.',
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Partner & Channel Enablement',
+        content: 'Where partnerships are critical, we support partner shortlisting, commercial terms, contract readiness, and onboarding documentation. The focus is to launch with control, measurable KPIs, and clear accountability across stakeholders.',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1177,6 +1216,24 @@ export const SERVICES: ServiceData[] = [
         title: 'Seamless Registration',
         content: 'We handle the bureaucracy so you don\'t have to. From name reservation to final license issuance, our team ensures a smooth and efficient registration process across all government departments.',
         image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Entity Selection Workshop',
+        content: [
+          'We start with a structuring session to align your legal form with your operational goals: ownership, liability, governance, and funding plans.',
+          'This prevents mismatches like choosing a structure that is difficult to bank, hard to scale, or misaligned with your planned activities.'
+        ],
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Documentation & Approvals',
+        content: 'We prepare and validate the core documentation set (constitutional documents, shareholder/director resolutions, and regulated supporting files) and manage submissions, follow-ups, and approvals through the relevant authorities to keep timelines predictable.',
+        image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Post-Incorporation Activation',
+        content: 'After registration, we help you activate the entity for real operations: corporate banking readiness, accounting setup, compliance calendar, and vendor onboarding basics so you can transact and scale without delays.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1197,6 +1254,24 @@ export const SERVICES: ServiceData[] = [
         title: 'Audit & Monitoring',
         content: 'We conduct regular compliance audits and monitor regulatory changes to ensure your business stays ahead of its legal obligations. Our experts provide clear, actionable advice on all compliance matters.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'AML, KYC & Governance',
+        content: [
+          'Banks, regulators, and counterparties expect a defensible compliance posture. We help you implement practical AML/KYC processes, governance practices, and documentation standards that stand up to due diligence.',
+          'Where needed, we support UBO mapping, risk scoring, and evidence packs that reduce friction with banking and enterprise clients.'
+        ],
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Policies, Controls & Training',
+        content: 'We draft and operationalize compliance policies and internal controls that fit your size and sector. We also support staff training and simple playbooks so compliance is consistently executed, not just documented.',
+        image: 'https://images.unsplash.com/photo-1523240715637-1425e799298e?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Remediation & Regulator Readiness',
+        content: 'If issues are identified, we design remediation plans, strengthen records, and prepare your business for audits, inspections, and bank reviews. The goal is continuity: fewer disruptions, fewer escalations, and better operational resilience.',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1217,6 +1292,24 @@ export const SERVICES: ServiceData[] = [
         title: 'Tax Optimization',
         content: 'We analyze your business operations to identify legal tax-saving opportunities and structure your transactions for maximum tax efficiency. Our advisors provide comprehensive support for tax filings and audits.',
         image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Planning & Structuring',
+        content: [
+          'We review your operating model, contract flows, and intercompany arrangements to structure tax outcomes legally and predictably.',
+          'For cross-border businesses, we help align substance, governance, and reporting so your structure remains defensible and bank-friendly.'
+        ],
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Compliance Calendar & Controls',
+        content: 'We create a compliance calendar, define filing responsibilities, and implement controls so deadlines are met and filings are consistent with your accounting records. This reduces penalties and reduces audit risk.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Audit Support & Representation',
+        content: 'If you face a tax review or audit, we help you prepare reconciliations, evidence packs, and responses. Our approach is structured and documented so you can resolve queries quickly and protect business continuity.',
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1237,6 +1330,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Capital Structuring',
         content: 'We help you optimize your debt-to-equity ratio and select the best financing options for your business needs. Our advisors provide expert support for financial modeling and valuation.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Cash Flow & Treasury',
+        content: 'We build cash flow forecasts and treasury practices that support growth: receivables strategy, working capital planning, and payment rails for multi-currency operations. The goal is control and predictability, not just reporting.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Fundraising Readiness',
+        content: 'For founders raising capital, we support investor-ready financial models, KPI dashboards, and data rooms. We help you translate strategy into numbers and present the story clearly to lenders or investors.',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'M&A & Restructuring Support',
+        content: 'When you acquire, divest, or restructure, we support valuation, due diligence preparation, and integration planning. We focus on risk identification, documentation, and execution clarity so decisions are informed and timelines are realistic.',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1257,6 +1365,24 @@ export const SERVICES: ServiceData[] = [
         title: 'Payroll Management',
         content: 'Our automated payroll systems ensure accurate calculations, timely payments, and full compliance with Wage Protection Systems (WPS). We handle all aspects of employee compensation and benefits.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'HR Operations & Records',
+        content: 'We manage employee files, onboarding/offboarding checklists, leave and attendance coordination, and standard HR processes so your team stays organized, compliant, and audit-ready.',
+        image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Policies, Contracts & Advisory',
+        content: [
+          'We help you standardize employment contracts, HR policies, and internal processes aligned with local labor law and practical business needs.',
+          'As your team grows, we advise on role design, org structure, performance frameworks, and documentation that reduces risk in disputes or inspections.'
+        ],
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Founder-Friendly HR Setup',
+        content: 'For new entities, we implement lightweight systems that scale: payroll cadence, approvals, standard templates, and a compliance calendar. You get the essentials without building an oversized HR function too early.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1277,6 +1403,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Contract Drafting',
         content: 'We draft and review all types of commercial contracts to ensure your business interests are fully protected. Our legal experts provide clear, actionable advice on all legal matters.',
         image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Corporate Governance',
+        content: 'We support governance essentials: shareholder agreements, board resolutions, delegated authorities, and document standards that reduce ambiguity and protect founders. This is especially important for banking, investors, and cross-border structures.',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Dispute Strategy & Resolution',
+        content: 'When disputes arise, we help you assess risk, preserve evidence, and choose the right pathway (negotiation, settlement, or formal proceedings). The goal is to protect operations, reputation, and commercial leverage.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'IP & Commercial Protection',
+        content: 'We advise on protecting brand assets and commercial rights through practical contract clauses and IP strategy. This includes licensing, confidentiality, and safeguarding key business relationships.',
+        image: 'https://images.unsplash.com/photo-1523240715637-1425e799298e?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1297,6 +1438,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Bespoke Solutions',
         content: 'We understand that every business is unique. Our team provides customized support services tailored to your specific operational needs and growth objectives.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Operational Enablement',
+        content: 'We help you solve practical operational blockers: office space coordination, vendor onboarding documentation, government liaison processes, and administrative setup that keeps execution moving.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Brand & IP Support',
+        content: 'Where required, we support trademark and brand protection workflows, documentation preparation, and coordination with specialist partners. The focus is clarity and speed, not endless back-and-forth.',
+        image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Partner Network Access',
+        content: 'We connect you to trusted partners for specialized needs (real estate, banking introductions, legal translation, attestation, and sector-specific support). You keep one accountable point of coordination while accessing best-fit providers.',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1317,6 +1473,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Statutory Audits',
         content: 'We conduct mandatory statutory audits for UAE, Indian, and other international companies as per local laws. Our reports are recognized by government authorities and financial institutions.',
         image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Internal Controls Review',
+        content: 'We assess internal controls and financial processes to identify gaps that create risk or inefficiency. You get practical recommendations that improve reliability and reduce future audit friction.',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Banking & Investor Confidence',
+        content: 'Audit-ready financials make a difference in banking and fundraising. We help you present clean statements and supporting schedules that strengthen credibility with banks, investors, and key counterparties.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Insights Beyond the Report',
+        content: 'Our audits are not just a checkbox. We highlight operational patterns, cost issues, and process improvements so the audit becomes a tool for better decision-making, not only compliance.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1337,6 +1508,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Bookkeeping',
         content: 'We manage your daily financial transactions and maintain accurate ledgers using industry-leading software. Our team ensures your records are always audit-ready.',
         image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Management Reporting',
+        content: 'We provide clear management reports (P&L, balance sheet, cash flow, and KPI views) so you can make decisions quickly. Reporting is structured to match how founders and finance teams actually operate.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'VAT-Ready Accounting',
+        content: 'We keep your books aligned with VAT and corporate tax expectations by maintaining proper invoice discipline, reconciliations, and documentation. This reduces risk in filings and makes audits significantly smoother.',
+        image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Systems & Process Setup',
+        content: 'If you are early-stage, we help set up the right accounting stack and processes: chart of accounts, approval flows, and monthly close checklists. You get structure without heavy overhead.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1357,6 +1543,21 @@ export const SERVICES: ServiceData[] = [
         title: 'VAT & Corporate Tax',
         content: 'We manage all aspects of your VAT and corporate tax compliance, from registration to return filing and audit support. Our experts ensure accurate and timely submissions.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Registration & Filings',
+        content: 'We handle registrations, periodic filings, reconciliations, and supporting schedules so submissions match accounting records. This reduces follow-up queries and keeps you penalty-safe.',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Tax Residency & Substance',
+        content: 'For cross-border founders, we advise on residency planning, documentation, and practical substance signals that matter in banking and compliance. The focus is alignment between how you operate and how you report.',
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Dispute & Audit Support',
+        content: 'If you receive tax queries or face an audit, we prepare the evidence pack and help you respond in a structured way. We focus on fast resolution while protecting your commercial position.',
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1377,6 +1578,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Banking Liaison',
         content: 'We maintain direct relationships with leading banks to facilitate smooth account opening and operational banking. Our team handles all communication and documentation requirements.',
         image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'KYC File Build',
+        content: 'We prepare a complete KYC and compliance file including business profile, shareholder background, source of funds narrative, and operational evidence. This improves approval quality and reduces repeated bank queries.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Transaction Hygiene',
+        content: 'We help you keep transactions clean and explainable: invoice discipline, contract alignment, clear payment trails, and documentation standards that match banking expectations.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Ongoing Reviews & Maintenance',
+        content: 'As your volume grows, compliance expectations grow too. We help you maintain updated documents, respond to bank reviews, and avoid operational interruptions caused by missing evidence or unclear activity patterns.',
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1397,6 +1613,21 @@ export const SERVICES: ServiceData[] = [
         title: 'MISA Licensing',
         content: 'We handle the entire MISA licensing process, ensuring your investment plan aligns with Saudi regulatory requirements and national economic goals.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Entity Types & Ownership',
+        content: 'We advise on the best legal structure for your KSA expansion, aligning ownership, governance, and activity scope with licensing requirements and practical operating needs.',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Regulatory & Labor Alignment',
+        content: 'We help you plan compliance early, including Saudization implications, operational policies, and reporting requirements. This reduces surprises after incorporation and supports sustainable scaling.',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Operational Launch Support',
+        content: 'After setup, we support the initial operating layer: documentation readiness, accounting and compliance alignment, and coordination for banking and vendor onboarding so you can transact faster.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1417,6 +1648,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Market Entry Strategy',
         content: 'We provide comprehensive market entry advisory for Qatar, helping you identify the best legal structure and location for your business operations.',
         image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'QFC vs Mainland Pathway',
+        content: 'We assess whether Qatar Financial Centre (QFC) or mainland registration is a better fit based on your activity, ownership needs, and target clients. The goal is the simplest compliant path that supports real operations.',
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Registration & Documentation',
+        content: 'We coordinate documentation preparation, submissions, and authority follow-ups. This includes governance documents, approvals, and the practical steps needed to get your entity ready for contracts and invoicing.',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Tax & Compliance Readiness',
+        content: 'We align your accounting and compliance expectations early, so reporting, filings, and operational evidence are consistent from day one. This improves banking readiness and reduces regulatory friction later.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1437,6 +1683,24 @@ export const SERVICES: ServiceData[] = [
         title: 'Our Vision',
         content: 'To be the most trusted partner for businesses expanding and operating in the MEASA region, providing seamless solutions that drive sustainable value.',
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'What We Do',
+        content: [
+          'We help founders and enterprises set up and operate with confidence: incorporation, licensing, banking readiness, tax and compliance, and the operational support needed to keep everything running.',
+          'Our services are designed to reduce friction with authorities, banks, and counterparties through clean documentation, clear processes, and consistent follow-through.'
+        ],
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'How We Work',
+        content: 'We combine advisory with execution. You get a clear plan, realistic timelines, and an accountable team that coordinates paperwork, submissions, and follow-ups without leaving you to manage multiple vendors.',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Banking-First Philosophy',
+        content: 'Many businesses can secure a license but struggle to bank smoothly. We structure entities and documentation with banking and compliance expectations in mind, helping you operate with fewer delays and fewer disruptions.',
+        image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1457,6 +1721,21 @@ export const SERVICES: ServiceData[] = [
         title: 'Specialized Advisory',
         content: 'Our team provides expert guidance on complex tax matters and specialized financial reporting requirements. We ensure your business is well-prepared for any regulatory scrutiny.',
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Transfer Pricing & Documentation',
+        content: 'For businesses with cross-border related-party transactions, we support transfer pricing documentation and practical policy alignment. The objective is clarity, defensibility, and consistency across contracts, invoices, and reporting.',
+        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Excise & Specialized Taxes',
+        content: 'Where applicable, we advise on excise tax exposure, registrations, and reporting. We also support specialized regulatory filings and sector-specific reporting expectations that affect financial compliance.',
+        image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Tax & Accounting Health Checks',
+        content: 'We perform focused reviews of your books and filings to identify weak points early: reconciliation gaps, documentation weaknesses, or process issues that increase audit risk. You get a prioritized fix plan and support to implement it.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   }

@@ -163,12 +163,7 @@ export function WhyChooseUs() {
                       <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em]">0{index + 1}</span>
                     </div>
 
-                    {/* Stats Badge */}
-                    <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                      <span className="text-[10px] font-black text-white uppercase tracking-wider">
-                        {feature.stats}
-                      </span>
-                    </div>
+
 
                     <h3 className="text-2xl lg:text-3xl font-black mb-3 tracking-tight text-white group-hover:text-gold transition-colors">
                       {feature.title}
