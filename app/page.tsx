@@ -23,7 +23,7 @@ export default function Home() {
       <WhyChooseUs />
       <CoreServices />
       {/* <BankingAdvantage /> */}
-      <ProcessSteps />
+      {/* <ProcessSteps /> */}
       <GlobalPresence />
       {/* <SuccessStories /> */}
       <CTA />
