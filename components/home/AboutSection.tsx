@@ -90,8 +90,7 @@ export function AboutSection() {
               </span>
             </div>
             <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase">
-              Architecting Your{" "}
-              <span className="text-gradient-infinity">UAE Success</span>
+              Architecting Your UAE Success
             </h2>
             <p className="text-lg text-foreground/60 max-w-3xl mx-auto leading-relaxed">
               We're not just business setup consultants—we're your strategic
@@ -270,7 +269,7 @@ export function AboutSection() {
               variants={itemVariants}
               className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
             >
-              Our Core <span className="text-gradient-infinity">Values</span>
+              Our Core Values
             </motion.h3>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

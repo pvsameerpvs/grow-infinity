@@ -105,8 +105,7 @@ export function WhyChooseUs() {
             </div>
 
             <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight">
-              Why Visionaries Choose <br />
-              <span className="text-gradient-infinity px-2">Grow Infinity</span>
+              Why Visionaries Choose Grow Infinity
             </h2>
 
             <p className="text-lg lg:text-xl text-foreground/60 font-medium leading-relaxed">

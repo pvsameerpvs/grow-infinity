@@ -73,7 +73,7 @@ export function Hero() {
                 className="flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4 pl-1 lg:pl-3"
               >
                 <div className="hidden lg:block h-[2px] w-16 bg-gradient-to-r from-[#C49A45] to-transparent rounded-full" />
-                <h2 className="font-sans text-[#FFF8ED]/90 uppercase tracking-[0.3em] text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap text-gradient-infinity">
+                <h2 className="font-sans text-[#FFF8ED]/90 uppercase tracking-[0.3em] text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap">
                   Elite Corporate Legacy
                 </h2>
               </motion.div>

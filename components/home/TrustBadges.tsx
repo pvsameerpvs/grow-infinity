@@ -16,29 +16,29 @@ import {
 const stats = [
   {
     icon: Building2,
-    value: "5,000+",
-    label: "Companies Established",
+    value: "500+",
+    label: "Businesses Launched",
     color: "text-primary",
     gradient: "from-primary to-primary-dark",
   },
   {
     icon: Users,
-    value: "98%",
-    label: "Client Retention",
+    value: "99%",
+    label: "Customer Happiness",
     color: "text-gold",
     gradient: "from-gold to-gold-dark",
   },
   {
     icon: TrendingUp,
-    value: "25+",
-    label: "Banking Partners",
+    value: "24h",
+    label: "Application Review",
     color: "text-primary",
     gradient: "from-primary-light to-primary",
   },
   {
     icon: CheckCircle2,
-    value: "100%",
-    label: "Success Rate",
+    value: "7 Days",
+    label: "Average Setup Time",
     color: "text-gold",
     gradient: "from-gold-dark to-gold",
   },
@@ -135,14 +135,12 @@ export function TrustBadges() {
             </motion.div>
 
             <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase">
-              Trusted by{" "}
-              <span className="text-gradient-infinity">Thousands</span>
+              The Modern Way to Launch in UAE
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Our certifications, accreditations, and strategic partnerships
-              with UAE's leading free zones and regulatory bodies speak to our
-              unwavering commitment to excellence, compliance, and client
-              success.
+              We've redesigned the business setup experience for modern
+              entrepreneurs. Our agile approach ensures your company is ready
+              to scale in the UAE's vibrant ecosystem with speed and precision.
             </p>
           </motion.div>
 
@@ -183,7 +181,7 @@ export function TrustBadges() {
                     </motion.div>
 
                     {/* Value */}
-                    <div className="text-4xl lg:text-5xl font-black text-foreground mb-2 tracking-tight group-hover:text-gradient-infinity transition-all">
+                    <div className="text-4xl lg:text-5xl font-black text-foreground mb-2 tracking-tight transition-all">
                       {stat.value}
                     </div>
 
@@ -356,8 +354,8 @@ export function TrustBadges() {
               </motion.div>
               <span className="text-sm font-bold text-foreground">
                 Trusted by{" "}
-                <span className="text-primary font-black">Fortune 500</span>{" "}
-                companies and global entrepreneurs
+                <span className="text-primary font-black">Startup Founders</span>{" "}
+                and global digital innovators
               </span>
               <Sparkles className="w-4 h-4 text-gold" />
             </div>

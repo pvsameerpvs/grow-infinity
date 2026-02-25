@@ -103,8 +103,7 @@ export function ProcessSteps() {
             </div>
 
             <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight">
-              Your Roadmap To <br />
-              <span className="text-gradient-infinity px-2">Excellence</span>
+              Your Roadmap To Excellence
             </h2>
 
             <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed mb-8">

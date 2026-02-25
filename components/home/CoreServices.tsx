@@ -73,9 +73,10 @@ export function CoreServices() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-light text-foreground mb-4 tracking-tight leading-tight max-w-5xl mx-auto">
-            Everything your startup needs to <br className="hidden md:block" />
-            successfully scale in the UAE
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
+            Everything you need to efficiently{" "}
+            <br className="hidden md:block" />
+            set up your business in the UAE
           </h2>
         </motion.div>
 
@@ -114,25 +115,25 @@ export function CoreServices() {
             >
               {/* Left Side: Clean Text Details */}
               <div className="w-full lg:w-[45%] flex flex-col justify-center">
-                <h3 className="text-3xl lg:text-5xl font-light mb-6 text-foreground tracking-tight italic">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-6 text-foreground tracking-tight">
                   {activeService.title}
                 </h3>
 
-                <p className="text-lg text-foreground/70 leading-relaxed mb-6 font-light">
+                <p className="text-base text-foreground/70 leading-relaxed mb-6">
                   {activeService.desc}
                 </p>
 
-                <div className="text-sm font-medium text-foreground/50 mb-8 border-t border-foreground/5 pt-6 uppercase tracking-widest">
-                  Strategic guidance & end-to-end
-                  ecosystem support for rapid growth.
+                <div className="text-sm font-medium text-foreground/60 mb-8 border-t border-foreground/5 pt-6">
+                  Expert guidance, documentation support, and end-to-end
+                  processing for a seamless UAE business setup experience.
                 </div>
 
                 <Link
                   href={`/${activeService.slug}`}
-                  className="inline-flex items-center gap-2 text-xl text-primary hover:text-primary-dark transition-all group italic"
+                  className="inline-flex items-center gap-2 font-bold text-sm text-primary hover:text-primary-dark transition-all group"
                 >
-                  Discover the {activeService.title} workflow
-                  <ArrowRight className="w-6 h-6 ml-1 group-hover:translate-x-1 transition-transform" />
+                  Learn more about {activeService.title}
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
 

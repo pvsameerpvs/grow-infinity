@@ -79,9 +79,7 @@ export function BankingAdvantage() {
 
           <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight max-w-4xl mx-auto">
             Any Firm Can Get You A License. <br />
-            <span className="text-gradient-infinity px-2">
-              We Ensure You Can Bank
-            </span>
+            We Ensure You Can Bank
           </h2>
 
           <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed">

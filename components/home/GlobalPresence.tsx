@@ -93,17 +93,7 @@ export function GlobalPresence() {
           </motion.div>
 
           <h2 className=" text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-8 tracking-tight uppercase leading-[0.95]">
-            Strategic Hub <br />
-            <span className="relative inline-block">
-              <span className="text-gradient-infinity">In Dubai</span>
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: "100%" }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary via-gold to-primary rounded-full"
-              />
-            </span>
+            Strategic Hub In Dubai
           </h2>
 
           <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed font-medium">
