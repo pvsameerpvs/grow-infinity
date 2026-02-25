@@ -100,7 +100,7 @@ const CostCalculator = () => {
                 <Calculator className="w-8 h-8 text-white" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-foreground mb-4 tracking-tighter">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
               Setup <span className="text-primary italic">Cost Calculator</span>
             </h1>
             <p className="text-xl text-foreground/40 font-medium">
@@ -166,7 +166,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Step 01
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           What is your primary <br />
                           business activity?
                         </h2>
@@ -217,7 +217,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Step 02
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           Preferred Jurisdiction
                         </h2>
                       </div>
@@ -277,7 +277,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Step 03
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           Number of Shareholders
                         </h2>
                       </div>
@@ -311,7 +311,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Step 04
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           Residency Visa Requirements
                         </h2>
                       </div>
@@ -343,7 +343,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Step 05
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           Office Space Facilities
                         </h2>
                       </div>
@@ -379,7 +379,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Step 06
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           Owner Nationality
                         </h2>
                       </div>
@@ -410,7 +410,7 @@ const CostCalculator = () => {
                         <span className="text-xs font-black text-primary uppercase tracking-widest">
                           Final Step
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-black text-foreground tracking-tight leading-tight">
+                        <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
                           Contact Information
                         </h2>
                       </div>

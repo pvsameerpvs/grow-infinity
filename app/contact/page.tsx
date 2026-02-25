@@ -37,17 +37,16 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className=" text-5xl sm:text-7xl lg:text-8xl font-black text-foreground uppercase tracking-tight leading-[0.95]"
+              className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight"
             >
-              Strategic{" "}
-              <span className="text-gradient-infinity">Consultation</span>
+              Strategic Consultation
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg lg:text-xl text-foreground/50 font-medium leading-relaxed max-w-2xl mx-auto"
+              className="text-base lg:text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto"
             >
               Direct access to the architects of UAE business success. Inquire
               today for enterprise-grade solutions and banking first-priority
@@ -109,13 +108,11 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="glass-dark p-12 sm:p-20 rounded-[4rem] text-center space-y-10 border border-white/10 shadow-[0_40px_100px_-20px_rgba(29,111,197,0.3)] bg-foreground"
           >
-            <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tight leading-none italic">
+            <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
               Ready to calculate your <br />
-              <span className="text-gradient-infinity not-italic">
-                Infrastructure Cost?
-              </span>
+              <span className="text-gold">Infrastructure Cost?</span>
             </h2>
-            <p className="text-white/50 text-lg font-medium max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-base max-w-xl mx-auto leading-relaxed">
               Use our proprietary algorithm to receive a detailed breakdown of
               your business setup investment in seconds.
             </p>

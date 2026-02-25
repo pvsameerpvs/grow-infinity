@@ -153,7 +153,7 @@ const Header = () => {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/5 transition-all duration-300 pointer-events-auto">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white/5 transition-all duration-300 pointer-events-auto">
       <div className="container mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
         <nav className="relative flex items-center justify-between h-[72px]">
           {/* Left Side: Logo & Navigation */}

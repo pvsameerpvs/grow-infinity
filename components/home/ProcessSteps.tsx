@@ -72,8 +72,8 @@ export function ProcessSteps() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-[#fafafa] dark:bg-[#080808] border border-foreground/5">
+    <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -102,11 +102,11 @@ export function ProcessSteps() {
               </span>
             </div>
 
-            <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
               Your Roadmap To Excellence
             </h2>
 
-            <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed mb-8">
               We streamline the complexities of UAE regulation into a precise
               four-stage deployment.
             </p>

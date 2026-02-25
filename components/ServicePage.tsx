@@ -102,18 +102,17 @@ const ServicePage: React.FC<ServicePageProps> = ({
             scale: 1.15,
             y: useTransform(scrollYProgress, [0, 0.4], [0, 100]),
           }}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 bg-background"
         >
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover scale-110"
+            className="w-full h-full object-cover scale-110 opacity-40 dark:opacity-20"
             onError={(e) => console.log("Image failed to load:", image)}
           />
           {/* Advanced Mesh Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-background via-background/60 to-transparent" />
+          <div className="absolute inset-0 bg-background/80" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(var(--primary-rgb),0.1)_0%,transparent_60%)]" />
         </motion.div>
 
         <div className="container px-4 mx-auto relative z-10">
@@ -133,7 +132,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   </span>
                 </motion.div>
 
-                <h1 className=" text-4xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tighter uppercase mb-6 max-w-4xl">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-tight mb-6 max-w-4xl">
                   {title.split(" ").map((word, i) => (
                     <motion.span
                       key={i}
@@ -146,7 +145,6 @@ const ServicePage: React.FC<ServicePageProps> = ({
                       }}
                       className={cn(
                         "inline-block relative mr-[0.3em] last:mr-0",
-                        i === 1 && "text-gradient-infinity",
                       )}
                     >
                       {word}
@@ -160,7 +158,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   transition={{ duration: 1, delay: 0.4 }}
                   className="max-w-xl mt-10 pl-4 border-l-2 border-primary/40"
                 >
-                  <p className="text-lg md:text-xl text-foreground/70 leading-relaxed font-medium">
+                  <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
                     {description[0]}
                   </p>
                 </motion.div>
@@ -273,7 +271,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <section className="py-24 relative">
         <div className="container px-4 mx-auto">
           <div className="max-w-4xl mb-16">
-            <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter uppercase mb-6 leading-none">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
               Strategic <span className="text-primary">Advantages</span>
             </h2>
           </div>
@@ -293,7 +291,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
                     <CheckCircle2 className="w-7 h-7 text-primary" />
                   </div>
-                  <h3 className="text-lg font-black text-foreground uppercase tracking-tight leading-tight group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold text-foreground tracking-tight leading-tight group-hover:text-primary transition-colors">
                     {adv}
                   </h3>
                 </div>
@@ -330,7 +328,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                       </span>
                       <div className="h-px flex-1 bg-foreground/10" />
                     </div>
-                    <h3 className=" text-3xl md:text-5xl font-black text-foreground tracking-tighter uppercase leading-none">
+                    <h3 className="text-2xl md:text-4xl font-bold text-foreground tracking-tight leading-tight">
                       {section.title}
                     </h3>
                   </div>
@@ -413,9 +411,9 @@ const ServicePage: React.FC<ServicePageProps> = ({
             viewport={{ once: true }}
             className="max-w-5xl mx-auto text-center space-y-12"
           >
-            <h2 className=" text-5xl md:text-7xl lg:text-8xl font-black text-white uppercase leading-[0.9] tracking-tighter">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[0.9] tracking-tight mb-6">
               The Path to <br />
-              <span className="text-gradient-gold">UAE Dominance</span>
+              <span className="text-gold">UAE Dominance</span>
             </h2>
 
             <p className="text-xl md:text-2xl text-white/50 max-w-2xl mx-auto font-medium leading-tight">

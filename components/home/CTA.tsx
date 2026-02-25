@@ -88,8 +88,8 @@ export function CTA() {
   );
 
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-white dark:bg-black border border-foreground/5 py-24 lg:py-48">
+    <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5 py-24 lg:py-48">
         {/* Background with deepened shadows and richer gradients */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(29,111,197,0.1),transparent_50%)]" />
@@ -151,10 +151,10 @@ export function CTA() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, ease: "easeOut" }}
-                      className="text-4xl md:text-5xl lg:text-7xl font-bold leading-[0.95] mb-8 text-foreground tracking-tighter"
+                      className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl"
                     >
-                      ARCHITECTING <br />
-                      <span className="text-gradient-gold">UAE LEGACIES</span>
+                      Architecting <br />
+                      <span className="text-gradient-gold">UAE Legacies</span>
                     </motion.h2>
 
                     <motion.p
@@ -162,7 +162,7 @@ export function CTA() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2, duration: 0.8 }}
-                      className="text-lg text-muted-foreground/80 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
+                      className="text-base text-foreground/70 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed"
                     >
                       Experience the pinnacle of corporate advisory. We blend
                       strategic precision with banking excellence to launch your

@@ -68,8 +68,8 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="relative py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-[#f8f8f8] dark:bg-[#0c0c0c] border border-foreground/5">
+    <section id="about" className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
@@ -89,10 +89,10 @@ export function AboutSection() {
                 About Grow Infinity
               </span>
             </div>
-            <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
               Architecting Your UAE Success
             </h2>
-            <p className="text-lg text-foreground/60 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               We're not just business setup consultants—we're your strategic
               partners in building a legacy in the world's most dynamic business
               hub.

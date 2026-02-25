@@ -82,8 +82,8 @@ export function WhyChooseUs() {
   };
 
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-white dark:bg-black border border-foreground/5">
+    <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
         {/* Background Accents */}
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full" />
         <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-gold/5 blur-[150px] rounded-full" />
@@ -104,11 +104,11 @@ export function WhyChooseUs() {
               </span>
             </div>
 
-            <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
               Why Visionaries Choose Grow Infinity
             </h2>
 
-            <p className="text-lg lg:text-xl text-foreground/60 font-medium leading-relaxed">
+            <p className="text-base text-foreground/70 max-w-4xl mx-auto leading-relaxed">
               We don't just register companies. We architect stable, bankable,
               and scalable corporate empires in the UAE's most dynamic business
               hub.

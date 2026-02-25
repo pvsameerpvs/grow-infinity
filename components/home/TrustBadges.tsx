@@ -80,8 +80,8 @@ export function TrustBadges() {
   const [hoveredCert, setHoveredCert] = useState<number | null>(null);
 
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-gradient-to-b from-background via-foreground/[0.02] to-background border border-foreground/5">
+    <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
         {/* Animated Background Grid */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div
@@ -134,10 +134,10 @@ export function TrustBadges() {
               </span>
             </motion.div>
 
-            <h2 className=" text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6 tracking-tight uppercase">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
               The Modern Way to Launch in UAE
             </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-base text-foreground/70 max-w-2xl mx-auto leading-relaxed">
               We've redesigned the business setup experience for modern
               entrepreneurs. Our agile approach ensures your company is ready
               to scale in the UAE's vibrant ecosystem with speed and precision.

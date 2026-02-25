@@ -32,7 +32,7 @@ export function GlobalPresence() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-24 lg:py-32 bg-gradient-to-b from-background via-foreground/[0.02] to-background overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -92,11 +92,11 @@ export function GlobalPresence() {
             <Sparkles className="w-4 h-4 text-gold" />
           </motion.div>
 
-          <h2 className=" text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-8 tracking-tight uppercase leading-[0.95]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
             Strategic Hub In Dubai
           </h2>
 
-          <p className="text-lg lg:text-xl text-foreground/60 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             Our flagship headquarters in Dubai serves as a premier{" "}
             <span className="text-primary font-bold">
               global financial gateway
