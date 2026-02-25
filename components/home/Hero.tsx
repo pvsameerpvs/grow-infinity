@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Building2, TrendingUp, ShieldCheck, PhoneCall, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { HeroForm } from "./HeroForm";
 
 const LOCATIONS = ["UAE", "Qatar", "KSA", "India"];
 
@@ -39,7 +40,7 @@ export function Hero() {
         </div>
 
         {/* Floating Brand Label at top center */}
-        <div className="absolute top-12 left-1/2 -translate-x-1/2 z-20">
+        {/* <div className="absolute top-12 left-1/2 -translate-x-1/2 z-20">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -52,7 +53,7 @@ export function Hero() {
             </span>
             <div className="w-1.5 h-1.5 rounded-full bg-[#C49A45] animate-pulse" />
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Content Container */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center lg:flex-row lg:justify-between p-6 sm:p-12 lg:p-20 max-w-screen-2xl mx-auto w-full">
@@ -120,59 +121,14 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* Right: Floating Info Card */}
+          {/* Right: Floating Form Card */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.6 }}
             className="w-full lg:w-[420px] hidden lg:block mt-10 lg:mt-0"
           >
-            <div className="glass-light dark:glass-dark rounded-[2rem] p-8 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] relative overflow-hidden group/card transition-all duration-500 hover:border-[#C49A45]/50">
-              {/* Decorative gradients */}
-              <div className="absolute -top-20 -right-20 w-60 h-60 bg-[#C49A45]/30 rounded-full blur-[3rem] group-hover/card:bg-[#C49A45]/40 transition-all duration-700" />
-              <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-white/5 rounded-full blur-[3rem]" />
-              
-              <div className="relative z-10">
-                <h3 className="text-2xl font-semibold mb-8 flex items-center text-gray-900 dark:text-white pb-6 border-b border-gray-200/50 dark:border-white/10">
-                  <ShieldCheck className="w-8 h-8 text-[#C49A45] mr-3" />
-                  Why Grow Infinity?
-                </h3>
-                
-                <div className="space-y-8">
-                  <div className="flex items-start group/item">
-                    <div className="flex-shrink-0 mt-1 bg-[#C49A45]/10 dark:bg-[#C49A45]/20 p-3 rounded-xl group-hover/item:scale-110 transition-transform duration-300">
-                      <Building2 className="w-6 h-6 text-[#C49A45]" />
-                    </div>
-                    <div className="ml-5">
-                      <h4 className="text-lg font-bold text-gray-900 dark:text-white group-hover/item:text-[#C49A45] transition-colors">Mainland & Freezone</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">Tailored setups ensuring 100% foreign ownership where applicable.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start group/item">
-                    <div className="flex-shrink-0 mt-1 bg-[#C49A45]/10 dark:bg-[#C49A45]/20 p-3 rounded-xl group-hover/item:scale-110 transition-transform duration-300">
-                      <TrendingUp className="w-6 h-6 text-[#C49A45]" />
-                    </div>
-                    <div className="ml-5">
-                      <h4 className="text-lg font-bold text-gray-900 dark:text-white group-hover/item:text-[#C49A45] transition-colors">End-to-End Solutions</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">From initial licensing to premium office and priority PRO services.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-6 mt-4 border-t border-gray-200/50 dark:border-white/10">
-                    <div className="flex items-center justify-between">
-                      <p className="text-base font-medium text-gray-800 dark:text-gray-200">
-                        Trusted by <span className="text-[#C49A45] font-bold text-xl ml-1">500+</span>
-                        <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">Founders & Startups</span>
-                      </p>
-                      <Link href="/about" className="h-10 w-10 bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C49A45] hover:text-white text-gray-600 dark:text-gray-300 transition-all">
-                        <ArrowRight className="w-5 h-5" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroForm />
           </motion.div>
 
         </div>
