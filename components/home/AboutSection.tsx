@@ -16,27 +16,27 @@ import Link from "next/link";
 const values = [
   {
     icon: Target,
-    title: "Precision & Excellence",
+    title: "Agile Execution",
     description:
-      "Every business setup executed with meticulous attention to detail and regulatory compliance.",
+      "Rapid-response setups executed with zero-friction compliance and obsessive attention to detail.",
   },
   {
     icon: Lightbulb,
-    title: "Innovation-First",
+    title: "Venture-First",
     description:
-      "Leveraging cutting-edge solutions and banking partnerships for seamless company formation.",
+      "Leveraging tech-enabled solutions and top-tier banking integrations for the modern founder.",
   },
   {
     icon: Users,
-    title: "Client-Centric",
+    title: "Founder-Centric",
     description:
-      "98% retention rate through personalized advisory and dedicated support teams.",
+      "Unmatched support tailored to the needs of high-growth startups and digital innovators.",
   },
   {
     icon: Globe2,
-    title: "Global Expertise",
+    title: "Global Scalability",
     description:
-      "Deep understanding of international business needs and UAE regulatory landscape.",
+      "Seamlessly transition your business from a local startup to a global powerhouse.",
   },
 ];
 
@@ -132,39 +132,7 @@ export function AboutSection() {
                 </motion.div>
 
                 {/* Two Small Images */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
-                >
-                  <img
-                    src="/about-team.png"
-                    alt="Expert Team"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <div className="text-white font-black text-xs uppercase">
-                      Expert Team
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="relative h-[200px] rounded-2xl overflow-hidden group border border-white/10"
-                >
-                  <img
-                    src="/about-dubai.png"
-                    alt="Dubai Skyline"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <div className="text-white font-black text-xs uppercase">
-                      UAE Hub
-                    </div>
-                  </div>
-                </motion.div>
+                
               </div>
 
               {/* Floating Stats Card */}
@@ -200,21 +168,21 @@ export function AboutSection() {
               transition={{ duration: 0.8 }}
             >
               <h3 className="text-3xl lg:text-4xl font-black text-foreground mb-6 tracking-tight">
-                Your Gateway to{" "}
-                <span className="text-primary">UAE Business Excellence</span>
+                The New Standard for{" "}
+                <span className="text-primary">UAE Venture Launch</span>
               </h3>
 
               <div className="space-y-4 mb-8">
                 <p className="text-foreground/70 leading-relaxed">
-                  Since 2015, Grow Infinity has been the trusted partner for
-                  entrepreneurs and corporations seeking to establish their
-                  presence in the UAE. We've transformed the complex process of
-                  business setup into a streamlined, banking-first experience.
+                  Grow Infinity is the high-velocity partner for startups and
+                  digital ventures entering the UAE. We've replaced traditional,
+                  slow-moving consultancy with a streamlined, tech-enabled
+                  deployment model that mirrors the speed of your business.
                 </p>
                 <p className="text-foreground/70 leading-relaxed">
-                  Our expertise spans Mainland, Free Zone, and Offshore company
-                  formations, backed by strategic partnerships with 25+ leading
-                  UAE banks and all major free zones.
+                  Our platform provides instant access to Mainland and Free Zone
+                  ecosystems, supported by deep integrations with 25+ leading
+                  banks to ensure your financial infrastructure is ready Day 1.
                 </p>
               </div>
 
@@ -258,44 +226,6 @@ export function AboutSection() {
           </div>
 
           {/* Core Values */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <motion.h3
-              variants={itemVariants}
-              className="text-3xl lg:text-4xl font-black text-center text-foreground mb-12 tracking-tight uppercase"
-            >
-              Our Core Values
-            </motion.h3>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  variants={itemVariants}
-                  whileHover={{
-                    y: -10,
-                    borderColor: "rgba(var(--primary-rgb), 0.2)",
-                  }}
-                  className="glass p-6 rounded-2xl border border-foreground/5 transition-all duration-500 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-gold/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <value.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="text-lg font-black text-foreground mb-2">
-                    {value.title}
-                  </h4>
-                  <p className="text-sm text-foreground/60 leading-relaxed">
-                    {value.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

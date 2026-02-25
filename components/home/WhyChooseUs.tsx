@@ -58,7 +58,7 @@ const benefits = [
   { icon: Users, text: "Multi-Language Support Team" },
   { icon: Building2, text: "All Free Zones & Mainland Options" },
   { icon: Globe2, text: "International Business Setup Expertise" },
-  { icon: TrendingUp, text: "Post-Setup Growth Advisory" },
+  { icon: TrendingUp, text: "High-Growth Strategy Advisory" },
 ];
 
 export function WhyChooseUs() {
@@ -109,9 +109,9 @@ export function WhyChooseUs() {
             </h2>
 
             <p className="text-base text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-              We don't just register companies. We architect stable, bankable,
-              and scalable corporate empires in the UAE's most dynamic business
-              hub.
+              We don't just register companies. We build high-performance
+              ventures with priority banking and agile infrastructure for the
+              next generation of global founders.
             </p>
           </motion.div>
 

@@ -142,7 +142,7 @@ export function CTA() {
                     >
                       <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                       <span className="text-xs font-black uppercase tracking-[0.2em] leading-none">
-                        Limitless Potential
+                        Venture Protocol
                       </span>
                     </motion.div>
 
@@ -154,7 +154,7 @@ export function CTA() {
                       className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl"
                     >
                       Architecting <br />
-                      <span className="text-gradient-gold">UAE Legacies</span>
+                      <span className="text-gradient-gold">UAE Ventures</span>
                     </motion.h2>
 
                     <motion.p
@@ -164,9 +164,9 @@ export function CTA() {
                       transition={{ delay: 0.2, duration: 0.8 }}
                       className="text-base text-foreground/70 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed"
                     >
-                      Experience the pinnacle of corporate advisory. We blend
-                      strategic precision with banking excellence to launch your
-                      vision in record time.
+                      Experience high-velocity venture building. We combine
+                      government-level precision with agile deployment to launch your
+                      innovation in record time.
                     </motion.p>
 
                     <motion.div

@@ -74,9 +74,9 @@ export function CoreServices() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
-            Everything you need to efficiently{" "}
+            Everything you need to rapidly{" "}
             <br className="hidden md:block" />
-            set up your business in the UAE
+            deploy your venture in the UAE
           </h2>
         </motion.div>
 
@@ -124,8 +124,8 @@ export function CoreServices() {
                 </p>
 
                 <div className="text-sm font-medium text-foreground/60 mb-8 border-t border-foreground/5 pt-6">
-                  Expert guidance, documentation support, and end-to-end
-                  processing for a seamless UAE business setup experience.
+                  Priority processing, automated workflows, and direct tier-1
+                  banking integrations for the modern founder.
                 </div>
 
                 <Link

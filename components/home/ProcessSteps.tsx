@@ -103,12 +103,12 @@ export function ProcessSteps() {
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
-              Your Roadmap To Excellence
+              Your Roadmap To Market
             </h2>
 
             <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed mb-8">
-              We streamline the complexities of UAE regulation into a precise
-              four-stage deployment.
+              We streamline the complexities of UAE regulation into a high-speed
+              four-stage launch protocol.
             </p>
 
             {/* Timeline Summary */}

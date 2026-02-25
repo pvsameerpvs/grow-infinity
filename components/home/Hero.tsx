@@ -88,7 +88,7 @@ export function Hero() {
               >
                 <div className="hidden lg:block h-[2px] w-16 bg-gradient-to-r from-[#C49A45] to-transparent rounded-full" />
                 <h2 className="font-sans text-[#FFF8ED]/90 uppercase tracking-[0.3em] text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap">
-                  Elite Corporate Legacy
+                  Agile Venture Architecture
                 </h2>
               </motion.div>
             </div>
@@ -99,7 +99,7 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.6 }}
               className="text-white/80 text-base sm:text-lg lg:text-xl max-w-xl font-light leading-relaxed drop-shadow-md"
             >
-              Empowering global entrepreneurs with seamless company formation, visa solutions, and premium workspace infrastructure in the heart of the Middle East.
+              The definitive platform for rapid UAE expansion. We provide the infrastructure, licensing, and priority banking that tech-forward founders demand.
             </motion.p>
 
             <motion.div
@@ -155,7 +155,7 @@ export function Hero() {
                     </div>
                     <div className="ml-5">
                       <h4 className="text-lg font-bold text-gray-900 dark:text-white group-hover/item:text-[#C49A45] transition-colors">End-to-End Solutions</h4>
-                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">From initial licensing to premium office and PRO services.</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">From initial licensing to premium office and priority PRO services.</p>
                     </div>
                   </div>
                   
@@ -163,7 +163,7 @@ export function Hero() {
                     <div className="flex items-center justify-between">
                       <p className="text-base font-medium text-gray-800 dark:text-gray-200">
                         Trusted by <span className="text-[#C49A45] font-bold text-xl ml-1">500+</span>
-                        <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">Leading businesses</span>
+                        <span className="block text-sm text-gray-500 dark:text-gray-400 mt-1">Founders & Startups</span>
                       </p>
                       <Link href="/about" className="h-10 w-10 bg-gray-100 dark:bg-white/10 rounded-full flex items-center justify-center hover:bg-[#C49A45] hover:text-white text-gray-600 dark:text-gray-300 transition-all">
                         <ArrowRight className="w-5 h-5" />
