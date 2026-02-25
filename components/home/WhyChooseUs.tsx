@@ -84,9 +84,19 @@ export function WhyChooseUs() {
   return (
     <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
-        {/* Background Accents */}
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full" />
-        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-gold/5 blur-[150px] rounded-full" />
+        {/* Cinematic Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 blur-[150px] rounded-full opacity-50" />
+          <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/10 blur-[150px] rounded-full opacity-50" />
+          
+          {/* Subtle Animated Pattern */}
+          <div className="absolute inset-0 opacity-[0.03]">
+            <div className="absolute inset-0" style={{ 
+              backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
+              backgroundSize: '100px 100px'
+            }} />
+          </div>
+        </div>
 
         <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
           {/* Section Header */}
@@ -127,54 +137,50 @@ export function WhyChooseUs() {
               <motion.div
                 key={feature.title}
                 variants={itemVariants}
-                whileHover={{ y: -10 }}
-                className="group relative overflow-hidden rounded-3xl"
+                style={{ 
+                  perspective: 1000,
+                }}
+                whileHover={{ rotateY: index % 2 === 0 ? 5 : -5, rotateX: 2 }}
+                className="group relative overflow-hidden rounded-[2.5rem] h-[400px]"
               >
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                {/* Background Image with Deep Parallax */}
+                <div className="absolute inset-0 z-0 scale-110 group-hover:scale-125 transition-transform duration-[1.5s] ease-out">
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover"
                   />
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-black/60 group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/50 transition-all duration-500" />
-                  {/* Gradient Accent Overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}
-                  />
+                  {/* Multi-layered Overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-20 group-hover:opacity-40 transition-opacity duration-700`} />
                 </div>
 
-                <div className="glass-dark p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-500 h-full relative z-10 backdrop-blur-sm">
-                  {/* Icon with Gradient Background */}
-                  <div className="relative mb-6">
-                    <motion.div
-                      whileHover={{ rotate: 12, scale: 1.1 }}
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-2xl transition-all duration-500`}
-                    >
-                      <feature.icon className="w-8 h-8 text-white" />
-                    </motion.div>
+                <div className="relative h-full p-8 lg:p-12 flex flex-col justify-end z-10">
+                  {/* Content Container with Glassmorphism */}
+                  <div className="p-8 rounded-[2rem] bg-white/5 backdrop-blur-md border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
+                    <div className="flex items-center gap-4 mb-6 -mt-14">
+                      <div className={`w-12 h-[2px] bg-gradient-to-r ${feature.color}`} />
+                      <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em]">0{index + 1}</span>
+                    </div>
+
                     {/* Stats Badge */}
-                    <div className="absolute -top-2 -right-2 glass px-3 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-md">
+                    <div className="absolute top-6 right-6 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
                       <span className="text-[10px] font-black text-white uppercase tracking-wider">
                         {feature.stats}
                       </span>
                     </div>
+
+                    <h3 className="text-2xl lg:text-3xl font-black mb-3 tracking-tight text-white group-hover:text-gold transition-colors">
+                      {feature.title}
+                    </h3>
+                    <p className="text-white/70 text-sm leading-relaxed font-medium">
+                      {feature.desc}
+                    </p>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-2xl lg:text-3xl font-black mb-4 tracking-tight text-white group-hover:text-gold transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-white/80 text-sm lg:text-base leading-relaxed font-medium">
-                    {feature.desc}
-                  </p>
-
-                  {/* Decorative Glow */}
-                  <div
-                    className={`absolute -bottom-10 -right-10 w-40 h-40 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-20 blur-3xl transition-opacity duration-500 rounded-full`}
-                  />
                 </div>
+
+                {/* Animated Inner Glow */}
+                <div className="absolute inset-0 border-[1px] border-white/0 group-hover:border-white/20 rounded-[2.5rem] transition-all duration-500" />
               </motion.div>
             ))}
           </motion.div>
@@ -187,35 +193,56 @@ export function WhyChooseUs() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="max-w-5xl mx-auto"
           >
-            <div className="glass p-8 lg:p-12 rounded-3xl border border-foreground/5">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-2xl font-black text-foreground tracking-tight">
-                  Complete Business Setup Package
-                </h3>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={benefit.text}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    whileHover={{ x: 5 }}
-                    className="flex items-start gap-3 group"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
-                      <benefit.icon className="w-4 h-4 text-primary" />
+            <div className="relative group/package">
+              {/* Premium Card Border Animation */}
+              <div className="absolute -inset-[2px] bg-gradient-to-r from-primary via-gold to-primary rounded-[2.5rem] lg:rounded-[3.5rem] opacity-0 group-hover/package:opacity-30 blur-md transition-opacity duration-1000" />
+              
+              <div className="glass p-8 lg:p-14 rounded-[2.5rem] lg:rounded-[3.5rem] border border-foreground/5 relative overflow-hidden backdrop-blur-3xl bg-background/40">
+                {/* Background Texture Overlay */}
+                <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+                
+                <div className="relative z-10">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-12">
+                    <div className="flex items-center gap-5">
+                      <div className="w-2 h-16 bg-gradient-to-b from-primary to-primary-dark rounded-full group-hover/package:scale-y-110 transition-transform duration-500" />
+                      <div>
+                        <h3 className="text-2xl md:text-3xl font-black text-foreground tracking-tight mb-1">
+                          Enterprise Launch Protocol
+                        </h3>
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                          <span className="text-[10px] font-black text-foreground/40 uppercase tracking-widest">Global Status: Priority</span>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-sm font-bold text-foreground/70 group-hover:text-foreground transition-colors cursor-default">
-                      {benefit.text}
-                    </span>
-                  </motion.div>
-                ))}
+                    
+                    <div className="hidden lg:block h-12 w-px bg-foreground/10" />
+                    
+                    <div className="flex flex-col items-end">
+                      <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-2">Exclusive Membership</p>
+                      <div className="text-3xl font-black text-foreground tracking-tighter">PLATINUM <span className="text-gold">ACCESS</span></div>
+                    </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {benefits.map((benefit, index) => (
+                      <motion.div
+                        key={benefit.text}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                        className="flex items-center gap-4 p-5 rounded-2xl bg-foreground/[0.03] border border-foreground/5 hover:border-primary/20 hover:bg-white dark:hover:bg-black transition-all group/benefit cursor-default shadow-sm hover:shadow-2xl hover:shadow-primary/5"
+                      >
+                        <div className="flex flex-col">
+                          <span className="text-sm font-bold text-foreground/70 group-hover:text-foreground transition-colors leading-tight">
+                            {benefit.text}
+                          </span>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
