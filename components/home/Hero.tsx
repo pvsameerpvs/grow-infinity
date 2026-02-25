@@ -20,7 +20,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen lg:h-screen pt-[100px] lg:pt-[120px] pb-12 px-4 sm:px-6 lg:px-8 bg-[#f5f5f5] dark:bg-[#0a0a0a]">
+    <section className="relative min-h-screen lg:h-screen pt-[100px] lg:pt-[120px] pb-4 px-4 sm:px-6 lg:px-8 bg-[#f5f5f5] dark:bg-[#0a0a0a]">
       {/* Main Rounded Hero Card */}
       <div className="relative h-[calc(100vh-140px)] lg:h-full w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl">
         {/* Background Video */}
@@ -38,7 +38,21 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 lg:from-black/50 via-black/10 to-transparent" />
         </div>
 
-     
+        {/* Floating Brand Label at top center */}
+        <div className="absolute top-12 left-1/2 -translate-x-1/2 z-20">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 glass-dark backdrop-blur-xl group/brand cursor-default"
+          >
+            <div className="w-1.5 h-1.5 rounded-full bg-[#C49A45] animate-pulse" />
+            <span className="text-white font-black uppercase tracking-[0.5em] text-[10px] leading-none">
+              Grow Infinity
+            </span>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#C49A45] animate-pulse" />
+          </motion.div>
+        </div>
 
         {/* Content Container */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center lg:flex-row lg:justify-between p-6 sm:p-12 lg:p-20 max-w-screen-2xl mx-auto w-full">
