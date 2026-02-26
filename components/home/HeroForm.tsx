@@ -98,9 +98,10 @@ export function HeroForm() {
             <div className="relative">
               <select
                 required
+                defaultValue=""
                 className="w-full bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-4 py-3 rounded-xl text-sm font-medium text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#C49A45]/20 focus:border-[#C49A45]/30 transition-all appearance-none cursor-pointer"
               >
-                <option value="" disabled selected>
+                <option value="" disabled>
                   Select Service
                 </option>
                 <option value="mainland">Mainland Formation</option>
