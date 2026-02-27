@@ -2,78 +2,164 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Calculator, Globe } from "lucide-react";
+import {
+  ArrowUpRight,
+  Phone,
+  Calculator,
+  CheckCircle2,
+  Zap,
+  Shield,
+} from "lucide-react";
 import Link from "next/link";
+
+const guarantees = [
+  { icon: Zap, text: "Setup in 7 Days" },
+  { icon: Shield, text: "100% Compliance" },
+  { icon: CheckCircle2, text: "Priority Banking" },
+];
 
 export function CTA() {
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] rounded-full opacity-50" />
-      </div>
+    <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
+      {/* Ambient glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-primary/8 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/5 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="relative glass p-12 lg:p-24 rounded-[3rem] border border-primary/10 overflow-hidden text-center">
-          {/* Subtle Grid Background */}
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-               style={{ backgroundImage: 'radial-gradient(circle, #c19b4b 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border border-foreground/8"
+        >
+          {/* Card background */}
+          <div className="absolute inset-0 bg-foreground/[0.02]" />
+
+          {/* Top gold accent bar */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
+
+          {/* Dot pattern */}
+          <div
+            className="absolute inset-0 opacity-[0.025] pointer-events-none"
+            style={{
+              backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+            }}
           />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative z-10"
-          >
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-8 border border-[#C49A45]/10">
-              <div className="w-2 h-2 rounded-full bg-[#C49A45] animate-pulse" />
-              <span className="text-xs font-black uppercase tracking-widest text-[#C49A45]">
-                Ready to Expansion
+          <div className="relative z-10 px-8 sm:px-14 lg:px-20 py-16 lg:py-24 text-center">
+
+            {/* Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-3 mb-7"
+            >
+              <div className="h-px w-8 bg-primary/60" />
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+                Ready to Launch
               </span>
-            </div>
+              <div className="h-px w-8 bg-primary/60" />
+            </motion.div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-8 tracking-tight leading-tight max-w-4xl mx-auto">
-              Level Up Your <span className="text-primary">UAE Presence</span> Today
-            </h2>
+            {/* Heading */}
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15, duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-tight max-w-3xl mx-auto mb-6"
+            >
+              Level Up Your{" "}
+              <span className="text-primary">UAE Presence</span> Today
+            </motion.h2>
 
-            <p className="text-foreground/50 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed font-medium">
-              Join 500+ successful founders who launched their global vision with our agile infrastructure and priority advisory.
-            </p>
+            {/* Sub */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25, duration: 0.6 }}
+              className="text-foreground/50 text-base lg:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
+            >
+              Join 500+ founders who launched their global vision with our
+              agile infrastructure and priority advisory.
+            </motion.p>
 
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link
-                href="/cost-calculator"
-                className="group bg-primary hover:bg-primary-dark text-white px-8 md:px-12 py-5 rounded-2xl flex items-center gap-4 transition-all duration-300 shadow-xl shadow-primary/20 button-premium"
-              >
-                <Calculator className="w-5 h-5" />
-                <span className="font-bold uppercase tracking-widest text-sm">
-                  Instant Cost Quote
-                </span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+            {/* Guarantees row */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="flex flex-wrap items-center justify-center gap-6 mb-12"
+            >
+              {guarantees.map((g, i) => {
+                const Icon = g.icon;
+                return (
+                  <div key={i} className="flex items-center gap-2">
+                    <Icon className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm font-bold text-foreground/60 uppercase tracking-wider">
+                      {g.text}
+                    </span>
+                  </div>
+                );
+              })}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.35, duration: 0.55 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            >
+              {/* Primary */}
+              <Link href="/cost-calculator">
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all duration-300 shadow-lg shadow-primary/25 cursor-pointer button-premium"
+                >
+                  <Calculator className="w-4 h-4" />
+                  <span>Get Instant Quote</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </motion.div>
               </Link>
 
-              <Link
-                href="/contact"
-                className="px-8 md:px-12 py-5 rounded-2xl border border-foreground/10 bg-background/50 backdrop-blur-sm hover:bg-foreground/5 transition-all duration-300 flex items-center gap-4 font-bold uppercase tracking-widest text-sm text-foreground"
-              >
-                <Phone className="w-5 h-5 text-primary" />
-                Book Consultation
+              {/* Secondary */}
+              <Link href="/contact">
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group flex items-center gap-3 px-8 py-4 rounded-2xl border border-foreground/10 hover:border-foreground/20 bg-foreground/[0.02] hover:bg-foreground/[0.05] font-black uppercase tracking-widest text-sm text-foreground transition-all duration-300 cursor-pointer"
+                >
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span>Book Consultation</span>
+                </motion.div>
               </Link>
-            </div>
+            </motion.div>
 
-            <div className="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-40">
-              <div className="flex items-center gap-2">
-                <Globe className="w-4 h-4" />
-                <span className="text-[10px] font-black uppercase tracking-widest">Global Standards</span>
-              </div>
-              <div className="w-1 h-1 rounded-full bg-foreground/20" />
-              <div className="flex items-center gap-2">
-                <span className="text-[10px] font-black uppercase tracking-widest">Priority Support 24/7</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+            {/* Fine print */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+              className="mt-8 text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/20"
+            >
+              No commitment required · Free initial consultation · Results in 7 days
+            </motion.p>
+
+          </div>
+
+          {/* Bottom gold accent bar */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+        </motion.div>
       </div>
     </section>
   );
