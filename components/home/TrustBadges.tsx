@@ -128,7 +128,7 @@ export function TrustBadges() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-3 glass px-6 py-3 rounded-full mb-8 border border-primary/20 shadow-lg"
             >
-              <Sparkles className="w-5 h-5 text-gold" />
+             
               <span className="text-xs font-black uppercase tracking-[0.2em] text-foreground">
                 Trust & Excellence
               </span>
@@ -145,60 +145,7 @@ export function TrustBadges() {
           </motion.div>
 
           {/* Stats Grid - Enhanced */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-20">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.05 }}
-                className="group relative"
-              >
-                <div className="glass p-8 rounded-3xl border border-foreground/5 hover:border-primary/20 transition-all duration-500 relative overflow-hidden">
-                  {/* Gradient Overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-                  />
-
-                  {/* Shimmer Effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/5 to-transparent"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.6 }}
-                  />
-
-                  <div className="relative">
-                    {/* Icon */}
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                      className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center mb-6 shadow-lg`}
-                    >
-                      <stat.icon className="w-7 h-7 text-white" />
-                    </motion.div>
-
-                    {/* Value */}
-                    <div className="text-4xl lg:text-5xl font-black text-foreground mb-2 tracking-tight transition-all">
-                      {stat.value}
-                    </div>
-
-                    {/* Label */}
-                    <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/60 leading-tight">
-                      {stat.label}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Glow Effect */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-20 blur-2xl -z-10 transition-opacity duration-500 rounded-3xl`}
-                />
-              </motion.div>
-            ))}
-          </div>
+         
 
           {/* Certifications - Enhanced with Flip Cards */}
           <motion.div
@@ -337,29 +284,7 @@ export function TrustBadges() {
             </div>
           </motion.div>
 
-          {/* Trust Statement - Enhanced */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center"
-          >
-            <div className="inline-flex items-center gap-3 glass px-8 py-4 rounded-full border border-primary/20 shadow-lg">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <Shield className="w-5 h-5 text-primary" />
-              </motion.div>
-              <span className="text-sm font-bold text-foreground">
-                Trusted by{" "}
-                <span className="text-primary font-black">Startup Founders</span>{" "}
-                and global digital innovators
-              </span>
-              <Sparkles className="w-4 h-4 text-gold" />
-            </div>
-          </motion.div>
+         
         </div>
       </div>
     </section>

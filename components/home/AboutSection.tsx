@@ -93,7 +93,7 @@ export function AboutSection() {
               Architecting Your UAE Success
             </h2>
             <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              We're not just business setup consultants—we're your strategic
+              We're not just business setup consultants we're your strategic
               partners in building a legacy in the world's most dynamic business
               hub.
             </p>
@@ -136,28 +136,7 @@ export function AboutSection() {
               </div>
 
               {/* Floating Stats Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="absolute -bottom-8 -right-8 glass p-6 rounded-2xl border border-primary/10 shadow-2xl hidden lg:block"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-black text-foreground">
-                      9+ Years
-                    </div>
-                    <div className="text-xs text-foreground/60 font-bold">
-                      Industry Excellence
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+             
             </motion.div>
 
             {/* Right: Story Content */}
