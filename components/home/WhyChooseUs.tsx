@@ -3,10 +3,10 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Briefcase,
-  Zap,
-  Shield,
-  Crown,
+  Landmark,
+  Gauge,
+  ShieldCheck,
+  Gem,
   CheckCircle2,
   Clock,
   Users,
@@ -22,7 +22,7 @@ const features = [
     number: "01",
     title: "Banking-First Approach",
     desc: "Direct partnerships with 25+ UAE banks ensure your corporate account opens seamlessly — no rejections, no delays, guaranteed.",
-    icon: Briefcase,
+    icon: Landmark,
     stat: "100%",
     statLabel: "Bank Approval Rate",
     image: "/why-banking.png",
@@ -33,7 +33,7 @@ const features = [
     number: "02",
     title: "Speed & Precision",
     desc: "Government API integrations and VIP processing channels deliver your complete company setup in just 7 days — 65% faster than the industry average.",
-    icon: Zap,
+    icon: Gauge,
     stat: "7 Days",
     statLabel: "Average Setup Time",
     image: "/why-speed.png",
@@ -44,7 +44,7 @@ const features = [
     number: "03",
     title: "Total Compliance",
     desc: "ISO 9001:2015 certified processes ensure every license, visa, and document meets exact UAE regulatory standards — zero risk exposure.",
-    icon: Shield,
+    icon: ShieldCheck,
     stat: "ISO",
     statLabel: "9001:2015 Certified",
     image: "/why-compliance.png",
@@ -55,7 +55,7 @@ const features = [
     number: "04",
     title: "Elite Network Access",
     desc: "Tap into our private network of sovereign wealth advisors, Tier-1 banks, and industry leaders across the UAE ecosystem.",
-    icon: Crown,
+    icon: Gem,
     stat: "500+",
     statLabel: "Elite Connections",
     image: "/why-network.png",
@@ -109,7 +109,7 @@ export function WhyChooseUs() {
         </motion.div>
 
         {/* ── Interactive Feature Showcase ── */}
-        <div className="flex flex-col lg:flex-row gap-0 mb-16 rounded-3xl overflow-hidden border border-foreground/8 shadow-2xl min-h-[560px]">
+        <div className="flex flex-col lg:flex-row gap-0 mb-16  overflow-hidden shadow-2xl min-h-[560px]">
 
           {/* Left — Tab Selector */}
           <div className="lg:w-[42%] bg-foreground/[0.02] border-r border-foreground/8 flex flex-col">
