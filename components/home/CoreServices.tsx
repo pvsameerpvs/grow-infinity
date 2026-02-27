@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import {
   Building2,
   Landmark,
-  Calculator,
-  ShieldCheck,
-  Users2,
-  Globe,
-  ArrowRight,
+  CreditCard,
+  Star,
+  Receipt,
+  Briefcase,
+  ArrowUpRight,
 } from "lucide-react";
 import Link from "next/link";
 import { SERVICES } from "@/constants/services";
@@ -26,137 +26,163 @@ const CORE_SLUGS = [
 const iconMap: Record<string, any> = {
   "mainland-company-formation": Building2,
   "free-zone-company-setup": Landmark,
-  "corporate-bank-account-uae": Calculator,
-  "golden-visa-uae": ShieldCheck,
-  "corporate-tax-uae": Users2,
-  "pro-services-uae": Globe,
+  "corporate-bank-account-uae": CreditCard,
+  "golden-visa-uae": Star,
+  "corporate-tax-uae": Receipt,
+  "pro-services-uae": Briefcase,
 };
 
-const services = CORE_SLUGS.map((slug) => {
+const colorMap: Record<string, string> = {
+  "mainland-company-formation": "from-blue-500/20 to-blue-600/5",
+  "free-zone-company-setup": "from-emerald-500/20 to-emerald-600/5",
+  "corporate-bank-account-uae": "from-primary/20 to-primary/5",
+  "golden-visa-uae": "from-yellow-500/20 to-yellow-600/5",
+  "corporate-tax-uae": "from-purple-500/20 to-purple-600/5",
+  "pro-services-uae": "from-rose-500/20 to-rose-600/5",
+};
+
+const iconColorMap: Record<string, string> = {
+  "mainland-company-formation": "text-blue-400",
+  "free-zone-company-setup": "text-emerald-400",
+  "corporate-bank-account-uae": "text-primary",
+  "golden-visa-uae": "text-yellow-400",
+  "corporate-tax-uae": "text-purple-400",
+  "pro-services-uae": "text-rose-400",
+};
+
+const badgeColorMap: Record<string, string> = {
+  "mainland-company-formation": "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  "free-zone-company-setup": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  "corporate-bank-account-uae": "bg-primary/10 text-primary border-primary/20",
+  "golden-visa-uae": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+  "corporate-tax-uae": "bg-purple-500/10 text-purple-400 border-purple-500/20",
+  "pro-services-uae": "bg-rose-500/10 text-rose-400 border-rose-500/20",
+};
+
+const services = CORE_SLUGS.map((slug, i) => {
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) return null;
   return {
     ...service,
     icon: iconMap[slug] || Building2,
-    desc: service.description[0],
+    desc: service.description[0]?.slice(0, 120) + "...",
+    gradient: colorMap[slug],
+    iconColor: iconColorMap[slug],
+    badgeColor: badgeColorMap[slug],
+    number: String(i + 1).padStart(2, "0"),
   };
 }).filter(Boolean) as any[];
 
 export function CoreServices() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
-
   return (
-    <section id="services" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-background">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/5 blur-[120px] rounded-full opacity-50" />
-      </div>
+    <section id="services" className="relative py-20 lg:py-32 bg-background overflow-hidden">
+      {/* Background ambience */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-primary/5 blur-[180px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-[#C49A45]/10"
-          >
-            <div className="w-2 h-2 rounded-full bg-[#C49A45] animate-pulse" />
-            <span className="text-xs font-black uppercase tracking-widest text-[#C49A45]">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* ── Header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16 lg:mb-20"
+        >
+          <div className="inline-flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-primary/60" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
               Core Expertise
             </span>
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto"
-          >
-            Strategic Solutions for Global Visionaries
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-foreground/50 text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-medium"
-          >
-            We provide the critical infrastructure, priority banking, and agile licensing frameworks that tech-forward founders demand for rapid UAE expansion.
-          </motion.p>
-        </div>
+            <div className="h-px w-8 bg-primary/60" />
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-3xl mx-auto">
+            Strategic Solutions for{" "}
+            <span className="text-primary">Global Visionaries</span>
+          </h2>
+          <p className="text-foreground/50 text-base max-w-2xl mx-auto leading-relaxed">
+            Critical infrastructure, priority banking, and agile licensing frameworks
+            built for tech-forward founders entering the UAE.
+          </p>
+        </motion.div>
 
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {services.map((service) => {
+        {/* ── Services Grid ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+          {services.map((service, i) => {
             const Icon = service.icon;
             return (
               <motion.div
                 key={service.slug}
-                variants={itemVariants}
-                className="group relative"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.55 }}
               >
-                <Link href={`/${service.slug}`} className="block h-full">
-                  <div className="h-full glass-light dark:glass-dark p-8 rounded-[2rem] border border-foreground/5 hover:border-[#C49A45]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#C49A45]/5 flex flex-col items-start text-left">
-                    <div className="w-14 h-14 rounded-2xl bg-[#C49A45]/10 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-[#C49A45] transition-all duration-500">
-                      <Icon className="w-6 h-6 text-[#C49A45] group-hover:text-white transition-colors" />
+                <Link href={`/${service.slug}`} className="block h-full group">
+                  <div className="relative h-full flex flex-col p-7 rounded-3xl border border-foreground/5 hover:border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-400 overflow-hidden">
+
+                    {/* Gradient glow top-right */}
+                    <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${service.gradient} blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+
+                    {/* Top row: icon + number */}
+                    <div className="flex items-start justify-between mb-6">
+                      <div className={`w-12 h-12 rounded-2xl bg-foreground/5 group-hover:bg-foreground/8 flex items-center justify-center transition-all duration-300 group-hover:scale-110`}>
+                        <Icon className={`w-5 h-5 ${service.iconColor}`} strokeWidth={1.8} />
+                      </div>
+                      <span className="text-[10px] font-black text-foreground/15 tracking-widest">
+                        {service.number}
+                      </span>
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-[#C49A45] transition-colors leading-tight">
+
+                    {/* Badge */}
+                    {service.badge && (
+                      <div className={`inline-flex self-start mb-3 px-2.5 py-1 rounded-full border text-[9px] font-black uppercase tracking-widest ${service.badgeColor}`}>
+                        {service.badge}
+                      </div>
+                    )}
+
+                    {/* Title */}
+                    <h3 className="text-lg font-black text-foreground mb-3 leading-snug tracking-tight group-hover:text-foreground transition-colors">
                       {service.title}
                     </h3>
-                    
-                    <p className="text-sm text-foreground/50 leading-relaxed font-medium mb-8">
+
+                    {/* Description */}
+                    <p className="text-sm text-foreground/45 leading-relaxed flex-1 mb-6">
                       {service.desc}
                     </p>
-                    
-                    <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#C49A45] opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0">
-                      Explore Service <ArrowRight className="w-3 h-3" />
+
+                    {/* CTA arrow */}
+                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-foreground/25 group-hover:text-primary transition-all duration-300">
+                      <span>Explore</span>
+                      <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
+
+                    {/* Bottom border line that animates */}
+                    <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-primary to-transparent transition-all duration-500 rounded-b-3xl" />
                   </div>
                 </Link>
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* Bottom CTA */}
+        {/* ── Bottom CTA ── */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-20 text-center"
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-center"
         >
-          <Link href="/services" className="inline-flex items-center gap-3 text-foreground/40 hover:text-[#C49A45] transition-colors font-bold uppercase tracking-[0.3em] text-[10px]">
-            View All Specialized Solutions <ArrowRight className="w-4 h-4" />
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-foreground/35 hover:text-primary transition-colors font-black uppercase tracking-[0.3em] text-[10px] group"
+          >
+            View All Specialized Solutions
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </motion.div>
+
       </div>
     </section>
   );
