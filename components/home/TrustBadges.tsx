@@ -1,67 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
-  Shield,
+  Trophy,
   Award,
+  ShieldCheck,
   Building2,
   Users,
+  Clock,
   CheckCircle2,
   TrendingUp,
-  Sparkles,
-  Trophy,
 } from "lucide-react";
 
-const stats = [
-  {
-    icon: Building2,
-    value: "500+",
-    label: "Businesses Launched",
-    color: "text-primary",
-    gradient: "from-primary to-primary-dark",
-  },
-  {
-    icon: Users,
-    value: "99%",
-    label: "Customer Happiness",
-    color: "text-gold",
-    gradient: "from-gold to-gold-dark",
-  },
-  {
-    icon: TrendingUp,
-    value: "24h",
-    label: "Application Review",
-    color: "text-primary",
-    gradient: "from-primary-light to-primary",
-  },
-  {
-    icon: CheckCircle2,
-    value: "7 Days",
-    label: "Average Setup Time",
-    color: "text-gold",
-    gradient: "from-gold-dark to-gold",
-  },
-];
+
 
 const certifications = [
   {
     name: "ISO 9001:2015",
     subtitle: "Quality Management",
-    description: "Internationally recognized quality standards",
     icon: Trophy,
   },
   {
     name: "DMCC Approved",
     subtitle: "Corporate Service Provider",
-    description: "Official DMCC certification",
     icon: Award,
   },
   {
     name: "DED Licensed",
     subtitle: "Business Setup Authority",
-    description: "Dubai Economic Department licensed",
-    icon: Shield,
+    icon: ShieldCheck,
   },
 ];
 
@@ -77,215 +45,128 @@ const partners = [
 ];
 
 export function TrustBadges() {
-  const [hoveredCert, setHoveredCert] = useState<number | null>(null);
-
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `
- linear-gradient(to right, currentColor 1px, transparent 1px),
- linear-gradient(to bottom, currentColor 1px, transparent 1px)
- `,
-              backgroundSize: "80px 80px",
-            }}
-          />
-        </div>
+    <section className="relative py-20 lg:py-32 bg-background overflow-hidden">
+      {/* Background glows */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
 
-        {/* Background Accents */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* ── Section Header ── */}
         <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.05, 0.1, 0.05],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full"
-        />
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16 lg:mb-20"
+        >
+          <div className="inline-flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-primary/60" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+              Trust & Excellence
+            </span>
+            <div className="h-px w-8 bg-primary/60" />
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-3xl mx-auto">
+            The Modern Way to{" "}
+            <span className="text-primary">Launch in UAE</span>
+          </h2>
+          <p className="text-base text-foreground/55 max-w-2xl mx-auto leading-relaxed">
+            We&apos;ve redesigned the business setup experience for modern entrepreneurs —
+            agile, transparent, and built for speed.
+          </p>
+        </motion.div>
+
+
+
+        {/* ── Certifications ── */}
         <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.05, 0.1, 0.05],
-          }}
-          transition={{ duration: 10, repeat: Infinity, delay: 1 }}
-          className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gold/20 blur-[120px] rounded-full"
-        />
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 lg:mb-20"
+        >
+          {/* Label */}
+          <div className="flex items-center gap-4 mb-10 justify-center">
+            <div className="h-px flex-1 max-w-[80px] bg-foreground/10" />
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/35">
+              Certifications & Accreditations
+            </span>
+            <div className="h-px flex-1 max-w-[80px] bg-foreground/10" />
+          </div>
 
-        <div className="container mx-auto px-4 py-24 lg:py-32 relative z-10">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-3 glass px-6 py-3 rounded-full mb-8 border border-primary/20 shadow-lg"
-            >
-             
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-foreground">
-                Trust & Excellence
-              </span>
-            </motion.div>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
-              The Modern Way to Launch in UAE
-            </h2>
-            <p className="text-base text-foreground/70 max-w-2xl mx-auto leading-relaxed">
-              We've redesigned the business setup experience for modern
-              entrepreneurs. Our agile approach ensures your company is ready
-              to scale in the UAE's vibrant ecosystem with speed and precision.
-            </p>
-          </motion.div>
-
-          {/* Stats Grid - Enhanced */}
-         
-
-          {/* Certifications - Enhanced with Flip Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-20"
-          >
-            <div className="flex items-center justify-center mb-12">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary/30" />
-              <p className="text-center text-xs font-black text-foreground/70 uppercase tracking-[0.3em] mx-6">
-                Certifications & Accreditations
-              </p>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/30" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {certifications.map((cert, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            {certifications.map((cert, i) => {
+              const Icon = cert.icon;
+              return (
                 <motion.div
                   key={cert.name}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10, scale: 1.03 }}
-                  onHoverStart={() => setHoveredCert(index)}
-                  onHoverEnd={() => setHoveredCert(null)}
-                  className="group relative"
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -5 }}
+                  className="group relative flex flex-col items-center text-center p-8 rounded-3xl glass border border-foreground/5 hover:border-primary/20 transition-all overflow-hidden"
                 >
-                  <div className="glass p-8 rounded-3xl border border-gold/10 hover:border-gold/30 transition-all duration-500 text-center relative overflow-hidden h-full">
-                    {/* Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Hover glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    {/* Icon */}
-                    <motion.div
-                      animate={{
-                        scale: hoveredCert === index ? 1.1 : 1,
-                        rotate: hoveredCert === index ? 360 : 0,
-                      }}
-                      transition={{ duration: 0.6 }}
-                      className="relative w-20 h-20 rounded-full bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center mx-auto mb-6 shadow-xl"
-                    >
-                      <cert.icon className="w-10 h-10 text-white" />
-                      <motion.div
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-0 rounded-full bg-white/30"
-                      />
-                    </motion.div>
-
-                    {/* Content */}
-                    <div className="relative">
-                      <div className="text-lg font-black text-foreground mb-2">
-                        {cert.name}
-                      </div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-foreground/70 mb-3">
-                        {cert.subtitle}
-                      </div>
-
-                      {/* Description - Shows on Hover */}
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{
-                          opacity: hoveredCert === index ? 1 : 0,
-                          height: hoveredCert === index ? "auto" : 0,
-                        }}
-                        className="text-sm text-foreground/80 overflow-hidden font-medium"
-                      >
-                        {cert.description}
-                      </motion.div>
-                    </div>
-
-                    {/* Checkmark Badge */}
-                    <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
-                    </div>
+                  {/* Icon */}
+                  <div className="relative w-16 h-16 rounded-2xl bg-primary/10 border border-primary/15 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
                   </div>
 
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold to-gold-dark opacity-0 group-hover:opacity-20 blur-2xl -z-10 transition-opacity duration-500 rounded-3xl" />
+                  {/* Check badge */}
+                  <div className="absolute top-5 right-5 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+                  </div>
+
+                  <div className="font-black text-base text-foreground mb-1 relative">{cert.name}</div>
+                  <div className="text-xs text-foreground/40 font-bold uppercase tracking-wider relative">{cert.subtitle}</div>
                 </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* ── Partners Marquee ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-4 mb-10 justify-center">
+            <div className="h-px flex-1 max-w-[80px] bg-foreground/10" />
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/35">
+              Directly Licensed By & Partnered With
+            </span>
+            <div className="h-px flex-1 max-w-[80px] bg-foreground/10" />
+          </div>
+
+          <div className="relative flex w-full overflow-hidden py-4">
+            {/* Fade edges */}
+            <div className="absolute top-0 bottom-0 left-0 w-24 lg:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 bottom-0 right-0 w-24 lg:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+            <motion.div
+              className="flex items-center gap-14 lg:gap-20 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ repeat: Infinity, ease: "linear", duration: 28 }}
+            >
+              {[...partners, ...partners, ...partners, ...partners].map((partner, i) => (
+                <div key={`${partner.name}-${i}`} className="group flex-shrink-0 text-center cursor-default">
+                  <span className="text-2xl lg:text-3xl font-black text-foreground/20 group-hover:text-foreground/60 transition-colors duration-300 tracking-tighter whitespace-nowrap">
+                    {partner.name}
+                  </span>
+                </div>
               ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Partners - Animated Carousel */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="flex items-center justify-center mb-12">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary/30" />
-              <p className="text-center text-xs font-black text-foreground/70 uppercase tracking-[0.3em] mx-6">
-                Directly Licensed by & Partnered with
-              </p>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/30" />
-            </div>
-
-            {/* Continuous Infinite Sliding Marquee */}
-            <div className="relative flex w-full overflow-hidden py-6 mb-12">
-              {/* Fade Edges for premium look */}
-              <div className="absolute top-0 bottom-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-              <div className="absolute top-0 bottom-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-              <motion.div
-                className="flex items-center space-x-12 sm:space-x-24 w-max"
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{
-                  repeat: Infinity,
-                  ease: "linear",
-                  duration: 25,
-                }}
-              >
-                {/* Array duplicated twice (4 times total for seamless 50% scroll) so it never snaps abruptly. */}
-                {[...partners, ...partners, ...partners, ...partners].map(
-                  (partner, index) => (
-                    <div
-                      key={`${partner.name}-${index}`}
-                      className="group cursor-pointer relative flex-shrink-0"
-                    >
-                      <div className="text-center">
-                        <span className="text-3xl lg:text-4xl font-black text-foreground/40 hover:text-foreground transition-all duration-300 tracking-tighter">
-                          {partner.name}
-                        </span>
-
-                        {/* Tooltip */}
-                        <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-background/95 backdrop-blur-md px-3 py-2 rounded-lg border border-primary/20 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50"></div>
-                      </div>
-                    </div>
-                  ),
-                )}
-              </motion.div>
-            </div>
-          </motion.div>
-
-         
-        </div>
       </div>
     </section>
   );

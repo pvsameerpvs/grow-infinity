@@ -65,7 +65,7 @@ export function GlobalPresence() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
+    <section className="relative py-2 lg:py-4 bg-background overflow-hidden">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div
@@ -107,27 +107,22 @@ export function GlobalPresence() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20 lg:mb-24"
         >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-3 glass px-6 py-3 rounded-full mb-8 border border-primary/20 shadow-lg"
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <MapPin className="w-5 h-5 text-primary" />
-            </motion.div>
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-primary">
-              Strategic Presence
+         
+ <div className="inline-flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-primary/60" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+                Strategic Presence
             </span>
-            <Sparkles className="w-4 h-4 text-gold" />
-          </motion.div>
+            <div className="h-px w-8 bg-primary/60" />
+          </div>
+
+
+
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
             Strategic Global Network
           </h2>
+
 
           <p className="text-base text-foreground/70 max-w-3xl mx-auto leading-relaxed">
             Our flagship headquarters in Dubai serves as a premier{" "}
