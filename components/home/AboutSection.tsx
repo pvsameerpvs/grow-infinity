@@ -68,13 +68,23 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
+    <section id="about" className="relative py-12 pl-0 pr-4 sm:pr-6 lg:pr-8 bg-background">
+      {/* ── Vertical Side Label ── */}
+      <div className="absolute left-0 top-12 bottom-12 w-16 hidden lg:flex items-center justify-center z-20">
+        <span
+          className="text-base font-black uppercase text-foreground/30 select-none whitespace-nowrap"
+          style={{ writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)", letterSpacing: "0.5em" }}
+        >
+          About Grow Infinity
+        </span>
+      </div>
+
+      <div className="relative w-full overflow-hidden pl-16 lg:pl-20">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
 
-        <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
+        <div className="container mx-auto px-4 py-2 lg:py-4 relative z-10">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -83,12 +93,7 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 lg:mb-24"
           >
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-primary/10">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-black uppercase tracking-widest text-primary">
-                About Grow Infinity
-              </span>
-            </div>
+            <div className="mb-3" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
               Architecting Your UAE Success
             </h2>
@@ -100,43 +105,31 @@ export function AboutSection() {
           </motion.div>
 
           {/* Story Section with Images */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-center">
-            {/* Left: Images Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20 items-stretch">
+            {/* Left: Full-Height Image */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative min-h-[400px]"
             >
-              <div className="grid grid-cols-2 gap-4">
-                {/* Large Image */}
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="col-span-2 relative h-[300px] lg:h-[400px] rounded-3xl overflow-hidden group border border-white/10"
-                >
-                  <img
-                    src="/about-office.png"
-                    alt="Grow Infinity Dubai Office"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                  <div className="absolute bottom-6 left-6">
-                    <div className="text-white font-black text-sm uppercase tracking-wider">
-                      Dubai Office
-                    </div>
-                    <div className="text-white/80 text-xs">
-                      Premium Business District
-                    </div>
+              <div className="absolute inset-0 rounded-3xl overflow-hidden group border border-white/10">
+                <img
+                  src="/about-office.png"
+                  alt="Grow Infinity Dubai Office"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-6 left-6">
+                  <div className="text-white font-black text-sm uppercase tracking-wider">
+                    Dubai Office
                   </div>
-                </motion.div>
-
-                {/* Two Small Images */}
-                
+                  <div className="text-white/80 text-xs">
+                    Premium Business District
+                  </div>
+                </div>
               </div>
-
-              {/* Floating Stats Card */}
-             
             </motion.div>
 
             {/* Right: Story Content */}
