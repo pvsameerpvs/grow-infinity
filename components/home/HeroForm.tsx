@@ -54,14 +54,11 @@ export function HeroForm() {
       <div className="relative z-10">
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#C49A45]" />
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#C49A45]">
-              Grow Infinity
-            </span>
+            <img src="/logo-black.png" alt="Grow Infinity" className="h-8 w-auto" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-tight leading-none">
+          {/* <h3 className="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-tight leading-none">
             Elite <span className="text-[#C49A45]">Consult</span>
-          </h3>
+          </h3> */}
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
