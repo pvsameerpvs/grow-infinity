@@ -109,10 +109,10 @@ export function WhyChooseUs() {
         </motion.div>
 
         {/* ── Interactive Feature Showcase ── */}
-        <div className="flex flex-col lg:flex-row gap-0 mb-16  overflow-hidden shadow-2xl min-h-[560px]">
+        <div className="flex flex-col lg:flex-row gap-0 mb-16  overflow-hidden min-h-[560px]">
 
           {/* Left — Tab Selector */}
-          <div className="lg:w-[42%] bg-foreground/[0.02] border-r border-foreground/8 flex flex-col">
+          <div className="lg:w-[42%] bg-foreground/[0.02] flex flex-col">
             {features.map((f, i) => {
               const Icon = f.icon;
               const isActive = active === i;
