@@ -1,247 +1,264 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  Target,
+  Briefcase,
   Zap,
   Shield,
   Crown,
-  Briefcase,
-  Globe2,
-  TrendingUp,
-  Award,
   CheckCircle2,
   Clock,
   Users,
   Building2,
+  Globe2,
+  TrendingUp,
+  ArrowRight,
 } from "lucide-react";
 
-const mainFeatures = [
+const features = [
   {
+    id: 0,
+    number: "01",
     title: "Banking-First Approach",
-    desc: "Direct partnerships with 25+ UAE banks ensure your corporate account opens seamlessly—no rejections, no delays.",
+    desc: "Direct partnerships with 25+ UAE banks ensure your corporate account opens seamlessly — no rejections, no delays, guaranteed.",
     icon: Briefcase,
-    color: "from-primary to-primary-dark",
-    stats: "100% Bank Approval",
+    stat: "100%",
+    statLabel: "Bank Approval Rate",
     image: "/why-banking.png",
+    accent: "#C49A45",
   },
   {
+    id: 1,
+    number: "02",
     title: "Speed & Precision",
-    desc: "Government API integrations and VIP channels deliver your complete setup in 7 days—65% faster than industry average.",
+    desc: "Government API integrations and VIP processing channels deliver your complete company setup in just 7 days — 65% faster than the industry average.",
     icon: Zap,
-    color: "from-gold to-gold-dark",
-    stats: "7-Day Setup",
+    stat: "7 Days",
+    statLabel: "Average Setup Time",
     image: "/why-speed.png",
+    accent: "#C49A45",
   },
   {
+    id: 2,
+    number: "03",
     title: "Total Compliance",
-    desc: "ISO 9001:2015 certified processes ensure every license, visa, and document meets exact UAE regulatory standards.",
+    desc: "ISO 9001:2015 certified processes ensure every license, visa, and document meets exact UAE regulatory standards — zero risk exposure.",
     icon: Shield,
-    color: "from-primary to-primary-light",
-    stats: "100% Compliant",
+    stat: "ISO",
+    statLabel: "9001:2015 Certified",
     image: "/why-compliance.png",
+    accent: "#C49A45",
   },
   {
+    id: 3,
+    number: "04",
     title: "Elite Network Access",
-    desc: "Tap into our private network of sovereign wealth advisors, Tier-1 banks, and industry leaders across the UAE.",
+    desc: "Tap into our private network of sovereign wealth advisors, Tier-1 banks, and industry leaders across the UAE ecosystem.",
     icon: Crown,
-    color: "from-gold-dark to-gold",
-    stats: "VIP Access",
+    stat: "500+",
+    statLabel: "Elite Connections",
     image: "/why-network.png",
+    accent: "#C49A45",
   },
 ];
 
 const benefits = [
-  { icon: CheckCircle2, text: "Zero Hidden Fees - Transparent Pricing" },
-  { icon: Clock, text: "Dedicated Account Manager 24/7" },
-  { icon: Users, text: "Multi-Language Support Team" },
-  { icon: Building2, text: "All Free Zones & Mainland Options" },
-  { icon: Globe2, text: "International Business Setup Expertise" },
-  { icon: TrendingUp, text: "High-Growth Strategy Advisory" },
+  { icon: CheckCircle2, text: "Zero Hidden Fees" },
+  { icon: Clock, text: "24/7 Account Manager" },
+  { icon: Users, text: "Multi-Language Support" },
+  { icon: Building2, text: "All Free Zones & Mainland" },
+  { icon: Globe2, text: "International Expertise" },
+  { icon: TrendingUp, text: "Growth Strategy Advisory" },
 ];
 
 export function WhyChooseUs() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
+  const [active, setActive] = useState(0);
 
   return (
-    <section className="relative py-12 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="relative w-full rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden group shadow-2xl bg-background border border-foreground/5">
-        {/* Cinematic Background Elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 blur-[150px] rounded-full opacity-50" />
-          <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/10 blur-[150px] rounded-full opacity-50" />
-          
-          {/* Subtle Animated Pattern */}
-          <div className="absolute inset-0 opacity-[0.03]">
-            <div className="absolute inset-0" style={{ 
-              backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
-              backgroundSize: '100px 100px'
-            }} />
+    <section className="relative py-20 lg:py-32 bg-background overflow-hidden">
+      {/* Background glows */}
+      <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-primary/5 blur-[200px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/5 blur-[180px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* ── Section Header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16 lg:mb-20"
+        >
+          <div className="inline-flex items-center gap-3 mb-5">
+            <div className="h-px w-8 bg-primary/60" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+              Distinct Advantage
+            </span>
+            <div className="h-px w-8 bg-primary/60" />
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-3xl mx-auto">
+            Why Visionaries Choose{" "}
+            <span className="text-primary">Grow Infinity</span>
+          </h2>
+          <p className="text-base text-foreground/55 max-w-2xl mx-auto leading-relaxed">
+            We don&apos;t just register companies. We build high-performance ventures with
+            priority banking and agile infrastructure.
+          </p>
+        </motion.div>
+
+        {/* ── Interactive Feature Showcase ── */}
+        <div className="flex flex-col lg:flex-row gap-0 mb-16 rounded-3xl overflow-hidden border border-foreground/8 shadow-2xl min-h-[560px]">
+
+          {/* Left — Tab Selector */}
+          <div className="lg:w-[42%] bg-foreground/[0.02] border-r border-foreground/8 flex flex-col">
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              const isActive = active === i;
+              return (
+                <motion.button
+                  key={f.id}
+                  onClick={() => setActive(i)}
+                  className={`group relative flex items-start gap-5 p-7 lg:p-8 text-left transition-all duration-300 border-b border-foreground/5 last:border-b-0 cursor-pointer
+                    ${isActive ? "bg-foreground/[0.05]" : "hover:bg-foreground/[0.03]"}`}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  {/* Active indicator bar */}
+                  <div
+                    className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-r-full transition-all duration-300
+                      ${isActive ? "bg-primary scale-y-100" : "bg-transparent scale-y-0"}`}
+                  />
+
+                  {/* Icon */}
+                  <div className={`flex-shrink-0 w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-300
+                    ${isActive ? "bg-primary text-white" : "bg-foreground/5 text-foreground/40 group-hover:bg-foreground/8 group-hover:text-foreground/60"}`}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </div>
+
+                  {/* Text */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className={`text-[10px] font-black uppercase tracking-widest transition-colors
+                        ${isActive ? "text-primary" : "text-foreground/25"}`}>
+                        {f.number}
+                      </span>
+                      {isActive && (
+                        <motion.div
+                          initial={{ opacity: 0, x: -4 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          className="w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center"
+                        >
+                          <ArrowRight className="w-2.5 h-2.5 text-primary" />
+                        </motion.div>
+                      )}
+                    </div>
+                    <h3 className={`font-black text-base lg:text-lg tracking-tight transition-colors
+                      ${isActive ? "text-foreground" : "text-foreground/50 group-hover:text-foreground/70"}`}>
+                      {f.title}
+                    </h3>
+                    {isActive && (
+                      <motion.p
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="text-foreground/55 text-sm leading-relaxed mt-2"
+                      >
+                        {f.desc}
+                      </motion.p>
+                    )}
+                  </div>
+                </motion.button>
+              );
+            })}
+          </div>
+
+          {/* Right — Image + Stat reveal */}
+          <div className="lg:w-[58%] relative overflow-hidden min-h-[320px] lg:min-h-0">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                {/* Image */}
+                <img
+                  src={features[active].image}
+                  alt={features[active].title}
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+
+                {/* Stat badge — bottom left */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="absolute bottom-8 left-8"
+                >
+                  <div className="inline-flex flex-col bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4">
+                    <span className="text-4xl font-black text-primary leading-none">
+                      {features[active].stat}
+                    </span>
+                    <span className="text-white/50 text-xs font-bold uppercase tracking-wider mt-1.5">
+                      {features[active].statLabel}
+                    </span>
+                  </div>
+                </motion.div>
+
+                {/* Feature title overlay — top left */}
+                <motion.div
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.15, duration: 0.5 }}
+                  className="absolute top-8 left-8"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-[0.35em] text-white/40">
+                    {features[active].number} — {features[active].title}
+                  </span>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-4xl mx-auto mb-16 lg:mb-24"
-          >
-            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 border border-primary/10">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-black uppercase tracking-widest text-primary">
-                Distinct Advantage
-              </span>
-            </div>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight leading-tight max-w-4xl mx-auto">
-              Why Visionaries Choose Grow Infinity
-            </h2>
-
-            <p className="text-base text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-              We don't just register companies. We build high-performance
-              ventures with priority banking and agile infrastructure for the
-              next generation of global founders.
-            </p>
-          </motion.div>
-
-          {/* Main Features Grid */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16"
-          >
-            {mainFeatures.map((feature, index) => (
+        {/* ── Benefits Strip ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3"
+        >
+          {benefits.map((b, i) => {
+            const Icon = b.icon;
+            return (
               <motion.div
-                key={feature.title}
-                variants={itemVariants}
-                style={{ 
-                  perspective: 1000,
-                }}
-                whileHover={{ rotateY: index % 2 === 0 ? 5 : -5, rotateX: 2 }}
-                className="group relative overflow-hidden rounded-[2.5rem] h-[400px]"
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07, duration: 0.4 }}
+                whileHover={{ y: -3 }}
+                className="flex flex-col items-center text-center gap-2.5 p-5 rounded-2xl glass border border-foreground/5 hover:border-primary/20 transition-all cursor-default"
               >
-                {/* Background Image with Deep Parallax */}
-                <div className="absolute inset-0 z-0 scale-110 group-hover:scale-125 transition-transform duration-[1.5s] ease-out">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Multi-layered Overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80" />
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-20 group-hover:opacity-40 transition-opacity duration-700`} />
+                <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-primary" />
                 </div>
-
-                <div className="relative h-full p-8 lg:p-12 flex flex-col justify-end z-10">
-                  {/* Content Container with Glassmorphism */}
-                  <div className="p-8 rounded-[2rem] bg-white/5 backdrop-blur-md border border-white/10 group-hover:bg-white/10 group-hover:border-white/20 transition-all duration-500">
-                    <div className="flex items-center gap-4 mb-6 -mt-14">
-                      <div className={`w-12 h-[2px] bg-gradient-to-r ${feature.color}`} />
-                      <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em]">0{index + 1}</span>
-                    </div>
-
-
-
-                    <h3 className="text-2xl lg:text-3xl font-black mb-3 tracking-tight text-white group-hover:text-gold transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-white/70 text-sm leading-relaxed font-medium">
-                      {feature.desc}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Animated Inner Glow */}
-                <div className="absolute inset-0 border-[1px] border-white/0 group-hover:border-white/20 rounded-[2.5rem] transition-all duration-500" />
+                <span className="text-xs font-bold text-foreground/60 leading-tight">
+                  {b.text}
+                </span>
               </motion.div>
-            ))}
-          </motion.div>
+            );
+          })}
+        </motion.div>
 
-          {/* Additional Benefits */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-5xl mx-auto"
-          >
-            <div className="relative group/package">
-              {/* Premium Card Border Animation */}
-              <div className="absolute -inset-[2px] bg-gradient-to-r from-primary via-gold to-primary rounded-[2.5rem] lg:rounded-[3.5rem] opacity-0 group-hover/package:opacity-30 blur-md transition-opacity duration-1000" />
-              
-              <div className="glass p-8 lg:p-14 rounded-[2.5rem] lg:rounded-[3.5rem] border border-foreground/5 relative overflow-hidden backdrop-blur-3xl bg-background/40">
-                {/* Background Texture Overlay */}
-                <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-                
-                <div className="relative z-10">
-                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-12">
-                    <div className="flex items-center gap-5">
-                      <div className="w-2 h-16 bg-gradient-to-b from-primary to-primary-dark rounded-full group-hover/package:scale-y-110 transition-transform duration-500" />
-                      <div>
-                        <h3 className="text-2xl md:text-3xl font-black text-foreground tracking-tight mb-1">
-                          Enterprise Launch Protocol
-                        </h3>
-                        <div className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                          <span className="text-[10px] font-black text-foreground/40 uppercase tracking-widest">Global Status: Priority</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="hidden lg:block h-12 w-px bg-foreground/10" />
-                    
-                    <div className="flex flex-col items-end">
-                      <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-2">Exclusive Membership</p>
-                      <div className="text-3xl font-black text-foreground tracking-tighter">PLATINUM <span className="text-gold">ACCESS</span></div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {benefits.map((benefit, index) => (
-                      <motion.div
-                        key={benefit.text}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.4, delay: index * 0.05 }}
-                        className="flex items-center gap-4 p-5 rounded-2xl bg-foreground/[0.03] border border-foreground/5 hover:border-primary/20 hover:bg-white dark:hover:bg-black transition-all group/benefit cursor-default shadow-sm hover:shadow-2xl hover:shadow-primary/5"
-                      >
-                        <div className="flex flex-col">
-                          <span className="text-sm font-bold text-foreground/70 group-hover:text-foreground transition-colors leading-tight">
-                            {benefit.text}
-                          </span>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </section>
   );
