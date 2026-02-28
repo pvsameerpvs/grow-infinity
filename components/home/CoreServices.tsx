@@ -75,7 +75,7 @@ const services = CORE_SLUGS.map((slug, i) => {
 
 export function CoreServices() {
   return (
-    <section id="services" className="relative py-20 lg:py-32 bg-background overflow-hidden">
+    <section id="services" className="relative py-2 lg:py-4 bg-background overflow-hidden">
       {/* Background ambience */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-primary/5 blur-[180px] rounded-full pointer-events-none" />
 

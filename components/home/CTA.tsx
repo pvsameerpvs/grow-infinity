@@ -20,10 +20,10 @@ const guarantees = [
 
 export function CTA() {
   return (
-    <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
+    <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-primary rounded-t-3xl">
       {/* Ambient glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-primary/8 blur-[180px] rounded-full pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/5 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/10 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-black/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
@@ -31,24 +31,19 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative rounded-[2.5rem] lg:rounded-[3.5rem] overflow-hidden border border-foreground/8"
+          className="relative overflow-hidden"
         >
-          {/* Card background */}
-          <div className="absolute inset-0 bg-foreground/[0.02]" />
-
-          {/* Top gold accent bar */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" />
 
           {/* Dot pattern */}
           <div
-            className="absolute inset-0 opacity-[0.025] pointer-events-none"
+            className="absolute inset-0 opacity-[0.06] pointer-events-none"
             style={{
               backgroundImage: "radial-gradient(circle, currentColor 1px, transparent 1px)",
               backgroundSize: "36px 36px",
             }}
           />
 
-          <div className="relative z-10 px-8 sm:px-14 lg:px-20 py-16 lg:py-24 text-center">
+          <div className="relative z-10 px-8 sm:px-14 lg:px-20 py-1 lg:py-2 text-center">
 
             {/* Eyebrow */}
             <motion.div
@@ -58,11 +53,11 @@ export function CTA() {
               transition={{ delay: 0.1, duration: 0.5 }}
               className="inline-flex items-center gap-3 mb-7"
             >
-              <div className="h-px w-8 bg-primary/60" />
-              <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+              <div className="h-px w-8 bg-white/50" />
+              <span className="text-xs font-black uppercase tracking-[0.3em] text-white/80">
                 Ready to Launch
               </span>
-              <div className="h-px w-8 bg-primary/60" />
+              <div className="h-px w-8 bg-white/50" />
             </motion.div>
 
             {/* Heading */}
@@ -71,10 +66,10 @@ export function CTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight leading-tight max-w-3xl mx-auto mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight max-w-3xl mx-auto mb-6"
             >
               Level Up Your{" "}
-              <span className="text-primary">UAE Presence</span> Today
+              <span className="text-white/80">UAE Presence</span> Today
             </motion.h2>
 
             {/* Sub */}
@@ -83,7 +78,7 @@ export function CTA() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25, duration: 0.6 }}
-              className="text-foreground/50 text-base lg:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
+              className="text-white/70 text-base lg:text-lg max-w-xl mx-auto mb-10 leading-relaxed"
             >
               Join 500+ founders who launched their global vision with our
               agile infrastructure and priority advisory.
@@ -101,8 +96,8 @@ export function CTA() {
                 const Icon = g.icon;
                 return (
                   <div key={i} className="flex items-center gap-2">
-                    <Icon className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-sm font-bold text-foreground/60 uppercase tracking-wider">
+                    <Icon className="w-4 h-4 text-white flex-shrink-0" />
+                    <span className="text-sm font-bold text-white/70 uppercase tracking-wider">
                       {g.text}
                     </span>
                   </div>
@@ -123,7 +118,7 @@ export function CTA() {
                 <motion.div
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group flex items-center gap-3 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all duration-300 shadow-lg shadow-primary/25 cursor-pointer button-premium"
+                  className="group flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all duration-300 shadow-lg shadow-black/20 cursor-pointer hover:bg-white/90"
                 >
                   <Calculator className="w-4 h-4" />
                   <span>Get Instant Quote</span>
@@ -136,9 +131,9 @@ export function CTA() {
                 <motion.div
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group flex items-center gap-3 px-8 py-4 rounded-2xl border border-foreground/10 hover:border-foreground/20 bg-foreground/[0.02] hover:bg-foreground/[0.05] font-black uppercase tracking-widest text-sm text-foreground transition-all duration-300 cursor-pointer"
+                  className="group flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/30 hover:border-white/50 bg-white/10 hover:bg-white/20 font-black uppercase tracking-widest text-sm text-white transition-all duration-300 cursor-pointer"
                 >
-                  <Phone className="w-4 h-4 text-primary" />
+                  <Phone className="w-4 h-4 text-white/70" />
                   <span>Book Consultation</span>
                 </motion.div>
               </Link>
@@ -150,7 +145,7 @@ export function CTA() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.45, duration: 0.5 }}
-              className="mt-8 text-[10px] font-bold uppercase tracking-[0.25em] text-foreground/20"
+              className="mt-8 text-[10px] font-bold uppercase tracking-[0.25em] text-white/30"
             >
               No commitment required · Free initial consultation · Results in 7 days
             </motion.p>
@@ -158,7 +153,7 @@ export function CTA() {
           </div>
 
           {/* Bottom gold accent bar */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
         </motion.div>
       </div>
     </section>

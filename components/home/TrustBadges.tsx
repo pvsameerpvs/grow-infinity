@@ -46,7 +46,7 @@ const partners = [
 
 export function TrustBadges() {
   return (
-    <section className="relative py-20 lg:py-32 bg-background overflow-hidden">
+    <section className="relative py-2 lg:py-4 bg-background overflow-hidden">
       {/* Background glows */}
       <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gold/5 blur-[160px] rounded-full pointer-events-none" />
