@@ -99,13 +99,10 @@ export function WhyChooseUs() {
             <div className="h-px w-8 bg-primary/60" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-3xl mx-auto">
-            Why Visionaries Choose{" "}
+            Why Visionaries Choose<br></br>
             <span className="text-primary">Grow Infinity</span>
           </h2>
-          <p className="text-base text-foreground/55 max-w-2xl mx-auto leading-relaxed">
-            We don&apos;t just register companies. We build high-performance ventures with
-            priority banking and agile infrastructure.
-          </p>
+          
         </motion.div>
 
         {/* ── Interactive Feature Showcase ── */}

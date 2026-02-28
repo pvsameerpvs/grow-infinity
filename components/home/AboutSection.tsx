@@ -22,7 +22,7 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative bg-background overflow-hidden py-16 lg:py-24">
+    <section id="about" className="relative bg-background overflow-hidden py-16 lg:py-24 px-4 sm:px-6 lg:px-8 xl:px-12">
       {/* Ambient Glows */}
       <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-primary/5 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 blur-[150px] rounded-full pointer-events-none" />
@@ -35,24 +35,15 @@ export function AboutSection() {
         transition={{ duration: 0.7 }}
         className="relative z-10 text-center px-4 mb-16 lg:mb-20"
       >
-        <div className="inline-flex items-center gap-3 mb-5">
-          <div className="h-px w-8 bg-primary/60" />
-          <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
-            Who We Are
-          </span>
-          <div className="h-px w-8 bg-primary/60" />
-        </div>
+       
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-4xl mx-auto">
-          About Grow Infinity
+          About <span className="text-primary">Grow Infinity</span>
         </h2>
-        <p className="text-base text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-          We&apos;re not just business setup consultants  we&apos;re your strategic partners in
-          building a legacy in the world&apos;s most dynamic business hub.
-        </p>
+       
       </motion.div>
 
       {/* ── Split Layout ── */}
-      <div className="relative z-10 flex flex-col lg:flex-row min-h-[620px]">
+      <div className="relative z-10 flex flex-col lg:flex-row min-h-[620px] max-w-[1600px] mx-auto gap-0">
 
         {/* LEFT — Full-bleed image */}
         <motion.div
@@ -60,10 +51,10 @@ export function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="relative lg:w-1/2 min-h-[420px] lg:min-h-0"
+          className="relative lg:w-1/2 min-h-[340px] lg:min-h-0 rounded-2xl overflow-hidden"
         >
           {/* Image fills entire left half */}
-          <div className="absolute inset-0 overflow-hidden group">
+          <div className="absolute inset-0 overflow-hidden group rounded-2xl">
             <img
               src="/about-office.png"
               alt="Grow Infinity Dubai Office"
@@ -99,7 +90,7 @@ export function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: "easeOut" }}
-          className="lg:w-1/2 flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-14 lg:py-0"
+          className="lg:w-1/2 flex flex-col justify-center px-4 sm:px-8 lg:px-14 py-10 lg:py-0"
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-5">
@@ -112,7 +103,7 @@ export function AboutSection() {
           {/* Sub-heading */}
           <h3 className="text-3xl lg:text-4xl font-black text-foreground leading-tight tracking-tight mb-5">
             The New Standard for{" "}
-            <span className="text-primary">UAE Business Setup</span>
+            <span className="">UAE Business Setup</span>
           </h3>
 
           {/* Body copy */}
