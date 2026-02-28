@@ -52,13 +52,12 @@ export function HeroForm() {
       <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#C49A45]/10 rounded-full blur-[3rem] group-hover/card:bg-[#C49A45]/20 transition-all duration-700" />
       
       <div className="relative z-10">
-        <div className="mb-6">
-          <div className="flex items-center gap-2 mb-2">
-            <img src="/logo-black.png" alt="Grow Infinity" className="h-8 w-auto" />
+        <div className="mb-6 text-center">
+          <div className="flex items-center justify-center mb-3">
+            <img src="/logo-black.png" alt="Grow Infinity" className="h-14 w-auto dark:hidden" />
+            <img src="/logo.png" alt="Grow Infinity" className="h-14 w-auto hidden dark:block" />
           </div>
-          {/* <h3 className="text-2xl font-bold text-gray-900 dark:text-white uppercase tracking-tight leading-none">
-            Elite <span className="text-[#C49A45]">Consult</span>
-          </h3> */}
+          <div className="w-16 h-px bg-[#C49A45]/30 mx-auto" />
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
