@@ -6,28 +6,27 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
 import { PartnerSection } from "@/components/contact/PartnerSection";
 import { GlobalPresence } from "@/components/home/GlobalPresence";
-import { Sparkles, Globe2, ShieldCheck, Zap } from "lucide-react";
+import { Sparkles, Globe2, ShieldCheck, Zap, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col w-full min-h-screen">
-      {/* Contact Hero - Subdued & Elite */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Cinematic Background */}
+    <div className="flex flex-col w-full min-h-screen overflow-hidden">
+      {/* Contact Hero */}
+      <section className="relative pt-24 pb-12 lg:pt-36 lg:pb-20 overflow-hidden">
+        {/* Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/[0.05] via-transparent to-background dark:from-primary/10" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="max-w-3xl mx-auto text-center space-y-5">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-3 glass px-5 py-2.5 rounded-full border border-primary/20 shadow-xl"
+              className="inline-flex items-center gap-3 glass px-4 py-2 rounded-full border border-primary/20 shadow-xl"
             >
-              <Sparkles className="w-4 h-4 text-primary animate-pulse" />
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">
                 Dubai&apos;s Elite Advisory Portal
               </span>
@@ -37,7 +36,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl md:text-5xl lg:text-7xl font-bold text-foreground tracking-tight leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight"
             >
               Strategic Consultation
             </motion.h1>
@@ -46,34 +45,34 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base lg:text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto"
+              className="text-sm lg:text-base text-foreground/70 leading-relaxed max-w-xl mx-auto"
             >
               Direct access to the architects of UAE business success. Inquire
               today for enterprise-grade solutions and banking first-priority
               execution.
             </motion.p>
 
-            {/* Trust Badges Simple */}
+            {/* Trust Badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="flex flex-wrap justify-center items-center gap-8 pt-6 opacity-40 grayscale"
+              className="flex flex-wrap justify-center items-center gap-4 pt-3 opacity-50"
             >
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5" />
+                <ShieldCheck className="w-4 h-4" />
                 <span className="text-[10px] font-black uppercase tracking-widest">
                   DED Compliant
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Globe2 className="w-5 h-5" />
+                <Globe2 className="w-4 h-4" />
                 <span className="text-[10px] font-black uppercase tracking-widest">
                   Global Markets
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5" />
+                <Zap className="w-4 h-4" />
                 <span className="text-[10px] font-black uppercase tracking-widest">
                   Express Setup
                 </span>
@@ -83,12 +82,44 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Content Grid */}
-      <section className="py-20 bg-background relative z-10">
+      {/* Blue Trust Bar — matches ServicePage */}
+      <div className="relative py-6 overflow-hidden" style={{ backgroundColor: "#5B9EC9" }}>
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            <ContactInfo />
-            <ContactForm />
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <div className="flex items-center gap-2.5 font-black tracking-tighter text-sm uppercase text-white">
+              <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-3.5 h-3.5 text-white" />
+              </div>
+              Priority Response
+            </div>
+            <div className="w-px h-5 bg-white/30 hidden md:block" />
+            <div className="flex items-center gap-2.5 font-black tracking-tighter text-sm uppercase text-white">
+              <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-3.5 h-3.5 text-white" />
+              </div>
+              Free Consultation
+            </div>
+            <div className="w-px h-5 bg-white/30 hidden md:block" />
+            <div className="flex items-center gap-2.5 font-black tracking-tighter text-sm uppercase text-white">
+              <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
+                <Clock className="w-3.5 h-3.5 text-white" />
+              </div>
+              Reply in 30 Mins
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <section className="py-10 bg-background relative z-10 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+            <div className="w-full lg:w-1/2">
+              <ContactInfo />
+            </div>
+            <div className="w-full lg:w-1/2">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
@@ -100,29 +131,29 @@ export default function ContactPage() {
       <PartnerSection />
 
       {/* Bottom CTA for Calculator */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="glass-dark p-12 sm:p-20 rounded-[4rem] text-center space-y-10 border border-white/10 shadow-[0_40px_100px_-20px_rgba(29,111,197,0.3)] bg-foreground"
+            className="glass-dark p-8 sm:p-12 rounded-3xl text-center space-y-6 border border-white/10 shadow-[0_40px_100px_-20px_rgba(29,111,197,0.3)] bg-foreground"
           >
-            <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
-              Ready to calculate your <br />
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+              Ready to calculate your{" "}
               <span className="text-gold">Infrastructure Cost?</span>
             </h2>
-            <p className="text-white/70 text-base max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-sm max-w-md mx-auto leading-relaxed">
               Use our proprietary algorithm to receive a detailed breakdown of
               your business setup investment in seconds.
             </p>
             <div className="flex justify-center">
               <a
                 href="/cost-calculator"
-                className="px-12 py-5 bg-white text-foreground rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-white/90 transition-all button-premium shadow-2xl group shadow-white/5"
+                className="px-8 py-3 bg-white text-foreground rounded-xl font-black text-sm uppercase tracking-[0.15em] hover:bg-white/90 transition-all shadow-xl group shadow-white/5 inline-flex items-center gap-2"
               >
                 Launch Calculator
-                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
+                <span className="inline-block group-hover:translate-x-1 transition-transform">
                   →
                 </span>
               </a>

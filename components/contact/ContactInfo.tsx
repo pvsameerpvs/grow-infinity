@@ -58,33 +58,33 @@ const SOCIALS = [
 
 export function ContactInfo() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 w-full overflow-hidden">
       {/* Header Info */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="space-y-6"
+        className="space-y-4 w-full"
       >
         <div className="flex items-center gap-2">
-          <div className="w-8 h-1 bg-primary rounded-full" />
-          <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">
+          <div className="w-8 h-1 rounded-full" style={{ backgroundColor: "#5B9EC9" }} />
+          <span className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color: "#5B9EC9" }}>
             Communication Core
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-black text-foreground uppercase tracking-tight leading-none">
+        <h2 className="text-2xl sm:text-3xl font-black text-foreground uppercase tracking-tight leading-tight break-words w-full">
           Let&apos;s Architect Your{" "}
           <span className="text-gradient-infinity">Global Legacy</span>
         </h2>
-        <p className="text-foreground/50 text-lg font-medium leading-relaxed max-w-lg">
+        <p className="text-foreground/50 text-sm font-medium leading-relaxed max-w-lg break-words">
           Connect with our specialized advisors for absolute precision in UAE
           business formation and banking operations.
         </p>
       </motion.div>
 
       {/* Contact Cards */}
-      <div className="grid gap-6">
+      <div className="grid gap-4">
         {CONTACT_METHODS.map((method, index) => (
           <motion.div
             key={index}
@@ -98,18 +98,18 @@ export function ContactInfo() {
                 href={method.path}
                 target={method.icon === MapPin ? "_blank" : undefined}
                 rel={method.icon === MapPin ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-6 glass p-6 rounded-3xl border border-foreground/5 hover:border-primary/20 transition-all duration-500"
+                className="group flex items-start gap-4 glass p-4 rounded-2xl border border-foreground/5 hover:border-primary/20 transition-all duration-500"
               >
                 <div
-                  className={`w-14 h-14 rounded-2xl ${method.bg} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}
+                  className={`w-10 h-10 flex-shrink-0 rounded-xl ${method.bg} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}
                 >
-                  <method.icon className={`w-6 h-6 ${method.color}`} />
+                  <method.icon className={`w-5 h-5 ${method.color}`} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-[10px] font-black text-foreground/40 uppercase tracking-[0.2em] mb-1">
                     {method.label}
                   </div>
-                  <div className="text-sm sm:text-base font-bold text-foreground truncate">
+                  <div className="text-sm font-bold text-foreground break-words leading-snug">
                     {method.value}
                   </div>
                 </div>
@@ -118,17 +118,17 @@ export function ContactInfo() {
                 </div>
               </a>
             ) : (
-              <div className="flex items-center gap-6 glass p-6 rounded-3xl border border-foreground/5">
+              <div className="flex items-start gap-4 glass p-4 rounded-2xl border border-foreground/5">
                 <div
-                  className={`w-14 h-14 rounded-2xl ${method.bg} flex items-center justify-center`}
+                  className={`w-10 h-10 flex-shrink-0 rounded-xl ${method.bg} flex items-center justify-center`}
                 >
-                  <method.icon className={`w-6 h-6 ${method.color}`} />
+                  <method.icon className={`w-5 h-5 ${method.color}`} />
                 </div>
                 <div className="flex-1">
                   <div className="text-[10px] font-black text-foreground/40 uppercase tracking-[0.2em] mb-1">
                     {method.label}
                   </div>
-                  <div className="text-sm sm:text-base font-bold text-foreground">
+                  <div className="text-sm font-bold text-foreground break-words leading-snug">
                     {method.value}
                   </div>
                 </div>
@@ -144,7 +144,7 @@ export function ContactInfo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="glass p-8 rounded-[2rem] border border-foreground/5 space-y-8"
+        className="glass p-6 rounded-2xl border border-foreground/5 space-y-5"
       >
         <div className="flex items-center justify-between">
           <div className="space-y-1">

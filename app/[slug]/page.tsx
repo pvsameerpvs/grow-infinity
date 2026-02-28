@@ -44,6 +44,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <ServicePage
+      slug={service.slug}
       title={service.title}
       subtitle={service.subtitle}
       description={service.description}
