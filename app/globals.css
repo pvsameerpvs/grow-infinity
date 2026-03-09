@@ -10,19 +10,20 @@
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
   
-  --color-infinity-blue: #1D6FC5;
-  --color-infinity-blue-light: #4D94C8;
+  --color-infinity-blue: #5B9EC9; /* User Specified Blue */
+  --color-infinity-blue-light: #7CB5D9; /* Lighter shade for highlights */
   
-  --color-gold: #C5A030;
-  --color-gold-light: #D4B65B;
-  --color-gold-dark: #A08226;
+  --color-gold: #D4AF37; /* Rich Gold */
+  --color-gold-light: #F1D592;
+  --color-gold-dark: #A68A2E;
   
   --color-accent: var(--color-gold);
   
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-inter);
-  --font-merriweather: var(--font-inter);
-  --font-oswald: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta);
+  --font-plus-jakarta: var(--font-plus-jakarta);
+  --font-merriweather: var(--font-merriweather);
+  --font-oswald: var(--font-oswald);
   --font-mono: var(--font-geist-mono);
   
   --radius-sm: 0.5rem;
@@ -41,27 +42,27 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #C49A45;
-  --primary-rgb: 196, 154, 69;
-  --primary-light: #D4B26B;
-  --primary-dark: #A98135;
+  --background: #FFFFFF; /* Pure White for Brightness */
+  --foreground: #0A0A0A; /* Deep Black for Contrast */
+  --primary: #D4AF37; /* Richer Gold */
+  --primary-rgb: 212, 175, 55;
+  --primary-light: #F1D592;
+  --primary-dark: #A68A2E;
   
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(0, 0, 0, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(0, 0, 0, 0.04);
 }
 
 .dark {
   --background: #020617;
-  --foreground: #f8fafc;
-  --primary: #C49A45;
-  --primary-rgb: 196, 154, 69;
-  --primary-light: #D4B26B;
-  --primary-dark: #A98135;
+  --foreground: #F8FAFC;
+  --primary: #D4AF37;
+  --primary-rgb: 212, 175, 55;
+  --primary-light: #F1D592;
+  --primary-dark: #A68A2E;
   
-  --card-bg: rgba(15, 23, 42, 0.6);
-  --card-border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(15, 23, 42, 0.65);
+  --card-border: rgba(255, 255, 255, 0.08);
 }
 
 body {
@@ -79,9 +80,10 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-inter), ui-sans-serif, system-ui;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 @keyframes width-grow {

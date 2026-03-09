@@ -87,9 +87,9 @@ export function Hero() {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4 pl-1 lg:pl-3"
               >
-                <div className="hidden lg:block h-[2px] w-16 bg-gradient-to-r from-[#C49A45] to-transparent rounded-full" />
-                <h2 className="font-sans text-[#FFF8ED]/90 uppercase tracking-[0.3em] text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap">
-                  Agile Venture Architecture
+                <div className="hidden lg:block h-[2px] w-16 bg-gradient-to-r from-primary to-transparent rounded-full" />
+                <h2 className="font-sans text-white/90 uppercase tracking-[0.2em] text-sm sm:text-base lg:text-lg font-bold whitespace-nowrap">
+                  Setting Up Business Made Simple
                 </h2>
               </motion.div>
             </div>
@@ -98,9 +98,9 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="text-white/80 text-base sm:text-lg lg:text-xl max-w-xl font-light leading-relaxed drop-shadow-md"
+              className="text-white/90 text-base sm:text-lg lg:text-xl max-w-xl font-normal leading-relaxed drop-shadow-md"
             >
-              The definitive platform for rapid UAE expansion. We provide the infrastructure, licensing, and priority banking that tech-forward founders demand.
+              Start and scale your business in the UAE, Saudi Arabia, Qatar, and India. We manage your licensing, priority banking, and corporate setup so you can focus on success.
             </motion.p>
 
             <motion.div
@@ -109,9 +109,9 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.8 }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4 w-full"
             >
-              <Link href="/contact" className="w-full sm:w-auto text-center bg-[#C49A45] text-white px-8 py-4 lg:px-10 lg:py-4 rounded-full font-medium tracking-wide hover:bg-[#D4B26B] transition-all button-premium shadow-[0_4px_20px_rgba(196,154,69,0.4)] flex items-center justify-center group">
+              <Link href="/contact" className="w-full sm:w-auto text-center bg-[#5B9EC9] text-white px-8 py-4 lg:px-10 lg:py-4 rounded-full font-bold tracking-wide hover:bg-[#4A8EB9] transition-all button-premium shadow-[0_4px_20px_rgba(91,158,201,0.4)] flex items-center justify-center group">
                 <span className="relative z-10 flex items-center">
-                  Get Started Today 
+                  Start Your Journey
                   <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </span>
               </Link>

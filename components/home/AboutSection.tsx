@@ -101,17 +101,14 @@ export function AboutSection() {
           </div>
 
           {/* Sub-heading */}
-          <h3 className="text-3xl lg:text-4xl font-black text-foreground leading-tight tracking-tight mb-5">
-            The New Standard for{" "}
-            <span className="">UAE Business Setup</span>
+          <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight mb-5">
+            Your Trusted Partner for{" "}
+            <span className="text-[#5B9EC9]">Global Expansion</span>
           </h3>
-
+  
           {/* Body copy */}
-          <p className="text-foreground/60 leading-relaxed mb-8 text-sm max-w-md">
-            Grow Infinity is the UAE&apos;s high-velocity business setup partner  built for
-            founders, startups, and global ventures who demand speed, precision, and zero
-            friction from day one.
-            
+          <p className="text-foreground/60 leading-relaxed mb-8 text-base max-w-md">
+            Grow Infinity helps entrepreneurs and businesses expand to new markets with ease. We provide professional advice, handle your paperwork, and ensure your business is set up for long-term success.
           </p>
 
           {/* Checklist */}

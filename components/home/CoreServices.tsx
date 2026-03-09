@@ -42,12 +42,12 @@ const colorMap: Record<string, string> = {
 };
 
 const iconColorMap: Record<string, string> = {
-  "mainland-company-formation": "text-blue-400",
-  "free-zone-company-setup": "text-emerald-400",
-  "corporate-bank-account-uae": "text-primary",
-  "golden-visa-uae": "text-yellow-400",
-  "corporate-tax-uae": "text-purple-400",
-  "pro-services-uae": "text-rose-400",
+  "mainland-company-formation": "text-[#5B9EC9]",
+  "free-zone-company-setup": "text-emerald-500",
+  "corporate-bank-account-uae": "text-[#4A8EB9]",
+  "golden-visa-uae": "text-[#5B9EC9]",
+  "corporate-tax-uae": "text-purple-600",
+  "pro-services-uae": "text-[#5B9EC9]",
 };
 
 const badgeColorMap: Record<string, string> = {
@@ -97,12 +97,10 @@ export function CoreServices() {
             <div className="h-px w-8 bg-primary/60" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-3xl mx-auto">
-            Strategic Solutions for{" "}
-            <span className="text-primary">Global Visionaries</span>
+            Our <span className="text-[#5B9EC9]">Key Services</span>
           </h2>
-          <p className="text-foreground/50 text-base max-w-2xl mx-auto leading-relaxed">
-            Critical infrastructure, priority banking, and agile licensing frameworks
-            built for tech-forward founders entering the UAE.
+          <p className="text-foreground/60 text-base max-w-2xl mx-auto leading-relaxed">
+            Everything you need to set up and grow your business in the UAE, simplified and handled by experts.
           </p>
         </motion.div>
 

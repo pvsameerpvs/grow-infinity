@@ -335,9 +335,9 @@ const Header = () => {
               <div className="flex items-center space-x-3">
                 <Link
                   href="/contact"
-                  className="px-4 py-2 text-[13px] font-medium text-white bg-[#C49A45] rounded-md hover:bg-[#B38A36] transition-all shadow-sm"
+                  className="px-6 py-2.5 text-[13px] font-bold text-white bg-[#5B9EC9] rounded-full hover:bg-[#4A8EB9] transition-all shadow-md active:scale-95"
                 >
-                  Get started
+                  Get Started
                 </Link>
               </div>
             </div>
@@ -496,7 +496,7 @@ const Header = () => {
                     </Link>
                     <Link
                       href="/contact"
-                      className="flex flex-col items-center justify-center bg-[#C49A45] text-white p-4 rounded-2xl shadow-lg shadow-[#C49A45]/20 active:scale-95 transition-all hover:bg-[#B38A36]"
+                      className="flex flex-col items-center justify-center bg-[#5B9EC9] text-white p-4 rounded-2xl shadow-lg shadow-[#5B9EC9]/20 active:scale-95 transition-all hover:bg-[#4A8EB9]"
                       onClick={() => setIsOpen(false)}
                     >
                       <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest mb-1">

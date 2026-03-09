@@ -13,7 +13,7 @@ import { ThemeProvider } from "next-themes";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--",
+  variable: "--font-plus-jakarta",
 });
 
 const inter = Inter({
@@ -24,13 +24,13 @@ const inter = Inter({
 const merriweatherSans = Merriweather_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "---sans",
+  variable: "--font-merriweather",
 });
 
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
-  variable: "--",
+  variable: "--font-oswald",
 });
 
 const cormorant = Cormorant_Garamond({
