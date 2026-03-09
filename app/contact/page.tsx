@@ -83,29 +83,29 @@ export default function ContactPage() {
       </section>
 
       {/* Blue Trust Bar — matches ServicePage */}
-      <div className="relative py-6 overflow-hidden" style={{ backgroundColor: "#5B9EC9" }}>
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="flex items-center gap-2.5 font-black tracking-tighter text-sm uppercase text-white">
-              <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                <Phone className="w-3.5 h-3.5 text-white" />
-              </div>
-              Priority Response
+      <div className="relative py-10 md:py-12 overflow-hidden" style={{ backgroundColor: "#5B9EC9" }}>
+        <div className="container px-4 mx-auto relative z-10 flex flex-col md:flex-row justify-center items-start md:items-center gap-10 md:gap-20">
+          <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
+              <Phone className="w-5 h-5 text-white" />
             </div>
-            <div className="w-px h-5 bg-white/30 hidden md:block" />
-            <div className="flex items-center gap-2.5 font-black tracking-tighter text-sm uppercase text-white">
-              <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                <Mail className="w-3.5 h-3.5 text-white" />
-              </div>
-              Free Consultation
+            <span className="leading-none">Priority Response</span>
+          </div>
+          <div className="w-px h-8 bg-white/30 hidden md:block" />
+          <div className="h-px w-full max-w-[40px] bg-white/20 md:hidden ml-5" />
+          <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
+              <Mail className="w-5 h-5 text-white" />
             </div>
-            <div className="w-px h-5 bg-white/30 hidden md:block" />
-            <div className="flex items-center gap-2.5 font-black tracking-tighter text-sm uppercase text-white">
-              <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                <Clock className="w-3.5 h-3.5 text-white" />
-              </div>
-              Reply in 30 Mins
+            <span className="leading-none">Free Consultation</span>
+          </div>
+          <div className="w-px h-8 bg-white/30 hidden md:block" />
+          <div className="h-px w-full max-w-[40px] bg-white/20 md:hidden ml-5" />
+          <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
+              <Clock className="w-5 h-5 text-white" />
             </div>
+            <span className="leading-none">Reply in 30 Mins</span>
           </div>
         </div>
       </div>

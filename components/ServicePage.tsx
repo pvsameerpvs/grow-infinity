@@ -251,28 +251,29 @@ const ServicePage: React.FC<ServicePageProps> = ({
         </div>
       </section>
 
-      {/* Trust Ticker */}
-      <div className="relative py-8 overflow-hidden" style={{ backgroundColor: "#5B9EC9" }}>
-        <div className="container px-4 mx-auto relative z-10 flex flex-wrap justify-center items-center gap-10 md:gap-20">
-          <div className="flex items-center gap-3 font-black tracking-tighter text-base uppercase text-white">
-            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-              <Compass className="w-4 h-4 text-white" />
+      <div className="relative py-10 md:py-12 overflow-hidden" style={{ backgroundColor: "#5B9EC9" }}>
+        <div className="container px-4 mx-auto relative z-10 flex flex-col md:flex-row justify-center items-start md:items-center gap-10 md:gap-20">
+          <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
+              <Compass className="w-5 h-5 text-white" />
             </div>
-            DET APPROVED
+            <span className="leading-none">DET APPROVED</span>
           </div>
-          <div className="w-px h-6 bg-white/30 hidden md:block" />
-          <div className="flex items-center gap-3 font-black tracking-tighter text-base uppercase text-white">
-            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-              <Lock className="w-4 h-4 text-white" />
+          <div className="w-px h-8 bg-white/30 hidden md:block" />
+          <div className="h-px w-full max-w-[40px] bg-white/20 md:hidden ml-5" />
+          <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
+              <Lock className="w-5 h-5 text-white" />
             </div>
-            BANKING READY
+            <span className="leading-none">BANKING READY</span>
           </div>
-          <div className="w-px h-6 bg-white/30 hidden md:block" />
-          <div className="flex items-center gap-3 font-black tracking-tighter text-base uppercase text-white">
-            <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-              <Target className="w-4 h-4 text-white" />
+          <div className="w-px h-8 bg-white/30 hidden md:block" />
+          <div className="h-px w-full max-w-[40px] bg-white/20 md:hidden ml-5" />
+          <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
+              <Target className="w-5 h-5 text-white" />
             </div>
-            0% TAX RISK
+            <span className="leading-none">0% TAX RISK</span>
           </div>
         </div>
       </div>
