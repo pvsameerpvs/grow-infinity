@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SERVICES } from "@/constants/services";
-import { ThemeToggle } from "./ThemeToggle";
 
 const NAVIGATION = [
   {
@@ -329,8 +328,6 @@ const Header = () => {
           <div className="flex items-center space-x-3 sm:space-x-5 h-full">
             {/* Desktop Only Actions */}
             <div className="hidden lg:flex items-center space-x-5">
-              <ThemeToggle />
-
               {/* Action Buttons */}
               <div className="flex items-center space-x-3">
                 <Link
@@ -344,7 +341,6 @@ const Header = () => {
 
             {/* Mobile Actions */}
             <div className="flex items-center lg:hidden space-x-3">
-              <ThemeToggle />
               <button
                 className="text-white p-2 rounded-full hover:bg-white/5 transition-colors"
                 onClick={() => setIsOpen(true)}

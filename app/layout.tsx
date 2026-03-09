@@ -92,7 +92,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${plusJakarta.variable} ${merriweatherSans.variable} ${oswald.variable} ${cormorant.variable} font-sans antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false}>
           <Header />
           <main>{children}</main>
           <Footer />
