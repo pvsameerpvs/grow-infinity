@@ -50,14 +50,7 @@ const iconColorMap: Record<string, string> = {
   "pro-services-uae": "text-[#5B9EC9]",
 };
 
-const badgeColorMap: Record<string, string> = {
-  "mainland-company-formation": "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  "free-zone-company-setup": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  "corporate-bank-account-uae": "bg-[#5B9EC9]/10 text-[#5B9EC9] border-[#5B9EC9]/20",
-  "golden-visa-uae": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
-  "corporate-tax-uae": "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  "pro-services-uae": "bg-rose-500/10 text-rose-400 border-rose-500/20",
-};
+
 
 const services = CORE_SLUGS.map((slug, i) => {
   const service = SERVICES.find((s) => s.slug === slug);
@@ -68,7 +61,6 @@ const services = CORE_SLUGS.map((slug, i) => {
     desc: service.description[0]?.slice(0, 120) + "...",
     gradient: colorMap[slug],
     iconColor: iconColorMap[slug],
-    badgeColor: badgeColorMap[slug],
     number: String(i + 1).padStart(2, "0"),
   };
 }).filter(Boolean) as any[];
@@ -117,46 +109,46 @@ export function CoreServices() {
                 transition={{ delay: i * 0.08, duration: 0.55 }}
               >
                 <Link href={`/${service.slug}`} className="block h-full group">
-                  <div className="relative h-full flex flex-col p-7 rounded-3xl border border-foreground/5 hover:border-foreground/10 bg-foreground/[0.02] hover:bg-foreground/[0.04] transition-all duration-400 overflow-hidden">
+                  <div className="relative h-full flex flex-col p-7 rounded-3xl border border-[#5B9EC9]/20 bg-[#5B9EC9] hover:bg-[#4A8EB9] transition-all duration-400 overflow-hidden shadow-xl shadow-[#5B9EC9]/20">
 
                     {/* Gradient glow top-right */}
-                    <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl ${service.gradient} blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     {/* Top row: icon + number */}
                     <div className="flex items-start justify-between mb-6">
-                      <div className={`w-12 h-12 rounded-2xl bg-foreground/5 group-hover:bg-foreground/8 flex items-center justify-center transition-all duration-300 group-hover:scale-110`}>
-                        <Icon className={`w-5 h-5 ${service.iconColor}`} strokeWidth={1.8} />
+                      <div className="w-12 h-12 rounded-2xl bg-white/20 group-hover:bg-white flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm">
+                        <Icon className="w-5 h-5 text-white group-hover:text-[#5B9EC9] transition-colors duration-300" strokeWidth={1.8} />
                       </div>
-                      <span className="text-[10px] font-black text-foreground/15 tracking-widest">
+                      <span className="text-[10px] font-black text-white/30 tracking-widest group-hover:text-white/50 transition-colors">
                         {service.number}
                       </span>
                     </div>
 
                     {/* Badge */}
                     {service.badge && (
-                      <div className={`inline-flex self-start mb-3 px-2.5 py-1 rounded-full border text-[9px] font-black uppercase tracking-widest ${service.badgeColor}`}>
+                      <div className="inline-flex self-start mb-3 px-2.5 py-1 rounded-full border border-white/20 bg-white/10 text-white text-[9px] font-black uppercase tracking-widest">
                         {service.badge}
                       </div>
                     )}
 
                     {/* Title */}
-                    <h3 className="text-lg font-black text-foreground mb-3 leading-snug tracking-tight group-hover:text-foreground transition-colors">
+                    <h3 className="text-xl font-black text-white mb-3 leading-snug tracking-tight">
                       {service.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-sm text-foreground/45 leading-relaxed flex-1 mb-6">
+                    <p className="text-sm text-white/80 leading-relaxed flex-1 mb-6 font-medium">
                       {service.desc}
                     </p>
 
                     {/* CTA arrow */}
-                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-foreground/25 group-hover:text-primary transition-all duration-300">
+                    <div className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-white/60 group-hover:text-white transition-all duration-300">
                       <span>Explore</span>
                       <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
 
                     {/* Bottom border line that animates */}
-                    <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-[#5B9EC9] to-transparent transition-all duration-500 rounded-b-3xl" />
+                    <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-gold transition-all duration-500 rounded-b-3xl" />
                   </div>
                 </Link>
               </motion.div>
