@@ -55,7 +55,7 @@ export function HeroForm() {
         <div className="mb-6 text-center">
           <div className="flex items-center justify-center mb-3">
             <img src="/logo-black.png" alt="Grow Infinity" className="h-14 w-auto dark:hidden" />
-            <img src="/logo.png" alt="Grow Infinity" className="h-14 w-auto hidden dark:block" />
+            <img src="/logo-white.png" alt="Grow Infinity" className="h-14 w-auto hidden dark:block" />
           </div>
           <div className="w-16 h-px bg-[#5B9EC9]/30 mx-auto" />
         </div>

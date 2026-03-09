@@ -46,10 +46,39 @@ export const metadata: Metadata = {
     "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
   keywords:
     "business setup dubai, uae company formation, banking advisory uae, golden visa, corporate tax uae",
+  metadataBase: new URL("https://grow-infinity.com"), // Replace with actual domain
+  alternates: {
+    canonical: "/",
+  },
   icons: {
-    icon: "/fevic.png",
-    shortcut: "/fevic.png",
-    apple: "/logo-black.png",
+    icon: [
+      { url: "/favicon.png?v=1", sizes: "any" },
+      { url: "/favicon.png?v=1", type: "image/png" }
+    ],
+    shortcut: "/favicon.png?v=1",
+    apple: "/favicon.png?v=1",
+  },
+  openGraph: {
+    title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
+    description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
+    url: "https://grow-infinity.com",
+    siteName: "Grow Infinity",
+    images: [
+      {
+        url: "/logo-black.png",
+        width: 1200,
+        height: 630,
+        alt: "Grow Infinity Logo",
+      },
+    ],
+    locale: "en_AE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Grow Infinity | Premium UAE Business Setup",
+    description: "Elite business setup and banking advisory in Dubai, UAE.",
+    images: ["/logo-black.png"],
   },
 };
 

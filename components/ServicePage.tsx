@@ -252,7 +252,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       <div className="relative py-10 md:py-12 overflow-hidden" style={{ backgroundColor: "#5B9EC9" }}>
-        <div className="container px-4 mx-auto relative z-10 flex flex-col md:flex-row justify-center items-start md:items-center gap-10 md:gap-20">
+        <div className="container px-4 mx-auto relative z-10 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20">
           <div className="flex items-center gap-5 font-black tracking-tighter text-sm md:text-base uppercase text-white group">
             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/10 transition-transform group-hover:scale-110">
               <Compass className="w-5 h-5 text-white" />
