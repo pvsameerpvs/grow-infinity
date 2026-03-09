@@ -139,9 +139,10 @@ export function ContactForm() {
                 </label>
                 <select
                   required
+                  defaultValue=""
                   className="w-full bg-foreground/[0.03] dark:bg-white/[0.03] border border-foreground/10 px-4 py-3 rounded-xl text-sm font-bold text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/30 transition-all appearance-none cursor-pointer"
                 >
-                  <option value="" disabled selected>
+                  <option value="" disabled>
                     Select Strategy
                   </option>
                   <option value="mainland">Mainland Formation</option>
