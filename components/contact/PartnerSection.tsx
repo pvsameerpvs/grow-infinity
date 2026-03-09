@@ -98,7 +98,7 @@ export function PartnerSection() {
 
             <Link
               href="#contact-form"
-              className="inline-flex items-center px-8 py-4 bg-primary text-white rounded-xl font-black text-sm uppercase tracking-widest hover:bg-primary-dark transition-all button-premium shadow-xl shadow-primary/20"
+              className="inline-flex items-center px-8 py-4 bg-[#5B9EC9] text-white rounded-xl font-black text-sm uppercase tracking-widest hover:bg-[#4A8EB9] transition-all button-premium shadow-xl shadow-[#5B9EC9]/20"
             >
               Partner With Us
               <ArrowRight className="ml-2 w-4 h-4" />

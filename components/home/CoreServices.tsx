@@ -35,7 +35,7 @@ const iconMap: Record<string, any> = {
 const colorMap: Record<string, string> = {
   "mainland-company-formation": "from-blue-500/20 to-blue-600/5",
   "free-zone-company-setup": "from-emerald-500/20 to-emerald-600/5",
-  "corporate-bank-account-uae": "from-primary/20 to-primary/5",
+  "corporate-bank-account-uae": "from-[#5B9EC9]/20 to-[#5B9EC9]/5",
   "golden-visa-uae": "from-yellow-500/20 to-yellow-600/5",
   "corporate-tax-uae": "from-purple-500/20 to-purple-600/5",
   "pro-services-uae": "from-rose-500/20 to-rose-600/5",
@@ -53,7 +53,7 @@ const iconColorMap: Record<string, string> = {
 const badgeColorMap: Record<string, string> = {
   "mainland-company-formation": "bg-blue-500/10 text-blue-400 border-blue-500/20",
   "free-zone-company-setup": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
-  "corporate-bank-account-uae": "bg-primary/10 text-primary border-primary/20",
+  "corporate-bank-account-uae": "bg-[#5B9EC9]/10 text-[#5B9EC9] border-[#5B9EC9]/20",
   "golden-visa-uae": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
   "corporate-tax-uae": "bg-purple-500/10 text-purple-400 border-purple-500/20",
   "pro-services-uae": "bg-rose-500/10 text-rose-400 border-rose-500/20",
@@ -77,7 +77,7 @@ export function CoreServices() {
   return (
     <section id="services" className="relative py-2 lg:py-4 bg-background overflow-hidden">
       {/* Background ambience */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-primary/5 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#5B9EC9]/5 blur-[180px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -90,14 +90,14 @@ export function CoreServices() {
           className="text-center mb-16 lg:mb-20"
         >
           <div className="inline-flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-primary/60" />
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+            <div className="h-px w-8 bg-gold/60" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-gold">
               Core Expertise
             </span>
-            <div className="h-px w-8 bg-primary/60" />
+            <div className="h-px w-8 bg-gold/60" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 tracking-tight leading-tight max-w-3xl mx-auto">
-            Our <span className="text-[#5B9EC9]">Key Services</span>
+            Our <span className="text-gold">Key Services</span>
           </h2>
           <p className="text-foreground/60 text-base max-w-2xl mx-auto leading-relaxed">
             Everything you need to set up and grow your business in the UAE, simplified and handled by experts.
@@ -156,7 +156,7 @@ export function CoreServices() {
                     </div>
 
                     {/* Bottom border line that animates */}
-                    <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-primary to-transparent transition-all duration-500 rounded-b-3xl" />
+                    <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-gradient-to-r from-[#5B9EC9] to-transparent transition-all duration-500 rounded-b-3xl" />
                   </div>
                 </Link>
               </motion.div>
@@ -174,7 +174,7 @@ export function CoreServices() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-foreground/35 hover:text-primary transition-colors font-black uppercase tracking-[0.3em] text-[10px] group"
+            className="inline-flex items-center gap-2 text-foreground/35 hover:text-[#5B9EC9] transition-colors font-black uppercase tracking-[0.3em] text-[10px] group"
           >
             View All Specialized Solutions
             <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

@@ -96,12 +96,12 @@ const CostCalculator = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 rounded-3xl bg-primary flex items-center justify-center shadow-xl shadow-primary/20">
+              <div className="w-16 h-16 rounded-3xl bg-[#5B9EC9] flex items-center justify-center shadow-xl shadow-primary/20">
                 <Calculator className="w-8 h-8 text-white" />
               </div>
             </div>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-tight">
-              Setup <span className="text-primary italic">Cost Calculator</span>
+              Setup <span className="text-[#5B9EC9] italic">Cost Calculator</span>
             </h1>
             <p className="text-xl text-foreground/40 font-medium">
               Get an instant, customized quote for your UAE business setup.
@@ -112,7 +112,7 @@ const CostCalculator = () => {
           <div className="flex justify-between mb-16 relative">
             <div className="absolute top-5 left-0 w-full h-1 bg-foreground/5 -translate-y-1/2 z-0 rounded-full" />
             <div
-              className="absolute top-5 left-0 h-1 bg-primary -translate-y-1/2 z-0 transition-all duration-700 rounded-full shadow-[0_0_15px_rgba(29,111,197,0.5)]"
+              className="absolute top-5 left-0 h-1 bg-[#5B9EC9] -translate-y-1/2 z-0 transition-all duration-700 rounded-full shadow-[0_0_15px_rgba(91,158,201,0.5)]"
               style={{ width: `${(currentStep / (STEPS.length - 1)) * 100}%` }}
             />
             {STEPS.map((step, idx) => (
@@ -125,9 +125,9 @@ const CostCalculator = () => {
                   className={cn(
                     "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 border-2 font-bold text-xs shadow-lg",
                     idx < currentStep
-                      ? "bg-primary border-primary text-white scale-90"
+                      ? "bg-[#5B9EC9] border-primary text-white scale-90"
                       : idx === currentStep
-                        ? "bg-background border-primary text-primary scale-110 shadow-primary/20"
+                        ? "bg-background border-[#5B9EC9] text-[#5B9EC9] shadow-[#5B9EC9]/20"
                         : "bg-background border-foreground/10 text-foreground/20",
                   )}
                 >
@@ -140,7 +140,7 @@ const CostCalculator = () => {
                 <span
                   className={cn(
                     "hidden md:block text-[9px] uppercase tracking-[0.2em] mt-4 font-black transition-colors duration-500",
-                    idx <= currentStep ? "text-primary" : "text-foreground/20",
+                    idx <= currentStep ? "text-[#5B9EC9]" : "text-foreground/20",
                   )}
                 >
                   {step.title}
@@ -163,7 +163,7 @@ const CostCalculator = () => {
                   {currentStep === 0 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Step 01
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -188,7 +188,7 @@ const CostCalculator = () => {
                             className={cn(
                               "p-6 rounded-[2rem] border-2 text-left transition-all duration-300 group relative overflow-hidden",
                               formData.businessActivity === act
-                                ? "border-primary bg-primary/5 text-primary shadow-xl shadow-primary/5"
+                                ? "border-primary bg-[#5B9EC9]/5 text-[#5B9EC9] shadow-xl shadow-primary/5"
                                 : "border-foreground/5 hover:border-primary/30 text-foreground/60",
                             )}
                           >
@@ -200,7 +200,7 @@ const CostCalculator = () => {
                                 className={cn(
                                   "w-4 h-4 rounded-full border-2 transition-all",
                                   formData.businessActivity === act
-                                    ? "bg-primary border-primary scale-125"
+                                    ? "bg-[#5B9EC9] border-primary scale-125"
                                     : "border-foreground/10",
                                 )}
                               />
@@ -214,7 +214,7 @@ const CostCalculator = () => {
                   {currentStep === 1 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Step 02
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -247,7 +247,7 @@ const CostCalculator = () => {
                             className={cn(
                               "p-8 rounded-[2.5rem] border-2 text-left transition-all duration-300 group relative",
                               formData.jurisdiction === j.id
-                                ? "border-primary bg-primary/5 text-primary shadow-xl shadow-primary/5"
+                                ? "border-primary bg-[#5B9EC9]/5 text-[#5B9EC9] shadow-xl shadow-primary/5"
                                 : "border-foreground/5 hover:border-primary/30 text-foreground/60",
                             )}
                           >
@@ -260,7 +260,7 @@ const CostCalculator = () => {
                             {formData.jurisdiction === j.id && (
                               <motion.div
                                 layoutId="choice"
-                                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shadow-lg"
+                                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-[#5B9EC9] flex items-center justify-center text-white shadow-lg"
                               >
                                 <BadgeCheck className="w-5 h-5" />
                               </motion.div>
@@ -274,7 +274,7 @@ const CostCalculator = () => {
                   {currentStep === 2 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Step 03
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -291,7 +291,7 @@ const CostCalculator = () => {
                             className={cn(
                               "w-24 h-24 rounded-[2rem] border-2 flex flex-col items-center justify-center transition-all duration-300",
                               formData.shareholders === num
-                                ? "border-primary bg-primary/5 text-primary shadow-xl shadow-primary/5 scale-105"
+                                ? "border-primary bg-[#5B9EC9]/5 text-[#5B9EC9] shadow-xl shadow-primary/5 scale-105"
                                 : "border-foreground/5 hover:border-primary/30 text-foreground/40",
                             )}
                           >
@@ -308,7 +308,7 @@ const CostCalculator = () => {
                   {currentStep === 3 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Step 04
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -323,7 +323,7 @@ const CostCalculator = () => {
                             className={cn(
                               "w-24 h-24 rounded-[2rem] border-2 flex flex-col items-center justify-center transition-all duration-300",
                               formData.visas === num
-                                ? "border-primary bg-primary/5 text-primary shadow-xl shadow-primary/5 scale-105"
+                                ? "border-primary bg-[#5B9EC9]/5 text-[#5B9EC9] shadow-xl shadow-primary/5 scale-105"
                                 : "border-foreground/5 hover:border-primary/30 text-foreground/40",
                             )}
                           >
@@ -340,7 +340,7 @@ const CostCalculator = () => {
                   {currentStep === 4 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Step 05
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -360,7 +360,7 @@ const CostCalculator = () => {
                             className={cn(
                               "p-8 rounded-[2rem] border-2 text-left transition-all duration-300",
                               formData.officeType === off
-                                ? "border-primary bg-primary/5 text-primary shadow-xl shadow-primary/5"
+                                ? "border-primary bg-[#5B9EC9]/5 text-[#5B9EC9] shadow-xl shadow-primary/5"
                                 : "border-foreground/5 hover:border-primary/30 text-foreground/60",
                             )}
                           >
@@ -376,7 +376,7 @@ const CostCalculator = () => {
                   {currentStep === 5 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Step 06
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -384,13 +384,13 @@ const CostCalculator = () => {
                         </h2>
                       </div>
                       <div className="relative">
-                        <Globe className="absolute left-6 top-1/2 -translate-y-1/2 text-primary w-6 h-6" />
+                        <Globe className="absolute left-6 top-1/2 -translate-y-1/2 text-[#5B9EC9] w-6 h-6" />
                         <select
                           value={formData.nationality}
                           onChange={(e) =>
                             handleInputChange("nationality", e.target.value)
                           }
-                          className="w-full pl-16 pr-6 py-6 rounded-3xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-primary outline-none transition-all text-foreground font-black uppercase tracking-widest text-sm appearance-none cursor-pointer"
+                          className="w-full pl-16 pr-6 py-6 rounded-3xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-[#5B9EC9] outline-none transition-all text-foreground font-black uppercase tracking-widest text-sm appearance-none cursor-pointer"
                         >
                           <option value="">Select Nationality</option>
                           {NATIONALITIES.map((n) => (
@@ -407,7 +407,7 @@ const CostCalculator = () => {
                   {currentStep === 6 && (
                     <div className="space-y-8">
                       <div className="space-y-2">
-                        <span className="text-xs font-black text-primary uppercase tracking-widest">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                           Final Step
                         </span>
                         <h2 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight leading-tight">
@@ -419,7 +419,7 @@ const CostCalculator = () => {
                           <input
                             type="text"
                             placeholder="Full Name"
-                            className="w-full p-6 rounded-2xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-primary outline-none text-foreground font-bold"
+                            className="w-full p-6 rounded-2xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-[#5B9EC9] outline-none text-foreground font-bold"
                             value={formData.name}
                             onChange={(e) =>
                               handleInputChange("name", e.target.value)
@@ -430,7 +430,7 @@ const CostCalculator = () => {
                           <input
                             type="email"
                             placeholder="Email Address"
-                            className="w-full p-6 rounded-2xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-primary outline-none text-foreground font-bold"
+                            className="w-full p-6 rounded-2xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-[#5B9EC9] outline-none text-foreground font-bold"
                             value={formData.email}
                             onChange={(e) =>
                               handleInputChange("email", e.target.value)
@@ -441,7 +441,7 @@ const CostCalculator = () => {
                           <input
                             type="tel"
                             placeholder="Phone (with country code)"
-                            className="w-full p-6 rounded-2xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-primary outline-none text-foreground font-bold"
+                            className="w-full p-6 rounded-2xl border-2 border-foreground/5 bg-foreground/[0.02] focus:border-[#5B9EC9] outline-none text-foreground font-bold"
                             value={formData.phone}
                             onChange={(e) =>
                               handleInputChange("phone", e.target.value)
@@ -449,8 +449,8 @@ const CostCalculator = () => {
                           />
                         </div>
                       </div>
-                      <div className="flex items-start space-x-3 p-4 bg-primary/5 rounded-2xl">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div className="flex items-start space-x-3 p-4 bg-[#5B9EC9]/5 rounded-2xl">
+                        <CheckCircle2 className="w-5 h-5 text-[#5B9EC9] flex-shrink-0 mt-0.5" />
                         <p className="text-[10px] font-bold text-foreground/50 uppercase tracking-widest leading-relaxed">
                           By submitting, you agree to receive a customized
                           professional quote and a strategic consultation from
@@ -472,7 +472,7 @@ const CostCalculator = () => {
                   "flex items-center px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs transition-all",
                   currentStep === 0
                     ? "opacity-0 pointer-events-none"
-                    : "text-foreground/40 hover:text-primary hover:bg-primary/5",
+                    : "text-foreground/40 hover:text-primary hover:bg-[#5B9EC9]/5",
                 )}
               >
                 <ChevronLeft className="mr-3 w-5 h-5" />
@@ -489,7 +489,7 @@ const CostCalculator = () => {
                 className={cn(
                   "flex items-center px-12 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs transition-all shadow-2xl",
                   isStepComplete()
-                    ? "bg-primary text-white hover:bg-primary-dark shadow-primary/30 button-premium"
+                    ? "bg-[#5B9EC9] text-white hover:bg-[#4A8EB9] shadow-[#5B9EC9]/30 button-premium"
                     : "bg-foreground/5 text-foreground/20 cursor-not-allowed",
                 )}
               >
@@ -527,7 +527,7 @@ const CostCalculator = () => {
             >
               <div className="bg-background rounded-[3rem] p-8 md:p-12 shadow-2xl border border-foreground/10 relative overflow-hidden">
                 {/* Decorative Elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#5B9EC9]/10 blur-[100px] rounded-full" />
                 <div className="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 blur-[80px] rounded-full" />
 
                 {/* Close Button */}
@@ -542,9 +542,9 @@ const CostCalculator = () => {
                 <div className="relative z-10">
                   {/* Success Icon */}
                   <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center relative">
-                      <div className="absolute inset-0 bg-primary/20 rounded-3xl animate-ping" />
-                      <CheckCircle2 className="w-10 h-10 text-primary relative z-10" />
+                    <div className="w-20 h-20 rounded-3xl bg-[#5B9EC9]/10 flex items-center justify-center relative">
+                      <div className="absolute inset-0 bg-[#5B9EC9]/20 rounded-3xl animate-ping" />
+                      <CheckCircle2 className="w-10 h-10 text-[#5B9EC9] relative z-10" />
                     </div>
                   </div>
 
@@ -622,10 +622,10 @@ const CostCalculator = () => {
                   </div>
 
                   {/* Contact Info */}
-                  <div className="bg-primary/5 rounded-2xl p-6 border border-primary/10 space-y-3">
+                  <div className="bg-[#5B9EC9]/5 rounded-2xl p-6 border border-primary/10 space-y-3">
                     <div className="flex items-center space-x-2 mb-3">
                       <Send className="w-4 h-4 text-primary" />
-                      <h4 className="text-xs font-black text-primary uppercase tracking-widest">
+                      <h4 className="text-xs font-black text-[#5B9EC9] uppercase tracking-widest">
                         Quote Will Be Sent To
                       </h4>
                     </div>
@@ -649,7 +649,7 @@ const CostCalculator = () => {
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
                     <button
                       onClick={() => setShowModal(false)}
-                      className="flex-1 bg-primary hover:bg-primary-dark text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-xl shadow-primary/20 transition-all active:scale-95"
+                      className="flex-1 bg-[#5B9EC9] hover:bg-[#4A8EB9] text-white py-4 rounded-xl font-black text-sm uppercase tracking-wider shadow-xl shadow-[#5B9EC9]/20 transition-all active:scale-95"
                     >
                       Close
                     </button>

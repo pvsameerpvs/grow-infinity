@@ -18,7 +18,7 @@ const stats = [
     suffix: "H",
     label: "License Issuance",
     icon: Zap,
-    color: "from-primary to-primary-dark",
+    color: "from-[#5B9EC9] to-[#4A8EB9]",
     description: "Express Setup",
   },
   {
@@ -34,7 +34,7 @@ const stats = [
     suffix: "%",
     label: "Income Tax",
     icon: TrendingUp,
-    color: "from-primary-light to-primary",
+    color: "from-[#7CB5D9] to-[#5B9EC9]",
     description: "Tax Benefits",
   },
   {

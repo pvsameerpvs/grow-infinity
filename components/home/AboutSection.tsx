@@ -94,8 +94,8 @@ export function AboutSection() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-5">
-            <div className="h-px w-8 bg-primary" />
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-primary">
+            <div className="h-px w-8 bg-gold" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-gold">
               Our Story
             </span>
           </div>
@@ -103,7 +103,7 @@ export function AboutSection() {
           {/* Sub-heading */}
           <h3 className="text-3xl lg:text-4xl font-bold text-foreground leading-tight tracking-tight mb-5">
             Your Trusted Partner for{" "}
-            <span className="text-[#5B9EC9]">Global Expansion</span>
+            <span className="text-gold">Global Expansion</span>
           </h3>
   
           {/* Body copy */}
@@ -122,7 +122,7 @@ export function AboutSection() {
                 transition={{ delay: i * 0.07, duration: 0.4 }}
                 className="flex items-center gap-3 text-foreground/75 text-sm"
               >
-                <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-[#5B9EC9] flex-shrink-0" />
                 {item}
               </motion.li>
             ))}
@@ -142,7 +142,7 @@ export function AboutSection() {
                   whileHover={{ y: -3, borderColor: "rgba(var(--primary-rgb), 0.25)" }}
                   className="glass border border-foreground/5 rounded-2xl p-4 transition-colors"
                 >
-                  <Icon className="w-4 h-4 text-primary mb-2 opacity-80" />
+                  <Icon className="w-4 h-4 text-[#5B9EC9] mb-2 opacity-80" />
                   <div className="text-2xl font-black text-foreground">{stat.value}</div>
                   <div className="text-[10px] text-foreground/45 font-bold uppercase tracking-wider mt-0.5">
                     {stat.label}
@@ -156,7 +156,7 @@ export function AboutSection() {
           <Link href="/about">
             <motion.div
               whileHover={{ x: 4 }}
-              className="inline-flex items-center gap-2 text-primary font-black text-sm uppercase tracking-wider cursor-pointer group"
+              className="inline-flex items-center gap-2 text-[#5B9EC9] font-black text-sm uppercase tracking-wider cursor-pointer group"
             >
               <span>Learn Our Full Story</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

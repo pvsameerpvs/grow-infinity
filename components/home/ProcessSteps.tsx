@@ -334,7 +334,7 @@ export function ProcessSteps() {
                     className={`px-4 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-black text-xs md:text-sm uppercase tracking-wider transition-all inline-flex items-center gap-1 md:gap-2 ${
                       activeStep === steps.length - 1
                         ? "opacity-30 cursor-not-allowed"
-                        : "bg-primary hover:bg-primary-dark text-white button-premium"
+                        : "bg-[#5B9EC9] hover:bg-[#4A8EB9] text-white button-premium"
                     }`}
                   >
                     <span className="hidden sm:inline">Next Step</span>
@@ -370,7 +370,7 @@ export function ProcessSteps() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium whitespace-nowrap"
+                  className="px-8 py-3 bg-[#5B9EC9] hover:bg-[#4A8EB9] text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium whitespace-nowrap"
                 >
                   Book Consultation
                 </motion.button>

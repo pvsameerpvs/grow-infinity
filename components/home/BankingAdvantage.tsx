@@ -263,7 +263,7 @@ export function BankingAdvantage() {
                 </div>
               </div>
             </div>
-            <button className="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium whitespace-nowrap">
+            <button className="px-8 py-3 bg-[#5B9EC9] hover:bg-[#4A8EB9] text-white font-black rounded-xl text-sm uppercase tracking-wider transition-all duration-500 button-premium whitespace-nowrap">
               Start Banking Process
             </button>
           </div>

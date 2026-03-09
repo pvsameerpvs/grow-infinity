@@ -20,7 +20,7 @@ const guarantees = [
 
 export function CTA() {
   return (
-    <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-primary rounded-t-3xl">
+    <section className="relative py-20 lg:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#5B9EC9] rounded-t-3xl">
       {/* Ambient glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/10 blur-[160px] rounded-full pointer-events-none" />
       <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-black/10 blur-[120px] rounded-full pointer-events-none" />
@@ -118,7 +118,7 @@ export function CTA() {
                 <motion.div
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="group flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all duration-300 shadow-lg shadow-black/20 cursor-pointer hover:bg-white/90"
+                  className="group flex items-center gap-3 bg-white text-[#5B9EC9] px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all duration-300 shadow-lg shadow-black/20 cursor-pointer hover:bg-white/90"
                 >
                   <Calculator className="w-4 h-4" />
                   <span>Get Instant Quote</span>

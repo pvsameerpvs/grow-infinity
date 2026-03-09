@@ -200,7 +200,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
               className="mt-8 flex flex-wrap gap-3"
             >
               <Link href="/contact" className="group">
-                  <div className="relative px-6 py-2.5 bg-primary rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_-10px_rgba(var(--primary-rgb),0.5)] hover:-translate-y-1">
+                  <div className="relative px-6 py-2.5 bg-[#5B9EC9] rounded-xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_-10px_rgba(91,158,201,0.5)] hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1.2s]" />
                     <span className="relative flex items-center gap-2 text-white font-black text-sm uppercase tracking-widest">
                       Get Started
@@ -467,7 +467,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                               className={cn(
                                 "relative rounded-xl transition-all duration-300",
                                 focusedField === "name"
-                                  ? "ring-2 ring-primary/40 shadow-md shadow-primary/10"
+                                  ? "focus:ring-[#5B9EC9]/40 shadow-md shadow-[#5B9EC9]/10"
                                   : "",
                               )}
                             >
@@ -484,7 +484,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                                 }
                                 onFocus={() => setFocusedField("name")}
                                 onBlur={() => setFocusedField(null)}
-                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground placeholder:text-foreground/30 font-semibold text-xs focus:outline-none focus:border-primary/40 transition-colors"
+                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground placeholder:text-foreground/30 font-semibold text-xs focus:outline-none focus:border-[#5B9EC9]/40 transition-colors"
                               />
                             </div>
                           </div>
@@ -499,7 +499,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                               className={cn(
                                 "relative rounded-xl transition-all duration-300",
                                 focusedField === "phone"
-                                  ? "ring-2 ring-primary/40 shadow-md shadow-primary/10"
+                                  ? "focus:ring-[#5B9EC9]/40 shadow-md shadow-[#5B9EC9]/10"
                                   : "",
                               )}
                             >
@@ -516,7 +516,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                                 }
                                 onFocus={() => setFocusedField("phone")}
                                 onBlur={() => setFocusedField(null)}
-                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground placeholder:text-foreground/30 font-semibold text-xs focus:outline-none focus:border-primary/40 transition-colors"
+                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground placeholder:text-foreground/30 font-semibold text-xs focus:outline-none focus:border-[#5B9EC9]/40 transition-colors"
                               />
                             </div>
                           </div>
@@ -531,7 +531,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                               className={cn(
                                 "relative rounded-xl transition-all duration-300",
                                 focusedField === "serviceCategory"
-                                  ? "ring-2 ring-primary/40 shadow-md shadow-primary/10"
+                                  ? "focus:ring-[#5B9EC9]/40 shadow-md shadow-[#5B9EC9]/10"
                                   : "",
                               )}
                             >
@@ -545,7 +545,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                                 }
                                 onFocus={() => setFocusedField("serviceCategory")}
                                 onBlur={() => setFocusedField(null)}
-                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground font-semibold text-xs focus:outline-none focus:border-primary/40 transition-colors appearance-none cursor-pointer"
+                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground font-semibold text-xs focus:outline-none focus:border-[#5B9EC9]/40 transition-colors appearance-none cursor-pointer"
                               >
                                 {[
                                   "Mainland",
@@ -590,7 +590,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                               className={cn(
                                 "relative rounded-xl transition-all duration-300",
                                 focusedField === "requirements"
-                                  ? "ring-2 ring-primary/40 shadow-md shadow-primary/10"
+                                  ? "focus:ring-[#5B9EC9]/40 shadow-md shadow-[#5B9EC9]/10"
                                   : "",
                               )}
                             >
@@ -606,7 +606,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                                 }
                                 onFocus={() => setFocusedField("requirements")}
                                 onBlur={() => setFocusedField(null)}
-                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground placeholder:text-foreground/30 font-semibold text-xs focus:outline-none focus:border-primary/40 transition-colors resize-none"
+                                className="w-full px-4 py-3 bg-foreground/[0.04] dark:bg-white/[0.06] rounded-xl border border-foreground/10 dark:border-white/10 text-foreground placeholder:text-foreground/30 font-semibold text-xs focus:outline-none focus:border-[#5B9EC9]/40 transition-colors resize-none"
                               />
                             </div>
                           </div>
@@ -617,7 +617,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                             disabled={isSubmitting}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full relative px-6 py-3.5 bg-gradient-to-r from-primary to-primary-dark text-white font-black rounded-xl text-xs uppercase tracking-[0.2em] overflow-hidden shadow-xl shadow-primary/30 disabled:opacity-70 disabled:cursor-not-allowed transition-all group"
+                            className="w-full relative px-6 py-3.5 bg-[#5B9EC9] text-white font-black rounded-xl text-xs uppercase tracking-[0.2em] overflow-hidden shadow-xl shadow-[#5B9EC9]/30 disabled:opacity-70 disabled:cursor-not-allowed transition-all group hover:bg-[#4A8EB9]"
                           >
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1.2s]" />
                             <span className="relative flex items-center justify-center gap-2.5">
@@ -705,7 +705,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                     boxShadow: "0 20px 50px -12px rgba(212,175,55,0.4)",
                   }}
                   whileTap={{ scale: 0.96 }}
-                  className="w-full sm:w-auto px-8 py-3 bg-gold text-white font-black rounded-xl text-sm uppercase tracking-tight shadow-xl flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-8 py-3 bg-[#5B9EC9] text-white font-black rounded-xl text-sm uppercase tracking-tight shadow-xl flex items-center justify-center gap-2 group hover:bg-[#4A8EB9]"
                 >
                   Launch Protocol
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -740,7 +740,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
         className="fixed bottom-10 right-10 z-[60] lg:hidden"
       >
         <Link href="tel:+971526065777">
-          <div className="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center shadow-3xl hover:scale-110 transition-transform cursor-pointer group">
+          <div className="w-16 h-16 rounded-full bg-[#5B9EC9] text-white flex items-center justify-center shadow-3xl hover:scale-110 transition-transform cursor-pointer group hover:bg-[#4A8EB9]">
             <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform" />
           </div>
         </Link>

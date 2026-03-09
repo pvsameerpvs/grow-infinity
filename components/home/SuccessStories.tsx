@@ -160,7 +160,7 @@ export function SuccessStories() {
               whileInView={{ width: 48 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="h-1.5 bg-gradient-to-r from-primary to-gold mb-8 rounded-full"
+              className="h-1.5 bg-gradient-to-r from-[#5B9EC9] to-gold mb-8 rounded-full"
             />
             <h2 className=" text-5xl md:text-6xl lg:text-7xl font-black mb-10 leading-[0.9] tracking-tighter uppercase text-foreground">
               Legacy <br />
@@ -186,17 +186,17 @@ export function SuccessStories() {
               whileHover={{ scale: 1.1, x: -5 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => paginate(-1)}
-              className="w-16 h-16 rounded-full glass border border-foreground/10 dark:border-white/10 hover:border-primary/50 flex items-center justify-center transition-all group"
+              className="w-16 h-16 rounded-full glass border border-foreground/10 dark:border-white/10 hover:border-[#5B9EC9]/50 flex items-center justify-center transition-all group"
             >
-              <ArrowLeft className="w-6 h-6 text-foreground/60 dark:text-white/60 group-hover:text-primary transition-colors" />
+              <ArrowLeft className="w-6 h-6 text-foreground/60 dark:text-white/60 group-hover:text-[#5B9EC9] transition-colors" />
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.1, x: 5 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => paginate(1)}
-              className="w-16 h-16 rounded-full glass border border-foreground/10 dark:border-white/10 hover:border-primary/50 flex items-center justify-center transition-all group"
+              className="w-16 h-16 rounded-full glass border border-foreground/10 dark:border-white/10 hover:border-[#5B9EC9]/50 flex items-center justify-center transition-all group"
             >
-              <ArrowRight className="w-6 h-6 text-foreground/60 dark:text-white/60 group-hover:text-primary transition-colors" />
+              <ArrowRight className="w-6 h-6 text-foreground/60 dark:text-white/60 group-hover:text-[#5B9EC9] transition-colors" />
             </motion.button>
           </motion.div>
         </div>
@@ -263,7 +263,7 @@ export function SuccessStories() {
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ delay: 0.4, type: "spring" }}
-                          className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-xl border-4 border-background"
+                          className="absolute -bottom-4 -right-4 w-16 h-16 rounded-full bg-[#5B9EC9] flex items-center justify-center shadow-xl border-4 border-background"
                         >
                           <CheckCircle2 className="w-8 h-8 text-white" />
                         </motion.div>
@@ -349,8 +349,8 @@ export function SuccessStories() {
                           {currentTestimonial.company}
                         </span>
                       </div>
-                      <div className="inline-block px-3 py-1.5 bg-primary/10 rounded-lg">
-                        <span className="text-xs font-black text-primary uppercase tracking-wider">
+                      <div className="inline-block px-3 py-1.5 bg-[#5B9EC9]/10 rounded-lg">
+                        <span className="text-xs font-black text-[#5B9EC9] uppercase tracking-wider">
                           {currentTestimonial.industry}
                         </span>
                       </div>
