@@ -1711,6 +1711,16 @@ export const SERVICES: ServiceData[] = [
         title: 'Tax & Accounting Health Checks',
         content: 'We perform focused reviews of your books and filings to identify weak points early: reconciliation gaps, documentation weaknesses, or process issues that increase audit risk. You get a prioritized fix plan and support to implement it.',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Financial Statement Preparation & Reporting',
+        content: 'We consolidate ledgers into quarterly and annual financial statements, build supporting schedules, and package narrative reporting that aligns with IFRS/UAE standards so lenders, investors, and auditors receive a consistent, reconciled view.',
+        image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Payroll & WPS Compliance',
+        content: 'Our specialists run payroll cycles end-to-end, generate WPS files, manage leave liabilities, and keep supporting documentation aligned with MOL and tax requirements so every salary disbursement clears without compliance issues.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   }
