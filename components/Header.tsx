@@ -121,21 +121,28 @@ const NAVIGATION = [
   {
     name: "Business Support",
     items: [
-      { title: "Compliance & Banking", slug: "compliance-banking" },
-      { title: "Corporate Bank Account", slug: "corporate-bank-account-uae" },
-      { title: "Multi-Currency Accounts", slug: "multi-currency-bank-account" },
-      { title: "Banking Compliance", slug: "banking-compliance-advisory" },
-      { title: "PRO Services", slug: "pro-services-uae" },
-      { title: "ISO Certification", slug: "iso-certification-uae" },
-      { title: "Document Attestation", slug: "document-attestation-uae" },
-      {
-        title: "Corporate & Regulatory Compliance",
-        slug: "corporate-and-regulatory-compliance",
-      },
-      { title: "Legal Translation", slug: "legal-translation-uae" },
-      { title: "Golden Visa", slug: "golden-visa-uae" },
-      { title: "Wills & Estate", slug: "uae-wills-estate-planning" },
-       { title: "Financial Advisory", slug: "financial-advisory" },
+       { title: "Golden Visa", slug: "golden-visa-uae" },
+       { title: "Corporate Bank Account", slug: "corporate-bank-account-uae" },
+        { title: "PRO Services", slug: "pro-services-uae" },
+        { title: "Legal Translation", slug: "legal-translation-uae" },
+        { title: "Will & Estate", slug: "uae-wills-estate-planning" },
+         { title: "Document Attestation", slug: "document-attestation-uae" },
+         { title: "ISO Certification", slug: "iso-certification-uae" },
+      // { title: "Compliance & Banking", slug: "compliance-banking" },
+      
+      // { title: "Multi-Currency Accounts", slug: "multi-currency-bank-account" },
+      // { title: "Banking Compliance", slug: "banking-compliance-advisory" },
+     
+      
+     
+      // {
+      //   title: "Corporate & Regulatory Compliance",
+      //   slug: "corporate-and-regulatory-compliance",
+      // },
+      
+     
+      
+      //  { title: "Financial Advisory", slug: "financial-advisory" },
       
     ],
   },
