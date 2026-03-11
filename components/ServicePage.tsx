@@ -689,10 +689,10 @@ const ServicePage: React.FC<ServicePageProps> = ({
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+            {/* <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
               The Path to{" "}
               <span className="text-gold">UAE Dominance</span>
-            </h2>
+            </h2> */}
 
             <p className="text-base text-white/50 max-w-xl mx-auto font-medium leading-relaxed">
               Don't just launch—scale with the infrastructure of tomorrow.

@@ -35,8 +35,8 @@ const CONTACT_METHODS = [
   {
     icon: Mail,
     label: "Direct Email",
-    value: "desk@growinfinity.ae",
-    path: "mailto:desk@growinfinity.ae",
+    value: "info@growinfinity.ae",
+    path: "mailto:info@growinfinity.ae",
     color: "text-amber-500",
     bg: "bg-amber-500/10",
   },

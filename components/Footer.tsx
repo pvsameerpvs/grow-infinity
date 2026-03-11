@@ -28,7 +28,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-white/50 leading-relaxed font-medium text-sm">
-              Your professional partner for business setup and corporate services. We help you succeed in the UAE and beyond with expert advice and reliable support since 2018.
+              Your professional partner for business setup and corporate services. We help you succeed in the UAE and beyond with expert advice and reliable support every step of the way.
             </p>
             <div className="flex space-x-5">
               {[Instagram, Linkedin, Twitter].map((Icon, i) => (
@@ -146,7 +146,7 @@ const Footer = () => {
                   <Mail className="w-4 h-4 text-[#7CB5D9]" />
                 </div>
                 <p className="text-white/40 text-sm font-bold">
-                  desk@growinfinity.ae
+                 info@growinfinity.ae
                 </p>
               </div>
             </div>
