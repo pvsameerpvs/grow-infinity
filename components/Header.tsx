@@ -91,9 +91,9 @@ const NAVIGATION = [
         ],
       },
       
-      { title: "HR and Payroll Services", slug: "hr-and-payroll-services" },
-      { title: "Legal Services", slug: "legal-services" },
-      { title: "Other Services", slug: "other-services" },
+      // { title: "HR and Payroll Services", slug: "hr-and-payroll-services" },
+      // { title: "Legal Services", slug: "legal-services" },
+      // { title: "Other Services", slug: "other-services" },
     ],
   },
   {
@@ -109,12 +109,12 @@ const NAVIGATION = [
         { title: "Auditing", slug: "auditing" },
          { title: "Other Services", slug: "other-services-tax" },
        
-      { title: "Accounting", slug: "accounting" },
-      { title: "TAX Services", slug: "tax-services" },
-      {
-        title: "Tax Advisory & Compliance",
-        slug: "tax-advisory-and-compliance",
-      },
+      // { title: "Accounting", slug: "accounting" },
+      // { title: "TAX Services", slug: "tax-services" },
+      // {
+      //   title: "Tax Advisory & Compliance",
+      //   slug: "tax-advisory-and-compliance",
+      // },
       
     ],
   },
@@ -125,7 +125,7 @@ const NAVIGATION = [
        { title: "Corporate Bank Account", slug: "corporate-bank-account-uae" },
         { title: "PRO Services", slug: "pro-services-uae" },
         { title: "Legal Translation", slug: "legal-translation-uae" },
-        { title: "Will & Estate", slug: "uae-wills-estate-planning" },
+        { title: "Uae Will Preparation", slug: "uae-will-preparation" },
          { title: "Document Attestation", slug: "document-attestation-uae" },
          { title: "ISO Certification", slug: "iso-certification-uae" },
       // { title: "Compliance & Banking", slug: "compliance-banking" },
