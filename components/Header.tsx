@@ -11,34 +11,7 @@ const NAVIGATION = [
   {
     name: "Business Set Up",
     items: [
-      {
-        title: "India",
-        isSubMenu: true,
-        children: [
-          { title: "India Company Formation", slug: "india-company-formation" },
-          { title: "Market Entry Strategy", slug: "market-entry-strategy" },
-          {
-            title: "Company Incorporation",
-            slug: "company-incorporation-and-registration",
-          },
-        ],
-      },
-      {
-        title: "Saudi Arabia",
-        isSubMenu: true,
-        children: [
-          { title: "Saudi Company Formation", slug: "saudi-company-formation" },
-          { title: "Market Entry Strategy", slug: "market-entry-strategy" },
-        ],
-      },
-      {
-        title: "Qatar",
-        isSubMenu: true,
-        children: [
-          { title: "Qatar Company Formation", slug: "qatar-company-formation" },
-          { title: "Market Entry Strategy", slug: "market-entry-strategy" },
-        ],
-      },
+
       {
         title: "Mainland",
         isSubMenu: true,
@@ -89,19 +62,35 @@ const NAVIGATION = [
           { title: "Ajman Offshore", slug: "ajman-offshore-company" },
         ],
       },
-      {
-        title: "Corporate & Regulatory Compliance",
-        slug: "corporate-and-regulatory-compliance",
+       {
+        title: "Saudi Arabia",
+        isSubMenu: true,
+        children: [
+          { title: "Saudi Company Formation", slug: "saudi-company-formation" },
+          { title: "Market Entry Strategy", slug: "market-entry-strategy" },
+        ],
       },
       {
-        title: "Tax Advisory & Compliance",
-        slug: "tax-advisory-and-compliance",
+        title: "Qatar",
+        isSubMenu: true,
+        children: [
+          { title: "Qatar Company Formation", slug: "qatar-company-formation" },
+          { title: "Market Entry Strategy", slug: "market-entry-strategy" },
+        ],
       },
-      { title: "Financial Advisory", slug: "financial-advisory" },
       {
-        title: "Accounting and Bookkeeping",
-        slug: "accounting-bookkeeping-uae",
+        title: "India",
+        isSubMenu: true,
+        children: [
+          { title: "India Company Formation", slug: "india-company-formation" },
+          { title: "Market Entry Strategy", slug: "market-entry-strategy" },
+          {
+            title: "Company Incorporation",
+            slug: "company-incorporation-and-registration",
+          },
+        ],
       },
+      
       { title: "HR and Payroll Services", slug: "hr-and-payroll-services" },
       { title: "Legal Services", slug: "legal-services" },
       { title: "Other Services", slug: "other-services" },
@@ -110,12 +99,23 @@ const NAVIGATION = [
   {
     name: "Tax and Accounting",
     items: [
+        {
+        title: "Accounting and Bookkeeping",
+        slug: "accounting-bookkeeping-uae",
+      },
+       { title: "VAT Registration", slug: "vat-registration-uae" },
+        
+        { title: "Corporate Tax", slug: "corporate-tax-uae" },
+        { title: "Auditing", slug: "auditing" },
+         { title: "Other Services", slug: "other-services-tax" },
+       
       { title: "Accounting", slug: "accounting" },
-      { title: "Auditing", slug: "auditing" },
       { title: "TAX Services", slug: "tax-services" },
-      { title: "VAT Registration", slug: "vat-registration-uae" },
-      { title: "Corporate Tax", slug: "corporate-tax-uae" },
-      { title: "Other Services", slug: "other-services-tax" },
+      {
+        title: "Tax Advisory & Compliance",
+        slug: "tax-advisory-and-compliance",
+      },
+      
     ],
   },
   {
@@ -128,11 +128,18 @@ const NAVIGATION = [
       { title: "PRO Services", slug: "pro-services-uae" },
       { title: "ISO Certification", slug: "iso-certification-uae" },
       { title: "Document Attestation", slug: "document-attestation-uae" },
+      {
+        title: "Corporate & Regulatory Compliance",
+        slug: "corporate-and-regulatory-compliance",
+      },
       { title: "Legal Translation", slug: "legal-translation-uae" },
       { title: "Golden Visa", slug: "golden-visa-uae" },
       { title: "Wills & Estate", slug: "uae-wills-estate-planning" },
+       { title: "Financial Advisory", slug: "financial-advisory" },
+      
     ],
   },
+  
   {
     name: "Contact Us",
     items: [
