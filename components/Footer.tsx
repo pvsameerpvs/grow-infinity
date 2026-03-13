@@ -130,7 +130,6 @@ const Footer = () => {
                   <br />
                   Shaikh Khalifa Bin Zayed Street,
                   <br />
-                  Al Mankhool Dubai
                 </p>
               </div>
               <div className="flex items-center space-x-5">

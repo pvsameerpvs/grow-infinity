@@ -654,13 +654,13 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   </div>
                   <div>
                     <p className="text-[9px] font-black uppercase tracking-[0.2em] text-foreground/40">
-                      Priority Hotline
+                      Hotline
                     </p>
                     <Link
-                      href="tel:+971526065777"
+                      href="tel:+971508663700"
                       className="text-sm font-black text-foreground hover:text-primary transition-colors"
                     >
-                      +971 52 606 5777
+                      +971 50 866 3700
                     </Link>
                   </div>
                 </div>
@@ -740,7 +740,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
         animate={{ opacity: 1, scale: 1 }}
         className="fixed bottom-10 right-10 z-[60] lg:hidden"
       >
-        <Link href="tel:+971526065777">
+        <Link href="tel:+971508663700">
           <div className="w-16 h-16 rounded-full bg-[#5B9EC9] text-white flex items-center justify-center shadow-3xl hover:scale-110 transition-transform cursor-pointer group hover:bg-[#4A8EB9]">
             <Phone className="w-7 h-7 group-hover:rotate-12 transition-transform" />
           </div>

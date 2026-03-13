@@ -8,6 +8,12 @@ import { cn } from "@/lib/utils";
 import { SERVICES } from "@/constants/services";
 
 const NAVIGATION = [
+
+    {
+    name: "About Us",
+    slug: "/about",
+  },
+  
   {
     name: "Business Set Up",
     items: [
@@ -146,15 +152,12 @@ const NAVIGATION = [
       
     ],
   },
-  
   {
     name: "Contact Us",
-    items: [
-      { title: "About Us", slug: "about" },
-      { title: "Contact Us", slug: "contact" },
-      { title: "Cost Calculator", slug: "cost-calculator" },
-    ],
+    slug: "/contact",
   },
+
+  
 ];
 
 const Header = () => {
@@ -345,10 +348,10 @@ const Header = () => {
               {/* Action Buttons */}
               <div className="flex items-center space-x-3">
                 <Link
-                  href="/contact"
+                  href="/cost-calculator"
                   className="px-6 py-2.5 text-[13px] font-bold text-white bg-[#5B9EC9] rounded-full hover:bg-[#4A8EB9] transition-all shadow-md active:scale-95"
                 >
-                  Get Started
+                 cost calculator
                 </Link>
               </div>
             </div>
