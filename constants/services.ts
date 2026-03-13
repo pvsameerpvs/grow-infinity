@@ -51,7 +51,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         title: 'Complete Setup Process',
-        content: 'Our streamlined company setup usually takes 7–10 working days from document submission to getting your license. We guide you through every step—from choosing your business activities and name to preparing documents, securing office space, and finalizing your license.',
+        content: 'Our streamlined company setup usually takes 2 to 3 days from document submission to getting your license. We guide you through every step—from choosing your business activities and name to preparing documents, securing office space, and finalizing your license.',
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000'
       }
     ]
@@ -234,18 +234,18 @@ export const SERVICES: ServiceData[] = [
   },
   {
     slug: 'ifza-company-formation',
-    title: 'IFZA Company Formation',
+    title: 'IFZA Free Zone Company Formation',
     subtitle: 'International Free Zone Authority',
     category: 'Free Zone',
-    navTitle: 'IFZA Dubai',
+    navTitle: 'IFZA Free Zone',
     description: [
-      'IFZA Dubai offers a prime location near Dubai International Airport and Downtown, providing a flexible, cost-effective, and fast-track setup for startups, SMEs, and service businesses. Dubai is a global business hub with a strong, diversified economy, world-class connectivity, and a highly skilled expatriate population. Ranked top in the Middle East for business ease and innovation, the city—together with IFZA\'s innovation-focused ecosystem—makes it an ideal destination to establish and grow your business in the UAE.'
+      'IFZA Free Zone Dubai offers a prime location near Dubai International Airport and Downtown, providing a flexible, cost-effective, and fast-track setup for startups, SMEs, and service businesses. Dubai is a global business hub with a strong, diversified economy, world-class connectivity, and a highly skilled expatriate population. Ranked top in the Middle East for business ease and innovation, the city—together with IFZA\'s innovation-focused ecosystem—makes it an ideal destination to establish and grow your business in the UAE.'
     ],
     image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=2000',
     advantages: ['Fast-track setup', 'Modern office facilities', 'Competitive pricing'],
     sections: [
       {
-        title: 'Why IFZA?',
+        title: 'Why IFZA Free Zone?',
         content: 'IFZA is preferred for consultancy and service-based startups seeking affordable entry into the UAE market. The free zone offers flexible office solutions, competitive pricing packages, and streamlined setup procedures designed for small and medium enterprises.',
         image: "/services/ifza_service.png"
       },
@@ -619,7 +619,7 @@ export const SERVICES: ServiceData[] = [
     sections: [
       {
         title: 'Asset Holding',
-        content: 'RAK offshore companies are preferred for real estate and intellectual property holding. The jurisdiction provides a stable legal framework based on international best practices, offering comprehensive asset protection and operational flexibility.',
+        content: 'RAK offshore companies are preferred for international asset holding and intellectual property structures. The jurisdiction provides a stable legal framework based on international best practices, offering comprehensive asset protection and operational flexibility.',
         image: 'https://images.unsplash.com/photo-1523240715637-1425e799298e?auto=format&fit=crop&q=80&w=2000'
       },
       {
@@ -640,14 +640,14 @@ export const SERVICES: ServiceData[] = [
     subtitle: 'Dubai Offshore Advantage',
     category: 'Offshore',
     description: [
-      'JAFZA Offshore Company gives you a Dubai address with full offshore benefits. It\'s the only offshore option that can directly own property in Dubai freehold areas, making it perfect for real estate investment and property holding.'
+      'JAFZA Offshore Company gives you a Dubai address with full offshore benefits. It is well suited for international holding structures, cross-border ownership planning, and businesses that want the credibility of a Dubai-linked offshore jurisdiction.'
     ],
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000',
-    advantages: ['Dubai prestige', 'Bankable jurisdiction', 'Direct real estate ownership'],
+    advantages: ['Dubai prestige', 'Bankable jurisdiction', 'Offshore flexibility'],
     sections: [
       {
-        title: 'Property Holding',
-        content: 'JAFZA offshore companies are the only offshore entities permitted to directly own property in Dubai freehold areas. This unique advantage makes JAFZA offshore ideal for real estate investment and property portfolio management.',
+        title: 'Holding Structure',
+        content: 'JAFZA offshore companies are often used for international holding structures, shareholder arrangements, and cross-border ownership planning. This makes the jurisdiction useful for businesses that want operational flexibility with a strong Dubai association.',
         image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
       },
       {
@@ -948,33 +948,60 @@ export const SERVICES: ServiceData[] = [
     ]
   },
   {
-    slug: 'uae-wills-estate-planning',
-    title: 'UAE Wills & Estate Planning',
+    slug: 'uae-will-preparation',
+    title: 'UAE Will Preparation',
     subtitle: 'Legacy Protection',
-    category: 'Residency',
-    navTitle: 'Wills & Estate',
+    category: 'Corporate Support',
+    navTitle: 'UAE Will Preparation',
     description: [
-      'Protect your assets according to your wishes, not local law defaults, through comprehensive UAE wills and estate planning services. Without a registered will, UAE inheritance laws based on Sharia principles will determine asset distribution, which may not align with your personal wishes or family circumstances.',
-      'We draft and register wills for both non-Muslims and Muslims through the DIFC Wills and Probate Registry, providing legally enforceable asset distribution according to your specific instructions. DIFC Court registration ensures your will is recognized and enforced according to your wishes, protecting your family and beneficiaries.',
-      'Our estate planning services include asset protection strategies, guardianship provisions for minor children, business succession planning, and comprehensive legacy protection. We ensure your assets are distributed according to your wishes while minimizing legal complications and family disputes.'
+      'Protect your assets and family interests with professionally prepared UAE will services designed to reflect your wishes clearly and lawfully. Without a registered will, local inheritance rules may apply by default, which may not match your personal intentions or family circumstances.',
+      'We assist with drafting and registration support for UAE wills, helping individuals and business owners document asset distribution, guardianship instructions, and succession preferences in a structured and enforceable format.',
+      'Our service is designed to give you clarity, reduce future disputes, and ensure your family, beneficiaries, and business interests are protected through proper planning and accurate documentation.',
+      'Whether you hold real estate, bank balances, shares in UAE companies, or overseas-connected assets, we help you review what should be covered and how your instructions should be organized. The result is a practical will structure that is easier to understand, review, and act on when required.',
+      'We also help clients think beyond the document itself. That includes reviewing beneficiary details, backup executors, guardianship considerations, and the administrative documents needed to support a smooth registration process and future enforcement.'
     ],
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000',
     advantages: ['DIFC Court registration', 'Asset protection', 'Family security'],
     sections: [
       {
         title: 'Asset Distribution',
-        content: 'We draft and register wills for non-Muslims and Muslims alike through the DIFC Wills and Probate Registry. Our estate planning services provide legally enforceable asset distribution according to your specific instructions.',
+        content: [
+          'We help you prepare a will that clearly sets out how your personal and business assets should be distributed. This includes reviewing your objectives, identifying the assets to be covered, and drafting instructions that reflect your wishes with clarity and precision.',
+          'Where needed, we help separate personal holdings, company interests, and family provisions so the final document is easier to interpret and less likely to create confusion later.'
+        ],
         image: 'https://images.unsplash.com/photo-1507679722338-9571897e7436?auto=format&fit=crop&q=80&w=2000'
       },
       {
         title: 'DIFC Registration',
-        content: 'DIFC Court registration ensures your will is recognized and enforced according to your wishes, protecting your family and beneficiaries. Without a registered will, UAE inheritance laws based on Sharia principles will determine asset distribution.',
+        content: [
+          'Where appropriate, we guide you through the DIFC wills registration pathway and help organize the required documents for a smoother process. Proper registration strengthens enforceability and helps ensure your instructions are recognized and followed when needed.',
+          'Our support covers document readiness, identity records, asset references, appointment coordination, and practical pre-submission checks so avoidable delays are reduced.'
+        ],
         image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=2000'
       },
       {
+        title: 'Guardianship & Family Protection',
+        content: [
+          'For families with minor children, guardianship planning is one of the most important parts of the will. We help you document guardian preferences clearly so your intentions are properly recorded alongside the rest of your estate plan.',
+          'This gives families greater certainty and helps reduce stress during already difficult circumstances by making key decisions visible and properly organized in advance.'
+        ],
+        image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
         title: 'Comprehensive Planning',
-        content: 'Our estate planning services include asset protection strategies, guardianship provisions for minor children, and business succession planning. We ensure your assets are distributed according to your wishes while minimizing legal complications.',
+        content: [
+          'Beyond drafting the will itself, we help you think through guardianship arrangements for minor children, business succession matters, and practical estate planning considerations. The goal is to create a complete plan that protects your legacy and reduces complications for your family.',
+          'We also review whether your will instructions align with how your bank accounts, company documents, property records, and shareholding arrangements are currently structured, so the wider estate plan remains consistent.'
+        ],
         image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Review & Update Support',
+        content: [
+          'A will should not remain static if your life or business changes. We help you review and update your document when there are major changes such as marriage, children, new property purchases, ownership restructuring, or changes in beneficiaries.',
+          'This keeps your instructions current and reduces the risk of outdated clauses creating unnecessary complications later.'
+        ],
+        image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   },
@@ -1408,7 +1435,7 @@ export const SERVICES: ServiceData[] = [
       },
       {
         title: 'Partner Network Access',
-        content: 'We connect you to trusted partners for specialized needs (real estate, banking introductions, legal translation, attestation, and sector-specific support). You keep one accountable point of coordination while accessing best-fit providers.',
+        content: 'We connect you to trusted partners for specialized needs (banking introductions, legal translation, attestation, and sector-specific support). You keep one accountable point of coordination while accessing best-fit providers.',
         image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
       },
       {
@@ -1701,6 +1728,16 @@ export const SERVICES: ServiceData[] = [
         title: 'Tax & Accounting Health Checks',
         content: 'We perform focused reviews of your books and filings to identify weak points early: reconciliation gaps, documentation weaknesses, or process issues that increase audit risk. You get a prioritized fix plan and support to implement it.',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Financial Statement Preparation & Reporting',
+        content: 'We prepare quarterly and annual financial statements that reconcile properly to your books, include supporting schedules, and present your numbers clearly for management, banks, investors, and auditors. Our reporting is structured to improve accuracy, consistency, and readiness for reviews or submissions.',
+        image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=2000'
+      },
+      {
+        title: 'Payroll & WPS Compliance',
+        content: 'We support end-to-end payroll processing with accurate salary calculations, WPS file preparation, leave and end-of-service tracking, and proper payroll records. This helps your business stay organized, pay employees on time, and remain aligned with UAE labor and WPS compliance requirements.',
+        image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=2000'
       }
     ]
   }

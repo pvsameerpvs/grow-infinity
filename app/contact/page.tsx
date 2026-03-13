@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactInfo } from "@/components/contact/ContactInfo";
-import { PartnerSection } from "@/components/contact/PartnerSection";
 import { GlobalPresence } from "@/components/home/GlobalPresence";
 import { Sparkles, Globe2, ShieldCheck, Zap, Phone, Mail, Clock } from "lucide-react";
 
@@ -126,9 +125,6 @@ export default function ContactPage() {
 
       {/* Global Presence Integration */}
       <GlobalPresence />
-
-      {/* Real Estate Partner Section */}
-      <PartnerSection />
 
       {/* Bottom CTA for Calculator */}
       <section className="py-16 relative overflow-hidden">

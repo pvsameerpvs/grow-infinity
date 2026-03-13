@@ -57,7 +57,7 @@ export default function OffshoreSolutions() {
       icon: TrendingUp,
       title: "Wealth Holding",
       description:
-        "Ideal structure for holding international investments, real estate, and IP.",
+        "Ideal structure for holding international investments, group assets, and IP.",
     },
   ];
 

@@ -75,9 +75,9 @@ export default function ResidencySolutions() {
     {
       name: "INVESTOR VISA (5Y)",
       description:
-        "The standard for property investors and serial business owners.",
+        "A strong option for qualifying investors and established business owners.",
       requirements: [
-        "AED 750k+ Property",
+        "Qualifying Investment",
         "Fixed Income",
         "Corporate Dividends",
       ],

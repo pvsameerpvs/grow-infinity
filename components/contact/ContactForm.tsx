@@ -151,7 +151,7 @@ export function ContactForm() {
                   <option value="banking">Banking Advisory</option>
                   <option value="compliance">Corporate Compliance</option>
                   <option value="residency">Residency Solutions</option>
-                  <option value="partner">Property Partnership</option>
+                  
                 </select>
                 <ChevronRight className="absolute right-6 bottom-4.5 w-4 h-4 text-foreground/20 rotate-90 pointer-events-none" />
               </div>

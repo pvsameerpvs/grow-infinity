@@ -224,7 +224,7 @@ export const SERVICES: ServiceData[] = [
     category: 'Offshore',
     description: ['The gold standard for offshore jurisdictions in UAE.'],
     advantages: ['Stable legal framework', 'Fast incorporation', 'Strong privacy laws'],
-    sections: [{ title: 'Asset Holding', content: 'Preferred for real estate and intellectual property holding.' }]
+    sections: [{ title: 'Asset Holding', content: 'Preferred for international asset holding and intellectual property structures.' }]
   },
   {
     slug: 'jafza-offshore-company',
@@ -232,8 +232,8 @@ export const SERVICES: ServiceData[] = [
     subtitle: 'Dubai Offshore Advantage',
     category: 'Offshore',
     description: ['Premium offshore status within Dubai.'],
-    advantages: ['Dubai prestige', 'Bankable jurisdiction', 'Direct real estate ownership'],
-    sections: [{ title: 'Property Holding', content: 'The only offshore entity permitted to own property in Dubai freeholds.' }]
+    advantages: ['Dubai prestige', 'Bankable jurisdiction', 'Offshore flexibility'],
+    sections: [{ title: 'Holding Structure', content: 'Useful for international holding structures and cross-border ownership planning.' }]
   },
   {
     slug: 'ajman-offshore-company',
