@@ -1324,11 +1324,6 @@ export const SERVICES: ServiceData[] = [
         image: 'https://images.unsplash.com/photo-1454165833767-0275080057d6?auto=format&fit=crop&q=80&w=2000'
       },
       {
-        title: 'Payroll & WPS Compliance',
-        content: 'We prepare WPS bank files, reconcile salary transfers, manage MOL/Immigration submissions, and document every change so inspections are straightforward. Our team keeps payroll calendars, approvals, and variance reports organized to eliminate penalties or payment delays.',
-        image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&q=80&w=2000'
-      },
-      {
         title: 'HR Operations & Records',
         content: 'We manage employee files, onboarding/offboarding checklists, leave and attendance coordination, and standard HR processes so your team stays organized, compliant, and audit-ready.',
         image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000'
@@ -1480,11 +1475,6 @@ export const SERVICES: ServiceData[] = [
         title: 'Management Reporting',
         content: 'We provide clear management reports (P&L, balance sheet, cash flow, and KPI views) so you can make decisions quickly. Reporting is structured to match how founders and finance teams actually operate.',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
-      },
-      {
-        title: 'Financial Statement Preparation & Reporting',
-        content: 'We compile quarterly and annual financial statements that reconcile to your trial balance, include supporting schedules, and align with IFRS/UAE reporting standards. Board-ready packs highlight key ratios, covenant checks, and commentary so investors, banks, and auditors get a complete, consistent view.',
-        image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=2000'
       },
       {
         title: 'VAT-Ready Accounting',
@@ -1710,16 +1700,6 @@ export const SERVICES: ServiceData[] = [
       {
         title: 'Tax & Accounting Health Checks',
         content: 'We perform focused reviews of your books and filings to identify weak points early: reconciliation gaps, documentation weaknesses, or process issues that increase audit risk. You get a prioritized fix plan and support to implement it.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
-      },
-      {
-        title: 'Financial Statement Preparation & Reporting',
-        content: 'We consolidate ledgers into quarterly and annual financial statements, build supporting schedules, and package narrative reporting that aligns with IFRS/UAE standards so lenders, investors, and auditors receive a consistent, reconciled view.',
-        image: 'https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&q=80&w=2000'
-      },
-      {
-        title: 'Payroll & WPS Compliance',
-        content: 'Our specialists run payroll cycles end-to-end, generate WPS files, manage leave liabilities, and keep supporting documentation aligned with MOL and tax requirements so every salary disbursement clears without compliance issues.',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000'
       }
     ]

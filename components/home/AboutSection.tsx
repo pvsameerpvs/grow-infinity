@@ -6,10 +6,10 @@ import { CheckCircle2, ArrowUpRight, Building2, Clock, Users2, Star } from "luci
 import Link from "next/link";
 
 const stats = [
-  { value: "500+", label: "Businesses Launched", icon: Building2 },
+  { value: "100%", label: "Compliance Assured", icon: Star },
+  { value: "40+", label: "Free Zones Covered", icon: Building2 },
+  { value: "24/7", label: "Expert Support", icon: Users2 },
   { value: "7 Days", label: "Avg. Setup Time", icon: Clock },
-  { value: "25+", label: "Banking Partners", icon: Users2 },
-  { value: "100%", label: "Success Rate", icon: Star },
 ];
 
 const highlights = [
