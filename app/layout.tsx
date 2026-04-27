@@ -41,12 +41,15 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
+  title: "Grow Infinity | Business Setup in Dubai & UAE",
   description:
-    "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
+    "Start and grow your business in Dubai and the UAE with company formation, trade licenses, bank account support, visas, tax and compliance help.",
   keywords:
-    "business setup dubai, uae company formation, banking advisory uae, golden visa, corporate tax uae",
-  metadataBase: new URL("https://grow-infinity.com"), // Replace with actual domain
+    "business setup dubai, business setup uae, company formation uae, company registration dubai, uae trade license, free zone company setup, mainland company setup, corporate bank account uae, golden visa uae, corporate tax uae",
+  metadataBase: new URL("https://grow-infinity.com"),
+  applicationName: "Grow Infinity",
+  creator: "Grow Infinity",
+  publisher: "Grow Infinity",
   alternates: {
     canonical: "/",
   },
@@ -59,8 +62,9 @@ export const metadata: Metadata = {
     apple: "/favicon.png?v=1",
   },
   openGraph: {
-    title: "Grow Infinity | Premium UAE Business Setup & Corporate Advisory",
-    description: "Architecting Businesses. Securing Legacies. Growing Infinitely. Elite business setup and banking advisory in Dubai, UAE.",
+    title: "Grow Infinity | Business Setup in Dubai & UAE",
+    description:
+      "Company formation, trade licenses, bank account support, visas, tax and compliance help for businesses in Dubai and the UAE.",
     url: "https://grow-infinity.com",
     siteName: "Grow Infinity",
     images: [
@@ -76,8 +80,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grow Infinity | Premium UAE Business Setup",
-    description: "Elite business setup and banking advisory in Dubai, UAE.",
+    title: "Grow Infinity | Business Setup in Dubai & UAE",
+    description:
+      "Simple business setup, company formation, banking, visa, tax and compliance support in Dubai and the UAE.",
     images: ["/logo-black.png"],
   },
 };
