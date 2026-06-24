@@ -5,15 +5,11 @@ import {
   Mail,
   MapPin,
   Instagram,
-  Linkedin,
-  Twitter,
   ArrowRight,
 } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { icon: Instagram, href: "https://www.instagram.com/growinfinity", label: "Instagram" },
-  { icon: Linkedin, href: "https://www.linkedin.com/company/growinfinity", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/growinfinity", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/grow.infinity_?igsh=MW50eWtmOXhzMG1peQ==", label: "Instagram" },
 ];
 
 const Footer = () => {

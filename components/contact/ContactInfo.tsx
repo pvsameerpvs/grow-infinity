@@ -9,9 +9,7 @@ import {
   Clock,
   ArrowUpRight,
   Globe2,
-  Linkedin,
   Instagram,
-  Twitter,
 } from "lucide-react";
 
 const CONTACT_METHODS = [
@@ -51,9 +49,7 @@ const CONTACT_METHODS = [
 ];
 
 const SOCIALS = [
-  { icon: Linkedin, name: "LinkedIn", path: "https://www.linkedin.com/company/growinfinity" },
-  { icon: Instagram, name: "Instagram", path: "https://www.instagram.com/growinfinity" },
-  { icon: Twitter, name: "Twitter", path: "https://x.com/growinfinity" },
+  { icon: Instagram, name: "Instagram", path: "https://www.instagram.com/grow.infinity_?igsh=MW50eWtmOXhzMG1peQ==" },
 ];
 
 export function ContactInfo() {

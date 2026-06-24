@@ -113,9 +113,7 @@ const organizationSchema = {
     email: "info@growinfinity.ae",
   },
   sameAs: [
-    "https://www.linkedin.com/company/growinfinity",
-    "https://www.instagram.com/growinfinity",
-    "https://x.com/growinfinity",
+    "https://www.instagram.com/grow.infinity_?igsh=MW50eWtmOXhzMG1peQ==",
   ],
 };
 
