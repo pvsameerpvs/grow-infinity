@@ -16,6 +16,7 @@ import {
   Scale,
   Award,
   Database,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -241,6 +242,58 @@ export default function ComplianceSolutions() {
                   Analyze Compliance <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Everything you need to know about compliance and regulatory services in the UAE.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What is the VAT registration threshold in the UAE?",
+                a: "Businesses with taxable supplies and imports exceeding AED 375,000 per annum must register for VAT. Those with supplies between AED 187,500 and AED 375,000 may register voluntarily. We handle the entire FTA registration process for you.",
+              },
+              {
+                q: "What is the UAE corporate tax rate?",
+                a: "The UAE corporate tax rate is 9% on taxable income exceeding AED 375,000. Income below this threshold is taxed at 0%. Certain free zone businesses may qualify for 0% corporate tax if they meet specific conditions.",
+              },
+              {
+                q: "How often do I need to file VAT returns?",
+                a: "VAT returns must be filed quarterly with the Federal Tax Authority (FTA). Each return must be submitted within 28 days of the quarter's end. Late filing attracts penalties starting at AED 1,000 for the first offense.",
+              },
+              {
+                q: "What PRO services does a UAE company need?",
+                a: "PRO services cover visa processing, Emirates ID applications, medical examinations, labor contract registration, immigration approvals, trade license renewal, and other government-related documentation. Our team handles all these processes seamlessly.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
             ))}
           </div>
         </div>

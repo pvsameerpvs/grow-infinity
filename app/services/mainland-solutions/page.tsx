@@ -15,6 +15,7 @@ import {
   Phone,
   Calculator,
   MapPin,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -340,6 +341,62 @@ export default function MainlandSolutions() {
                   ))}
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Everything you need to know about UAE Mainland company formation.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Can a foreigner fully own a mainland company in the UAE?",
+                a: "Yes. Recent UAE law changes now allow 100% foreign ownership in most commercial and industrial activities across all seven emirates without requiring a local service agent or partner.",
+              },
+              {
+                q: "How long does it take to set up a mainland company?",
+                a: "The full process typically takes 7–10 working days from document submission to license issuance. This includes name reservation, MOA drafting, initial approvals, office Ejari registration, and final DED license delivery.",
+              },
+              {
+                q: "What is the minimum office space requirement?",
+                a: "Mainland companies require physical office space. The minimum size is evaluated based on your business activity. We help you find compliant office solutions—from flexi-desks for consultants to full office suites for trading and industrial companies.",
+              },
+              {
+                q: "Can a mainland company operate in all seven emirates?",
+                a: "Yes. A mainland company registered with any economic department (DET in Dubai, ADDED in Abu Dhabi, etc.) has the right to operate, trade, and secure contracts across the entire UAE including all free zones (subject to free zone rules).",
+              },
+              {
+                q: "What is the cost to start a UAE mainland company?",
+                a: "Costs vary depending on your business activity, office requirements, and visa needs. Our cost calculator provides a transparent estimate. Use it to get an accurate breakdown for your specific business model.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
             ))}
           </div>
         </div>

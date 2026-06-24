@@ -17,6 +17,7 @@ import {
   Building,
   Building2,
   Calculator,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -270,6 +271,62 @@ export default function FreeZoneSolutions() {
                   </div>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Everything you need to know about Free Zone company formation in the UAE.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What is the difference between a Free Zone and Mainland company?",
+                a: "Free Zone companies offer 100% foreign ownership, zero corporate tax, and simplified setup but are restricted to operating within the free zone or internationally. Mainland companies can trade freely across the UAE and secure government contracts but require physical office space.",
+              },
+              {
+                q: "How fast can I get a Free Zone license?",
+                a: "With our specialized digital onboarding, Free Zone setup can be completed in as little as 48 hours. This covers initial approvals, license issuance, and basic visa processing, depending on the free zone and business activity selected.",
+              },
+              {
+                q: "Which Free Zone is best for my business?",
+                a: "The best free zone depends on your business activity, budget, and operational needs. DMCC is ideal for commodities trading, IFZA for e-commerce and tech startups, DIFC for financial services, and Meydan for digital businesses. We help you select the optimal jurisdiction.",
+              },
+              {
+                q: "Can I open a corporate bank account with a Free Zone license?",
+                a: "Yes. Free Zone companies can open corporate bank accounts with UAE and international banks. Our banking-first approach prepares your KYC documentation, business profile, and financial projections to speed up the account opening process significantly.",
+              },
+              {
+                q: "Do Free Zone companies need physical office space?",
+                a: "Many free zones offer flexible options including flexi-desks, virtual offices, and co-working spaces. However, visa allocations typically require physical office space. We help you choose the most cost-effective workspace solution for your specific needs.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
             ))}
           </div>
         </div>

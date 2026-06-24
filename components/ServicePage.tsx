@@ -162,7 +162,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
             </motion.div>
 
             {/* Main Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground leading-[1.1] tracking-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground leading-tight tracking-tight mb-6 break-words">
               {title.split(" ").map((word, i) => (
                 <motion.span
                   key={i}
@@ -173,7 +173,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                     delay: i * 0.12,
                     ease: "circOut",
                   }}
-                  className="inline-block relative mr-[0.3em] last:mr-0"
+                  className="inline-block relative mr-[0.25em] last:mr-0"
                 >
                   {word}
                 </motion.span>
@@ -669,6 +669,59 @@ const ServicePage: React.FC<ServicePageProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Related Services */}
+      <section className="py-20 bg-background relative z-10">
+        <div className="container px-4 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-black text-foreground mb-4 tracking-tight uppercase">
+              Related <span className="text-gradient-infinity">Services</span>
+            </h2>
+            <p className="text-foreground/50 text-base max-w-xl mx-auto">
+              Explore our other business solutions designed to support your growth.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { title: "Mainland Company Formation", slug: "mainland-company-formation" },
+              { title: "Free Zone Business Setup", slug: "free-zone-company-setup" },
+              { title: "Corporate Bank Account UAE", slug: "corporate-bank-account-uae" },
+            ].map((related, i) => (
+              <motion.div
+                key={related.slug}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Link
+                  href={`/${related.slug}`}
+                  className="block group h-full"
+                >
+                  <div className="glass p-8 rounded-3xl border border-foreground/5 h-full flex flex-col items-center text-center hover:border-primary/30 transition-all group-hover:-translate-y-1 duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+                      <Building2 className="w-6 h-6 text-primary group-hover:text-white" />
+                    </div>
+                    <h3 className="text-lg font-black text-foreground uppercase tracking-tight">
+                      {related.title}
+                    </h3>
+                    <div className="mt-4 flex items-center gap-2 text-primary text-xs font-black uppercase tracking-widest">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="py-20 relative overflow-hidden bg-foreground dark:bg-slate-950">

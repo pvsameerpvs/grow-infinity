@@ -17,6 +17,7 @@ import {
   GraduationCap,
   MapPin,
   Star,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -260,6 +261,58 @@ export default function ResidencySolutions() {
                   ))}
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Everything you need to know about UAE residency and Golden Visa.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Who is eligible for the UAE Golden Visa?",
+                a: "The Golden Visa is available to investors (AED 2M+ investment), entrepreneurs, highly skilled professionals (doctors, engineers, scientists), outstanding students, and individuals with specialized talents in culture, sports, and technology.",
+              },
+              {
+                q: "How long is the UAE Golden Visa valid?",
+                a: "The Golden Visa is a 10-year renewable residence permit. It does not require a sponsor and can be renewed every 10 years as long as the qualifying criteria continue to be met.",
+              },
+              {
+                q: "Can I sponsor my family with a Golden Visa?",
+                a: "Yes. Golden Visa holders can sponsor their spouse, children, and parents as dependents. There is no limit on the number of domestic helpers you can sponsor, giving you complete family flexibility.",
+              },
+              {
+                q: "Can I work or run a business on a Golden Visa?",
+                a: "Yes. Golden Visa holders have full freedom to work, pursue career opportunities, or start and own 100% of their business in the UAE without needing a separate sponsor or employment visa.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
             ))}
           </div>
         </div>

@@ -10,6 +10,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+const SOCIAL_LINKS = [
+  { icon: Instagram, href: "https://www.instagram.com/growinfinity", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/growinfinity", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/growinfinity", label: "Twitter" },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[#050505] text-white pt-32 pb-16 relative overflow-hidden">
@@ -31,13 +37,16 @@ const Footer = () => {
               Your professional partner for business setup and corporate services. We help you succeed in the UAE and beyond with expert advice and reliable support every step of the way.
             </p>
             <div className="flex space-x-5">
-              {[Instagram, Linkedin, Twitter].map((Icon, i) => (
+              {SOCIAL_LINKS.map((social, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-[#5B9EC9] transition-all group/icon border border-white/5"
+                  aria-label={social.label}
                 >
-                  <Icon className="w-5 h-5 text-white/40 group-hover/icon:text-white transition-colors" />
+                  <social.icon className="w-5 h-5 text-white/40 group-hover/icon:text-white transition-colors" />
                 </a>
               ))}
             </div>
@@ -97,8 +106,8 @@ const Footer = () => {
               {[
                 { label: "Cost Calculator", path: "/cost-calculator" },
                 { label: "Our Advisory Team", path: "#" },
-                { label: "Privacy Policy", path: "#" },
-                { label: "Terms of Service", path: "#" },
+                { label: "Privacy Policy", path: "/privacy-policy" },
+                { label: "Terms of Service", path: "/terms-of-service" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -130,6 +139,7 @@ const Footer = () => {
                   <br />
                   Shaikh Khalifa Bin Zayed Street,
                   <br />
+                  Dubai, UAE
                 </p>
               </div>
               <div className="flex items-center space-x-5">

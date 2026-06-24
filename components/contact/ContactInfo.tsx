@@ -19,7 +19,7 @@ const CONTACT_METHODS = [
     icon: MapPin,
     label: "Global Headquarters",
     value:
-      "Office 1517, 15th Floor, Burjuman Business Tower, Shaikh Khalifa Bin Zayed Street, Al Mankhool Dubai",
+      "Office 1517, 15th Floor, Burjuman Business Tower, Shaikh Khalifa Bin Zayed Street, Dubai, UAE",
     path: "https://maps.app.goo.gl/xxx",
     color: "text-blue-500",
     bg: "bg-blue-500/10",
@@ -51,9 +51,9 @@ const CONTACT_METHODS = [
 ];
 
 const SOCIALS = [
-  { icon: Linkedin, name: "LinkedIn", path: "#" },
-  { icon: Instagram, name: "Instagram", path: "#" },
-  { icon: Twitter, name: "Twitter", path: "#" },
+  { icon: Linkedin, name: "LinkedIn", path: "https://www.linkedin.com/company/growinfinity" },
+  { icon: Instagram, name: "Instagram", path: "https://www.instagram.com/growinfinity" },
+  { icon: Twitter, name: "Twitter", path: "https://x.com/growinfinity" },
 ];
 
 export function ContactInfo() {
@@ -160,6 +160,8 @@ export function ContactInfo() {
               <a
                 key={i}
                 href={social.path}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-12 h-12 rounded-2xl bg-white dark:bg-white/5 border border-foreground/10 flex items-center justify-center hover:bg-primary group transition-all duration-300"
                 title={social.name}
               >

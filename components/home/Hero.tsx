@@ -32,6 +32,8 @@ export function Hero() {
             loop
             muted
             playsInline
+            poster="/hero-section.jpg"
+            preload="none"
             className="w-full h-full object-cover opacity-90 transition-transform duration-[20s] ease-out group-hover:scale-105"
           />
           {/* Subtle Artistic Gradient */}
@@ -63,22 +65,26 @@ export function Hero() {
             
 
             <div className="space-y-2 relative w-full">
+              {/* Screen-reader accessible H1 */}
+              <h1 className="sr-only">Grow Infinity - Business Setup in Dubai, UAE, Saudi Arabia, Qatar & India</h1>
+              
               {/* Invisible placeholder to maintain consistent height */}
               <div className="font-cormorant text-[12vw] xs:text-[10vw] sm:text-[8vw] lg:text-[7.5rem] leading-[0.9] font-light tracking-tight opacity-0 pointer-events-none select-none">
                 Dubai
               </div>
               
               <AnimatePresence>
-                <motion.h1
+                <motion.span
                   key={locationIndex}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -30 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="font-cormorant text-[12vw] xs:text-[10vw] sm:text-[8vw] lg:text-[7.5rem] text-white leading-[0.9] font-light tracking-tight drop-shadow-2xl absolute top-0 left-0 w-full text-center lg:text-left"
+                  aria-hidden="true"
                 >
                   {LOCATIONS[locationIndex]}
-                </motion.h1>
+                </motion.span>
               </AnimatePresence>
               
               <motion.div

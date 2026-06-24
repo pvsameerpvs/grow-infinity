@@ -155,16 +155,14 @@ export function WhyChooseUs() {
                       ${isActive ? "text-foreground" : "text-foreground/50 group-hover:text-foreground/70"}`}>
                       {f.title}
                     </h3>
-                    {isActive && (
-                      <motion.p
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="text-foreground/55 text-sm leading-relaxed mt-2"
-                      >
-                        {f.desc}
-                      </motion.p>
-                    )}
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isActive ? 1 : 0.6 }}
+                      transition={{ duration: 0.3 }}
+                      className={`text-sm leading-relaxed mt-2 ${isActive ? "text-foreground/55" : "text-foreground/40"}`}
+                    >
+                      {f.desc}
+                    </motion.p>
                   </div>
                 </motion.button>
               );

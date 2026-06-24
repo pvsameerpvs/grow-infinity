@@ -15,6 +15,7 @@ import {
   Sparkles,
   Search,
   Filter,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -205,6 +206,58 @@ function ServicesListingContent() {
           </motion.div>
         )}
       </div>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Common questions about our business setup services.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "How long does it take to set up a company in the UAE?",
+                a: "Setup times vary by structure. Mainland companies typically take 7–10 working days, free zone companies can be set up in 2–5 days with fast-track processing, and offshore companies can be incorporated in 2–3 working days.",
+              },
+              {
+                q: "What is the minimum cost to start a business in the UAE?",
+                a: "Costs depend on the jurisdiction and business type. Free zone setup starts from approximately AED 10,000, mainland from AED 15,000 (excluding office costs), and offshore from AED 8,500. Use our cost calculator for a precise estimate tailored to your needs.",
+              },
+              {
+                q: "Do I need to be physically present to set up my company?",
+                a: "For most setups, we can handle the process remotely. You may need to be present for certain steps like visa processing and Emirates ID biometrics. Many free zones and offshore jurisdictions allow fully remote incorporation.",
+              },
+              {
+                q: "Can I switch from a Free Zone to a Mainland license later?",
+                a: "Yes, you can convert your free zone license to a mainland license. However, it is more efficient to choose the right structure from the start. We help you analyze your long-term goals to make the best initial choice.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Bottom CTA */}
       <section className="mt-40 py-40 bg-foreground text-white relative overflow-hidden rounded-[4rem]">

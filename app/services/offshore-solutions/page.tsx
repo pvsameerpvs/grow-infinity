@@ -17,6 +17,7 @@ import {
   Eye,
   ShieldAlert,
   Calculator,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -256,6 +257,58 @@ export default function OffshoreSolutions() {
                   </div>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Everything you need to know about UAE offshore company formation.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What is the difference between an offshore and a free zone company?",
+                a: "An offshore company cannot trade within the UAE or have a physical office presence. It is designed for international asset holding, IP ownership, and wealth management. A free zone company can conduct business in the UAE (within its zone), employ staff, and trade internationally.",
+              },
+              {
+                q: "Can a UAE offshore company open a bank account?",
+                a: "Yes. UAE offshore companies can open multi-currency corporate bank accounts with leading UAE and international banks. We provide bank introductions and prepare comprehensive KYC documentation to ensure a smooth account opening process.",
+              },
+              {
+                q: "What are the annual compliance requirements for an offshore company?",
+                a: "Offshore companies have minimal compliance requirements. Typically, you need to renew your registration annually, maintain a registered address, and file an annual confirmation. There is no mandatory audit or public filing requirement for most offshore jurisdictions.",
+              },
+              {
+                q: "Can a UAE offshore company own property in Dubai?",
+                a: "Yes, but only certain offshore jurisdictions allow direct property ownership. JAFZA Offshore companies can directly own property in Dubai's freehold areas. RAK ICC offshore companies can also hold UAE real estate through specific structures.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
             ))}
           </div>
         </div>

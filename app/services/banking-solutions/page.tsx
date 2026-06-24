@@ -15,6 +15,7 @@ import {
   Building2,
   Calculator,
   DollarSign,
+  ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -254,6 +255,58 @@ export default function BankingSolutions() {
                   </div>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative z-10 bg-background">
+        <div className="container px-4 mx-auto max-w-4xl">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase mb-6">
+              Frequently Asked <span className="text-gradient-infinity">Questions</span>
+            </h2>
+            <p className="text-xl text-foreground/50 max-w-2xl mx-auto font-medium">
+              Everything you need to know about corporate banking in the UAE.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "How long does it take to open a corporate bank account in the UAE?",
+                a: "With proper documentation and our pre-approval advisory, account opening can take 2–4 weeks. Without proper preparation, it can take 2–3 months due to banks' stringent KYC and compliance checks. Our banking-first approach significantly accelerates the process.",
+              },
+              {
+                q: "What documents are required to open a corporate bank account?",
+                a: "Typical requirements include your trade license, MOA/Articles of Association, passport copies of shareholders and directors, proof of address, business plan, and financial projections. We prepare a comprehensive KYC file to meet all bank requirements upfront.",
+              },
+              {
+                q: "Which UAE bank is best for my business?",
+                a: "The best bank depends on your business activity, transaction volumes, and target markets. Emirates NBD is excellent for mainland companies, Mashreq for trade-intensive SMEs, ADCB for premium corporate banking, and FAB for international transactions.",
+              },
+              {
+                q: "Can I open a multi-currency corporate account?",
+                a: "Yes. Most UAE banks offer multi-currency accounts supporting AED, USD, EUR, GBP, and many other currencies. This allows you to receive international payments, hold balances in different currencies, and convert at competitive rates.",
+              },
+            ].map((faq, i) => (
+              <motion.details
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="group glass p-6 rounded-2xl border border-foreground/5 cursor-pointer open:border-primary/30 transition-all"
+              >
+                <summary className="flex items-center justify-between list-none text-lg font-black text-foreground uppercase tracking-tight">
+                  <span>{faq.q}</span>
+                  <ChevronDown className="w-5 h-5 text-primary shrink-0 ml-4 group-open:rotate-180 transition-transform" />
+                </summary>
+                <p className="mt-4 text-foreground/60 leading-relaxed font-medium">
+                  {faq.a}
+                </p>
+              </motion.details>
             ))}
           </div>
         </div>
