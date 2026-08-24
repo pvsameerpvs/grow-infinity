@@ -29,6 +29,7 @@ import {
   Sparkles,
   Loader2,
 } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { SERVICES } from "@/constants/services";
@@ -649,8 +650,8 @@ const ServicePage: React.FC<ServicePageProps> = ({
 
                 {/* Quick Contact Below Form */}
                 <div className="mt-5 p-4 glass rounded-2xl border border-foreground/5 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-primary" />
+                  <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
+                    <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
                   </div>
                   <div>
                     <p className="text-[9px] font-black uppercase tracking-[0.2em] text-foreground/40">

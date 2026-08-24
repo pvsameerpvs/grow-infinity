@@ -9,6 +9,7 @@ import {
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { ThemeProvider } from "next-themes";
 
 const gaId = process.env.NEXT_PUBLIC_GA_ID || "";
@@ -168,6 +169,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingWhatsApp />
         </ThemeProvider>
         {gaId && (
           <>

@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Phone,
   Mail,
   MapPin,
   Clock,
@@ -11,6 +10,7 @@ import {
   Globe2,
   Instagram,
 } from "lucide-react";
+import WhatsAppIcon from "../WhatsAppIcon";
 
 const CONTACT_METHODS = [
   {
@@ -23,7 +23,7 @@ const CONTACT_METHODS = [
     bg: "bg-blue-500/10",
   },
   {
-    icon: Phone,
+    icon: WhatsAppIcon,
     label: "Strategic Hotline",
     value: "+971 50 866 3700",
     path: "tel:+971508663700",

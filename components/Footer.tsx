@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Phone,
   Mail,
   MapPin,
   Instagram,
   ArrowRight,
 } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 
 const SOCIAL_LINKS = [
   { icon: Instagram, href: "https://www.instagram.com/grow.infinity_?igsh=MW50eWtmOXhzMG1peQ==", label: "Instagram" },
@@ -139,8 +139,8 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-5">
-                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center flex-shrink-0 border border-white/5">
-                  <Phone className="w-4 h-4 text-[#7CB5D9]" />
+                <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center flex-shrink-0 border border-[#25D366]/20">
+                  <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
                 </div>
                 <p className="text-white/40 text-sm font-bold">
                   +971 50 866 3700
